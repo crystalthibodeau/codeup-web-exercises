@@ -1,4 +1,82 @@
 .fancy-header {
-    color: purple; /* single line comment */
+    color: dimgrey;
+    text-align: center;
     text-decoration: underline;
+}
+em h1 {
+    font-weight: bold;
+}
+h2 {
+    color: dimgrey;
+    text-decoration: underline;
+}
+div {
+    text-align: center;
+}
+.center{
+    width:250px;
+    margin:0 auto;
+    text-align:left;
+
+}
+body {
+    background-image: url("https://cdn.wallpapersafari.com/70/76/ohcQeA.jpg");
+    background-repeat: repeat-y;
+    font-family: Helvetica;
+}
+ol {
+    list-style-type: circle;
+}
+ul {
+    list-style-type: square;
+}
+.block {
+    display: block;
+    padding: 15px 15px;
+    background-color: black;
+    color: lightgrey;
+}
+
+td, th {
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+a {
+    text-align: center;
+}
+/* unvisited link (:link) */
+a:link {
+    color:black;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color:blue;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color:rebeccapurple;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color:green;
+}
+table {
+    margin: 0 auto;
+    background-color: lightgrey;
+    border: 1px solid black;
+    color: dimgrey;
+}
+
+img {
+    max-width:30%;
+    border-radius:50%;
+    padding: 10px;
 }
