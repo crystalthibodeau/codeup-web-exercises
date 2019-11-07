@@ -1,0 +1,20 @@
+
+p {
+    background-color: darkseagreen;
+    color: cadetblue;
+}
+h3 {
+    text-decoration: underline;
+    color: aliceblue;
+    text-align: center;
+}
+.unique {
+    background-color: darkcyan;
+    font-size: 40px;
+    color: lightgrey;
+    text-align: center;
+    font-family: "American Typewriter";
+}
+.unique2 {
+    background-color: darkcyan;
+}
