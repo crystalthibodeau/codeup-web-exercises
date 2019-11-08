@@ -28,6 +28,35 @@
             >>> For more info on box-sizing: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
         */
 
+.box {
+    width: 200px;
+    height: 200px;
+    padding: 5px;
+    color: white;
+    /*border: 5px;*/
+    background-color: indigo;
+    /*margin: 5px;*/
+       }
+
+.first-box{
+    background-color: indigo;
+    margin-bottom: 5px;
+}
+.second-box{
+    box-sizing: border-box;
+    background-color: darkblue;
+        }
+
+    div{
+    border: 1px solid black;
+    }
+    p{
+    border: 1px solid red;
+    }
+    span {
+            border: 1px solid cadetblue;
+    }
+
     </style>
 </head>
 <body>
@@ -38,8 +67,14 @@
 <h4>Here are some boxes...</h4>
 <!--	TODO TOGETHER: EXPLORE BOXES. -->
 
-
-
+<div class="box first-box">
+    <h1>First Box Content</h1>
+    <p>Box content is 220px</p>
+</div>
+<div class="box second-box">
+    <h1>Second Box Content</h1>
+    <p>comment here</p>
+</div>
 
 
 
