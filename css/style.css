@@ -1,41 +1,39 @@
 .fancy-header {
-    color: gray;
-    text-align: center;
+    color: dimgrey;
     text-decoration: underline;
 }
-em h1 {
+h1 {
     font-weight: bold;
     text-align: center;
 }
 h2 {
     color: dimgrey;
     text-decoration: underline;
-    text-align: center;
-
 }
 div {
     text-align: center;
-
 }
-
-/*.center{*/
-/*    width:230px;*/
-/*    margin:0 auto;*/
-/*    text-align:left;*/
-/*}*/
+.center{
+     width:200px;
+     margin:0 auto;
+     text-align:left;
+ }
 body {
     background-image: url("https://cdn.wallpapersafari.com/70/76/ohcQeA.jpg");
     background-repeat: repeat-y;
     font-family: Helvetica, sans-serif;
-    background-color: lightgrey;
+    /*text-align: center;*/
+    /*margin: auto 0;*/
 }
 ol {
-    /*list-style-type: decimal;*/
+    list-style-type: circle;
     list-style-position: inside;
+
 }
 ul {
     list-style-type: square;
     list-style-position: inside;
+    /*margin: 0 auto;*/
 }
 .block {
     display: block;
@@ -65,16 +63,14 @@ a:visited {
 
 /* mouse hover over link (:hover) */
 a:hover {
-    color:purple;
+    color:rebeccapurple;
 }
 
+/* active/selected link (:active) */
 a:active {
-    color: seagreen;
+    color:green;
 }
 table {
-    /*box-sizing: border-box;*/
-    /*width: 25%;*/
-    padding: 5px;
     margin: 0 auto;
     background-color: lightgrey;
     border: 1px solid black;
