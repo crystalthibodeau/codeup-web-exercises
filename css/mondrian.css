@@ -1,0 +1,82 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: auto;
+}
+
+main {
+    display: grid;
+    height: 500px;
+    width: 500px;
+    grid-template-columns: repeat(8, 5em);
+    grid-template-rows: repeat(8, 5em);
+    /*grid-column-gap: 0px;*/
+    grid-gap: 6px;
+    background-color: black;
+    border: 6px solid black;
+
+
+}
+
+/*div {*/
+/*    border: solid black 5px;*/
+/*}*/
+
+.div1 {
+    /*border: solid black 5px;*/
+    background-color: #30447B;
+    grid-area: 1 / 1 / 3 / 3;
+    /*grid-area: 1/ 1/ span 2/ span 2;*/
+}
+.div2 {
+    /*border: solid black 5px;*/
+    background-color: #DC1C22;
+    grid-area: 1 / 3 / 4 / 9;
+}
+.div3 {
+    /*border: solid black 5px;*/
+    background-color: #FBCC08;
+    /*grid-area: 3 / 1 / 6 / 3;*/
+    /*alternative to shorthand!*/
+
+    grid-row-start: 3;
+    grid-row-end: 6;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.div4 {
+    /*border: solid black 5px;*/
+    background-color:white;
+    grid-area: 6 / 1 / 8 / 3;
+}
+.div5 {
+    /*border: solid black 5px;*/
+    background-color: #DC1C22;
+    grid-area: 8 / 1 / 9 / 3;
+}
+.div6 {
+    /*border: solid black 5px;*/
+    background-color:#30447B;
+    grid-area: 8 / 3 / 9 / 9;
+}
+.div7 {
+    /*border: solid black 5px;*/
+    background-color: white;
+    grid-area: 4 / 3 / 8 / 5;
+}
+.div8 {
+    /*border: solid black 5px;*/
+    background-color:white;
+    grid-area: 4 / 5 / 6 / 9;
+}
+.div9 {
+    /*border: solid black 5px;*/
+    background-color: #FBCC08;
+    grid-area: 6 / 5 / 8 / 9;
+}
+
+/*grid-area: 4/ 5/ span 2 / span 4;*/
+/*which row does this go in?*/

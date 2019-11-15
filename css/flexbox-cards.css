@@ -66,9 +66,14 @@ a {
 }
 
 .container {
+    display: flex;
+    align-items: center;
+    /*flex-direction: row;*/
     /* This is a flex container */
 }
 
 .card {
+    flex-basis: 100%;
+    /*align-self: center;*/
     /* This is a flex item */
 }

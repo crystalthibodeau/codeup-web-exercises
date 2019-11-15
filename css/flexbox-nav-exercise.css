@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Work Sans";
+    margin: 0;
+    box-sizing: border-box;
+}
+nav {
+    background: darkgrey;
+    box-sizing: border-box;
+    height: 4.25em;
+}
+nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* made unordered list a flex container */
+    height: inherit;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+nav a:hover {
+    color: #3B94D9;
+}
+nav a {
+    text-decoration: none;
+    font-family: Verdana;
+    display: inline-block; /* inline-block to increase clickable area beyond the text */
+    padding: 1em; /* increases clickable area of anchor tags on all sides by 1em */
+}
+nav li{
+    margin: .5em;
+}
+li:nth-child(6) {
+        /*this allows the last flex item to be right justified*/
+        /*by filling remaining space to the left of the flex item with margin*/
+    margin-left: auto;
+}
+
+.logo-item{
+    font-size: 3em;
+    font-family: "Montserrat";
+    position: absolute;
+    height: inherit;
+    width: 100%;
+    display: flex;
+    margin: 0;
+}
+#logo {
+    margin: auto;
+    padding-top: .2em;
+    padding-bottom: .2em;
+}
