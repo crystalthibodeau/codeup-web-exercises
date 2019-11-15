@@ -1,13 +1,78 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Grid 1</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+        }
+        main {
+            margin: auto;
+            display: grid;
+            background-color: white;
+            /*padding: 5px;*/
+            height:500px;
+            width:600px;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            grid-gap: 8px;
+
+
+        }
+        #div1 {
+            /*top-box*/
+            grid-area: 1/ 1/ 2/ 9  ;
+            background-color: #FCD802;
+            /*border: solid black 2px;*/
+
+        }
+        #div2 {
+            /*left-bottom*/
+            grid-area: 2/ 1/ 7/ 3;
+            background-color: #FCD802;
+            /*border: solid black 2px;*/
+        }
+        #div3 {
+            grid-area: 2 / 9 / 6 / 8;
+            background-color: #FCD802;
+            /*border: solid black 2px;*/
+        }
+        #div4 {
+            /*center-box*/
+            grid-area: 2 / 3 / 6 / 8;
+            background-color: #FCD802;
+            /*border: solid black 2px;*/
+        }
+        #div5 {
+            /*bottom-right*/
+            grid-area: 6/ 3 / 7 / 9 ;
+            background-color: #FCD802;
+            /*border: solid black 2px;*/
+        }
+
+        .style {
+            font-size: 20px;
+            color: black;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
+    <main>
+        <div id="div1" class="style">Header</div>
+        <div id="div2" class="style">Nav</div>
+        <div id="div3" class="style">Ads</div>
+        <div id="div4" class="style">Article</div>
+        <div id="div5" class="style">Footer</div>
+    </main>
 
 </body>
 </html>
