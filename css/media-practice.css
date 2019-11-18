@@ -1,0 +1,55 @@
+@media all and (max-width: 1199px) {
+    body {
+        background-color: #0fb784;
+        color: #9e4157;
+    }
+}
+@media all and (max-width: 991px) {
+    body {
+        background-color: #9e4157;
+        color: #372f93;
+    }
+    .container {
+        grid-template-columns:1fr 1fr 1fr ;
+    }
+}
+@media all and (max-width: 768px) {
+    body {
+        background-color: #372f93;
+        color: #b4d455;
+    }
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media all and (max-width: 575px) {
+    body {
+        background-color: #b4d455;
+        color: orange;
+    }
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+​
+@media all and (min-width: 1200px) {
+    body {
+        background-color: #30447B;
+        color: orangered;
+    }
+    ​
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+div {
+    height: 40%;
+    /*width: 100%;*/
+    padding: 70px;
+    margin: 20px;
+    border: solid grey 1px;
+}
+

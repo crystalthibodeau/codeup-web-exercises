@@ -33,18 +33,23 @@
 //     }
 //     console.log(firstItem(["dog", "cat", "bird"]));
 
-var arrayLength = function (inputArray){
-    return inputArray.length;
-}
-
-console.log(arrayLength(["dog", "cat", "bird"]));
-console.log(arrayLength(["x", "y", "z", "a", "b", "c"]));
+// var arrayLength = function (inputArray){
+//     return inputArray.length;
+// }
+//
+// console.log(arrayLength(["dog", "cat", "bird"]));
+// console.log(arrayLength(["x", "y", "z", "a", "b", "c"]));
 
 // function arrayLength(coffee,oatmeal,tea) {
 //    const morning = ["coffee", "oatmeal", "tea"]
 // }
 // console.log(arrayLength.length);
 
+var lastItem = function (inputArray){
+    // return inputArray[inputArray.length-1];
+    return inputArray.slice(-1)[0]
+}
+console.log(lastItem(["x", "y", "z", "a", "b", "c"]));
 </script>
 </body>
 </html>

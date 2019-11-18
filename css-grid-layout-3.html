@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grid 3</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 50px;
+        }
+        main {
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(7, 1fr);
+            grid-gap: 10px;
+            /*height: 100vh;*/
+            height:500px;
+            width:700px;
+            padding: 10px;
+            border: solid lightgrey 1px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+        }
+        .one {
+            grid-area: 1 / 1 / 4 / 5;
+            background-color: #FDDA04;
+            padding: 15px;
+        }
+        .two {
+            grid-area: 4 / 1 / 8 / 2;
+            background-color: #FDDA04;
+            padding: 25px;
+        }
+        .three {
+            grid-area: 4 / 2 / 4 / 3;
+            background-color: #FDDA04;
+            padding: 25px;
+        }
+        .four {
+            grid-area: 4 / 3 / 4 / 5;
+            background-color: #FDDA04;
+            padding: 25px;
+        }
+        .five {
+            grid-area: 5 / 2 / 5 / 4;
+            background-color: #FDDA04;
+            padding: 25px;
+        }
+        .six {
+            grid-area: 5 / 4 / 5 / 5 ;
+            background-color: #FDDA04;
+            padding: 25px;
+        }
+        .seven {
+            grid-area: 6 / 2 / 6 / 3;
+            background-color: #FDDA04;
+            padding: 25px;
+        }
+        .eight {
+            grid-area: 6 / 3 / 6 / 4 ;
+            background-color: #FDDA04;
+            padding: 25px;
+        }
+        .nine {
+            grid-area: 6 / 4 / 6 / 5 ;
+            background-color: #FDDA04;
+            padding: 25px;
+        }
+        .ten {
+            grid-area: 7 / 2 / 7 / 5;
+            background-color: #FDDA04;
+            padding: 20px;
+        }
+        .style {
+            color: white;
+            font-weight: bold;
+            font-size: 2vw;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="one style">1</div>
+        <div class="two style">2</div>
+        <div class="three style">3</div>
+        <div class="four style">4</div>
+        <div class="five style">5</div>
+        <div class="six style">6</div>
+        <div class="seven style">7</div>
+        <div class="eight style">8</div>
+        <div class="nine style">9</div>
+        <div class="ten style">10</div>
+
+    </main>
+</body>
+</html>
