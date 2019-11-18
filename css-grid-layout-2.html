@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding-top: 40px;
+        }
+
+        main {
+            margin: auto;
+            display: grid;
+            background-color: white;
+            /*padding: 5px;*/
+            height:475px;
+            width:700px;
+            grid-template-columns: repeat(9, 1fr);
+            grid-template-rows: repeat(12, 1fr);
+            grid-gap: 10px;
+            border: solid lightgrey 1px;
+            padding: 10px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+        }
+        .Header {
+            grid-area: 1 / 1 / 3 / 10 ;
+            background-color: #9BCE09;
+            padding: 25px;
+        }
+        .Nav {
+            grid-area: 3 / 1 /11 / 3;
+            background-color: #9BCE09;
+            padding: 25px;
+        }
+        .Article {
+            grid-area: 3 / 3 / 9 / 10 ;
+            background-color: #9BCE09;
+            padding: 25px;
+        }
+        .Ads {
+            grid-area: 9 / 3 / 11 / 10;
+            background-color: #9BCE09;
+            padding: 25px;
+        }
+        .Footer {
+            grid-area:11 / 1 / 13 / 10;
+            background-color: #9BCE09;
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="Header">Header</div>
+        <div class="Nav">Nav</div>
+        <div class="Article">Article</div>
+        <div class="Ads">Ads</div>
+        <div class="Footer">Footer</div>
+    </main>
+</body>
+</html>

@@ -12,64 +12,68 @@
         }
         body {
             margin: 0;
+            padding-top: 40px;
         }
         main {
             margin: auto;
             display: grid;
             background-color: white;
             /*padding: 5px;*/
-            height:425px;
-            width:700px;
-            grid-template-columns: repeat(8, 1fr);
+            height:475px;
+            width:725px;
+            grid-template-columns: repeat(13, 1fr);
             grid-template-rows: repeat(6, 1fr);
             grid-gap: 8px;
             border: solid lightgrey 1px;
-
-
-
-
+            padding: 10px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
         }
         #div1 {
-            /*top-box*/
-            grid-area: 1/ 1/ 2/ 9  ;
+            /*Header*/
+            grid-area: 1/ 1/ 2/ 14 ;
             background-color: #FCD802;
             /*border: solid black 2px;*/
-            padding-top: 3%;
+            /*padding: 20px;*/
 
         }
         #div2 {
-            /*left-bottom*/
-            grid-area: 2/ 1/ 7/ 3;
+            /*nav*/
+            grid-area: 2/ 1/ 7/ 4;
             background-color: #FCD802;
+            /*padding: 20px;*/
             /*border: solid black 2px;*/
-            padding-top: 70%;
+            /*padding-top: 70%;*/
 
         }
         #div3 {
-            grid-area: 2 / 9 / 6 / 8;
+            /*ads*/
+            grid-area: 2 / 12 / 6 / 14;
             background-color: #FCD802;
+            /*padding: 20px;*/
             /*border: solid black 2px;*/
-            padding-top: 145%;
+            /*padding-top: 145%;*/
         }
         #div4 {
-            /*center-box*/
-            grid-area: 2 / 3 / 6 / 8;
+            /*Article*/
+            grid-area: 2 / 4 / 6 / 12;
             background-color: #FCD802;
             /*border: solid black 2px;*/
-            padding-top: 28%;
+            /*padding: 20px;*/
         }
         #div5 {
-            /*bottom-right*/
-            grid-area: 6/ 3 / 7 / 9 ;
+            /*footer*/
+            grid-area: 6/ 4 / 7 / 14 ;
             background-color: #FCD802;
+            /*padding: 20px;*/
             /*border: solid black 2px;*/
-            padding-top: 4%;
+            /*padding-top: 4%;*/
         }
 
         .style {
             font-size: 20px;
             color: black;
-            text-align: center;
+            padding: 20px;
+            /*text-align: center;*/
             /*font-weight: bold;*/
         }
     </style>
