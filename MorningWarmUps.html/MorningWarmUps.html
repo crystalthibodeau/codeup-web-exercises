@@ -45,11 +45,16 @@
 // }
 // console.log(arrayLength.length);
 
-var lastItem = function (inputArray){
-    // return inputArray[inputArray.length-1];
-    return inputArray.slice(-1)[0]
-}
-console.log(lastItem(["x", "y", "z", "a", "b", "c"]));
+// var lastItem = function (inputArray){
+//     // return inputArray[inputArray.length-1];
+//     return inputArray.slice(-1)[0]
+// }
+// console.log(lastItem(["x", "y", "z", "a", "b", "c"]));
+    var nthItem = function (inputArray, n) {
+        return inputArray[n-1];
+    }
+console.log(nthItem(["x", "y", "z", "a", "b", "c"], 2));
+
 </script>
 </body>
 </html>
