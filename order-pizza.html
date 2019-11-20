@@ -68,10 +68,9 @@
     <div>
         <ul class="nav navbar-nav">
             <li>
-                <i class="fas fa-user"></i>
-            </li>
-            <li>
-                <a class="nav-link" href="#">Sign Up</a>
+                <!--            </li>-->
+                <!--            <li>-->
+                <a class="nav-link text-dark" href="#"><i class="fas fa-user">Sign Up</i></a>
             </li>
         </ul>
     </div>
@@ -95,11 +94,11 @@
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
             <a class="nav-link active" id="size-and-crust-tab" data-toggle="tab" href="#size-and-crust" role="tab"
-               aria-controls="home" aria-selected="true">Size And Crust</a>
+               aria-controls="size-and-crust" aria-selected="true">Size And Crust</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" id="cheese-and-sauce-tab" data-toggle="tab" href="#cheese-and-sauce" role="tab"
-               aria-controls="profile" aria-selected="false">Cheese And Sauce</a>
+               aria-controls="cheese-and-sauce" aria-selected="false">Cheese And Sauce</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" id="toppings-tab" data-toggle="tab" href="#toppings" role="tab" aria-controls="contact"
@@ -107,226 +106,102 @@
         </li>
     </ul>
 
-<!--tab one -->
+    <!--tab one -->
     <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="size-and-crust" role="tabpanel" aria-labelledby="home-tab">
+        <div class="tab-pane fade show active" id="size-and-crust" role="tabpanel" aria-labelledby="size-and-crust-tab">
 
-<!--card one / tab one-->
 
-            <div class="tab-pane fade show active p-3" id="nav-home-tab" role="tabpanel" aria-labelledby="nav-home-tab">
-
-                <div class="card position-static input-group mb-3" style="width: 100%">
-                    <div class="card-header">
-                        Hand Tossed
-                    </div>
-                    <ul class="list-group list-group-flush">
-<!--                        <input type="checkbox">-->
-                        <li class="list-group-item">Garlic seasoned crust, with a rich buttery taste</li>
-                        <li class="list-group-item"><input type="radio">Dapibus ac facilisis in</li>
-                        <li class="list-group-item"><input type="radio">Vestibulum at eros</li>
-                    </ul>
+            <div class="card">
+                <div class="card-header"><h5>
+                    Choose Size and Crust</h5>
                 </div>
-            </div>
-
-<!--       card two/tab one     -->
 
 
-            <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active p-3" id="nav-contact-tab" role="tabpanel" aria-labelledby="nav-home-tab">
-                    <div class=" card position-static" style="width: 100%">
+                <!--card one / tab one-->
+
+                <div class="tab-pane fade active show p-3" id="hand-tossed-size" role="tabpanel"
+                     aria-labelledby="nav-home-tab">
+
+                    <div class="card position-static input-group mb-3" style="width: 100%">
                         <div class="card-header">
-                            Featured
+                            Hand Tossed
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Cras justo odio</li>
-                            <li class="list-group-item">Dapibus ac facilisis in</li>
-                            <li class="list-group-item">Vestibulum at eros</li>
+                            <!--                        <input type="checkbox">-->
+                            <li class="list-group-item">Garlic seasoned crust, with a rich buttery taste!</li>
+                            <li class="list-group-item"><input type="radio">Small (10")</li>
+                            <li class="list-group-item"><input type="radio">Vestibulum at eros</li>
                         </ul>
                     </div>
+
+
                 </div>
-            </div>
+
+                <!--       card two/tab one     -->
 
 
-        </div>
-
-<!--    tab two-->
-        <div class="tab-pane fade" id="cheese-and-sauce" role="tabpanel" aria-labelledby="profile-tab">
-
-
-<!--    card one tab two -->
-
-            <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active p-3" id="nav-contact-tab" role="tabpanel" aria-labelledby="nav-home-tab">
-                    <div class=" card position-static" style="width: 100%">
-                        <div class="card-header">
-                            Featured
+                    <div class="tab-pane fade active show p-3" id="crispy-thin-size" role="tabpanel"
+                         aria-labelledby="nav-home-tab">
+                        <div class=" card position-static" style="width: 100%">
+                            <div class="card-header">
+                                Crispy Thin
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Cras justo odio</li>
+                                <li class="list-group-item">Dapibus ac facilisis in</li>
+                                <li class="list-group-item">Vestibulum at eros</li>
+                            </ul>
                         </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Cras justo odio</li>
-                            <li class="list-group-item">Dapibus ac facilisis in</li>
-                            <li class="list-group-item">Vestibulum at eros</li>
-                        </ul>
                     </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">Next</a>
+
                 </div>
-            </div>
 
-<!--card two/ tab two-->
-            <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active p-3" id="nav-contact-tab" role="tabpanel" aria-labelledby="nav-home-tab">
-                    <div class=" card position-static" style="width: 100%">
-                        <div class="card-header">
-                            Featured
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Cras justo odio</li>
-                            <li class="list-group-item">Dapibus ac facilisis in</li>
-                            <li class="list-group-item">Vestibulum at eros</li>
-                        </ul>
-                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">Next</a>
+
                 </div>
+
             </div>
-
-
-
-        </div>
-
-
-<!--    tab three-->
-
-
-        <div class="tab-pane fade" id="toppings" role="tabpanel" aria-labelledby="contact-tab">
-
-<!--card one / tab three -->
-
-            <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active p-3" id="nav-contact-tab" role="tabpanel" aria-labelledby="nav-home-tab">
-                    <div class=" card position-static" style="width: 100%">
-                        <div class="card-header">
-                            Featured
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Cras justo odio</li>
-                            <li class="list-group-item">Dapibus ac facilisis in</li>
-                            <li class="list-group-item">Vestibulum at eros</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-<!--card two / tab three -->
-
-
-            <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active p-3" id="nav-contact-tab" role="tabpanel" aria-labelledby="nav-home-tab">
-                    <div class=" card position-static" style="width: 100%">
-                        <div class="card-header">
-                            Featured
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Cras justo odio</li>
-                            <li class="list-group-item">Dapibus ac facilisis in</li>
-                            <li class="list-group-item">Vestibulum at eros</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
         </div>
     </div>
 
 
-    <!--    <nav class="border">-->
-    <!--        <ul class="nav nav-tabs">-->
-    <!--            <li class="nav-item">-->
-    <!--                <a class="nav-link active" href="#">Active</a>-->
-    <!--            </li>-->
-    <!--            <li class="nav-item">-->
-    <!--                <a class="nav-link" href="#">Link</a>-->
-    <!--            </li>-->
-    <!--            <li class="nav-item">-->
-    <!--                <a class="nav-link" href="#">Link</a>-->
-    <!--            </li>-->
-    <!--            <li class="nav-item">-->
-    <!--                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>-->
-    <!--            </li>-->
-    <!--        </ul>-->
-
-    <!--    card one starts here-->
 
 
-<!--    <div class="tab-content border-none" id=>-->
-<!--        <div class="tab-pane fade show nav nav-tabs" id="home" role="tabpanel" aria-labelledby="home-tab">-->
-
-
-<!--        </div>-->
-<!--        <div class="tab-pane fade nav nav-tabs" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>-->
-<!--        <div class="tab-pane fade nav nav-tabs" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>-->
-<!--    </div>-->
-
-
-<!--    <div class="tab-pane fade show active p-3" id="nav-home-tab" role="tabpanel" aria-labelledby="nav-home-tab">-->
-
-<!--        <div class="card position-static" style="width: 100%">-->
-<!--            <div class="card-header">-->
-<!--                Featured-->
-<!--            </div>-->
-<!--            <ul class="list-group list-group-flush">-->
-<!--                <li class="list-group-item">Cras justo odio</li>-->
-<!--                <li class="list-group-item">Dapibus ac facilisis in</li>-->
-<!--                <li class="list-group-item">Vestibulum at eros</li>-->
-<!--            </ul>-->
-<!--        </div>-->
-<!--    </div>-->
-
-
-    <!--    card two starts here-->
-
-
-<!--    <div class="tab-pane fade show active p-3  nav nav-tabs" id="nav-profile-tab" role="tabpanel"-->
-<!--         aria-labelledby="nav-home-tab">-->
-<!--        <div class=" card position-static" style="width: 100%">-->
-<!--            <div class="card-header">-->
-<!--                Featured-->
-<!--            </div>-->
-<!--            <ul class="list-group list-group-flush">-->
-<!--                <li class="list-group-item">Cras justo odio</li>-->
-<!--                <li class="list-group-item">Dapibus ac facilisis in</li>-->
-<!--                <li class="list-group-item">Vestibulum at eros</li>-->
-<!--            </ul>-->
-<!--        </div>-->
-<!--    </div>-->
-
-
-<!--    <div class="tab-content" id="nav-tabContent">-->
-<!--        <div class="tab-pane fade show active p-3" id="nav-contact-tab" role="tabpanel" aria-labelledby="nav-home-tab">-->
-<!--            <div class=" card position-static" style="width: 100%">-->
-<!--                <div class="card-header">-->
-<!--                    Featured-->
-<!--                </div>-->
-<!--                <ul class="list-group list-group-flush">-->
-<!--                    <li class="list-group-item">Cras justo odio</li>-->
-<!--                    <li class="list-group-item">Dapibus ac facilisis in</li>-->
-<!--                    <li class="list-group-item">Vestibulum at eros</li>-->
-<!--                </ul>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-    <!--    </nav>-->
-</div>
-
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
 </body>
 </html>
