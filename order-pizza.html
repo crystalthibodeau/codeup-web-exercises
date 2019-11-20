@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Order Now</title>
+    <style>
+        #main-container {
+            background-image: url("img/pizza.png");
+            text-align: center;
+            /*background-size: cover;*/
+            /*background-position: center;*/
+            /*height: 35vh;*/
+            /*linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%),*/
+        }
+
+        h1 {
+            /*width: 100%;*/
+            background-color: #ffffffab;
+            /*linear-gradient(to bottom, rgba(0,0,0,0.6) 10%,rgba(0,0,0,0.6) 10%),*/
+        }
+
+        /*.m-1 {*/
+        /*    margin: ($ spacer *.25);*/
+        /*}*/
+
+        /*.p-3 {*/
+        /*    padding: $ spacer;*/
+        /*}*/
+
+    </style>
+
+</head>
+<body>
+<!--nav bar starts here-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Pizza World <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Order online</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Menu</a>
+            </li>
+            <li>
+                <input class="form-control mr-sm-1" type="search" placeholder="Zip code" aria-label="Search">
+            </li>
+            <li>
+                <input class="form-control mr-sm-3" type="search" placeholder="Search stores near you!"
+                       aria-label="Search">
+            </li>
+        </ul>
+    </div>
+    <div>
+        <ul class="nav navbar-nav">
+            <li>
+                <i class="fas fa-user"></i>
+            </li>
+            <li>
+                <a class="nav-link" href="#">Sign Up</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!--nav bar ends here-->
+
+<!--    jumbotron starts here-->
+<div class="container">
+    <div class="jumbotron jumbotron-fluid" id="main-container">
+        <h1 class="display-4">Welcome to Pizza World!</h1>
+    </div>
+
+</div>
+<div class="container">
+    <h3>Build Your Own Pizza!</h3>
+
+    <!--tabs start here-->
+
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="size-and-crust-tab" data-toggle="tab" href="#size-and-crust" role="tab"
+               aria-controls="home" aria-selected="true">Size And Crust</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="cheese-and-sauce-tab" data-toggle="tab" href="#cheese-and-sauce" role="tab"
+               aria-controls="profile" aria-selected="false">Cheese And Sauce</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="toppings-tab" data-toggle="tab" href="#toppings" role="tab" aria-controls="contact"
+               aria-selected="false">Contact</a>
+        </li>
+    </ul>
+
+<!--tab one -->
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="size-and-crust" role="tabpanel" aria-labelledby="home-tab">
+
+<!--card one / tab one-->
+
+            <div class="tab-pane fade show active p-3" id="nav-home-tab" role="tabpanel" aria-labelledby="nav-home-tab">
+
+                <div class="card position-static input-group mb-3" style="width: 100%">
+                    <div class="card-header">
+                        Hand Tossed
+                    </div>
+                    <ul class="list-group list-group-flush">
+<!--                        <input type="checkbox">-->
+                        <li class="list-group-item">Garlic seasoned crust, with a rich buttery taste</li>
+                        <li class="list-group-item"><input type="radio">Dapibus ac facilisis in</li>
+                        <li class="list-group-item"><input type="radio">Vestibulum at eros</li>
+                    </ul>
+                </div>
+            </div>
+
+<!--       card two/tab one     -->
+
+
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active p-3" id="nav-contact-tab" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class=" card position-static" style="width: 100%">
+                        <div class="card-header">
+                            Featured
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+<!--    tab two-->
+        <div class="tab-pane fade" id="cheese-and-sauce" role="tabpanel" aria-labelledby="profile-tab">
+
+
+<!--    card one tab two -->
+
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active p-3" id="nav-contact-tab" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class=" card position-static" style="width: 100%">
+                        <div class="card-header">
+                            Featured
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+<!--card two/ tab two-->
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active p-3" id="nav-contact-tab" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class=" card position-static" style="width: 100%">
+                        <div class="card-header">
+                            Featured
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+<!--    tab three-->
+
+
+        <div class="tab-pane fade" id="toppings" role="tabpanel" aria-labelledby="contact-tab">
+
+<!--card one / tab three -->
+
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active p-3" id="nav-contact-tab" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class=" card position-static" style="width: 100%">
+                        <div class="card-header">
+                            Featured
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+<!--card two / tab three -->
+
+
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active p-3" id="nav-contact-tab" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class=" card position-static" style="width: 100%">
+                        <div class="card-header">
+                            Featured
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+
+    <!--    <nav class="border">-->
+    <!--        <ul class="nav nav-tabs">-->
+    <!--            <li class="nav-item">-->
+    <!--                <a class="nav-link active" href="#">Active</a>-->
+    <!--            </li>-->
+    <!--            <li class="nav-item">-->
+    <!--                <a class="nav-link" href="#">Link</a>-->
+    <!--            </li>-->
+    <!--            <li class="nav-item">-->
+    <!--                <a class="nav-link" href="#">Link</a>-->
+    <!--            </li>-->
+    <!--            <li class="nav-item">-->
+    <!--                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>-->
+    <!--            </li>-->
+    <!--        </ul>-->
+
+    <!--    card one starts here-->
+
+
+<!--    <div class="tab-content border-none" id=>-->
+<!--        <div class="tab-pane fade show nav nav-tabs" id="home" role="tabpanel" aria-labelledby="home-tab">-->
+
+
+<!--        </div>-->
+<!--        <div class="tab-pane fade nav nav-tabs" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>-->
+<!--        <div class="tab-pane fade nav nav-tabs" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>-->
+<!--    </div>-->
+
+
+<!--    <div class="tab-pane fade show active p-3" id="nav-home-tab" role="tabpanel" aria-labelledby="nav-home-tab">-->
+
+<!--        <div class="card position-static" style="width: 100%">-->
+<!--            <div class="card-header">-->
+<!--                Featured-->
+<!--            </div>-->
+<!--            <ul class="list-group list-group-flush">-->
+<!--                <li class="list-group-item">Cras justo odio</li>-->
+<!--                <li class="list-group-item">Dapibus ac facilisis in</li>-->
+<!--                <li class="list-group-item">Vestibulum at eros</li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+
+
+    <!--    card two starts here-->
+
+
+<!--    <div class="tab-pane fade show active p-3  nav nav-tabs" id="nav-profile-tab" role="tabpanel"-->
+<!--         aria-labelledby="nav-home-tab">-->
+<!--        <div class=" card position-static" style="width: 100%">-->
+<!--            <div class="card-header">-->
+<!--                Featured-->
+<!--            </div>-->
+<!--            <ul class="list-group list-group-flush">-->
+<!--                <li class="list-group-item">Cras justo odio</li>-->
+<!--                <li class="list-group-item">Dapibus ac facilisis in</li>-->
+<!--                <li class="list-group-item">Vestibulum at eros</li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+
+
+<!--    <div class="tab-content" id="nav-tabContent">-->
+<!--        <div class="tab-pane fade show active p-3" id="nav-contact-tab" role="tabpanel" aria-labelledby="nav-home-tab">-->
+<!--            <div class=" card position-static" style="width: 100%">-->
+<!--                <div class="card-header">-->
+<!--                    Featured-->
+<!--                </div>-->
+<!--                <ul class="list-group list-group-flush">-->
+<!--                    <li class="list-group-item">Cras justo odio</li>-->
+<!--                    <li class="list-group-item">Dapibus ac facilisis in</li>-->
+<!--                    <li class="list-group-item">Vestibulum at eros</li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+    <!--    </nav>-->
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+</html>
