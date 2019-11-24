@@ -40,9 +40,9 @@ nav {
     background: red;
     border-radius: 50%;
     color: white;
-    /*height: 200px;*/
+    height: 105px;
     /*font-weight: bold;*/
-    /*width: 200px;*/
+    width: 105px;
     /*!*display: table;*!*/
     /*margin: 20px auto;*/
     /*box-sizing: border-box;*/
@@ -51,11 +51,11 @@ nav {
 }
 .support-circle {
     background: red;
-    border-radius: 200px;
+    border-radius: 50%;
     color: white;
-    height: 200px;
+    height: 105px;
     font-weight: bold;
-    width: 200px;
+    width: 105px;
     /*display: table;*/
     margin: 20px auto;
     box-sizing: border-box;
@@ -64,11 +64,11 @@ nav {
 }
 .host-circle {
     background: red;
-    border-radius: 200px;
+    border-radius:50%;
     color: white;
-    height: 200px;
+    height: 105px;
     font-weight: bold;
-    width: 200px;
+    width: 105px;
     /*display: table;*/
     margin: 20px auto;
     box-sizing: border-box;
