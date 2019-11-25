@@ -1,7 +1,14 @@
-
+:root {
+    --page-background: #E6E6E6;
+    --navbar-background: #F0F0F0;
+    --design-icon: #E6563B;
+    --develop-icon: #EB9D3A;
+    --support-icon: #7CB06c;
+    --host-icon: #00ABA9;
+}
 
 .nav-background{
-    background-color: white;
+    background-color: var(--navbar-background);
     width: 100%;
     height: 50px;
 }
@@ -10,6 +17,7 @@
     height:105px;
     position: absolute;
     top: 14px;
+    margin-left: 4px;
 }
 body {
     background-color: lightgrey;
@@ -51,6 +59,7 @@ body {
     width: 105px;
     font-size: 15px;
     border: solid white 6px;
+    background-color: var(--design-icon);
 }
 .DEVELOP-BUTTON{
     border-radius: 50%;
@@ -59,6 +68,8 @@ body {
     width: 105px;
     font-size: 15px;
     border: solid white 6px;
+    background-color: var(--develop-icon);
+    padding: 8px;
 }
 .SUPPORT-BUTTON{
     border-radius: 50%;
@@ -67,6 +78,8 @@ body {
     width: 105px;
     font-size: 15px;
     border: solid white 6px;
+    background-color: var(--support-icon);
+    padding: 8px;
 }
 .HOST-BUTTON{
     border-radius: 50%;
@@ -75,4 +88,16 @@ body {
     width: 105px;
     font-size: 15px;
     border: solid white 6px;
+    background-color: var(--host-icon);
+}
+.pill{
+    color: black;
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    text-align: center;
+    padding-top: 4px;
+    font-family: 'abel', sans-serif;
+    /*padding-right:1px;*/
+
 }
