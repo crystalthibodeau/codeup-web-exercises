@@ -50,7 +50,7 @@ li:nth-child(6) {
     display: flex;
     margin: 0;
 }
-#logo {
+.logo {
     margin: auto;
     padding-top: .2em;
     padding-bottom: .2em;
