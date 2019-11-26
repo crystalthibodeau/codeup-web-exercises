@@ -1,50 +1,86 @@
 /** {*/
 /*    box-sizing: border-box;*/
 /*}*/
-/*body {*/
-/*    margin: 0;*/
-/*    text-align: center;*/
-/*}*/
-
-
-
 
 .parent {
     display: grid;
     height: 100vh;
     width: 100vw;
-    grid-template-columns: 25% 50% 25%;
-    grid-template-rows: 20% 20% 20% 20% 20%;
+    grid-template-columns: 15% 65% 30%;
+    grid-template-rows: 8% 30% 26% 20% 20%;
     /*grid-column-gap: 0px;*/
     /*grid-row-gap: 0px;*/
+    padding: 0;
+    margin: 0;
 }
 
 .div1 {
     grid-area: 1 / 1 / 2 / 4;
-    background-color: black
+    background-color: black;
+    color: white;
 }
+
 .div2 {
     grid-area: 2 / 1 / 6 / 2;
-    background-color: #848487;
+    background-color: lightgrey;
+    padding: 0;
 }
 .div3 {
     grid-area: 5 / 2 / 6 / 4;
-    background-color: #3B94D9;
+    background-color: darkgrey;
 }
 .div4 {
     grid-area: 2 / 2 / 5 / 3;
-    background-color: #7CB06c;
+    background-color: white;
+    padding: 1em;
 }
 .div5 {
     grid-area: 2 / 3 / 5 / 4;
     background-color: white;
 }
+.navTop{
+    display: flex; /* made unordered list a flex container */
+    list-style-type: none;
+    /*padding: 0;*/
+    /*margin: 1em;*/
+    /*height: inherit;*/
+    /*align-items: center;*/
+    padding: 1em;
+    margin: 0;
+}
+.navTopLi{
+    padding:5px;
+    margin-right:2px;
+    margin-left:2px;
+}
+.navLeft{
+    /*display: flex; !* made unordered list a flex container *!*/
+    list-style-type: none;
+    justify-content: flex-start;
+    padding: 1em;
+    margin: 0;
+}
+.navLeftLi{
+    padding:.5em;
+    margin: 0;
+}
+.menuText{
+    font-weight: bold;
+}
 
-
-
-
-
-
+img{
+    display: flex;
+    height: 150px;
+    width: 165px;
+    justify-content: center;
+    padding-left: 2em;
+    margin: 1em;
+}
+.footer{
+    font-weight: bold;
+    /*color: white;*/
+    padding: .5em;
+}
 /*.div9 { grid-area: 4 / 3 / 5 / 4; }*/
 
 /*!* This is where you setup how much space the boxes take up. *!*/
