@@ -96,6 +96,36 @@ console.log(getType("x", "y", "z", "a", "b", "c"));
     //     return numInput > 10;
     // }
     // console.log(greaterThanTen(12));
+
+// 1. write a function
+//     2. parameter number
+//     3. if/else number > = 13v"you may enter" (conditional)
+//     4. < 13 parent/guardian
+
+
+
+        // if (ageInput < 13) {
+        //   text = "Sorry, you need a parent or guardian to enter";
+        // }else {
+        //  text = "You may enter!"
+        // }
+        // -----------
+
+        function youMayEnter (age){
+            if(age >= 13){
+            return "You may enter!";
+        } else {
+            return "Sorry, you need a parent or guardian to enter";
+    }
+    }
+
+    console.log(youMayEnter(25));
+    console.log(youMayEnter(7));
+    console.log(youMayEnter(13));
+
+
+
+
 </script>
 </body>
 </html>
