@@ -40,12 +40,23 @@
 
 // A student can be enrolled in a class only if the class is not full and the class schedule does not conflict with her current schedule.
 
-var hasCLass = confirm("If class is not full, select 'OK' to continue");
-if () {
 
-} else {
+// var hasClass = confirm("Select 'OK' if no class conflict at this time.");
+// if (hasClass) {
+//     var classSize = Number(prompt('What is current class size?'));
+//     var maxClassSize = Number(prompt('What is the maximum class size?'));
+//     if( classSize < maxClassSize) {
+//         alert("Successfully enrolled in class.");
+//     } else{
+//         alert("Class is too full for enrollment.");
+//     }
+// } else {
+// alert("Class conflict for this time slot.");
+// }
 
-}
+// A product offer can be applied only if a person buys more than 2 items, and the offer has not expired. Premium members do not need to buy a specific amount of products.
 
-var scheduleConflict = confirm("Does new class occur during another pre-enrolled class time? Select 'OK' if there is no existing class during this time, to finalize enrollment.");
-var success = confirm('Success! You have successfully enrolled!');
+
+
+
+
