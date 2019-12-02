@@ -9,12 +9,12 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 //
-// function sayHello(name){
-//     return "Hello " + name + "!"
-// }
-// console.log(sayHello("Crystal"));
-// console.log(sayHello("Adam"));
-// console.log(sayHello("Thomas"));
+function sayHello(name){
+    return "Hello " + name + "!"
+}
+console.log(sayHello("Crystal"));
+console.log(sayHello("Thomas"));
+console.log(sayHello("Adam"));
 
 
 
@@ -104,8 +104,8 @@ function calculateTip(bill, percentage){
     // tip = bill * percentage;
     return bill * percentage;
 }
-alert("tip amount is $ " + calculateTip(bill, percentage.toFixed(2)));
-
+alert("tip amount is $" + calculateTip(bill, percentage.toFixed(2)));
+// alert("total bill is $" + bill + );
 
 
 /**
@@ -114,7 +114,6 @@ alert("tip amount is $ " + calculateTip(bill, percentage.toFixed(2)));
  * (before a discount is applied), and a discount percentage (a number between 0
  * and 1). It should return the result of applying the discount to the original
  * price.
- *
  * Example:
  * > var originalPrice = 100;
  * > var dicountPercent = .2; // 20%
@@ -122,3 +121,15 @@ alert("tip amount is $ " + calculateTip(bill, percentage.toFixed(2)));
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+// var applyDiscount = price - discountAmount() ;
+
+// function discountAmount(price, percentage){
+//      return price * percentage;
+// }
+//
+//
+// function applyDiscount(price, discountAmount){
+//     return price - discountAmount;
+// }
+// console.log(discountAmount(100, .2)+ "%");
+// console.log(applyDiscount(100, discountAmount(100, .2)));
