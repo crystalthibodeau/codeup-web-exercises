@@ -8,11 +8,13 @@
  * Example
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
-
-function sayHello(name){
-    return "Hello " + name + "!"
-}
-console.log(sayHello("Crystal"));
+//
+// function sayHello(name){
+//     return "Hello " + name + "!"
+// }
+// console.log(sayHello("Crystal"));
+// console.log(sayHello("Adam"));
+// console.log(sayHello("Thomas"));
 
 
 
@@ -25,8 +27,8 @@ console.log(sayHello("Crystal"));
  * console.log 'helloMessage' to check your work
  */
 
-var helloMessage = sayHello("Crystal");
-console.log(helloMessage);
+// var helloMessage = sayHello("Crystal");
+// console.log(helloMessage);
 
 
 
@@ -39,10 +41,11 @@ console.log(helloMessage);
  * console.
  */
 
-var myName = "Crystal";
+// var myName = "Crystal";
 
 
-console.log(sayHello(myName));
+// console.log(sayHello(myName));
+
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -64,11 +67,11 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
-function isTwo(x){
-    return x === 2;
-}
-
-console.log(isTwo(random));
+// function isTwo(x){
+//     return x === 2;
+// }
+//
+// console.log(isTwo(random));
 
 /**
  * TODO:
@@ -81,10 +84,10 @@ console.log(isTwo(random));
  * > calculateTip(0.25, 25.50) // returns 6.37
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
-function calculateTip(percentage, bill){
-    // tip = bill * percentage;
-    return bill* percentage;
-}
+// function calculateTip(percentage, bill){
+//     // tip = bill * percentage;
+//     return bill* percentage;
+// }
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
@@ -92,9 +95,20 @@ function calculateTip(percentage, bill){
  * then display the dollar amount they should tip
  */
 
-var billAmount  = Number(prompt('What is the total price of your bill?'));
-var
+var bill = Number(prompt('What is the total price of your bill?'));
+console.log(bill);
+var percentage = Number(prompt("what percentage would you like to tip?"));
+console.log(percentage);
 
+function calculateTip(bill, percentage) {
+    if (percentage.indexOf('%')>0) {
+        parseFloat(percentage) / 100;
+    } else {
+        // tip = bill * percentage;
+        return bill * percentage;
+    }
+}
+alert("tip amount is $ " + calculateTip(bill, percentage));
 
 /**
  * TODO:
