@@ -97,18 +97,16 @@ var random = Math.floor((Math.random() * 3) + 1);
 
 var bill = Number(prompt('What is the total price of your bill?'));
 console.log(bill);
-var percentage = Number(prompt("what percentage would you like to tip?"));
-console.log(percentage);
+var percentage = Number(prompt("what percentage would you like to tip? (Leave the % symbol off and add a . beforehand. example: 20 % = . 20)"));
+// console.log(percentage);
 
-function calculateTip(bill, percentage) {
-    if (percentage.indexOf('%')>0) {
-        parseFloat(percentage) / 100;
-    } else {
-        // tip = bill * percentage;
-        return bill * percentage;
-    }
+function calculateTip(bill, percentage){
+    // tip = bill * percentage;
+    return bill * percentage;
 }
-alert("tip amount is $ " + calculateTip(bill, percentage));
+alert("tip amount is $ " + calculateTip(bill, percentage.toFixed(2)));
+
+
 
 /**
  * TODO:
@@ -120,7 +118,7 @@ alert("tip amount is $ " + calculateTip(bill, percentage));
  * Example:
  * > var originalPrice = 100;
  * > var dicountPercent = .2; // 20%
- * > applyDiscount(originalPrice, dicountPercent) // 80
+ * > applyDiscount(originalPrice, discountPercent) // 80
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
