@@ -6,66 +6,66 @@
 </head>
 <body>
 <script>
-    function helloWorld() {
-        return "Hello World!";
-    }
-    console.log(helloWorld());
-
-
-    function sayHello(name){
-        return "Hello " + name + "!"
-    }
-    console.log(sayHello("Crystal"));
-function add (x,y) {
-        return x + y;
-    }
-    console.log(add(1,1));
-    console.log(add(2,7));
-
-function addFour(w,x,y,z) {
-   var sum = w + x + y + z;
-   return sum;
-}
-console.log(addFour(1,5,4,6));
-
-    function firstItem(inputArray){
-        return inputArray[0]
-    }
-    console.log(firstItem(["dog", "cat", "bird"]));
-
-var arrayLength = function (inputArray){
-    return inputArray.length;
-}
-
-console.log(arrayLength(["dog", "cat", "bird"]));
-console.log(arrayLength(["x", "y", "z", "a", "b", "c"]));
-
-function arrayLength(coffee,oatmeal,tea) {
-   const morning = ["coffee", "oatmeal", "tea"]
-}
-console.log(arrayLength.length);
-
-var lastItem = function (inputArray){
-    // return inputArray[inputArray.length-1];
-    return inputArray.slice(-1)[0]
-}
-console.log(lastItem(["x", "y", "z", "a", "b", "c"]));
-    var nthItem = function (inputArray, n) {
-        return inputArray[n-1];
-    }
-console.log(nthItem(["x", "y", "z", "a", "b", "c"], 2));
-
-    var getType = function (input){
-        return typeof (input)
-    }
-
-function getType(input) {
-        return typeof input
-}
-console.log(getType("x", "y", "z", "a", "b", "c"));
-
-    console.log(typeof 42)
-    console.log(typeof false)
+//     function helloWorld() {
+//         return "Hello World!";
+//     }
+//     console.log(helloWorld());
+//
+//
+//     function sayHello(name){
+//         return "Hello " + name + "!"
+//     }
+//     console.log(sayHello("Crystal"));
+// function add (x,y) {
+//         return x + y;
+//     }
+//     console.log(add(1,1));
+//     console.log(add(2,7));
+//
+// function addFour(w,x,y,z) {
+//    var sum = w + x + y + z;
+//    return sum;
+// }
+// console.log(addFour(1,5,4,6));
+//
+//     function firstItem(inputArray){
+//         return inputArray[0]
+//     }
+//     console.log(firstItem(["dog", "cat", "bird"]));
+//
+// var arrayLength = function (inputArray){
+//     return inputArray.length;
+// }
+//
+// console.log(arrayLength(["dog", "cat", "bird"]));
+// console.log(arrayLength(["x", "y", "z", "a", "b", "c"]));
+//
+// function arrayLength(coffee,oatmeal,tea) {
+//    const morning = ["coffee", "oatmeal", "tea"]
+// }
+// console.log(arrayLength.length);
+//
+// var lastItem = function (inputArray){
+//     // return inputArray[inputArray.length-1];
+//     return inputArray.slice(-1)[0]
+// }
+// console.log(lastItem(["x", "y", "z", "a", "b", "c"]));
+//     var nthItem = function (inputArray, n) {
+//         return inputArray[n-1];
+//     }
+// console.log(nthItem(["x", "y", "z", "a", "b", "c"], 2));
+//
+//     var getType = function (input){
+//         return typeof (input)
+//     }
+//
+// function getType(input) {
+//         return typeof input
+// }
+// console.log(getType("x", "y", "z", "a", "b", "c"));
+//
+//     console.log(typeof 42)
+//     console.log(typeof false)
 
 //     function put2(addArray){
 //         return (addArray.push);
@@ -111,21 +111,45 @@ console.log(getType("x", "y", "z", "a", "b", "c"));
         // }
         // -----------
 
-        function youMayEnter (age){
-            if(age >= 13){
-            return "You may enter!";
-        } else {
-            return "Sorry, you need a parent or guardian to enter";
+    //     function youMayEnter (age){
+    //         if(age >= 13){
+    //         return "You may enter!";
+    //     } else {
+    //         return "Sorry, you need a parent or guardian to enter";
+    // }
+    // }
+    //
+    // console.log(youMayEnter(25));
+    // console.log(youMayEnter(7));
+    // console.log(youMayEnter(13));
+
+
+//write a js function called seeYouLater that accepts a string. If the string is alligator, return "See you later alligator!",
+// if the string is crocodile, return "After a while crocodile!", if the string is not either, return "So long!"
+
+
+
+// 1. write a function seeYouLater(inputString)
+// 2. if means conditional - 3 to look at
+// 3. alligator - see you later
+// 4. crocodile - in awhile
+// 5. something  different - so long
+
+
+
+    function seeYouLater(inputString){
+       if (inputString === 'alligator'){
+           return "See you later alligator!";
+       } else if(inputString === 'crocodile'){
+           return "In awhile crocodile!";
+    } else {
+           return "so long!"
+       }
     }
-    }
 
-    console.log(youMayEnter(25));
-    console.log(youMayEnter(7));
-    console.log(youMayEnter(13));
-
-
-
-
+    console.log(seeYouLater("alligator"));
+    console.log(seeYouLater("crocodile"));
+    console.log(seeYouLater("dog"));
 </script>
 </body>
 </html>

@@ -104,3 +104,10 @@ body {
 li {
     list-style-type: none;
 }
+
+.small-img {
+    height: 50px;
+    width: 50px;
+    /*padding: 15px;*/
+    margin: 15px;
+}

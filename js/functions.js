@@ -92,6 +92,10 @@ function calculateTip(percentage, bill){
  * then display the dollar amount they should tip
  */
 
+var billAmount  = Number(prompt('What is the total price of your bill?'));
+var
+
+
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
