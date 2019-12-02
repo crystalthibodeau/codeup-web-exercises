@@ -55,8 +55,23 @@
 // }
 
 // A product offer can be applied only if a person buys more than 2 items, and the offer has not expired. Premium members do not need to buy a specific amount of products.
+var moreThanTwo;
+var isValid = confirm("Select 'OK' to continue if coupon offer is valid.");
+if (isValid) {
+    var hasPremium = confirm("Select 'OK' to continue if customer has Premium membership");
 
+    if(!hasPremium) {
+        moreThanTwo  = Number(prompt('How many items does the customer have?'));
+    }
+    if(moreThanTwo > 2 || hasPremium) {
+        alert("Coupon has been applied.");
+    }  else{
+        alert("Coupon does not meet requirements to validate.");
+    }
 
+} else{
+    alert("Coupon does not meet requirements to validate.");
+}
 
 
 
