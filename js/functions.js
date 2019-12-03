@@ -9,16 +9,18 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 //
-function sayHello(name){
-    return "Hello " + name + "!"
-}
-console.log(sayHello("Crystal"));
-console.log(sayHello("Thomas"));
-console.log(sayHello("Adam"));
+// function sayHello(name){
+//     return "Hello " + name + "!"
+// }
+// console.log(sayHello("Crystal"));
+// console.log(sayHello("Thomas"));
+// console.log(sayHello("Adam"));
+
+// class notes here
 
 
 
-
+// end of class notes here
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
@@ -95,17 +97,17 @@ var random = Math.floor((Math.random() * 3) + 1);
  * then display the dollar amount they should tip
  */
 
-var bill = Number(prompt('What is the total price of your bill?'));
-console.log(bill);
-var percentage = Number(prompt("what percentage would you like to tip? (Leave the % symbol off and add a . beforehand. example: 20 % = . 20)"));
-// console.log(percentage);
-
-function calculateTip(bill, percentage){
-    // tip = bill * percentage;
-    return bill * percentage;
-}
-alert("tip amount is $" + calculateTip(bill, percentage.toFixed(2)));
-// alert("total bill is $" + bill + );
+// var bill = Number(prompt('What is the total price of your bill?'));
+// console.log(bill);
+// var percentage = Number(prompt("what percentage would you like to tip? (Leave the % symbol off and add a . beforehand. example: 20 % = . 20)"));
+// // console.log(percentage);
+//
+// function calculateTip(bill, percentage){
+//     // tip = bill * percentage;
+//     return bill * percentage;
+// }
+// alert("tip amount is $" + calculateTip(bill, percentage.toFixed(2)));
+// // alert("total bill is $" + bill + );
 
 
 /**
@@ -121,15 +123,21 @@ alert("tip amount is $" + calculateTip(bill, percentage.toFixed(2)));
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
-// var applyDiscount = price - discountAmount() ;
 
-// function discountAmount(price, percentage){
-//      return price * percentage;
-// }
+
+// var applyDiscount = price - discountAmount() ;
+// var discountPercent = price * percentage;
+//    add in between for percentage
 //
+// var price = Number(prompt("What is the total bill price?"));
+// var percentage = Number(prompt("What is the discount amount?"));
 //
-// function applyDiscount(price, discountAmount){
-//     return price - discountAmount;
+// function calculateDiscount(price, percentage){
+//     return price * percentage;
 // }
-// console.log(discountAmount(100, .2)+ "%");
-// console.log(applyDiscount(100, discountAmount(100, .2)));
+// console.log(alert("discount amount is: $" + calculateDiscount(price, percentage)));
+//
+// function discountAmount(price, applyDiscount){
+//     return price - applyDiscount;
+// }
+// console.log(alert("Final bill amount is: $" + discountAmount(price, calculateDiscount(price, percentage))));
