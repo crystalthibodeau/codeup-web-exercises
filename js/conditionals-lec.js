@@ -16,60 +16,6 @@
  * Can you refactor your code to use functions?
  */
 
-//
-var wouldLikeNumber = confirm("Would you like to enter in a number?");
-if (wouldLikeNumber === true) {
-    var canEnterNumber = Number(prompt("Enter a number here:"));
-    if (canEnterNumber == Number && canEnterNumber % 2 == 0) {
-        var oddIs = alert("Your number is odd!");
-    }
-    if (canEnterNumber == Number && canEnterNumber % 1 == 0) {
-        var positiveIs = alert("Your number is positively cool!");
-    }
-    // if (numberIsNegative) {
-    //     var negativeIs = alert("Your number is a negative nancy........");
-    // } else {
-    //     var noNumberHere = alert("Bummer! You did not enter a number");
-    // }
-}
-//
-// var isEven = function(someNumber){
-//     return (someNumber%2 == 0) ? true : false;
-// };
-//
-// alert(isEven(64)); // Alerts "true".
-//
-// alert(isEven(97)); // Alerts "false".
-
-function canHasNumber(number){
-    // var discountPrice;
-    switch(number) {
-        case ():
-             = totalAmount;
-            break;
-        case():
-
-             = ;
-            break;
-        case ():
-            = ;
-            break;
-        case ():
-             = ;
-            break;
-        case ():
-             = ;
-            break;
-        case ():
-             = ;
-            break;
-        default:
-            alert("");
-            break;
-    }
-    return ;
-}
-
 /* ########################################################################## */
 
 /**
@@ -136,47 +82,6 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-// Number(prompt("What a coincidence, that's my favorite!"));
-// return discountPrice;
-
-
-function calculateTotal(luckyNumber, totalAmount){
-    var discountPrice;
-    switch(luckyNumber) {
-        case 0:
-            discountPrice = totalAmount;
-            break;
-        case 1:
-
-            discountPrice = (totalAmount) - (totalAmount * .10);
-            break;
-        case 2:
-            discountPrice = (totalAmount) - (totalAmount * .25);
-            break;
-        case 3:
-            discountPrice = (totalAmount) - (totalAmount * .35);
-            break;
-        case 4:
-            discountPrice = (totalAmount) - (totalAmount * .50);
-            break;
-        case 5:
-            discountPrice = 0;
-            break;
-        default:
-            alert("Discount unavailable at this time");
-            break;
-    }
-    return discountPrice;
-}
-
-console.log(calculateTotal(2,100));
-//
-
-
-
-
-
-
 
 /**
  * TODO:
