@@ -9,11 +9,14 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 //
-// function sayHello(name){
-//     return "Hello " + name + "!"
-// }
+function sayHello(name) {
+    return "Hello " + name + "!"
+}
+
 // console.log(sayHello("Crystal"));
+//
 // console.log(sayHello("Thomas"));
+//
 // console.log(sayHello("Adam"));
 
 // class notes here
@@ -69,10 +72,23 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
+
+// class notes here....
+
+// var isTwo = function(num) {
+//     return num === 2;
+// }
+//
+// console.log(isTwo(1)); // returns false
+// console.log(isTwo(2)); // returns true
+// console.log(isTwo(3)); // returns false
+
+// end of class notes here....
+
 // function isTwo(x){
 //     return x === 2;
 // }
-//
+// //
 // console.log(isTwo(random));
 
 /**
@@ -86,10 +102,25 @@ var random = Math.floor((Math.random() * 3) + 1);
  * > calculateTip(0.25, 25.50) // returns 6.37
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
+// start of class notes here....
+//
+// var calculateTip = function(tipPercent, billTotal) {
+//     return tipPercent * billTotal;
+// }
+// console.log(calculateTip(.20, 20));
+// console.log(calculateTip(.25, 25.50));
+// console.log(calculateTip(.15, 33.42));
+//
+// // end of class notes here...
+// //
 // function calculateTip(percentage, bill){
 //     // tip = bill * percentage;
 //     return bill* percentage;
 // }
+// console.log(alert("Tip amount is: $" + calculateTip(.20, 20)));
+// console.log(alert("Tip amount is: $" + calculateTip(.25, 25.50)));
+// console.log(alert("Tip amount is: $" + calculateTip(.15, 33.42)));
+
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
@@ -97,17 +128,32 @@ var random = Math.floor((Math.random() * 3) + 1);
  * then display the dollar amount they should tip
  */
 
+
+// // start of class notes here .....
+//     var tipPercentage = prompt("What percentage would you like to tip?(0.00 to 1.00)");
+//     var billTotal= prompt("what was the total of your bill?");
+//     var amountToTip = alert("Amount to tip is: $" + calculateTip(tipPercentage, billTotal));
+//
+//     console.log(amountToTip);
+
+//     // end of class notes ....
+
+
+//
 // var bill = Number(prompt('What is the total price of your bill?'));
 // console.log(bill);
-// var percentage = Number(prompt("what percentage would you like to tip? (Leave the % symbol off and add a . beforehand. example: 20 % = . 20)"));
+// var percentage = Number(prompt("what percentage would you like to tip? (0.00 t0 1.00)"));
 // // console.log(percentage);
 //
 // function calculateTip(bill, percentage){
 //     // tip = bill * percentage;
 //     return bill * percentage;
 // }
-// alert("tip amount is $" + calculateTip(bill, percentage.toFixed(2)));
-// // alert("total bill is $" + bill + );
+// alert("tip amount should be $" + calculateTip(bill, percentage.toFixed(2)));
+
+
+
+// alert("total bill is $" + bill + );
 
 
 /**
@@ -123,11 +169,27 @@ var random = Math.floor((Math.random() * 3) + 1);
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+// class notes start here....
+// var applyDiscount = function (price, discountPercentage){
+//     var discountAmount = price * discountPercentage;
+//     return price - discountAmount;
+// }
+// var originalPrice = 100;
+// var discountPercentage = .2; // 20%
+//
+// console.log(applyDiscount(originalPrice, discountPercentage)); // 80
+// console.log(applyDiscount(45.99, 0.12)); // 40.4712
+// console.log(applyDiscount(60, 0.12)); //
+// class notes end here...
 
 
-// var applyDiscount = price - discountAmount() ;
+
+// start personal notes....
+
+//     // add in between for percentage
+//
+// var applyDiscount = price - discountAmount();
 // var discountPercent = price * percentage;
-//    add in between for percentage
 //
 // var price = Number(prompt("What is the total bill price?"));
 // var percentage = Number(prompt("What is the discount amount?"));
