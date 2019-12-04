@@ -19,7 +19,6 @@
 //canEnterNumber === Number &&
 
 
-
 var wouldLikeNumber = confirm("Would you like to enter in a number?");
 if (wouldLikeNumber === true) {
     var canEnterNumber = Number(prompt("Enter a number here:"));
