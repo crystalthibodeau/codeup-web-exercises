@@ -276,38 +276,38 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 
 
 
-
-function calculateTotal(luckyNumber, totalAmount){
-    var discountPrice;
-    switch(luckyNumber) {
-        case 0:
-            discountPrice = totalAmount;
-            break;
-        case 1:
-
-            discountPrice = (totalAmount) - (totalAmount * .10);
-            break;
-        case 2:
-            discountPrice = (totalAmount) - (totalAmount * .25);
-            break;
-        case 3:
-            discountPrice = (totalAmount) - (totalAmount * .35);
-            break;
-        case 4:
-            discountPrice = (totalAmount) - (totalAmount * .50);
-            break;
-        case 5:
-            discountPrice = 0;
-            break;
-        default:
-            alert("Discount unavailable at this time");
-            break;
-    }
-    return discountPrice;
-}
-
-console.log(calculateTotal(2,100));
-// //
+//
+// function calculateTotal(luckyNumber, totalAmount){
+//     var discountPrice;
+//     switch(luckyNumber) {
+//         case 0:
+//             discountPrice = totalAmount;
+//             break;
+//         case 1:
+//
+//             discountPrice = (totalAmount) - (totalAmount * .10);
+//             break;
+//         case 2:
+//             discountPrice = (totalAmount) - (totalAmount * .25);
+//             break;
+//         case 3:
+//             discountPrice = (totalAmount) - (totalAmount * .35);
+//             break;
+//         case 4:
+//             discountPrice = (totalAmount) - (totalAmount * .50);
+//             break;
+//         case 5:
+//             discountPrice = 0;
+//             break;
+//         default:
+//             alert("Discount unavailable at this time");
+//             break;
+//     }
+//     return discountPrice;
+// }
+//
+// console.log(calculateTotal(2,100));
+// // //
 
 
 
@@ -322,35 +322,42 @@ console.log(calculateTotal(2,100));
 // Generate a random number between 0 and 6
 var luckyNumber = Math.floor(Math.random() * 6);
 // ============================6. work and answer====================================
-var discountPrice;
-var totalAmount;
-function calculateTotal(){
+
+
+
+function calculateTotal(luckyNumber, totalAmount){
     luckyNumber = Math.floor(Math.random() * 6);
+    var totalAmount = Number(prompt("What was your bill amount?"));
     switch(luckyNumber) {
         case 1:
-            discountPrice = (totalAmount) - (totalAmount * .10);
+            alert("Congratulations your lucky number is 1!");
+            alert("Your price before discount is $" + (totalAmount));
+            alert("Your total price after discount is $" + ((totalAmount) - (totalAmount * .10)) );
             return;
         case 2:
-            discountPrice = (totalAmount) - (totalAmount * .25);
+            alert("Congratulations your lucky number is 2!");
+            alert("Your price before discount is $" + (totalAmount));
+            alert("Your total price after discount is $" + ((totalAmount) - (totalAmount * .25)) );
             return;
         case 3:
-            discountPrice = (totalAmount) - (totalAmount * .35);
+            alert("Congratulations your lucky number is 3!");
+            alert("Your price before discount is $" + totalAmount);
+            alert("Your total price after discount is $" + ((totalAmount) - (totalAmount * .35)) );
             return;
         case 4:
-            discountPrice = (totalAmount) - (totalAmount * .50);
+            alert("Congratulations your lucky number is 4!");
+            alert("Your price before discount is $" + totalAmount);
+            alert("Your total price after discount is $" + ((totalAmount) - (totalAmount * .50)) );
             return;
         case 5:
-            discountPrice = 0;
+            alert("Congratulations your lucky number is 5!");
+            alert("Your price before discount is $" + totalAmount + "Your total price after discount is  $" + ((totalAmount) - (totalAmount * 0)));
+            // alert("Your total price after discount is  $" + ((totalAmount) - (totalAmount * 0)) );
             return;
         default:
-            return ("Discount unavailable at this time");
-
+            alert("Discounts per a lucky number are currently unavailable");
+            return;
     }
-
 }
 
-console.log(calculateTotal(luckyNumber, totalAmount));
-
-// case 0:
-// discountPrice = totalAmount;
-// return;
+console.log(calculateTotal());
