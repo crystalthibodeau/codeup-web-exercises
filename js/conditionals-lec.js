@@ -270,24 +270,24 @@ console.log("hello from conditionals lec.js!");
 
 //TODO: Write a function that accepts a string that is a traffic light color as an input. When this function is called, it should return a message informing the user what to do when approaching that color light at an intersection.
 
-
-var trafficLightColor;
-function trafficGo(trafficLightColor){
-    if(trafficLightColor === "red"){
-        // return("Stop..*SIGH*");
-        alert("Stop..*SIGH*");
-    } else if(trafficLightColor === "yellow"){
-        // return("Better speed up, or slowwww down!");
-        alert("Better speed up, or slowwww down!");
-    } else if(trafficLightColor === "green"){
-        // return("Smooth sailing");
-        alert("Smooth sailing");
-    }else{
-        // return("Are you even driving?");
-        alert("Are you even driving?");
-    }
-}
-trafficGo("hello");
+//
+// var trafficLightColor;
+// function trafficGo(trafficLightColor){
+//     if(trafficLightColor === "red"){
+//         // return("Stop..*SIGH*");
+//         alert("Stop..*SIGH*");
+//     } else if(trafficLightColor === "yellow"){
+//         // return("Better speed up, or slowwww down!");
+//         alert("Better speed up, or slowwww down!");
+//     } else if(trafficLightColor === "green"){
+//         // return("Smooth sailing");
+//         alert("Smooth sailing");
+//     }else{
+//         // return("Are you even driving?");
+//         alert("Are you even driving?");
+//     }
+// }
+// trafficGo("hello");
 
 
 
@@ -297,24 +297,24 @@ trafficGo("hello");
 // && !hasPermit
 // alternate way to right && hasPermit === false
 
-
-var userAge = 17;
-var hasPermit = true;
-
-
-if(userAge < 15){
-    alert("Sorry you are not eligible.");
-}else {
-    if(userAge===15){
-        alert("You are eligible for a permit");
-    } else if (userAge >= 16 && hasPermit){
-        alert("You are eligible for a license");
-    }else if(userAge >= 16 && hasPermit === false){
-        alert("Sorry, you'll need to get a permit first");
-    }else {
-        alert("Please call (444)-444-4444 for more info");
-    }
-}
+//
+// var userAge = 17;
+// var hasPermit = true;
+//
+//
+// if(userAge < 15){
+//     alert("Sorry you are not eligible.");
+// }else {
+//     if(userAge===15){
+//         alert("You are eligible for a permit");
+//     } else if (userAge >= 16 && hasPermit){
+//         alert("You are eligible for a license");
+//     }else if(userAge >= 16 && hasPermit === false){
+//         alert("Sorry, you'll need to get a permit first");
+//     }else {
+//         alert("Please call (444)-444-4444 for more info");
+//     }
+// }
 
 
 
@@ -333,16 +333,34 @@ if(userAge < 15){
 //     message = "Oops, something went wrong.";
 // }
 // console.log(message);
-
-
+//
+// var theme = "black";
+// var backgroundColor = (theme) ? "color black for background" : "background color white";
+// console.log(backgroundColor);
+//
 // var success = true;
 // var message = (success) ? "Operation was successful from tern." : "Oops, something went wrong from tern.";
-// console.log(message)
+// console.log(message);
 
+// ? is if block : second half is else block;
+//example
+
+// if/else
+
+// var isAdmin = true;
+// if(isAdmin){
+//     showAdminNavbar();
+// }else{
+//     showRegularNavBar();
+// }
+
+
+// ternary example
+// (isAdmin) ? showAdminNavbar() : showRegularNavBar();
 
 //TODO: Refactor the following conditional as a ternary
-
-// var weather = "sunny";
+//
+// var weather = "rainy";
 // var weatherMessage;
 
 // if(weather === "rainy"){
@@ -351,12 +369,21 @@ if(userAge < 15){
 //     weatherMessage = "Have a nice day!";
 // }
 
-//WRITE YOUR TERNARY STATEMENT HERE!
 
+// class example
+
+// var weatherMessage = (weather === "rainy") ? "It's raining" : "Have a good day";
+// console.log(weatherMessage);
+//
+// //WRITE YOUR TERNARY STATEMENT HERE!
+// var weatherMessage = (weather === "rainy") ? "It's raining!" :  "Have a nice day!" ;
+// console.log(weatherMessage);
 
 
 // =============== SWITCH STATEMENT ================
 //TODO Together:
+
+
 
 // var pizzaPreference = prompt("What kind of pizza do you like?");
 //
@@ -375,10 +402,87 @@ if(userAge < 15){
 
 //TODO: Write a switch statement that evaluates weather as the condition. Check for "rainy", "sunny", "snow", and a default case.
 
+// var weather = "cloudy";
+
+// switch (weather){
+//     case "rainy":
+//         alert("It's raining");
+//         break;
+//     case "sunny":
+//         alert("It's sunny");
+//         break;
+//     case "snow":
+//         alert("It's snowing");
+//         break;
+//     default:
+//         alert("Have a nice day");
+//         break;
+// }
+//
+// function checkWeather(weather){
+//     var weatherMessage;
+//
+//     switch (weather){
+//         case "rainy":
+//             weatherMessage = ("It's raining");
+//             break;
+//         case "sunny":
+//             weatherMessage = ("It's sunny");
+//             break;
+//         case "snow":
+//             weatherMessage = ("It's snowing");
+//             break;
+//         default:
+//             weatherMessage = ("Have a nice day");
+//             break;
+//     }
+//     return weatherMessage;
+// }
+// console.log(checkWeather("sunny"));
 
 //TODO: Rewrite the intersection function from earlier as a switch statement.
 
+//
+// var trafficLightColor = "green";
+//
+// switch(trafficLightColor){
+//     case "red":
+//         alert("Stop..*SIGH*");
+//         break;
+//     case "yellow":
+//         alert("Better speed up, or slowwww down!");
+//         break;
+//     case "green":
+//         alert("Smooth sailing ahead");
+//         break;
+//     default:
+//         alert("Are you even driving?");
+//         break;
+// }
 
+
+// as a class.....
+//
+// function checkTrafficLight(trafficLight){
+//     var colorMessage;
+//     switch(trafficLight){
+//         case "green":
+//             colorMessage= "keep going";
+//             break;
+//         case "yellow":
+//             colorMessage= "slow down";
+//             break;
+//         case "red":
+//             colorMessage= "stop";
+//             break;
+//             default:
+//                 colorMessage = "proceed with caution";
+//                 break;
+//     }
+//     return colorMessage;
+// }
+//
+// console.log(checkTrafficLight("green"));
 
 // ================ REVERSE ENGINEERING =================
 // Visit each of these links, outline the steps required to achieve each of these demonstrations. You can write code or just write the logic steps that would achieve each output
