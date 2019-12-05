@@ -90,7 +90,7 @@
     //     } else {
     //         return false;
     //     }
-    }
+    // }
     // console.log(greaterThanTen(12));
     // function greaterThanTen(numInput) {
     //     return numInput > 10;
@@ -137,19 +137,45 @@
 
 
 
-    function seeYouLater(inputString){
-       if (inputString === 'alligator'){
-           return "See you later alligator!";
-       } else if(inputString === 'crocodile'){
-           return "In awhile crocodile!";
-    } else {
-           return "so long!"
-       }
-    }
+<!--    function seeYouLater(inputString){-->
+<!--       if (inputString === 'alligator'){-->
+<!--           return "See you later alligator!";-->
+<!--       } else if(inputString === 'crocodile'){-->
+<!--           return "In awhile crocodile!";-->
+<!--    } else {-->
+<!--           return "so long!"-->
+<!--       }-->
+<!--    }-->
 
-    console.log(seeYouLater("alligator"));
-    console.log(seeYouLater("crocodile"));
-    console.log(seeYouLater("dog"));
+<!--    console.log(seeYouLater("alligator"));-->
+<!--    console.log(seeYouLater("crocodile"));-->
+<!--    console.log(seeYouLater("dog"));-->
+
+
+
+
+function upperCase(x){
+    if(typeof x === 'string' && x == "number"){
+        return x.toUpperCase();
+    }else{
+        return false;
+    }
+}
+
+
+console.log(upperCase('43'));
+
+function containsVowel(x){
+    var vowel;
+    if(x === 'string' && vowel === 'a'||'e'||'i'|| 'o'|| 'u'){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+console.log(containsVowel('Hello'));
+
 </script>
 </body>
 </html>
