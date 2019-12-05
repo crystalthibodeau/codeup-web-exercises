@@ -27,6 +27,26 @@
 // var confirmMessage = confirm("Would you like to enter a number?");
 // // var isNegativeOrNot = anyNumber ;
 //
+
+//canEnterNumber === Number &&
+
+
+var wouldLikeNumber = confirm("Would you like to enter in a number?");
+if (wouldLikeNumber === true) {
+    var canEnterNumber = Number(prompt("Enter a number here:"));
+    if (canEnterNumber % 2 === 0) {
+        var oddIs = alert("Your number is odd!");
+    }
+    if (canEnterNumber == Number && canEnterNumber % 1 == 0) {
+        var positiveIs = alert("Your number is positively cool!");
+    }
+    // if (numberIsNegative) {
+    //     var negativeIs = alert("Your number is a negative nancy........");
+    // } else {
+    //     var noNumberHere = alert("Bummer! You did not enter a number");
+    // }
+}
+
 //
 // function numberFun(anyNumber) {
 //     if (confirmMessage === true) {
@@ -78,6 +98,37 @@
 // alert(isEven(64)); // Alerts "true".
 //
 // alert(isEven(97)); // Alerts "false".
+
+
+
+// function canHasNumber(number){
+//     // var discountPrice;
+//     switch(number) {
+//         case ():
+//              = totalAmount;
+//             break;
+//         case():
+//
+//              = ;
+//             break;
+//         case ():
+//             = ;
+//             break;
+//         case ():
+//              = ;
+//             break;
+//         case ():
+//              = ;
+//             break;
+//         case ():
+//              = ;
+//             break;
+//         default:
+//             alert("");
+//             break;
+//     }
+//     return ;
+// }
 
 
 // end question one...
