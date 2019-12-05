@@ -16,6 +16,18 @@
  * Can you refactor your code to use functions?
  */
 
+
+// ============================1. work and answer====================================
+
+
+// var isEven = function(someNumber){
+//     return (someNumber%2 == 0) ? "Yes, it is!" : "No, it is not.";
+// };
+// var anyNumber;
+// var confirmMessage = confirm("Would you like to enter a number?");
+// // var isNegativeOrNot = anyNumber ;
+//
+
 //canEnterNumber === Number &&
 
 
@@ -34,14 +46,60 @@ if (wouldLikeNumber === true) {
     //     var noNumberHere = alert("Bummer! You did not enter a number");
     // }
 }
+
 //
+// function numberFun(anyNumber) {
+//     if (confirmMessage === true) {
+//
+//         anyNumber = (prompt("Please enter a number."));
+//
+//         if (isNaN(anyNumber)) {
+//             alert("You did not enter a number!")
+//         } else if (Number(anyNumber)) {
+//             alert("Is your number even? " + isEven(anyNumber));
+//
+//             if (anyNumber) {
+//                 alert(("Your number + 100 is: ") + (Number(anyNumber) + 100));
+//
+//
+//                 if (Number(anyNumber < 0)) {
+//                     alert("Your number is a Negative Nelly....");
+//                 }
+//             }
+//         } else {
+//             alert("No problem, have a good day!");
+//         }
+//     }
+// }
+// console.log(numberFun());
+
+// =====notes====
+
+// modulus if number can go into the number evenly it is even if remainder it is odd
+
+
+// 1.confirm / would like to enter number?
+// 2. if true, prompt for number
+// 3.
+// - weather even or odd
+// -what number + 100 ===
+// - if negative or positive
+// 4. alert if not a number - without any previous alert info
+// 5. refactor inside a function
+
+
+// simple is even function!!
+
 // var isEven = function(someNumber){
 //     return (someNumber%2 == 0) ? true : false;
 // };
-//
+// console.log(isEven(97));
+// //
 // alert(isEven(64)); // Alerts "true".
 //
 // alert(isEven(97)); // Alerts "false".
+
+
 
 // function canHasNumber(number){
 //     // var discountPrice;
@@ -72,6 +130,8 @@ if (wouldLikeNumber === true) {
 //     return ;
 // }
 
+
+// end question one...
 /* ########################################################################## */
 
 /**
@@ -92,6 +152,51 @@ if (wouldLikeNumber === true) {
  * console.logging the function's return value
  */
 
+// ============================2. work and answer====================================
+
+
+// function colorOpinions (){
+//     var colorPrompt = prompt("What is your favorite color?");
+//         if(colorPrompt === "blue"){
+//             return("Blue is the BEST.. but don't tell the other colors....");
+//         }else if(colorPrompt === "red"){
+//             return("Red? Yikes..");
+//         } else if(colorPrompt === "cyan"){
+//             return("Hmmm, Cyan, someone with taste I see.");
+//         }
+//          else{
+//             return("The color you entered is undefined, but i'm sure it's nice!");
+//          }
+// }
+// console.log(colorOpinions());
+
+// rewritten as switch statement=========
+
+
+// function colorOpinions (color) {
+//     var colorPrompt = prompt("What is your favorite color?");
+//
+//     switch (colorPrompt) {
+//         case "blue":
+//             alert("Blue is the BEST.. but don't tell the other colors....");
+//             break;
+//         case "red":
+//             alert("Red? Yikes..");
+//             break;
+//         case "cyan":
+//             alert("Hmmm, Cyan, someone with taste I see.");
+//             break;
+//         default:
+//             alert("The color you entered is undefined, but i'm sure it's nice!");
+//             break;
+//     }
+//
+// }
+// console.log(colorOpinions());
+
+
+
+
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
@@ -105,10 +210,62 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 
+// =====function to just see the random number===
+
+
+// var colorsRandom  = colors[Math.floor(Math.random() * colors.length)];
+//
+// function randomColorChoice(colors){
+//    return randomColor;
+//
+// }
+// console.log(randomColorChoice());
+
+// function colorOpinions (color){
+//     colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+//     if(randomColor === "blue"){
+//         return("Blue is the BEST.. but don't tell the other colors....");
+//     }else if(randomColor === "red"){
+//         return("Red? Yikes..");
+//     } else if(randomColor === "cyan"){
+//         return("Hmmm, Cyan, someone with taste I see.");
+//     }
+//     else{
+//         return((randomColor) + ":  The color you entered is undefined, but i'm sure it's nice!");
+//     }
+// }
+// console.log(colorOpinions());
+
+
+// ============================3. work and answer====================================
+
+
+
+
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
+// function colorOpinions () {
+//     colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+//     switch (randomColor) {
+//         case "blue":
+//             return("Blue is the BEST.. but don't tell the other colors....");
+//             break;
+//         case "red":
+//             return("Red? Yikes..");
+//             break;
+//         case "indigo":
+//             return("Hmmm, Indigo, someone with taste I see.");
+//             break;
+//         default:
+//             return((randomColor) + ":  The color you entered is undefined, but i'm sure it's nice!");
+//      }
+//
+// }
+
+
+// console.log(colorOpinions());
 
 /**
  * TODO:
@@ -116,6 +273,29 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+// ============================4. work and answer====================================
+
+
+// function colorOpinions () {
+//     var colorPrompt = prompt("What is your favorite color?");
+//
+//     switch (colorPrompt) {
+//         case "blue":
+//             alert("Blue is the BEST.. but don't tell the other colors....");
+//             break;
+//         case "red":
+//             alert("Red? Yikes..");
+//             break;
+//         case "cyan":
+//             alert("Hmmm, Cyan, someone with taste I see.");
+//             break;
+//         default:
+//             alert("The color you entered is undefined, but i'm sure it's nice!");
+//             break;
+//     }
+//
+// }
+// console.log(colorOpinions());
 
 /* ########################################################################## */
 
@@ -142,6 +322,12 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 // return discountPrice;
 
 
+
+// ============================5. work and answer====================================
+
+
+
+//
 // function calculateTotal(luckyNumber, totalAmount){
 //     var discountPrice;
 //     switch(luckyNumber) {
@@ -172,10 +358,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 // }
 //
 // console.log(calculateTotal(2,100));
-//
-
-
-
+// // //
 
 
 
@@ -188,4 +371,44 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+// ============================6. work and answer====================================
+
+
+
+function calculateTotal(luckyNumber, totalAmount){
+    luckyNumber = Math.floor(Math.random() * 6);
+    var totalAmount = Number(prompt("What was your bill amount?"));
+    switch(luckyNumber) {
+        case 1:
+            alert("Congratulations your lucky number is 1!");
+            alert("Your price before discount is $" + (totalAmount));
+            alert("Your total price after discount is $" + ((totalAmount) - (totalAmount * .10)) );
+            return;
+        case 2:
+            alert("Congratulations your lucky number is 2!");
+            alert("Your price before discount is $" + (totalAmount));
+            alert("Your total price after discount is $" + ((totalAmount) - (totalAmount * .25)) );
+            return;
+        case 3:
+            alert("Congratulations your lucky number is 3!");
+            alert("Your price before discount is $" + totalAmount);
+            alert("Your total price after discount is $" + ((totalAmount) - (totalAmount * .35)) );
+            return;
+        case 4:
+            alert("Congratulations your lucky number is 4!");
+            alert("Your price before discount is $" + totalAmount);
+            alert("Your total price after discount is $" + ((totalAmount) - (totalAmount * .50)) );
+            return;
+        case 5:
+            alert("Congratulations your lucky number is 5!");
+            alert("Your price before discount is $" + totalAmount + "Your total price after discount is  $" + ((totalAmount) - (totalAmount * 0)));
+            // alert("Your total price after discount is  $" + ((totalAmount) - (totalAmount * 0)) );
+            return;
+        default:
+            alert("Discounts per a lucky number are currently unavailable");
+            return;
+    }
+}
+
+console.log(calculateTotal());
