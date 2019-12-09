@@ -1,10 +1,14 @@
 
 
-var x = new Array(3);
+// var x = [];
 
 function mysteryFunc (x){
-    // x = '152';
-return (x.split(0, 1)) * (x.split(1, 2)) * (x.split(2, 2));
+   // x= [];
+  console.log(x);
+  var newX = (""+x).split('');
+  console.log(newX);
+    return ((newX[0]) * (newX[1]) * (newX[2]));
 }
 
 console.log(mysteryFunc(152));
+
