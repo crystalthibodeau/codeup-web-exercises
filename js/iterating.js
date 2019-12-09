@@ -12,16 +12,16 @@ var names = ['Thomas', 'Crystal', 'Stacey', 'Mike'];
      * Create a log statement that will log the number of elements in the names
      * array.
      */
-// console.log(names);
+console.log(names.length);
     /**
      * TODO:
      * Create log statements that will print each of the names individually by
      * accessing each element's index.
      */
-    // var i = 0;
+    // var i    = 0;
     // while(i < names.length){
-    // console.log(names[i]);
-    // i++;
+    //     console.log(names[i]);
+    //     i++;
     // }
 
     /**
@@ -31,15 +31,15 @@ var names = ['Thomas', 'Crystal', 'Stacey', 'Mike'];
      */
     // for(var i = 0 ; i < names.length; i++){
     // console.log(names[i]);
-// }
+    // }
     /**
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
 
     // names.forEach(function(name, i){
-    //     console.log(name);
-        // console.log(pets[i]);
+    //     // console.log(name); // take out the i
+    //     console.log(names[i]);
     // });
 
     /**
