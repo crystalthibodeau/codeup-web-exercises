@@ -18,14 +18,25 @@
 // pets[5] = "Malu";
 // pets[6] = 'Lily';
 
-var pets = ["Toby", "Princess", "Samson", "Jill", "Bubbles", "Malu", 'Lily'];
-
-for(var i = 0 ; i < pets.length; i++){
-    console.log(pets[i]);
-}
+var pets = ["Toby", "Princess", "Samson", "Jill", "Bubbles", "Malu",];
+//
+// for(var i = 0 ; i < pets.length; i++){
+//     console.log(pets[i]);
+// }
 
 // var i = 0;
 // while(i < pets.length){
 //     console.log(pets[i]);
 //     i++;
 // }
+
+// pets[pets.length] = 'lily';
+// console.log(pets[pets.length -1]);
+
+// element/index/array var name i.e(pet, i, pets)
+// pets[10] = 'Rosy';
+
+// pets.forEach(function(pet, i){
+//     console.log(pet);
+//     // console.log(pets[i]);
+// });
