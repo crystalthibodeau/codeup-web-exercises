@@ -1,3 +1,4 @@
+
 // var pet1 = "Toby";
 // var pet2 = "Princess";
 // var pet3 = "Samson";
@@ -41,9 +42,7 @@
 //     // console.log(pets[i]);
 // });
 
-<<<<<<< HEAD
-=======
-//
+
 // var fruit = ['apple','orange','banana'];
 // // //
 // console.log(fruit);
@@ -166,6 +165,8 @@
 
 
 // //class example==================
+
+
 function titleCase(str) {
     var splitStr = str.toLowerCase().split(' ');
     console.log(splitStr);
