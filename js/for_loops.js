@@ -35,20 +35,22 @@ console.log("hello from for loops");
 // }
 
 //
-// var numberToMultiply = parseFloat(prompt("Enter a number here.."));
-//
-//
-// function showMultiplicationTable(x){
-//     // var multiplyTable = '';
-//     for(var i = 1 ;i <=10 ;i++){
-//         // multiplyTable +=
-//         console.log((x) + " x " + i + " = " + (x * i));
-//         // + "\n" === line break;
-//     }
-//     return x;
-// }
-//
-// console.log(showMultiplicationTable(numberToMultiply));
+var numberToMultiply = parseFloat(prompt("Enter a number here.."));
+
+
+function showMultiplicationTable(x){
+    // var multiplyTable = '';
+    for(var i = 1 ;i <=10 ;i++){
+        // multiplyTable +=
+        console.log((x) + " x " + i + " = " + (x * i));
+
+        // individual console.logs each time create the line break needed when set up as a variable by \n below
+        // + "\n" === line break;
+    }
+    return x;
+}
+
+console.log(showMultiplicationTable(numberToMultiply));
 
 
 // //

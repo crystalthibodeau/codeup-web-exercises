@@ -192,6 +192,41 @@
 //     alert("It work's!");
 // });
 
+// class solve=====
+
+// var contains = function(arr, x){
+//     return arr.includes(x);
+// }
+//
+// console.log(contains([1, 2, 3], 3));
+
+
+// personal example=======
+
+//     function contains(arr, x){
+//     if(arr.includes(x)){
+//         return true;
+//     }else{
+//         return false
+//     }
+//     }
+// console.log(contains([1, 2, 3], 3));
+
+
+// class loop example=======
+
+
+    var contains = function (arr, x){
+    for(var i = 0; i<arr.length;i++){
+        if(arr[i] === x){
+            return true;
+        }
+    }
+        return false;
+    };
+console.log(contains([1, 2, 3], 3));//true
+console.log(contains([1, 2, 3], 6));//false
+console.log(contains(['hat', 'bat', 'cat'], "cat"));//true
 
 </script>
 </body>
