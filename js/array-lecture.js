@@ -167,16 +167,39 @@
 // //class example==================
 
 
-function titleCase(str) {
-    var splitStr = str.toLowerCase().split(' ');
-    console.log(splitStr);
-    // console.log(splitStr.length);
+// function titleCase(str) {
+//     var splitStr = str.toLowerCase().split(' ');
+//     console.log(splitStr);
+//     // console.log(splitStr.length);
+//
+//     for (var i = 0; i < splitStr.length; i++) {
+//         splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+//     }
+//     // Directly return the joined string
+//     return splitStr.join(' ');
+// }
+//
+// console.log(titleCase("the quick brown fox jumped over the lazy dog"));
 
-    for (var i = 0; i < splitStr.length; i++) {
-        splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
-    }
-    // Directly return the joined string
-    return splitStr.join(' ');
-}
 
-console.log(titleCase("the quick brown fox jumped over the lazy dog"));
+// mathew example!=========
+
+// var sentence = "The quick brown fox jumps over the lazy dog";
+// console.log(sentence);
+// var words = sentence.split(" ");
+// for (var i = 0;i<words.length; i++) {
+//     // capitalize first letter
+//     var word = words[i];
+//     // var firstLetter = word.split()[0];
+//     var letters = word.split();
+//     var capitalFirstLetter = letters[0].toUpperCase();
+//     var capitalizedWord = "";
+//     capitalizedWord += capitalFirstLetter;
+//     for (var j=1; j<words.length; j++){
+//         words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+//         capitalizedWord += letters[j];
+//     }
+// }
+// // words.reverse();
+// sentence = words.join(" ");
+// console.log(sentence);

@@ -1,5 +1,6 @@
 console.log("hello from while.js!");
 
+// connected to loops.html
 // in console.log to see #===='while loop iteration #' +
 
 // var i = 2;

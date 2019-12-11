@@ -7,6 +7,8 @@ console.log("Hello from planets-string!");
     var planetsArray = planetsString.split("|");
 
     /**
+     //attached to file name split-join.html
+
      * TODO:
      * Convert planetsString to an array, and save it in a variable named
      * planetsArray.

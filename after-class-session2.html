@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>External JS</title>
+    <title>after class sess 2 </title>
 </head>
 <body>
 <script>
@@ -136,6 +136,26 @@
 //     }
 //
 //
+        //palindrome
+    // palin whataever example!------
+
+    // function reverseUpperCaseString(input) {
+    //     if(!isNaN(parseFloat(input))) {
+    //         return false;
+    //     }else if (typeof input !== "string") {
+    //         return false;
+    //     }else{
+    //         var input2 = (input.split("").reverse().join("")).toUpperCase();
+    //         return  input2 === input.toUpperCase();
+    //     }
+    // }
+
+
+
+
+
+
+
 //
 //         console.log(reverseUpperCaseString(true)); // false
 //         console.log(reverseUpperCaseString(18)); // false
@@ -175,10 +195,86 @@
 
 
 
+    // function containsVowel(input) {
+    //     if (typeof input == "string" && /[aeiouAEIOU]/.test(input)) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
+    // console.log(containsVowel("Index"));      // true
+    // console.log(containsVowel("Codeup"));     // true
+    // console.log(containsVowel("Jane"));       // true
+    // console.log(containsVowel("bb8"));        // false
+    // console.log(containsVowel(""));           // false
+    // console.log(containsVowel(34));           // false
+    // console.log(containsVowel([1, 2, 3]));    // false
+
+    // function upperCase(x) {
+    //     if (!isNaN(parseFloat(x)) || typeof (x) !== "string") {
+    //         return false;
+    //     } else {
+    //         x = x.toUpperCase();
+    //         return x;
+    //     }
+    // }
 
 
+    // console.log(upperCase("Codeup"));         // "CODEUP"
+    // console.log(upperCase("javascript"));     // "JAVASCRIPT"
+    // console.log(upperCase("45"));             // false
+    // console.log(upperCase(23));               // false
+    // console.log(upperCase(null));             // false
+    // console.log(upperCase([1, 2, 3]));        // false
+    // console.log(upperCase(true));             // false
+    // console.log(upperCase());
+
+    // function firstToLast(x){
+    //     var firstItem = x[0];
+    //     x.shift();
+    //     x.push(firstItem);
+    //     return x;
+    // }
+    // Exercise 59
+    // Write a function definition named firstToLast that takes in sequence and returns the sequence with the first value moved to the end of the sequence.
+
+    //
+    // function firstToLast(str) {
+    //     return str.concat(str.shift());
+    // }
+    //
+    // console.log(firstToLast([1, 2, 3, 4]));// [1, 4]
+    // console.log((firstToLast(["JS", "is", "awesome"])));//["JS", "awesome"]
+    // console.log((firstToLast(["strawberry", "kiwi", "mango", "guava"])));//["strawberry", "guava"]
 
 
+    // function isTruthy(input) {
+    //     if(input) {
+    //
+    //     } else {
+    //
+    //     }
+    // }
+    // console.log(isTruthy([NaN, 0, 15, false, -22, '',undefined, 47, null]));
+    //
+    // Reverse Number
+    // Write a JavaScript function that reverse a number
+
+    // Example x = 32243;
+    // Expected Output : 34223
+
+    var x = [];
+
+    function mysteryFunc (x){
+        // x= [];
+        console.log(x);
+        var newX = (""+x).split('');
+        console.log(newX);
+
+
+        return newX.reverse();
+    }
+console.log(mysteryFunc(32243));
 
 
 </script>
