@@ -79,40 +79,40 @@ var car = {
 //
 // console.log(truck['model']);
 
-var cars = [
-    car,
-    {
-        make : "Dodge",
-        model: "Challenger",
-        year: 2015,
-        report: function(){
-            console.log(this.year + ' ' + this.make + " " + this.model);
-        }
-    },
-    {
-        make: "Ford",
-        model : "Shelby GT 500",
-        year : "1969",
-        report: function(){
-            console.log(this.year + ' ' + this.make + " " + this.model);
-        }
-    },
-    {
-       make : "Cadillac",
-       model: "Escalade",
-       year : "2019",
-        report: function(){
-           console.log(this.year + ' ' + this.make + " " + this.model);
-        }
-    }
-
-];
-car.report = function () {
-    console.log(this.year + ' ' + this.make + " " + this.model);
-};
-cars.forEach(function(car){
-    car.report();
-});
+// var cars = [
+//     car,
+//     {
+//         make : "Dodge",
+//         model: "Challenger",
+//         year: 2015,
+//         report: function(){
+//             console.log(this.year + ' ' + this.make + " " + this.model);
+//         }
+//     },
+//     {
+//         make: "Ford",
+//         model : "Shelby GT 500",
+//         year : "1969",
+//         report: function(){
+//             console.log(this.year + ' ' + this.make + " " + this.model);
+//         }
+//     },
+//     {
+//        make : "Cadillac",
+//        model: "Escalade",
+//        year : "2019",
+//         report: function(){
+//            console.log(this.year + ' ' + this.make + " " + this.model);
+//         }
+//     }
+//
+// ];
+// car.report = function () {
+//     console.log(this.year + ' ' + this.make + " " + this.model);
+// };
+// cars.forEach(function(car){
+//     car.report();
+// });
 
 // var dogs = [
 //     {
