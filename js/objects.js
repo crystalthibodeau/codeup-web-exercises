@@ -181,12 +181,12 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-    // books.forEach(function(book, i){
-    //     console.log("Book # " + (i +1));
-    //     console.log("Title: " + book.title);
-    //     console.log("Author:" + book.author.firstName + " " + book.author.lastName);
-    //     console.log("------");
-    // });
+    books.forEach(function(book, i){
+        console.log("Book # " + (i +1));
+        console.log("Title: " + book.title);
+        console.log("Author:" + book.author.firstName + " " + book.author.lastName);
+        console.log("------");
+    });
     var createBook = function (title, authorFirstName, authorLastName){
         var book = {};
         book.title = title;
@@ -205,5 +205,6 @@
     };
 
     books.forEach(showBookInfo);
+
 
 })();

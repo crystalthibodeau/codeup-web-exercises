@@ -19,68 +19,95 @@
 // pets[5] = "Malu";
 // pets[6] = 'Lily';
 
-// var pets = ["Toby", "Princess", "Samson", "Jill", "Bubbles", "Malu",];
-//
+var pets = ["Toby", "Princess", "Samson", "Jill", "Bubbles", "Malu",];
+
+
+// for loop example .....
+
 // for(var i = 0 ; i < pets.length; i++){
 //     console.log(pets[i]);
 // }
 
-// var i = 0;
-// while(i < pets.length){
-//     console.log(pets[i]);
-//     i++;
-// }
 
-// pets[pets.length] = 'lily';
-// console.log(pets[pets.length -1]);
+// while loop example.....
 
+var i = 0;
+while(i < pets.length){
+    console.log(pets[i]);
+    i++;
+}
+
+
+// adding lily to pets
+// length value is 1 greater than index value
+
+pets[pets.length] = 'lily';
+console.log(pets[pets.length -1]);
+console.log("-----");
+
+// adding rosy to pets....
+
+pets[10] = 'Rosy';
 // element/index/array var name i.e(pet, i, pets)
-// pets[10] = 'Rosy';
 
-// pets.forEach(function(pet, i){
-//     console.log(pet);
-//     // console.log(pets[i]);
-// });
+pets.forEach(function(pet, i, pets){
+    console.log(pet); // dont need pets in the above function when only calling pets singular
+    // console.log(pets[i]); //works the same way as the above line of code
+});
+console.log("-----");
 
-
-// var fruit = ['apple','orange','banana'];
+var fruit = ['apple','orange','banana'];
 // // //
-// console.log(fruit);
+console.log(fruit);
+console.log("-----");
 // //
-// // //fruit[fruit.length]= 'pear'; === fruit.push('pear');
+// //fruit[fruit.length]= 'pear'; === fruit.push('pear');
 //
-// // fruit.push('pear'); //----> returns string length inside of a console --> sometimes console will reflect wrong because of javascript running speed?
+// // fruit.push('pear'); //----> returns string length inside of a console -->
+// sometimes console will reflect wrong because of javascript running speed?
 //
-// fruit.push('mango');
-// fruit.push('kiwi');
-// fruit.push('grapes');
-// fruit.push('jackfruit',"dragonfruit"); //if[] is placed around the string items used in push it inserts an array into the existing array
-// console.log(fruit);
-// console.log(fruit.shift());
-//----> shows what its shifting off the front without a console still works(shift == shifts things over to the left index)
-// console.log(fruit);
-// fruit.unshift('strawberry');
-// console.log(fruit);
-// console.log(fruit.pop());
-// //----> shows what its popping off the end, without a console still works
-// console.log(fruit);
-// console.log(fruit.indexOf('mango')); //returns index as a number --->
-// console.log(fruit[4]);
-// console.log(fruit[fruit.indexOf('mango')]);
-//
-// fruit.unshift('apple');
-// // console.log(fruit);
-// fruit.push('apple');
-// console.log(fruit);
-// console.log(fruit.lastIndexOf('apple'));
+fruit.push('mango');
+fruit.push('kiwi');
+fruit.push('grapes');
+fruit.push('jackfruit',"dragonfruit"); //if[] is placed around the string items used in push it inserts an array into the existing array
+console.log(fruit);
+console.log("-----");
+console.log(fruit.shift()); //---> shift returns what is removed
+//---->(shift == shifts things over to the left index)
+console.log("-----");
+console.log(fruit);
+console.log("-----");
+fruit.unshift('strawberry');
+console.log(fruit);
+console.log("-----");
+console.log(fruit.pop());//---> pop returns what is removed
+console.log("-----");
+console.log(fruit);
+console.log("-----");
+console.log(fruit.indexOf('mango')); //returns index as a number --->
+console.log("-----");
+console.log(fruit[4]); //----> returns item at index value
+console.log("-----");
+console.log(fruit[fruit.indexOf('mango')]); //----> undifined if not found, returned NOT IN STRING if found
+console.log("-----");
+fruit.unshift('apple');
+console.log(fruit);
+console.log("-----");
+fruit.push('apple');
+console.log(fruit);
+console.log("-----");
+console.log(fruit.lastIndexOf('apple')); //-->returns index#
 
 //
-// var fruit1thru3 = fruit.slice(0,3);
-// var fruit6thru8 = fruit.slice(6,8);
-// console.log(fruit6thru8);
-// console.log(fruit1thru3);
+console.log("-----");
+var fruit1thru3 = fruit.slice(0,3);
+console.log(fruit1thru3);
+console.log("-----");
+var fruit6thru8 = fruit.slice(6,8);
+console.log(fruit6thru8);
+
 // push/pop - the end
-// shift/unshift - the begenning
+// shift/unshift - the beginning
 
 
 // var thingsILike = ['muisc', 'painting', 'road trips'];
