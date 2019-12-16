@@ -8,19 +8,23 @@
     <title>Dom Practice</title>
 </head>
 <body>
+
 <h1 id="title">Chef Bored All Day</h1>
+
 <h3 >Menu</h3>
+
 <ul>
-<li><h4 class="specials">Tri-Tip (Santa Maria Style)</h4></li>
-<li><h4>French Dip Sandwich</h4></li>
+    <li><h4 class="specials">Tri-Tip (Santa Maria Style)</h4></li>
+    <li><h4>French Dip Sandwich</h4></li>
     <li><h4 class="specials">Street Tacos</h4></li>
-<ul>
+
+        <ul>
     <li class="favorite-special">Pork Carnitas</li>
     <li>Grilled Shrimp</li>
     <li>Shredded Beef</li>
     <li>Picadillo</li>
+        </ul>
 
-</ul>
 <h6>*Served with Corn or Flour tortillas</h6>
     <li><h4>Chile Verde</h4></li>
     <li><h4>Cajun Shrimp</h4></li>
@@ -42,17 +46,18 @@
     // html elements are NOT arrays, evens.forEach wont work!
 
     ////discouraged method
-    // var lis = document.getElementsByTagName("li");
-    // console.log(lis);
-    // for(var i = 0; i < lis.length; i++){
-    //     console.log(lis[i]);
-    // }
-    //
-    // var favSpecial = document.getElementsByClassName("favorite-special");
-    // console.log(favSpecial);
-    // for(var i = 0; i < favSpecial.length; i++){
-    //     console.log(favSpecial[i]);
-    // }
+    var lis = document.getElementsByTagName("li");
+    console.log(lis);
+    for(var i = 0; i < lis.length; i++){
+        console.log(lis[i]);
+    }
+
+    var favSpecial = document.getElementsByClassName("favorite-special");
+    console.log(favSpecial);
+    for(var i = 0; i < favSpecial.length; i++){
+        console.log(favSpecial[i]);
+    }
+    title.style.color = "blue";
 </script>
 </body>
 </html>

@@ -24,31 +24,110 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
+<!--paragraph to test for function on last problem -->
+
+<!--<p class="sub-paragraph">-->
+<!--    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do-->
+<!--    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim-->
+<!--    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut-->
+<!--    aliquip ex ea commodo consequat. Duis aute irure dolor in-->
+<!--    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla-->
+<!--    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in-->
+<!--    culpa qui officia deserunt mollit anim id est laborum.-->
+<!--</p>-->
+
+<!--<p class="sub-paragraph">-->
+<!--    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do-->
+<!--    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim-->
+<!--    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut-->
+<!--    aliquip ex ea commodo consequat. Duis aute irure dolor in-->
+<!--    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla-->
+<!--    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in-->
+<!--    culpa qui officia deserunt mollit anim id est laborum.-->
+<!--</p>-->
 
 <script>
     (function() {
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
-        // var mainHeader = ;
+        var mainHeader = document.getElementById("main-header") ;
+        console.log(mainHeader);
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
+        mainHeader.innerHTML = "<em>Javascript is Cool</em>";
 
         // TODO: Uncomment the next line and get the sub header element by id
-        // var subHeader = ;
+        var subHeader = document.getElementById("sub-header") ;
 
         // TODO: Set the text color of subHeader to blue
+subHeader.style.color = "blue";
 
         // TODO: Uncomment the next line and get all list items
-        // var listItems = ;
+        var listItems = document.getElementsByTagName("li");
+        console.log(listItems);
+        for(var i = 0; i < listItems.length; i++ ){
+            console.log(listItems[i]);
+        }
+
 
         // TODO: Set text color on every other list item to grey
+        var odds = document.getElementsByClassName("odd");
+        var evens = document.getElementsByClassName("even");
+        for(var i = 0; i < listItems.length; i++){
+            if (i % 2 !== 0) {
+                listItems[i].setAttribute("class", "even");
+            }
+            else{
+                listItems[i].setAttribute("class", "odd");
+
+
+            }
+        }
+        for(var i = 0; i < odds.length; i++){
+            odds[i].style.color = 'grey';
+        }
+        console.log(evens);
+        console.log(odds);
+
         // TODO: Set text color of li with dbid = 1 to blue
+var dBidOne = document.getElementsByTagName("li")[0];
+        dBidOne.style.color = "blue";
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        // var subParagraphs = ;
+
+        var subParagraphs = document.getElementsByClassName("sub-paragraph");
+        console.log(subParagraphs);
+
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+
+            // for (i = -1; i <subParagraphs.length; i++){
+            //     if(subParagraphs[i] !== subParagraphs[0]){
+            //         false;
+            //     }
+            //     else{
+            //         subParagraphs[0].innerHTML = "Mission Accomplished!";
+            //     }
+            // }
+
+        subParagraphs[0].innerText="Mission Accomplished!";
     })();
+
 </script>
 </body>
 </html>
+
+<!--mainHeader.innerHTML = "<em>Javascript is Cool</em>";-->
+
+<!--var thingsIWant = ["Great Career","Oculus Quest","Nintendo Switch","2 Front Teeth","Macbook Pro 16-inch","Valve Index"];-->
+
+<!--var wishList = document.getElementById("wishList");-->
+<!--var htmlString = "";-->
+<!--for (var i = 0;i<thingsIWant.length;i++){-->
+<!--if (i % 2 !== 0)-->
+<!--htmlString += "<li class='even'>" + thingsIWant[i] + "</li>";-->
+<!--else-->
+<!--htmlString += "<li class='odd'>" + thingsIWant[i] + "</li>";-->
+<!--}-->
+<!--wishList.innerHTML = htmlString;-->
+<!--var evens = document.getElementsByClassName("even");-->
