@@ -10,6 +10,7 @@
 <body>
 <h1 id="header">Happy Holidays</h1>
 <h3>Wish List</h3>
+<ul id=" wishList"></ul>
 <ul>
 
     <li >Great Career</li>
@@ -23,20 +24,35 @@
 
 
 <script>
-    console.log(document);
+    // // something missing to make this work from europa example, need to reference later
+    // // ===
+    // var thingsIWant = ["Great Career", "My Two Front Teeth", "Nintendo Switch", "Apple Watch", "French Press Coffee Cup", "Snow"];
+    // var wishList = document.getElementById("wishList");
+    // var htmlString = "";
+    // for (var i =0; i<thingsIWant.length; i++){
+    //     htmlString += "<li>" + thingsIWant[i] + "</li>";
+    // }
+    // wishList.innerHTML = htmlString;
+    // // ===
 
-    var header = document.getElementById("header");
-    console.log(header);
+    // console.log(document);
 
-    var evens = document.getElementsByClassName("even");
-    console.log(evens);
-    for(var i =0; i < evens.length ; i ++){
-        console.log(evens[i]);
-    }
+    // var header = document.getElementById("header");
+    // console.log(header);
+
+    // var evens = document.getElementsByClassName("even");
+    // console.log(evens);
+    // for(var i =0; i < evens.length ; i ++){
+    //     //replaces all even class items with the word "Money"!
+    //     // evens[i].innerHTML = "<em>Money</em>";
+    //     // console.log(evens[i]);
+    //     console.log(evens[i].innerHTML);
+    // }
+
     // html elements are NOT arrays, evens.forEach wont work!
 
-    var lis = document.getElementsByTagName("li");
-    console.log(lis);
+    // var lis = document.getElementsByTagName("li");
+    // console.log(lis);
 
 </script>
 

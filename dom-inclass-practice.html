@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dom Practice</title>
+</head>
+<body>
+<h1 id="title">Chef Bored All Day</h1>
+<h3 >Menu</h3>
+<ul>
+<li><h4 class="specials">Tri-Tip (Santa Maria Style)</h4></li>
+<li><h4>French Dip Sandwich</h4></li>
+    <li><h4 class="specials">Street Tacos</h4></li>
+<ul>
+    <li class="favorite-special">Pork Carnitas</li>
+    <li>Grilled Shrimp</li>
+    <li>Shredded Beef</li>
+    <li>Picadillo</li>
+
+</ul>
+<h6>*Served with Corn or Flour tortillas</h6>
+    <li><h4>Chile Verde</h4></li>
+    <li><h4>Cajun Shrimp</h4></li>
+    <li><h4 class="specials">Cioppino</h4></li>
+</ul>
+
+<script>
+
+    // console.log(document);
+
+    var title = document.getElementById("title");
+    console.log(title.innerHTML);
+
+    var specials = document.getElementsByClassName("specials");
+    // console.log(specials);
+    for(var i =0; i < specials.length ; i ++){
+        console.log(specials[i].innerHTML);
+    }
+    // html elements are NOT arrays, evens.forEach wont work!
+
+    ////discouraged method
+    // var lis = document.getElementsByTagName("li");
+    // console.log(lis);
+    // for(var i = 0; i < lis.length; i++){
+    //     console.log(lis[i]);
+    // }
+    //
+    // var favSpecial = document.getElementsByClassName("favorite-special");
+    // console.log(favSpecial);
+    // for(var i = 0; i < favSpecial.length; i++){
+    //     console.log(favSpecial[i]);
+    // }
+</script>
+</body>
+</html>
