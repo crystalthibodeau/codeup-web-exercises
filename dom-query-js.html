@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>DOM: Query and Modify</title>
+    <style>
+        .blue{
+            color: blue;
+        }
+    </style>
 </head>
 <body>
 
@@ -14,7 +19,7 @@
     <li data-dbid="4">Item 4</li>
     <li data-dbid="5">Item 5</li>
 </ul>
-<h2 id="sub-header">Hello Again.</h2>
+<h2 id="sub-header" class="something">Hello Again.</h2>
 <p class="sub-paragraph">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -51,7 +56,7 @@
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
         var mainHeader = document.getElementById("main-header") ;
-        console.log(mainHeader);
+        // console.log(mainHeader);
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
         mainHeader.innerHTML = "<em>Javascript is Cool</em>";
@@ -60,38 +65,67 @@
         var subHeader = document.getElementById("sub-header") ;
 
         // TODO: Set the text color of subHeader to blue
-subHeader.style.color = "blue";
+
+        // subHeader.style.color = "blue";
+
+        // this example does not push out existing classes i.e. something listed above
+
+        subHeader.setAttribute("class",
+        subHeader.getAttribute("class") + (" blue") );
+
+        // subHeader.setAttribute("style", "color:blue");
+
+        // subHeader.setAttribute("style", "blue");//ref css style tags
+
+        // add class in style tags to make blue via css
 
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName("li");
         console.log(listItems);
         for(var i = 0; i < listItems.length; i++ ){
-            console.log(listItems[i]);
+            console.log(listItems[i].innerHTML);
         }
 
 
         // TODO: Set text color on every other list item to grey
+
+        // setting the classes for even and odd now
         var odds = document.getElementsByClassName("odd");
         var evens = document.getElementsByClassName("even");
         for(var i = 0; i < listItems.length; i++){
             if (i % 2 !== 0) {
-                listItems[i].setAttribute("class", "even");
+                listItems[i].setAttribute("class",
+                    listItems[i].getAttribute("class") + (" even") );
+                // listItems[i].setAttribute("class", "even");
             }
             else{
-                listItems[i].setAttribute("class", "odd");
-
-
+                listItems[i].setAttribute("class",
+                    listItems[i].getAttribute("class") + (" odd") );
+                // listItems[i].setAttribute("class", "odd");
             }
         }
+
+        // changing odd color to grey
         for(var i = 0; i < odds.length; i++){
             odds[i].style.color = 'grey';
         }
-        console.log(evens);
-        console.log(odds);
+
 
         // TODO: Set text color of li with dbid = 1 to blue
-var dBidOne = document.getElementsByTagName("li")[0];
-        dBidOne.style.color = "blue";
+
+        // non-working example....
+
+
+        for(i = 0; i <listItems.length; i++){
+            if(listItems[i].getAttribute("data-dbid") == 1)
+                listItems[i].setAttribute("class",
+                    listItems[i].getAttribute("class") + (" blue") );
+
+        }
+
+
+// var dBidOne = document.getElementsByTagName("li")[0];
+//         dBidOne.style.color = "blue";
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
 
@@ -116,18 +150,3 @@ var dBidOne = document.getElementsByTagName("li")[0];
 </script>
 </body>
 </html>
-
-<!--mainHeader.innerHTML = "<em>Javascript is Cool</em>";-->
-
-<!--var thingsIWant = ["Great Career","Oculus Quest","Nintendo Switch","2 Front Teeth","Macbook Pro 16-inch","Valve Index"];-->
-
-<!--var wishList = document.getElementById("wishList");-->
-<!--var htmlString = "";-->
-<!--for (var i = 0;i<thingsIWant.length;i++){-->
-<!--if (i % 2 !== 0)-->
-<!--htmlString += "<li class='even'>" + thingsIWant[i] + "</li>";-->
-<!--else-->
-<!--htmlString += "<li class='odd'>" + thingsIWant[i] + "</li>";-->
-<!--}-->
-<!--wishList.innerHTML = htmlString;-->
-<!--var evens = document.getElementsByClassName("even");-->
