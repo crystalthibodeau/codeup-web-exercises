@@ -13,6 +13,12 @@
         .greenText {
             color:green
         }
+        .purple{
+            color:purple;
+        }
+        .blue{
+            color:blue;
+        }
     </style>
 </head>
 <body>
@@ -39,6 +45,8 @@
 <ul id="wishList">
 </ul>
 <a id="codeup" href="http://codeup.com">codeup</a>
+<br>
+<button id = "button">Click me!</button>
 <script>
     console.log(document);
     var header = document.getElementById("header");
@@ -104,6 +112,34 @@
     //     // console.log(evens[i]);
     //     console.log(evens[i].innerHTML);
     // }
+    var clicks = 0;
+    var buttonClick = function(){
+        clicks++;
+        console.log("button was clicked " + clicks + " times")
+    };
+
+    var button = document.getElementById("button");
+    button.addEventListener("click", buttonClick);
+
+    // button.addEventListener("mouseover", function(){
+    //     button.style.color = "blue";
+    // })
+
+    button.addEventListener("mouseover", function(){
+        button.setAttribute("class", "purple");
+    });
+
+    button.addEventListener("mouseout", function(){
+        button.setAttribute("class", "blue");
+    });
+
+    // button.addEventListener("mouseout", function(){
+    //     button.style.color = "purple";
+    // })
+
+    setTimeout(function(){
+        button.removeEventListener("click", buttonClick);
+    }, 3000);
 
 </script>
 </body>

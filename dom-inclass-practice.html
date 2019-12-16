@@ -15,9 +15,10 @@
 
 <ul>
     <li><h4 class="specials">Tri-Tip (Santa Maria Style)</h4></li>
+    <button id = "triTip">View Recipe</button>
     <li><h4>French Dip Sandwich</h4></li>
+    <button id = "frenchDip">View Recipe</button>
     <li><h4 class="specials">Street Tacos</h4></li>
-
         <ul>
     <li class="favorite-special">Pork Carnitas</li>
     <li>Grilled Shrimp</li>
@@ -26,10 +27,15 @@
         </ul>
 
 <h6>*Served with Corn or Flour tortillas</h6>
+    <button id = "tacos">View Recipe</button>
     <li><h4>Chile Verde</h4></li>
+    <button id = "chileVerde">View Recipe</button>
     <li><h4>Cajun Shrimp</h4></li>
+    <button id = "shrimp">View Recipe</button>
     <li><h4 class="specials">Cioppino</h4></li>
+    <button id = "cio">View Recipe</button>
 </ul>
+
 
 <script>
 
@@ -58,6 +64,16 @@
         console.log(favSpecial[i]);
     }
     title.style.color = "blue";
+
+    var clicks = 0;
+    var button = document.getElementById("triTip");
+    button.addEventListener("click", function (){
+        clicks++;
+        confirm("Would you like to leave this page?")
+        // + clicks + " times"
+    });
+
+
 </script>
 </body>
 </html>
