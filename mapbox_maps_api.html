@@ -33,33 +33,84 @@
         container: 'map',
         style: "mapbox://styles/crystal-thibodeau/ck4aas95r0xvy1cnwghfstjon",
         zoom: 8,
-        center: [-98.4916, 29.4252],
-        color: "blue",
+        center: [-98.4916, 29.4252]
     });
 
     map.addControl(new mapboxgl.NavigationControl());
 
     var markerOptions = {
         color: "blue",
-        draggable: true
+        draggable: false
     };
 
 
 
 
-    geocode("109 Saunders St, Boerne, TX 78006", mapboxToken).then(function(result) {
+    // geocode("109 Saunders St, Boerne, TX 78006", mapboxToken).then(function(result) {
+    //
+    //     var hungryHorsePopUp = new mapboxgl.Popup({closeOnClick: true})
+    //         .setText(
+    //             'Hungry Horse Restaurant' );
+    //         // .setLngLat(result);
+    //         // .setHTML('<h1>Hello World!</h1>');
+    //
+    //
+    //     var HungryHorseMarker = new mapboxgl.Marker(markerOptions)
+    //         .setLngLat(result)
+    //         .setPopup(hungryHorsePopUp)
+    //         .addTo(map);
+    //     map.setCenter(result);
+    //     map.setZoom(18);
+    //     hungryHorsePopUp;
+    // });
+var restaurants = [
+    {
+            name: "Hungry Horse",
+            location: "109 Saunders St, Boerne, TX 78006",
+            foodType: "American cuisine",
+            atmosphere: "Family friendly, Quaint",
+            priceAverage: "Average"
 
-        var HungryHorseMarker = new mapboxgl.Marker(markerOptions)
-            .setLngLat(result)
-            .addTo(map);
-        map.setCenter(result);
-        map.setZoom(18);
+    },
+    {
+            name: "China Bowl",
+            location: "1361 S Main St Suite 301, Boerne, TX 78006",
+            foodType: "Chinese cuisine",
+            atmosphere: "Family friendly, Intimate",
+            priceAverage: "Low"
 
-        var hungryHorsePopUp = new mapboxgl.Popup({closeOnClick: true})
-            .setLngLat(result)
-            .setHTML('<h1>Hello World!</h1>');
-        hungryHorsePopUp();
+    },
+    {
+        name: "El Chaparral",
+        location: "15103 Bandera Rd, Helotes, TX 78023",
+        foodType: "Mexican cuisine",
+        atmosphere: "Family friendly, Open",
+        priceAverage: "Low-Average",
+        // popupHTML: this.priceAverage
+
+    }
+];
+
+function restaurantMarkerAndPopup(restaurant, mapboxToken, map) {
+    restaurants.forEach(function (restaurant) {
+    geocode(restaurant.location, mapboxToken).then(function (result) {
+
+            var restaurantPopUp = new mapboxgl.Popup({closeOnClick: true})
+                .setHTML(restaurant.name + ", " + restaurant.foodType + ", Price Range: " + restaurant.priceAverage + ", " + restaurant.atmosphere );
+
+            var restaurantMarker = new mapboxgl.Marker(markerOptions)
+                .setLngLat(result)
+                .addTo(map)
+                .setPopup(restaurantPopUp);
+
+            restaurantMarker;
+
+        });
     });
+
+}
+restaurantMarkerAndPopup(restaurants, mapboxToken, map)
+
 
 </script>
 </body>
