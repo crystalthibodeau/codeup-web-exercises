@@ -11,7 +11,9 @@
 </head>
 <body>
 
-<h1 id="main-header">Hello World!</h1>
+<h1 id="main-header">Hello World! </h1><button id="coolJavaScript">Try me!</button>
+<br>
+<br>
 <ul>
     <li data-dbid="1">Item 1</li>
     <li data-dbid="2">Item 2</li>
@@ -19,7 +21,11 @@
     <li data-dbid="4">Item 4</li>
     <li data-dbid="5">Item 5</li>
 </ul>
-<h2 id="sub-header" class="something">Hello Again.</h2>
+<button id="toGrey">Try me!</button>
+<button id="liToBlue">Try me!</button>
+<br>
+<br>
+<h2 id="sub-header" class="something">Hello Again. <button id="toBlue">Try me!</button></h2>
 <p class="sub-paragraph">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -29,6 +35,7 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
+<button id="subMission">Try me!</button>
 <!--paragraph to test for function on last problem -->
 
 <!--<p class="sub-paragraph">-->
@@ -59,7 +66,7 @@
         // console.log(mainHeader);
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "<em>Javascript is Cool</em>";
+        // mainHeader.innerHTML = "<em>Javascript is Cool</em>";
 
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById("sub-header") ;
@@ -70,8 +77,8 @@
 
         // this example does not push out existing classes i.e. something listed above
 
-        subHeader.setAttribute("class",
-        subHeader.getAttribute("class") + (" blue") );
+        // subHeader.setAttribute("class",
+        // subHeader.getAttribute("class") + (" blue") );
 
         // subHeader.setAttribute("style", "color:blue");
 
@@ -81,10 +88,10 @@
 
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName("li");
-        console.log(listItems);
-        for(var i = 0; i < listItems.length; i++ ){
-            console.log(listItems[i].innerHTML);
-        }
+        // console.log(listItems);
+        // for(var i = 0; i < listItems.length; i++ ){
+        //     console.log(listItems[i].innerHTML);
+        // }
 
 
         // TODO: Set text color on every other list item to grey
@@ -106,23 +113,18 @@
         }
 
         // changing odd color to grey
-        for(var i = 0; i < odds.length; i++){
-            odds[i].style.color = 'grey';
-        }
-
+        // for(var i = 0; i < evens.length; i++){
+        //     evens[i].style.color = 'grey';
+        // }
 
         // TODO: Set text color of li with dbid = 1 to blue
 
-        // non-working example....
-
-
-        for(i = 0; i <listItems.length; i++){
-            if(listItems[i].getAttribute("data-dbid") == 1)
-                listItems[i].setAttribute("class",
-                    listItems[i].getAttribute("class") + (" blue") );
-
-        }
-
+        // for(var j = 0; j <listItems.length; j++){
+        //     if(listItems[j].getAttribute("data-dbid") == 1)
+        //         listItems[j].setAttribute("class",
+        //             listItems[j].getAttribute("class") + (" blue") );
+        //
+        // }
 
 // var dBidOne = document.getElementsByTagName("li")[0];
 //         dBidOne.style.color = "blue";
@@ -130,7 +132,7 @@
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
 
         var subParagraphs = document.getElementsByClassName("sub-paragraph");
-        console.log(subParagraphs);
+        // console.log(subParagraphs);
 
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
@@ -144,7 +146,102 @@
             //     }
             // }
 
-        subParagraphs[0].innerText="Mission Accomplished!";
+        // subParagraphs[0].innerText="Mission Accomplished!";
+
+        var coolButton = document.getElementById("coolJavaScript");
+
+        // coolButton.addEventListener("click", function(){
+        //    return mainHeader.innerHTML = "<em>Javascript is Cool</em>";
+        // });
+
+        coolButton.addEventListener("click", function(){
+
+            if(mainHeader.innerText !== "Javascript is Cool"){
+                return mainHeader.innerHTML = "<em>Javascript is Cool</em>";
+            }else{
+                return mainHeader.innerText = "Hello World!";
+            }
+        });
+
+
+        var greyButton = document.getElementById("toGrey");
+
+    //     greyButton.addEventListener("click", function () {
+    //         for(var i = 0; i < evens.length; i++){
+    //             evens[i].style.color = 'grey';
+    //     }
+    // });
+
+    greyButton.addEventListener("click", function(){
+        for(var i = 0; i < evens.length; i++){
+            if(evens[i].style.color === "grey"){
+                evens[i].style.color = "black";
+            }else{
+                evens[i].style.color = "grey";
+            }
+        }
+
+        });
+
+        var liBlueButton = document.getElementById("liToBlue");
+
+        // liBlueButton.addEventListener("click", function(){
+        //     for(var j = 0; j <listItems.length; j++){
+        //         if(listItems[j].getAttribute("data-dbid") == 1)
+        //             listItems[j].setAttribute("class",
+        //                 listItems[j].getAttribute("class") + (" blue") );
+        //     }});
+
+    liBlueButton.addEventListener("click", function(){
+            if(listItems[0].style.color === "blue"){
+                listItems[0].style.color = "black";
+            }else{
+                listItems[0].style.color = "blue";
+            }
+        });
+
+
+
+
+        var blueButton = document.getElementById("toBlue");
+
+        // blueButton.addEventListener("click", function(){
+        //     subHeader.style.color = "blue";
+        // });
+
+    blueButton.addEventListener("click", function(){
+            if(subHeader.style.color === "blue"){
+                subHeader.style.color = "black";
+            }else{
+                subHeader.style.color = "blue";
+            }
+    });
+
+
+
+
+        var missionButton = document.getElementById("subMission");
+
+
+        var lorem = document.getElementsByClassName("sub-paragraph")[0].innerText;
+        var newSub = "Mission Accomplished!";
+        // var newSub = subParagraphs[0].innerText="Mission Accomplished!"; // makes text show as mission statement everytime page is refreshred, read last in javascript
+
+        missionButton.addEventListener("click", function(){
+
+            if(subParagraphs[0].innerText == newSub){
+                return subParagraphs[0].innerText = lorem;
+            }else{
+                return subParagraphs[0].innerText = newSub;
+            }
+        });
+
+        // missionButton.addEventListener("click", function(){
+        //    var newSub = subParagraphs[0].innerText="Mission Accomplished!";
+        //    return newSub;
+        // }
+        // );
+
     })();
 
 </script>
