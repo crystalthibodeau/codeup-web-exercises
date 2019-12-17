@@ -81,12 +81,12 @@ var restaurants = [
 
     },
     {
-        name: "El Chaparral",
+        name: "<b>El Chaparral</b>",
         location: "15103 Bandera Rd, Helotes, TX 78023",
         foodType: "Mexican cuisine",
         atmosphere: "Family friendly, Open",
         priceAverage: "Low-Average",
-        // popupHTML: this.priceAverage
+        popupHTML: "<a href=\https://www.zomato.com/boerne-tx/china-bowl-boerne\"><b>MENU</b></a>"
 
     }
 ];
@@ -96,7 +96,7 @@ function restaurantMarkerAndPopup(restaurant, mapboxToken, map) {
     geocode(restaurant.location, mapboxToken).then(function (result) {
 
             var restaurantPopUp = new mapboxgl.Popup({closeOnClick: true})
-                .setHTML(restaurant.name + ", " + restaurant.foodType + ", Price Range: " + restaurant.priceAverage + ", " + restaurant.atmosphere );
+                .setHTML(restaurant.name + "<br>" + restaurant.foodType + "<br>" + "Price Range: " + restaurant.priceAverage + "<br>" + restaurant.atmosphere + "<br>" + restaurant.popupHTML );
 
             var restaurantMarker = new mapboxgl.Marker(markerOptions)
                 .setLngLat(result)
