@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Mapbox Map</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>My First Mapbox Map!</h1>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<!-- Mapbox JS -->
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+<!-- Custom JS -->
+<script>
+    mapboxgl.accessToken = mapboxToken;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: "mapbox://styles/crystal-thibodeau/ck4aas95r0xvy1cnwghfstjon",
+        zoom: 8,
+        center: [-98.4916, 29.4252],
+        color: "blue",
+    });
+
+    map.addControl(new mapboxgl.NavigationControl());
+
+    var markerOptions = {
+        color: "blue",
+        draggable: true
+    };
+
+
+
+
+    geocode("109 Saunders St, Boerne, TX 78006", mapboxToken).then(function(result) {
+
+        var HungryHorseMarker = new mapboxgl.Marker(markerOptions)
+            .setLngLat(result)
+            .addTo(map);
+        map.setCenter(result);
+        map.setZoom(18);
+
+        var hungryHorsePopUp = new mapboxgl.Popup({closeOnClick: true})
+            .setLngLat(result)
+            .setHTML('<h1>Hello World!</h1>');
+        hungryHorsePopUp();
+    });
+
+</script>
+</body>
+</html>

@@ -11,6 +11,7 @@
             /* the width and height may be set to any size */
             width: 100%;
             height: 700px;
+
         }
     </style>
 </head>
@@ -23,16 +24,10 @@
 
 <!-- Mapbox JS -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="js/mapbox-api-lec.js"></script>
 
-<!-- Custom JS -->
-<script>
-    mapboxgl.accessToken = YOUR_API_TOKEN_HERE;
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 10,
-        center: [-98.4916, 29.4252]
-    });
-</script>
+
 </body>
 </html>
