@@ -14,46 +14,59 @@
             /*padding: 5px 10px;*/
             text-align: center;
             display: inline-block;
-            /*font-size: 20px;*/
+            font-size: 15px;
             margin: 10px 30px;
             /*cursor: pointer;*/
         }
         li{
+            list-style: circle;
+        }
+        .noDot{
             list-style: none;
         }
         .center{
             margin:0 auto;
-            text-align:center;
+            text-align: center;
+        }
+        #notCenter {
+            text-align: start;
+            padding-left: 280px;
+        }
+        .marginOne {
+            /*margin: 10px;*/
+        }
+        .underline {
+            text-decoration: underline;
         }
     </style>
 </head>
-<body>
+<body class="center">
 
-<h1 id="title">Chef Bored All Day</h1>
+<h1 id="title" class="underline">Chef Bored All Day</h1>
 <div >
-<h3 >Menu</h3>
+    <h3 class="underline"><b>Favorite  "Make  It  Yourself"  Menu  Options</b></h3>
 
 <ul>
-    <li><h4 class="specials">Tri-Tip (Santa Maria Style)</h4></li>
-    <button id = "triTip" class="GFG" onclick="window.location.href='http://www.hyperlinkcode.com/button-links.php'">View Recipe</button>
-    <li><h4>French Dip Sandwich</h4></li>
-    <button id = "frenchDip" class="GFG">View Recipe</button>
-    <li><h4 class="specials">Street Tacos</h4></li>
-        <ul>
-    <li class="favorite-special">Pork Carnitas</li>
-    <li>Grilled Shrimp</li>
-    <li>Shredded Beef</li>
-    <li>Picadillo</li>
+    <li class="noDot"><h4 class="specials">Tri-Tip (Santa Maria Style)</h4></li>
+    <button id = "triTip" class="GFG" onclick="window.location.href='https://www.foodnetwork.com/recipes/bobby-flay/santa-maria-style-bbq-tri-tip-recipe-2014974'">View Recipe</button>
+    <li class="noDot"><h4>French Dip Sandwich</h4></li>
+    <button id = "frenchDip" class="GFG" onclick="window.location.href='https://thepioneerwoman.com/cooking/french-dip-sandwiches/'">View Recipe</button>
+    <li class="noDot"><h4 class="specials">Street Tacos</h4></li>
+        <ul id="notCenter">
+    <li class="favorite-special marginOne">Pork Carnitas</li>
+    <li class="marginOne">Grilled Shrimp</li>
+    <li class="marginOne">Shredded Beef</li>
+    <li class="marginOne">Picadillo</li>
         </ul>
 
 <h6>*Served with Corn or Flour tortillas</h6>
-    <button id = "tacos" class="GFG">View Recipe</button>
-    <li><h4>Chile Verde</h4></li>
-    <button id = "chileVerde" class="GFG">View Recipe</button>
-    <li><h4>Cajun Shrimp</h4></li>
-    <button id = "shrimp" class="GFG">View Recipe</button>
-    <li><h4 class="specials">Cioppino</h4></li>
-    <button id = "cio" class="GFG">View Recipe</button>
+    <button id = "tacos" class="GFG" onclick="window.location.href='https://www.allrecipes.com/recipe/239786/crispy-pork-carnitas/'">View Recipe</button>
+    <li class="noDot"><h4>Chile Verde</h4></li>
+    <button id = "chileVerde" class="GFG" onclick="window.location.href='https://www.foodnetwork.com/recipes/chili-verde-recipe0-1917661'">View Recipe</button>
+    <li class="noDot"><h4>Cajun Shrimp</h4></li>
+    <button id = "shrimp" class="GFG" onclick="window.location.href='https://gimmedelicious.com/the-best-10-minute-cajun-blackened-shrimp/'">View Recipe</button>
+    <li class="noDot"><h4 class="specials">Cioppino</h4></li>
+    <button id = "cio" class="GFG" onclick="window.location.href='https://www.foodnetwork.com/recipes/sams-anchor-cafe-cioppino-recipe-1947210'">View Recipe</button>
 </ul>
 </div>
 
