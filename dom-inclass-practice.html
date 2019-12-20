@@ -7,6 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dom Practice</title>
     <style>
+        .background{
+            font-family: "American Typewriter";
+            color: slategrey;
+        }
         .GFG {
             background-color: white;
             /*border: 2px solid black;*/
@@ -15,13 +19,11 @@
             text-align: center;
             display: inline-block;
             font-size: 15px;
-            margin: 10px 30px;
+            /*margin: 10px 30px;*/
+            font-family: "American Typewriter";
             /*cursor: pointer;*/
         }
         li{
-            list-style: circle;
-        }
-        .noDot{
             list-style: none;
         }
         .center{
@@ -30,29 +32,39 @@
         }
         #notCenter {
             text-align: start;
-            padding-left: 48%;
+            padding-left: 45%;
         }
         .marginOne {
             /*margin: 10px;*/
         }
         .underline {
             text-decoration: underline;
+            padding: 0;
+            margin: 2%;
+
         }
+        #backgroundImg {
+            background: url(img/food-background.jpg);
+            background-size: cover;
+            /*background-repeat: no-repeat;*/
+        }
+
     </style>
 </head>
-<body>
+<body class="background" id="backgroundImg">
 
-<h1 id="title">Chef Bored All Day</h1>
-<div >
-    <h3 >Menu</h3>
+<h1 id="title" class="center">Chef Bored All Day</h1>
+<div class="center">
+    <h3>Menu</h3>
+
 
     <ul>
-        <li><h4 class="specials">Tri-Tip (Santa Maria Style)</h4></li>
+        <li><h4 class="specials underline">Tri-Tip (Santa Maria Style)</h4></li>
         <button id = "triTip" class="GFG" onclick="window.location.href='https://www.foodnetwork.com/recipes/bobby-flay/santa-maria-style-bbq-tri-tip-recipe-2014974'">View Recipe</button>
-        <li><h4>French Dip Sandwich</h4></li>
-        <button id = "frenchDip" class="GFG">View Recipe</button>
-        <li><h4 class="specials">Street Tacos</h4></li>
-        <ul>
+        <li><h4 class="underline">French Dip Sandwich</h4></li>
+        <button id = "frenchDip" class="GFG" onclick="window.location.href='https://thepioneerwoman.com/cooking/french-dip-sandwiches'">View Recipe</button>
+        <li><h4 class="specials underline">Street Tacos</h4></li>
+        <ul  id="notCenter">
             <li class="favorite-special">Pork Carnitas</li>
             <li>Grilled Shrimp</li>
             <li>Shredded Beef</li>
@@ -60,15 +72,16 @@
         </ul>
 
         <h6>*Served with Corn or Flour tortillas</h6>
-        <button id = "tacos" class="GFG">View Recipe</button>
-        <li><h4>Chile Verde</h4></li>
-        <button id = "chileVerde" class="GFG">View Recipe</button>
-        <li><h4>Cajun Shrimp</h4></li>
-        <button id = "shrimp" class="GFG">View Recipe</button>
-        <li><h4 class="specials">Cioppino</h4></li>
-        <button id = "cio" class="GFG">View Recipe</button>
+        <button id = "tacos" class="GFG" onclick="window.location.href='https://www.allrecipes.com/recipe/239786/crispy-pork-carnitas'">View Recipe</button>
+        <li><h4 class="underline">Chile Verde</h4></li>
+        <button id = "chileVerde" class="GFG" onclick="window.location.href='https://www.foodnetwork.com/recipes/chili-verde-recipe0-1917661'">View Recipe</button>
+        <li><h4 class="underline">Cajun Shrimp</h4></li>
+        <button id = "shrimp" class="GFG" onclick="window.location.href='https://gimmedelicious.com/the-best-10-minute-cajun-blackened-shrimp'">View Recipe</button>
+        <li><h4 class="specials underline">Cioppino</h4></li>
+        <button id = "cio" class="GFG" onclick="window.location.href='https://www.foodnetwork.com/recipes/sams-anchor-cafe-cioppino-recipe-1947210'">View Recipe</button>
     </ul>
 </div>
+
 
 <script>
 
@@ -107,7 +120,25 @@
     //     }
     // + clicks + " times"
     // });
-
+    // var recipes = [
+    //     {website: "<a href=\https://www.foodnetwork.com/recipes/bobby-flay/santa-maria-style-bbq-tri-tip-recipe-2014974/\"></a>"},
+    //     {website: "<a href=\https://thepioneerwoman.com/cooking/french-dip-sandwiches/\"></a>"},
+    //     {website: "<a href=\https:https://www.allrecipes.com/recipe/239786/crispy-pork-carnitas/\"></a>"},
+    //     {website: "<a href=\https://'https://www.foodnetwork.com/recipes/chili-verde-recipe0-1917661'\"></a>"},
+    //     {website: "<a href=\https:// 'https://gimmedelicious.com/the-best-10-minute-cajun-blackened-shrimp/'\"></a>"},
+    //     {website: "<a href=\'https://www.foodnetwork.com/recipes/sams-anchor-cafe-cioppino-recipe-1947210'\"></a>"},
+    // ];
+    // function leavePage() {
+    //     // clearTimeout(detonationTimer);
+    //     var confirmLeave = confirm("Do you want to leave this page?");
+    //     if(confirmLeave === true){
+    //         recipes.forEach(function(recipe){
+    //             window.location.href = recipe.website;
+    //         });
+    //     }
+    // }
+    // var triTip = document.getElementById('triTip');
+    // triTip.addEventListener('click', leavePage);
 
 </script>
 </body>
