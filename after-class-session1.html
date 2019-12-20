@@ -15,14 +15,14 @@
 
     // Define a function named isString that takes in a value and returns a boolean if the argument provided is a string or not.
 
-    function isString(x){
-        if (typeof x == 'string') {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
+    // function isString(x){
+    //     if (typeof x == 'string') {
+    //         return true;
+    //     }
+    //     else {
+    //         return false;
+    //     }
+    // }
     //
     // console.log(isString(2)); //false
     // console.log(isString(true)); //false
@@ -31,15 +31,15 @@
 
     // Define a function named isNotString that accepts an input and returns true or false based on whether an input is not a string.
 
-function isNotString(x){
-        if (typeof x !== "string"){
-            return true;
-        }else {
-            return false;
-        }
-}
-    function isNumeric(x) {
-        return !isNaN(parseFloat(x));
+// function isNotString(x){
+//         if (typeof x !== "string"){
+//             return true;
+//         }else {
+//             return false;
+//         }
+// }
+//     function isNumeric(x) {
+//         return !isNaN(parseFloat(x));
 
     //
     // console.log(isNotString(2)); //true
@@ -69,14 +69,14 @@ function isNotEmptyString (x){
 
     // Define a function named isANumber that takes in a value and returns true if the input is a number.
 // isANumber(x)
-    function isANumber(x){
-        if(typeof x === "number"){
-            return true;
-        } else{
-            return false;
-        }
-
-    }
+//     function isANumber(x){
+//         if(typeof x === "number"){
+//             return true;
+//         } else{
+//             return false;
+//         }
+//
+//     }
 
     //
     // console.log(isANumber(2)); //true
@@ -87,15 +87,15 @@ function isNotEmptyString (x){
 
 
     // Define a function named isNumeric that takes in a value and returns true if the input is numeric or not. Numeric strings are numeric and should return true.
-
-function isNumeric (x){
-        if(! isNaN (parseFloat(x))){
-            return true;
-        } else {
-            return false;
-        }
-
-}
+//
+// function isNumeric (x){
+//         if(! isNaN (parseFloat(x))){
+//             return true;
+//         } else {
+//             return false;
+//         }
+//
+// }
 
 
 
@@ -179,6 +179,194 @@ function isPositive(x){
     // console.log(isPositive(true)); //false
     // console.log(isPositive("5")); //false
 
+    var carsList = [
+        {
+            make: 'Volvo',
+            color: 'red',
+            year: 1996,
+            isDirty: true
+        },
+        {
+            make: 'Toyota',
+            color: 'black',
+            year: 2004,
+            isDirty: false
+        },
+        {
+            make: 'Ford',
+            color: 'white',
+            year: 2007,
+            isDirty: true
+        }
+    ];
+
+function washCars(cars) {
+    cars.forEach(function (car) {
+        // if (car.isDirty === true) {
+            car.isDirty = false;
+            // console.log(car.isDirty);
+            // car.isDirty === false;
+        // }
+    });
+    return cars;
+}
+// console.log(washCars(carsList));
+
+    // 1.  Write a function, `filterNumbers()` that takes in an array of mixed data types and returns an array of only the numbers type in ascending order.
+// ​
+//     ```js
+//         filterNumbers(["fred", true, 5, 3]) //[3, 5]
+//     ```
+
+
+
+    function filterNumbers(arr) {
+        var onlyNums = [];
+        for(var i =0; i < arr.length ; i++ ){
+            if(typeof arr[i] === 'number'){
+                onlyNums.push(arr[i]);
+            }
+        }
+        return onlyNums;
+
+    }
+// console.log(filterNumbers(["fred", true, 5, 3]));
+
+//     Write a function, `getOlder()` that takes in array of dog objects and increases the value of the age properties by 1.
+// ​
+//    ```js
+//
+    var dogsList = [
+        {
+            name: "Chompers",
+            breed: "Pug",
+            age: 7
+        },
+        {
+            name: "Freddy",
+            breed: "Lab",
+            age: 4
+        },
+        {
+            name: "Mr. Pig",
+            breed: "Mastif",
+            age: 10
+        }
+    ];
+
+function getOlder(dogs) {
+
+    // for (var i = 0; i < dogs.length; i++){
+    //     dogs[i].age += 1;
+    // }
+
+
+    dogs.forEach(function (dog) {
+            dog.age += 1;
+            // dog.age = dog.age + 1;
+    });
+    return dogs;
+}
+
+// console.log(getOlder(dogsList));
+
+//     Write a function, `adminList()` that takes in an array of user objects and returns a count of all admins based on the isAdmin property. Refactor to return an array of admin-only user emails. Refactor again to return an array of user objects that are admins.
+
+
+
+    function adminList(arr){
+    // var adminCount =0;
+    // var adminEmail = [];
+        var admin= [];
+    for(var i = 0; i < arr.length; i++ ){
+        if(arr[i].isAdmin){
+            // adminCount += 1;
+            // return adminCount;
+           // adminEmail.push( arr[i].email);
+            admin.push(arr[i])
+        }
+
+    }
+// return adminEmail;
+//         return adminCount;
+        return admin;
+    }
+
+
+
+//         ```js
+         var usersList =
+          [
+             {
+                 isAdmin: true,
+                 email: 'user1@email.com'
+             },
+             {
+                 isAdmin: true,
+                 email: 'user2@email.com'
+             },
+             {
+                 isAdmin: false,
+                 email: 'user3@email.com'
+             }
+         ];
+//     ```
+
+    // console.log(adminList(usersList));
+
+//     Create a function, `makeSandwichObjects()` that takes in two array of strings, breads and fillings and returns an array of sandwichObjects that contain properties for bread and filling and values correspond to the same order of the two passed in arrays. Assume the two array inputs are the same length.
+//          makeSandwichObjects(breads, fillings) // example call to the function
+
+             var breadsList  = [
+                 "white",
+                 "wheat",
+                 "rhy",
+                 "white"
+             ];
+
+             var fillingsList = [
+                 "pb&j",
+                 "ham",
+                 "cheese steak",
+                 "tuna"
+             ];
+
+
+function makeSandwichObjects(breads, fillings){
+    var sandwich = [];
+    for(var i=0; i < breads.length; i++){
+
+        var sandwichObject = {
+            bread: breads[i],
+            filling: fillings[i],
+            // bread2: breads[i],
+        };
+
+
+        // sandwich.push({
+        //     bread: breads[i],
+        //     filling: fillings[i],
+        // });
+    }
+    return sandwich;
+}
+
+// console.log(makeSandwichObjects(breadsList, fillingsList));
+
+
+    // TODO Write a function named keepYellow that accepts an array of strings and returns an array with all the strings that are equal to "yellow"
+
+    function keepYellow(arr){
+    var yellowArr = [];
+    for( var i =0; i <arr.length; i++){
+        if(arr[i] === "yellow"){
+            yellowArr.push(arr[i]);
+        }
+    }
+    return yellowArr;
+    }
+
+    // console.log(keepYellow(["yellow", "red", "blue", "yellow", "black", "brown", "yellow"]));
 
 
 </script>

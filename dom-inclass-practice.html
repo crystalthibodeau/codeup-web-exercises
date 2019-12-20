@@ -30,7 +30,7 @@
         }
         #notCenter {
             text-align: start;
-            padding-left: 280px;
+            padding-left: 48%;
         }
         .marginOne {
             /*margin: 10px;*/
@@ -44,29 +44,30 @@
 
 <h1 id="title" class="underline">Chef Bored All Day</h1>
 <div >
-    <h3 class="underline"><b>Favorite  "Make  It  Yourself"  Menu  Options</b></h3>
+    <h3 class="underline"><b>Favorite  "Make  It  Yourself"  Recipe  Options</b></h3>
 
 <ul>
     <li class="noDot"><h4 class="specials">Tri-Tip (Santa Maria Style)</h4></li>
-    <button id = "triTip" class="GFG" onclick="window.location.href='https://www.foodnetwork.com/recipes/bobby-flay/santa-maria-style-bbq-tri-tip-recipe-2014974'">View Recipe</button>
+    <button id = "triTip" class="GFG">View Recipe</button>
     <li class="noDot"><h4>French Dip Sandwich</h4></li>
-    <button id = "frenchDip" class="GFG" onclick="window.location.href='https://thepioneerwoman.com/cooking/french-dip-sandwiches/'">View Recipe</button>
-    <li class="noDot"><h4 class="specials">Street Tacos</h4></li>
-        <ul id="notCenter">
-    <li class="favorite-special marginOne">Pork Carnitas</li>
-    <li class="marginOne">Grilled Shrimp</li>
-    <li class="marginOne">Shredded Beef</li>
-    <li class="marginOne">Picadillo</li>
-        </ul>
+    <button id = "frenchDip" class="GFG">View Recipe</button>
+    <li class="noDot"><h4 class="specials">Pork Carnitas Street Tacos</h4></li>
+
+<!--        <ul id="notCenter">-->
+<!--    <li class="favorite-special marginOne">Pork Carnitas</li>-->
+<!--    <li class="marginOne">Grilled Shrimp</li>-->
+<!--    <li class="marginOne">Shredded Beef</li>-->
+<!--    <li class="marginOne">Picadillo</li>-->
+<!--        </ul>-->
 
 <h6>*Served with Corn or Flour tortillas</h6>
-    <button id = "tacos" class="GFG" onclick="window.location.href='https://www.allrecipes.com/recipe/239786/crispy-pork-carnitas/'">View Recipe</button>
+    <button id = "tacos" class="GFG">View Recipe</button>
     <li class="noDot"><h4>Chile Verde</h4></li>
-    <button id = "chileVerde" class="GFG" onclick="window.location.href='https://www.foodnetwork.com/recipes/chili-verde-recipe0-1917661'">View Recipe</button>
+    <button id = "chileVerde" class="GFG" >View Recipe</button>
     <li class="noDot"><h4>Cajun Shrimp</h4></li>
-    <button id = "shrimp" class="GFG" onclick="window.location.href='https://gimmedelicious.com/the-best-10-minute-cajun-blackened-shrimp/'">View Recipe</button>
+    <button id = "shrimp" class="GFG">View Recipe</button>
     <li class="noDot"><h4 class="specials">Cioppino</h4></li>
-    <button id = "cio" class="GFG" onclick="window.location.href='https://www.foodnetwork.com/recipes/sams-anchor-cafe-cioppino-recipe-1947210'">View Recipe</button>
+    <button id = "cio" class="GFG" >View Recipe</button>
 </ul>
 </div>
 
@@ -91,22 +92,50 @@
         console.log(lis[i]);
     }
 
-    var favSpecial = document.getElementsByClassName("favorite-special");
-    console.log(favSpecial);
-    for(var i = 0; i < favSpecial.length; i++){
-        console.log(favSpecial[i]);
-    }
+    // var favSpecial = document.getElementsByClassName("favorite-special");
+    // console.log(favSpecial);
+    // for(var i = 0; i < favSpecial.length; i++){
+    //     console.log(favSpecial[i]);
+    // }
     // title.style.color = "blue";
 
-    // var clicks = 0;
-    // var button = document.getElementById("triTip");
-    // button.addEventListener("click", function (){
-    //     // clicks++;
-    //     if(confirm("Would you like to leave this page?")){
-    //         onclick = "window.location.href = 'https://ide.geeksforgeeks.org";
-    //     }
-        // + clicks + " times"
-    // });
+    var recipes = [
+        {website: "<a href=\https://www.foodnetwork.com/recipes/bobby-flay/santa-maria-style-bbq-tri-tip-recipe-2014974/\"></a>"},
+
+        {website: "<a href=\https://thepioneerwoman.com/cooking/french-dip-sandwiches/\"></a>"},
+
+        {website: "<a href=\https:https://www.allrecipes.com/recipe/239786/crispy-pork-carnitas/\"></a>"},
+
+        {website: "<a href=\https://'https://www.foodnetwork.com/recipes/chili-verde-recipe0-1917661'\"></a>"},
+
+        {website: "<a href=\https:// 'https://gimmedelicious.com/the-best-10-minute-cajun-blackened-shrimp/'\"></a>"},
+
+        {website: "<a href=\'https://www.foodnetwork.com/recipes/sams-anchor-cafe-cioppino-recipe-1947210'\"></a>"},
+    ];
+
+
+    function leavePage() {
+        // clearTimeout(detonationTimer);
+        var confirmLeave = confirm("Do you want to leave this page?");
+
+        if(confirmLeave === true){
+            recipes.forEach(function(recipe){
+                window.location.href = recipe.website;
+            });
+        }
+    }
+    var triTip = document.getElementById('triTip');
+    triTip.addEventListener('click', leavePage);
+
+    // var frenchDip = document.getElementById('triTip');
+    // var carnitas = document.getElementById('triTip');
+    // var chileVerde = document.getElementById('triTip');
+    // var shrimp = document.getElementById('triTip');
+    // var cioppino = document.getElementById('triTip');
+
+    // window.location.href = "http://www.w3schools.com";
+    // onclick="window.location.href='https://www.allrecipes.com/recipe/239786/crispy-pork-carnitas/' //this only works inside of the button tag, does not allow for confirm to function!
+
 
 
 </script>
