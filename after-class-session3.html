@@ -83,7 +83,7 @@
                 // console.log(string);
             }
         }
-        return letterCount
+        return letterCount;
     }
     // console.log(AsAndBs('Anaconda'));
     // console.log(AsAndBs('abba'));
@@ -94,8 +94,8 @@
     function stringLength(str) {
         return str.length
     }
-    console.log(stringLength("doggo"))
-    console.log('doggo'.length)
+    // console.log(stringLength("doggo"))
+    // console.log('doggo'.length)
     //write a function that accepts a string and returns an object with the original string, the length of the string, as well as the number of a's and b's
     function analyzeWord(str) {
         var word = {};
@@ -107,6 +107,7 @@
     // console.log(analyzeWord('dog'));
     // console.log(analyzeWord('banana'));
     // console.log(analyzeWord('mississippi'));
+
     // Write a function thataccepts an array or strings and returns an array of those words analyzaed similarly
     function analyzeAllWords(arr) {
         var analyzedWords = [];
@@ -116,6 +117,36 @@
         return analyzedWords;
     }
     console.log(analyzeAllWords(['dog', 'banana', 'mississippi']))
+
+    // function convertNameToObject(names) {
+    //     names = names.split(' ');
+    //     var nameSplit = [];
+    //     for(var i =0; i< names.length; i++)
+    //         console.log(i);
+    //         nameSplit.push({
+    //             firstName: names[i],
+    //             lastName: names[i],
+    //
+    //         });
+    //         return nameSplit;
+    //
+    // }
+
+
+    function analyzeWord(str){
+        var result = {};
+        // var newStr = [];
+        result.word = str;
+        result.numberOfLetters = str.split('').length;
+        // result.numberOfVowels = countVowels(str);
+
+
+
+        return result;
+    }
+
+    console.log(analyzeWord('Harry'));// {firstName: 'Harry', lastName: 'Potter'}
+    console.log(analyzeWord('Weasley')); // {firstName: 'Ron', lastName: 'Weasley'}
 </script>
 
 </body>
