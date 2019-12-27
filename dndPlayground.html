@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DND</title>
+    <style>
+        /*===================GRID LAYOUT==============================================================================*/
+        .parent {
+            display: grid;
+            height: 100vh;
+            width: 100fr;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 15% 10% 15% 25% 35%;
+            /*grid-column-gap: 0px;*/
+            /*grid-row-gap: 0px;*/
+        }
+
+        .title { grid-area: 1 / 1 / 2 / 3; }
+        .navBar { grid-area: 2 / 1 / 3 / 3; }
+        .campName { grid-area: 3 / 1 / 4 / 3; }
+        .mission { grid-area: 4 / 1 / 5 / 3; }
+        .dice { grid-area: 5 / 1 / 6 / 2; }
+        .character { grid-area: 5 / 2 / 6 / 3; }
+        /*===================TITLE STYLING============================================================================*/
+        #title{
+            display: flex;
+            color: darkred;
+            /*padding: .5em;*/
+            /*margin: 1em;*/
+            text-align: center;
+            background: black;
+            align-items: center;
+            justify-content: center;
+        }
+        /*===================NAV STYLING==============================================================================*/
+        .ulContainer{
+            display: flex; /* made unordered list a flex container */
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            /*height: inherit;*/
+            align-items: center;
+            justify-content: space-around;
+            border: 2px solid black;
+        }
+        .liItems{
+            /*display: flex;*/
+            padding: .5em;
+
+        }
+        .navStyle{
+            background-color: slategrey;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: underline;
+            color: white;
+        }
+        /*.navItem1 {*/
+        /*    padding-left: 8.5em;*/
+        /*    padding-right: 14em;*/
+        /*    border: 2px solid black;*/
+        /*    padding-top: .5em;*/
+        /*    padding-bottom: .5em;*/
+        /*}*/
+        /*.navItem2 {*/
+        /*    padding-left: 14em;*/
+        /*    padding-right: 14em;*/
+        /*    border: 2px solid black;*/
+        /*    padding-top: .5em;*/
+        /*    padding-bottom: .5em;*/
+        /*}*/
+        /*.navItem3 {*/
+        /*    padding-left: 14.25em;*/
+        /*    padding-right: 14em;*/
+        /*    border: 2px solid black;*/
+        /*    padding-top: .5em;*/
+        /*    padding-bottom: .5em;*/
+        /*}*/
+        /*==========================================END STYLING=======================================================*/
+    </style>
+</head>
+<body>
+
+<!--================================PARENT GRID======================================================================-->
+<div class="parent">
+
+    <!--================================TITLE========================================================================-->
+
+    <div class="title" id="title"><h1>
+    D&D Playground</h1></div>
+    <!--================================NAV START====================================================================-->
+
+    <div class="navBar">
+        <nav>
+            <ul class="ulContainer navStyle">
+                <li class="liItems navItem1"><a href="">Character</a></li>
+                <li class="liItems navItem2"><a href="">Map</a></li>
+                <li class="liItems navItem3"><a href="">Search</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!--================================CAMPAIGN TITLE===============================================================-->
+
+    <div class="campName"> Campaign Name</div>
+    <!--================================MISSION STMT=================================================================-->
+
+    <div class="mission">Mission statement....... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi illum laboriosam mollitia nobis numquam officia quasi quibusdam repellendus, repudiandae tempora. Beatae expedita quibusdam saepe sit sunt voluptate. Amet, culpa facere! </div>
+    <!--================================DICE ROLL====================================================================-->
+
+    <div class="dice"> dice here</div>
+    <!--================================NPC GENERATOR================================================================-->
+
+    <div class="character"> NPC</div>
+</div>
+
+<!--================================END OF PARENT GRID START OF JS===================================================-->
+
+<script>
+
+
+
+</script>
+</body>
+</html>
