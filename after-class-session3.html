@@ -116,7 +116,7 @@
         }
         return analyzedWords;
     }
-    console.log(analyzeAllWords(['dog', 'banana', 'mississippi']))
+    // console.log(analyzeAllWords(['dog', 'banana', 'mississippi']));
 
     // function convertNameToObject(names) {
     //     names = names.split(' ');
@@ -144,9 +144,19 @@
 
         return result;
     }
+    //
+    // console.log(analyzeWord('Harry'));// {firstName: 'Harry', lastName: 'Potter'}
+    // console.log(analyzeWord('Weasley')); // {firstName: 'Ron', lastName: 'Weasley'}
 
-    console.log(analyzeWord('Harry'));// {firstName: 'Harry', lastName: 'Potter'}
-    console.log(analyzeWord('Weasley')); // {firstName: 'Ron', lastName: 'Weasley'}
+
+    function productOfAll(num){
+        var allMultiplied = 1;
+        for(var i = 0; i < num.length; i++){
+            allMultiplied *= num[i];
+        }
+        return allMultiplied;
+    }
+    console.log((productOfAll([2, 2, 2])));
 </script>
 
 </body>

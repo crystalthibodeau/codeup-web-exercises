@@ -60,7 +60,7 @@
 
     <ul>
         <li><h4 class="specials underline">Tri-Tip (Santa Maria Style)</h4></li>
-        <button id = "triTip" class="GFG" onclick="window.location.href='https://www.foodnetwork.com/recipes/bobby-flay/santa-maria-style-bbq-tri-tip-recipe-2014974'">View Recipe</button>
+        <button id = "triTip" class="GFG" >View Recipe</button>
         <li><h4 class="underline">French Dip Sandwich</h4></li>
         <button id = "frenchDip" class="GFG" onclick="window.location.href='https://thepioneerwoman.com/cooking/french-dip-sandwiches'">View Recipe</button>
         <li><h4 class="specials underline">Street Tacos</h4></li>
@@ -120,25 +120,25 @@
     //     }
     // + clicks + " times"
     // });
-    // var recipes = [
-    //     {website: "<a href=\https://www.foodnetwork.com/recipes/bobby-flay/santa-maria-style-bbq-tri-tip-recipe-2014974/\"></a>"},
-    //     {website: "<a href=\https://thepioneerwoman.com/cooking/french-dip-sandwiches/\"></a>"},
-    //     {website: "<a href=\https:https://www.allrecipes.com/recipe/239786/crispy-pork-carnitas/\"></a>"},
-    //     {website: "<a href=\https://'https://www.foodnetwork.com/recipes/chili-verde-recipe0-1917661'\"></a>"},
-    //     {website: "<a href=\https:// 'https://gimmedelicious.com/the-best-10-minute-cajun-blackened-shrimp/'\"></a>"},
-    //     {website: "<a href=\'https://www.foodnetwork.com/recipes/sams-anchor-cafe-cioppino-recipe-1947210'\"></a>"},
-    // ];
-    // function leavePage() {
-    //     // clearTimeout(detonationTimer);
-    //     var confirmLeave = confirm("Do you want to leave this page?");
-    //     if(confirmLeave === true){
-    //         recipes.forEach(function(recipe){
-    //             window.location.href = recipe.website;
-    //         });
-    //     }
-    // }
-    // var triTip = document.getElementById('triTip');
-    // triTip.addEventListener('click', leavePage);
+    var recipes = [
+        {website: "<a href=\https://www.foodnetwork.com/recipes/bobby-flay/santa-maria-style-bbq-tri-tip-recipe-2014974/\"></a>"},
+        {website: "<a href=\https://thepioneerwoman.com/cooking/french-dip-sandwiches/\"></a>"},
+        {website: "<a href=\https:https://www.allrecipes.com/recipe/239786/crispy-pork-carnitas/\"></a>"},
+        {website: "<a href=\https://'https://www.foodnetwork.com/recipes/chili-verde-recipe0-1917661'\"></a>"},
+        {website: "<a href=\https:// 'https://gimmedelicious.com/the-best-10-minute-cajun-blackened-shrimp/'\"></a>"},
+        {website: "<a href=\'https://www.foodnetwork.com/recipes/sams-anchor-cafe-cioppino-recipe-1947210'\"></a>"},
+    ];
+    function leavePage() {
+        // clearTimeout(detonationTimer);
+        var confirmLeave = confirm("Do you want to leave this page?");
+        if(confirmLeave === true){
+            recipes.forEach(function(recipe){
+                window.location.href = 'https://ide.geeksforgeeks.org';
+            });
+        }
+    }
+    var triTip = document.getElementById('triTip');
+    triTip.addEventListener('click', leavePage);
 
 </script>
 </body>
