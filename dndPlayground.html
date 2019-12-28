@@ -6,34 +6,57 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DND</title>
+    <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Marck+Script&display=swap" rel="stylesheet">
     <style>
         /*===================GRID LAYOUT==============================================================================*/
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
         .parent {
             display: grid;
             height: 100vh;
             width: 100fr;
             grid-template-columns: 50% 50%;
-            grid-template-rows: 15% 10% 15% 25% 35%;
+            grid-template-rows: 15% 10% 10% 15% 50%;
             /*grid-column-gap: 0px;*/
             /*grid-row-gap: 0px;*/
         }
 
         .title { grid-area: 1 / 1 / 2 / 3; }
         .navBar { grid-area: 2 / 1 / 3 / 3; }
-        .campName { grid-area: 3 / 1 / 4 / 3; }
-        .mission { grid-area: 4 / 1 / 5 / 3; }
-        .dice { grid-area: 5 / 1 / 6 / 2; }
+        .campName { grid-area: 3 / 1 / 4 / 3;
+                    text-align: center;
+                    color: #EC1A23;
+            text-shadow: -1px 0 black, 0 4px black, 1px 0 black, 0 2px black;
+        }
+        .mission { grid-area: 4 / 1 / 6 / 2; }
+        .dice { grid-area: 4 / 2 / 5 / 3; }
         .character { grid-area: 5 / 2 / 6 / 3; }
         /*===================TITLE STYLING============================================================================*/
         #title{
             display: flex;
-            color: darkred;
+            font-family: 'VT323', monospace;
+            font-size: 2em;
+            color: black;
+            background: white;
             /*padding: .5em;*/
             /*margin: 1em;*/
             text-align: center;
-            background: black;
+            /*background: white;*/
+            background-image: url("img/logo-dnd.png");
+            background-size: 75% 100%;
+            background-repeat: no-repeat;
             align-items: center;
             justify-content: center;
+        }
+        .right{
+            /*display: flex;*/
+            /* justify-content: end;*/
+            /* align-content: center*/
+            padding-left: 14em;
         }
         /*===================NAV STYLING==============================================================================*/
         .ulContainer{
@@ -44,19 +67,21 @@
             /*height: inherit;*/
             align-items: center;
             justify-content: space-around;
-            border: 2px solid black;
+            border-bottom: 2px solid black;
+            border-top: 2px solid black;
+            font-size: 1.5em;
+            font-family: 'VT323', monospace;
         }
         .liItems{
-            /*display: flex;*/
             padding: .5em;
 
         }
         .navStyle{
-            background-color: slategrey;
+            background-color: black;
         }
 
         a {
-            color: black;
+            color: white;
             text-decoration: none;
         }
         a:hover{
@@ -84,18 +109,51 @@
         /*    padding-top: .5em;*/
         /*    padding-bottom: .5em;*/
         /*}*/
+        /*==========================================BACKGROUND========================================================*/
+        .background{
+            background-image: url("img/foggy-mountains.jpg");
+            background-color: rgba(100,100,100,1);
+            background-blend-mode: lighten;
+            background-size: cover;
+        }
+
+        .body-text{
+            color: white;
+            font-weight: bold;
+            font-size: large;
+        }
+        .scroll{
+            background-image:url("img/scroll.png");
+            background-size: 35em 26em;
+            background-repeat: no-repeat;
+            /*background: no-repeat;*/
+            /*background: no-repeat;*/
+            z-index: 2;
+        }
+        .scrollText{
+            position: absolute;
+            top: 17em;
+            left: 6em;
+            width: 18em;
+            z-index: 1;
+            color: #393432;
+            font-weight: lighter;
+            font-family: 'Marck Script', cursive;
+            font-size: 1.2em;
+        }
+
         /*==========================================END STYLING=======================================================*/
     </style>
 </head>
-<body>
+<body class="background body-text">
 
 <!--================================PARENT GRID======================================================================-->
 <div class="parent">
 
     <!--================================TITLE========================================================================-->
 
-    <div class="title" id="title"><h1>
-    D&D Playground</h1></div>
+    <div class="title" id="title"><h1 class="right">
+    Playground</h1></div>
     <!--================================NAV START====================================================================-->
 
     <div class="navBar">
@@ -110,22 +168,107 @@
 
     <!--================================CAMPAIGN TITLE===============================================================-->
 
-    <div class="campName"> Campaign Name</div>
+    <div class="campName"> <h1>The Return of the Wicked Covenant</h1></div>
     <!--================================MISSION STMT=================================================================-->
 
-    <div class="mission">Mission statement....... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi illum laboriosam mollitia nobis numquam officia quasi quibusdam repellendus, repudiandae tempora. Beatae expedita quibusdam saepe sit sunt voluptate. Amet, culpa facere! </div>
+    <div class="mission scroll">
+        <p class="scrollText">
+        Mission statement....... This is an adventure about dragon things and we will go do the killings of the dragons unless you die first because oh yeah there is monsters and you might not get along with people but you also might and learn lots of cool things so hey there's that but anyway... adventure and stuff!
+        </p>
+    </div>
     <!--================================DICE ROLL====================================================================-->
 
-    <div class="dice"> dice here</div>
+    <div class="dice">
+        <h4>Roll Some Dice!</h4>
+
+        <!--=======================================Dice Selector=====================================================-->
+        <label for="dice-selection" class="labels">Type of Dice: </label>
+        <select id="dice-selection">
+            <option value="">Select..</option>
+            <option value="4">D4</option>
+            <option value="6">D6</option>
+            <option value="8">D8</option>
+            <option value="10">D10</option>
+            <option value="12">D12</option>
+            <option value="20">D20</option>
+            <option value="100">D100</option>
+        </select>
+<br>
+        <!-- ========================================Number of Dice Selector=========================================-->
+        <label for="dice-num" class="labels">How Many? </label>
+
+        <input type="text" id="dice-num" placeholder="Number of Dice..." onsubmit="diceRoll()">
+        <br>
+        <button onclick="diceRoll()">Roll!</button>
+        <br>
+        <div id="diceResult"></div>
+
+
+    </div>
     <!--================================NPC GENERATOR================================================================-->
 
     <div class="character"> NPC</div>
+    <button onclick="generateNPC()">Generate!</button>
+    <br>
+    <div id="charText"></div>
 </div>
 
 <!--================================END OF PARENT GRID START OF JS===================================================-->
 
 <script>
 
+    //===============================================Roll Dice!=========================================================
+    function diceRoll() {
+        var dice = []; //initialize result variable
+
+        //Get values from input fields
+        var type = document.getElementById('dice-selection').value;
+        var numDice = document.getElementById('dice-num').value;
+
+        //Generate values from input
+       for (var i=0; i<numDice; i++ ) {
+           dice.push(Math.floor(Math.random()*100%type)+1);
+       }
+
+       //Display values generated
+       var diceBody = document.getElementById('diceResult');
+       diceBody.innerHTML = dice.toString();
+    }
+
+    //===========================================Clear Selections on Load===============================================
+    document.getElementById('dice-selection').value = "";
+    document.getElementById('dice-num').value = "";
+
+
+
+    document.getElementById("dice-num").addEventListener("keyup", function(event) {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+            diceRoll();
+        }
+    });
+    //===========================================NPC GENERATING=========================================================
+var firstName =["Edric","Bartholomew","Gwendolyn","Elsa","Angel","Francis","Clarence","Lester","Hilda","Elias"] ;
+var lastName = ["Griffith","Leopald","Powell","Baker","Woodward","Hotchkiss","Savage","Beasley","Wellington","Helberg"];
+var origin = ["Woodlands","Capital City","Farm Lands","Survivalist","Nobility","Slums","Traveling Merchant","Church Orphan","Military","Criminal"];
+var occupation = ["Religious Advisor","Messenger","Shop Keep","Guard","Laborer","Craftsman","Scribe","Entertainer","Mercenary","Influential Leader"];
+var personalityType = ["Approachable","Unapproachable","Aggressive","Friendly","Sarcastic","Shy","Dimwitted","Haughty","Flirtatious","Mute"];
+var physicalDescriptions = ["Tall","Short","Chubby","Thin","Weathered","Ugly","Attractive","Built","Dapper","Unkempt"];
+
+
+
+var randomNum = function (){
+    return Math.floor(Math.random()*10);
+};
+
+
+function generateNPC() {
+    var text = "<body>";
+    text+= "Name: " + firstName[randomNum()] + " " + lastName[randomNum()] + "<br>" + "Origin: " + origin[randomNum()] + "<br>" + "Occupation: " + occupation[randomNum()] + "<br>" + "Personality: " + personalityType[randomNum()] + "<br>" +  "Description: " + physicalDescriptions[randomNum()];
+    text += "</body>";
+    var charText = document.getElementById('charText');
+    charText.innerHTML = text.toString();
+}
 
 
 </script>
