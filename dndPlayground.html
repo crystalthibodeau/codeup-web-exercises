@@ -20,7 +20,7 @@
             height: 100vh;
             width: 100fr;
             grid-template-columns: 50% 50%;
-            grid-template-rows: 15% 10% 10% 15% 50%;
+            grid-template-rows: 15% 10% 10% 20% 45%;
             /*grid-column-gap: 0px;*/
             /*grid-row-gap: 0px;*/
         }
@@ -141,7 +141,30 @@
             font-family: 'Marck Script', cursive;
             font-size: 1.2em;
         }
-
+        button{
+            width: 6em;
+            height: 2em;
+            background: lightgray;
+            color: black;
+            border: 1px solid black;
+            box-shadow: 0 0 5px black;
+            font-weight: bold;
+            font-size: .55em;
+        }
+        /*===================BODY TEXT STYLING========================================================================*/
+        .bodyText{
+            font-size: 1.5em;
+            padding: 1em;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 1px black;
+        }
+        .diceText{
+            font-size: 1em;
+            padding: .65em;
+        }
+        .npcText{
+            font-size: .75em;
+            margin: 1em;
+        }
         /*==========================================END STYLING=======================================================*/
     </style>
 </head>
@@ -161,6 +184,7 @@
             <ul class="ulContainer navStyle">
                 <li class="liItems navItem1"><a href="">Character</a></li>
                 <li class="liItems navItem2"><a href="">Map</a></li>
+<!--                <li class="liItems navItem3"><a href="">Index</a></li>-->
                 <li class="liItems navItem3"><a href="">Search</a></li>
             </ul>
         </nav>
@@ -178,7 +202,7 @@
     </div>
     <!--================================DICE ROLL====================================================================-->
 
-    <div class="dice">
+    <div class="dice bodyText">
         <h4>Roll Some Dice!</h4>
 
         <!--=======================================Dice Selector=====================================================-->
@@ -201,16 +225,20 @@
         <br>
         <button onclick="diceRoll()">Roll!</button>
         <br>
-        <div id="diceResult"></div>
+        <div id="diceResult" class="diceText"></div>
+        <br>
 
 
     </div>
     <!--================================NPC GENERATOR================================================================-->
 
-    <div class="character"> NPC</div>
-    <button onclick="generateNPC()">Generate!</button>
-    <br>
-    <div id="charText"></div>
+    <div class="character bodyText">
+        <br>
+        <p> Non-Player Character Generater </p>
+        <button onclick="generateNPC()">Generate</button>
+        <br>
+        <div id="charText" class="npcText"></div>
+    </div>
 </div>
 
 <!--================================END OF PARENT GRID START OF JS===================================================-->
