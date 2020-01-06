@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            background: url("img/arcade.jpg");
+            background-size: cover;
+        }
+        h1{
+            color: #3421A0;
+            font-size: 50px;
+            /*background-color: #49ff18*/
+
+            /*font-weight: bold;*/
+        }
+    </style>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script>
+    function konami(fn) {
+        var input = "";
+        var pattern = "3838404037393739666513";
+        $(document).keydown(function(e) {
+            input += e.keyCode;
+            if (input.indexOf(pattern) !== -1) {
+                fn();
+                input = "";
+                $('h1').css({
+                    "color" : "#ABFCFB",
+                    "text-shadow": "0px 2px 4px #2902E1"});
+                $('body').css('background-image','url(img/arcade2.jpg)', 'background-size', 'cover');
+            }
+        });
+    }
+    $(document).ready(function() {
+        konami(function() {
+            alert("You did the Konami! W00t!");
+        });
+    });
+
+
+
+</script>
+</body>
+</html>

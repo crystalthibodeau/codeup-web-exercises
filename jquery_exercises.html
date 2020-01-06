@@ -11,12 +11,14 @@
             display: flex;
             font-family: "American Typewriter";
             background: url('img/fireworks.jpg');
-            background-size:cover;
-            color: #F5A44D;
+            background-size: cover;
+            /*background-repeat: no-repeat;*/
+            color: #77B6F5;
+            text-shadow: -2px 4px 3px rgba(28,110,164,0.77);
             font-weight: bold;
-            justify-content: flex-start;
-            align-content: space-between;
-            text-shadow: -1px 0 black, 0 3px black, 1px 0 black, 0 -1px black;
+            justify-content: center;
+            align-content: center;
+            /*text-shadow: -1px 0 black, 0 3px black, 1px 0 black, 0 -1px black;*/
         }
         .style{
             color: white;
@@ -29,11 +31,25 @@
             /*opacity: 0.5; */
 
         }
+        #button{
+            display: flex;
+            width: 6em;
+            height: 3em;
+            border-radius: 12px;
+            justify-content: center;
+            align-content: center;
+            /*margin-left: 10em;*/
+            margin-top: 1em;
+        }
+        .highlight{
+            background-color: yellow;
+        }
     </style>
 </head>
 <body>
 <div>
     <h1 id="title" class="codeup">jQuery</h1>
+    <h1>Happy New Year!!</h1>
     <h3 id="pageHeader" class="fancyText">New Years Resolution</h3>
     <p id="missionStatement">This year will be the best year yet! Enter what you would like to focus<br> on in the new year to work towards being a better you!</p>
 
@@ -41,10 +57,19 @@
         <li class="resolution">Lose Weight</li>
         <li class = "resolution sleep">Improve Sleep Patterns</li>
         <li class = "resolution numberOne">Spend More Time Outside</li>
-        <li class="codeup">Start Career!</li>
+        <li class="codeup">Start a Career!</li>
     </ul>
-<button id="button">Try me!</button>
-    <input type="text" id="textBox" placeholder="Enter Resolution">
+
+    <form name="resForm" action="">
+        <div>
+            <label for="textBox">What do you want to do this year?</label>
+            <input id="textBox" name="text" type="text" placeholder="Enter Resolution..">
+        </div>
+    </form>
+    <button id="button">Click Me!</button>
+
+<!--<button id="button">Try me!</button>-->
+<!--    <input type="text" id="textBox" placeholder="Enter Resolution">-->
 </div>
 <!--<button id="liToBlue">Try me!</button>-->
 <!--============================================Start of JavaScript==================================================-->
@@ -59,8 +84,9 @@
 
         // alert( 'The DOM has finished loading!' );
         // INSERT JAVASCRIPT CODE SAMPLE HERE
-        console.log($);
-        console.log(jQuery);
+        //
+        // console.log($);
+        // console.log(jQuery);
 
         // $(".numberOne").addClass("style");
         $(".numberOne").click(function(){
@@ -68,19 +94,54 @@
         });
         var numberOne = $(".numberOne").html();
         // alert(numberOne);
-        // $("#button").click(function(){})
+
         // $('.codeup').css('border', '1px solid red');
-        $('li').css('font-size', '20px');
-        // $('h1, p, li').css('background', 'blue');
-        var contents = $('h1').html();
+
+        // $('li').css('font-size', '20px');
+
+        // $('h1, p, li').addClass("highlight");
+
+        // var contents = $('h1').html();
         // alert(contents);
-        // $('#pageHeader').hover( handlerIn, handlerOut )
-        $('#pageHeader').hover(
+
+        // alert($('h1').html());//only alerts first!!
+
+        // var h1 = $('h1').html();//only alerts first!!
+        // alert(h1);
+
+        // $("h1").onload(function(){
+        //     alert('h1').html;
+        // });
+
+        // $('#pageHeader').hover(
+        //     function() {
+        //         $(this).css('background-color', '#001F46');
+        //     },
+        //     function() {
+        //         $(this).css('background-color', '#01060C');
+        //     }
+        // );
+
+
+
+        $('h1').click(
             function() {
-                $(this).css('background-color', 'blue');
+                $(this).css('background-color', '#F439A1');
+            }
+        );
+
+        $('p').dblclick(
+            function() {
+                $(this).css('font-size', '18px');
+            }
+        );
+
+        $('li').hover(
+            function() {
+                $('li').css('color', 'red');
             },
             function() {
-                $(this).css('background-color', '#001F46');
+                $('li').css('color', 'black');
             }
         );
 
