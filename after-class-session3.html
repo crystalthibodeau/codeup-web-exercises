@@ -156,7 +156,55 @@
         }
         return allMultiplied;
     }
-    console.log((productOfAll([2, 2, 2])));
+    // console.log((productOfAll([2, 2, 2])));
+
+
+
+
+
+    function onlyPositiveNumbers(nums){
+        var numBucket = [];
+        for(var i = 0; i < nums.length; i++){
+            if(nums[i] >0){
+                numBucket.push(nums[i]);
+            }
+        }
+        return numBucket;
+
+    }
+
+
+    function onlyEvenNumbers(nums){
+        var numBucket = [];
+        for(var i = 0; i < nums.length; i++){
+            if(nums[i] % 2 === 0){
+                numBucket.push(nums[i]);
+            }
+        }
+        return numBucket;
+
+    }
+
+
+
+    function onlyPositiveEvens (nums){
+        var positivelyEvens = [];
+        var a;
+        var b;
+        a = onlyPositiveNumbers(nums);
+        b = onlyEvenNumbers(a);
+        // positivelyEvens.push(a);
+        positivelyEvens.push(b);
+        alert(positivelyEvens);
+        return positivelyEvens;
+
+    }
+
+
+        console.log(onlyPositiveEvens([2, 3, 4, -1, -5]));
+        console.log(onlyPositiveEvens([1, -2, 3]));
+
+
 </script>
 
 </body>
