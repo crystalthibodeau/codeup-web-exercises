@@ -6,22 +6,86 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JQuery</title>
+    <style>
+        body{
+            display: flex;
+            font-family: "American Typewriter";
+            background: url('img/fireworks.jpg');
+            background-size:cover;
+            color: #F5A44D;
+            font-weight: bold;
+            justify-content: flex-start;
+            align-content: space-between;
+            text-shadow: -1px 0 black, 0 3px black, 1px 0 black, 0 -1px black;
+        }
+        .style{
+            color: white;
+            background: lightslategrey;
+            font-family: "Work Sans";
+            width: 25%;
+        }
+        #textBox{
+            /*border: 1px solid white;*/
+            /*opacity: 0.5; */
+
+        }
+    </style>
 </head>
 <body>
-<h1>jQuery</h1>
+<div>
+    <h1 id="title" class="codeup">jQuery</h1>
+    <h3 id="pageHeader" class="fancyText">New Years Resolution</h3>
+    <p id="missionStatement">This year will be the best year yet! Enter what you would like to focus<br> on in the new year to work towards being a better you!</p>
+
+    <ul id ="resolutionsContainer">
+        <li class="resolution">Lose Weight</li>
+        <li class = "resolution sleep">Improve Sleep Patterns</li>
+        <li class = "resolution numberOne">Spend More Time Outside</li>
+        <li class="codeup">Start Career!</li>
+    </ul>
+<button id="button">Try me!</button>
+    <input type="text" id="textBox" placeholder="Enter Resolution">
+</div>
+<!--<button id="liToBlue">Try me!</button>-->
 <!--============================================Start of JavaScript==================================================-->
 <!--============================================JQuery Links=========================================================-->
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <!--integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"-->
 <script>
+    (function(){
     "use strict";
 
     $(document).ready(function() {
 
-        alert( 'The DOM has finished loading!' );
+        // alert( 'The DOM has finished loading!' );
         // INSERT JAVASCRIPT CODE SAMPLE HERE
+        console.log($);
+        console.log(jQuery);
 
-    });
+        // $(".numberOne").addClass("style");
+        $(".numberOne").click(function(){
+            alert(numberOne);
+        });
+        var numberOne = $(".numberOne").html();
+        // alert(numberOne);
+        // $("#button").click(function(){})
+        // $('.codeup').css('border', '1px solid red');
+        $('li').css('font-size', '20px');
+        // $('h1, p, li').css('background', 'blue');
+        var contents = $('h1').html();
+        // alert(contents);
+        // $('#pageHeader').hover( handlerIn, handlerOut )
+        $('#pageHeader').hover(
+            function() {
+                $(this).css('background-color', 'blue');
+            },
+            function() {
+                $(this).css('background-color', '#001F46');
+            }
+        );
+
+    })
+    })();
     <!--============================================end of JS========================================================-->
 </script>
 </body>
