@@ -224,9 +224,27 @@
     }
         return false;
     };
-console.log(contains([1, 2, 3], 3));//true
-console.log(contains([1, 2, 3], 6));//false
-console.log(contains(['hat', 'bat', 'cat'], "cat"));//true
+// console.log(contains([1, 2, 3], 3));//true
+// console.log(contains([1, 2, 3], 6));//false
+// console.log(contains(['hat', 'bat', 'cat'], "cat"));//true
+
+function fizzBuzz(num){
+    for(var i =0; i <=num; i++){
+        if(i % 15 === 0){
+            console.log("fizzbuzz")
+        }
+        else if (i % 3 === 0){
+            console.log("fizz");
+        }
+        else if(i % 5 === 0){
+            console.log("buzz");
+        }
+        else {
+            console.log(i);
+        }
+    }
+}
+console.log(fizzBuzz(100));
 
 </script>
 </body>
