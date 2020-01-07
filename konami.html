@@ -2,47 +2,128 @@
 <html>
 <head>
     <title>Konami Code</title>
-    <style>
-        body{
-            display: flex;
-            justify-content: center;
-            background: url("img/arcade.jpg");
-            background-size: cover;
-        }
-        h1{
-            color: #3421A0;
-            font-size: 50px;
-            /*background-color: #49ff18*/
-
-            /*font-weight: bold;*/
-        }
-    </style>
+<!--    ==============================================PAGE LINKS=====================================================-->
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link  rel="stylesheet" href="css/konami.css">
 </head>
-<body>
-<h1>Konami Code</h1>
+<body class="parentBody">
+<audio id="pac">
+    <source src="img/Extra-pacman.mp3" type="audio/mp3">
+</audio>
+<audio id="pacPlay">
+    <source src="img/pacman-intro.mp3" type="audio/mp3">
+</audio>
+<audio id="invader">
+    <source src="img/invader-theme.mp3" type="audio/mp3">
+</audio>
+    <div class="header">
+       <h1> Konami Code </h1>
+    </div>
+    <div class="game1"> </div>
+    <div class="game2"> </div>
+
+<!--    ==============================================SCRIPT START===================================================-->
 
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<!--    ==============================================KONAMI FUNCTION================================================-->
+
 <script>
-    function konami(fn) {
+
+    function KonamiCode() {
+        var key = '3838404037393739666513';
         var input = "";
-        var pattern = "3838404037393739666513";
-        $(document).keydown(function(e) {
-            input += e.keyCode;
-            if (input.indexOf(pattern) !== -1) {
-                fn();
-                input = "";
-                $('h1').css({
-                    "color" : "#ABFCFB",
-                    "text-shadow": "0px 2px 4px #2902E1"});
-                $('body').css('background-image','url(img/arcade2.jpg)', 'background-size', 'cover');
+        $(document).keyup(function (event) {
+            console.log(event.keyCode);
+            input += ("" + event.keyCode);
+            if (input === key) {
+                <!--    ===============================BODY CSS AFTER CODE===========================================-->
+                $('body').css({
+                    'background': 'black',
+                    'width': '100%',
+                    'height': '100%',
+                    "font-weight": "bold",
+                    "text-shadow" : "0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #3421A0, 0 0 30px #3421A0, 0 0 40px #3421A0, 0 0 55px #3421A0, 0 0 75px #3421A0, 2px 2px 0px rgba(25,201,206,0)"
+                });
+                $('div.header').html("<h1>The Arcade Room!</h1>");
+                $('div.game1').html('<p> Pac Man</p>');
+                $('div.game2').html('<p> Space Invaders</p>');
+                $('audio#pac')[0].play();
+
             }
-        });
+            console.log(!key.indexOf(input));
+            if (!key.indexOf(input)){
+                return !key.indexOf(input);
+            }
+            input = ("" + event.keyCode)
+        })
     }
-    $(document).ready(function() {
-        konami(function() {
-            alert("You did the Konami! W00t!");
-        });
-    });
+
+    KonamiCode();
+
+
+    <!--    ==============================================PACMAN CODE================================================-->
+
+    function pacMan() {
+        var key = '38406513';
+        var input = "";
+        $(document).keyup(function (event) {
+            console.log(event.keyCode);
+            input += ("" + event.keyCode);
+            if (input === key) {
+                <!--    ===============================BODY CSS AFTER CODE===========================================-->
+
+                $('body').css({
+                    'background': 'url("img/pacman-background-epic.png")',
+                    'background-size' : 'cover',
+                    'width': '100%',
+                    'height': '100%',
+                    "font-weight": "bold",
+                    "text-shadow" : "0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #3421A0, 0 0 30px #3421A0, 0 0 40px #3421A0, 0 0 55px #3421A0, 0 0 75px #3421A0, 2px 2px 0px rgba(25,201,206,0)"
+
+                });
+                $('audio#pacPlay')[0].play();
+                $('div.header').html("<h1>Pacman Unlocked</h1>");
+                $('div.game1').html('<p> 30 Lives</p>');
+                $('div.game2').html('<p>Remaining</p>');
+            }
+            console.log(!key.indexOf(input));
+            if (!key.indexOf(input)){return !key.indexOf(input);}
+            input = ("" + event.keyCode)
+        })
+    }
+    pacMan();
+
+    <!--    ==============================================SPACE INVADERS CODE========================================-->
+
+    function invader() {
+        var key = '38406613';
+        var input = "";
+        $(document).keyup(function (event) {
+            console.log(event.keyCode);
+            input += ("" + event.keyCode);
+            if (input === key) {
+                <!--    ===============================BODY CSS AFTER CODE===========================================-->
+
+                $('body').css({
+                    'background': 'url("img/spaceinvader2.gif")',
+                    'background-size' : 'cover',
+                    'width': '100%',
+                    'height': '100%',
+                    "font-weight": "bold",
+                    "text-shadow" : "0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #3421A0, 0 0 30px #3421A0, 0 0 40px #3421A0, 0 0 55px #3421A0, 0 0 75px #3421A0, 2px 2px 0px rgba(25,201,206,0)"
+
+                });
+                $('audio#invader')[0].play();
+                $('div.header').html("<h1>Space Invaders Extra</h1>");
+                $('div.game1').html('<p> UNLOCKED</p>');
+                $('div.game2').html('<p>30 Lives</p>');
+            }
+            console.log(!key.indexOf(input));
+            if (!key.indexOf(input)){return !key.indexOf(input);}
+            input = ("" + event.keyCode)
+        })
+    }
+    invader();
 
 
 

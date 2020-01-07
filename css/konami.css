@@ -1,0 +1,46 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: space-around;
+    background: url("../img/arcade.jpg");
+    background-size: cover;
+    font-family: 'Press Start 2P', cursive;
+    text-shadow : 1px 0px 8px #FFF;
+    color: #3421A0;
+
+}
+.parentBody {
+    display: grid;
+    grid-template-columns: 5% 90% 5%;
+    grid-template-rows: 40% repeat(3, 20%);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.header { grid-area: 1 / 2 / 2 / 3; }
+.game1 {
+    grid-area: 2 / 2 / 3 / 3;
+    padding: 1em;
+}
+.game2 {
+    grid-area: 3 / 2 / 4 / 3;
+    padding: 1em;
+}
+h1{
+    font-size: 55px;
+    padding: 1em;
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF,
+    0 0 15px #FFF, 0 0 20px #3421A0, 0 0 30px #3421A0,
+    0 0 40px #3421A0, 0 0 55px #3421A0, 0 0 75px #3421A0,
+    2px 2px 0px rgba(25,201,206,0);
+}
+div{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+P{
+    font-size: 30px;
+}
