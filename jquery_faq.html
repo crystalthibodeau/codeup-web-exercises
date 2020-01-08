@@ -14,46 +14,143 @@
             background-color: deepskyblue;
             width: 15%;
         }
+        .body {
+            display: grid;
+            grid-template-columns: 13% 25% 24% 25% 13%;
+            grid-template-rows: 8% 23% 23% 23% 23%;
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            width: 100%;
+            height: 100%;
+        }
+        .header { grid-area: 1 / 2 / 2 / 5; }
+        .newsLetter { grid-area: 1 / 5 / 2 / 6; }
+        .faqs { grid-area: 2 / 3 / 6 / 4; }
+        .frame1 { grid-area: 2 / 2 / 3 / 3; }
+        .frame2 { grid-area: 4 / 2 / 5 / 3; }
+        .frame3 { grid-area: 2 / 4 / 3 / 5; }
+        .frame4 { grid-area: 4 / 4 / 5 / 5; }
+
+        .center{
+            text-align: center;
+        }
+        .right{
+        padding-left: 9em;
+        }
+        
+        img {
+            /*border:solid 2px;*/
+            border-bottom-color:#ffe;
+            border-left-color:#eed;
+            border-right-color:#eed;
+            border-top-color:#ccb;
+            height:100%;
+            width:100%;
+        }
+
+        .frame {
+            background-color: #ddc;
+            border: solid 5vmin #eee;
+            border-bottom-color: #fff;
+            border-left-color: #eee;
+            border-radius: 2px;
+            border-right-color: #eee;
+            border-top-color: #ddd;
+            box-shadow: 0 0 5px 0 rgba(0, 0, 0, .25) inset, 0 5px 10px 5px rgba(0, 0, 0, .25);
+            box-sizing: border-box;
+            display: inline-block;
+            height:100%;
+            width: 90%;
+            position: relative;
+            text-align: center;
+        }
+        .frame:before {
+             border-radius:2px;
+             bottom:-2vmin;
+             box-shadow:0 2px 5px 0 rgba(0,0,0,.25) inset;
+             content:"";
+             left:-2vmin;
+             position:absolute;
+             right:-2vmin;
+             top:-2vmin;
+         }
+        .frame:after {
+             border-radius:2px;
+             bottom:-2.5vmin;
+             box-shadow: 0 2px 5px 0 rgba(0,0,0,.25);
+             content:"";
+             left:-2.5vmin;
+             position:absolute;
+             right:-2.5vmin;
+             top:-2.5vmin;
+         }
+        
     </style>
 </head>
-<body>
-<h1>National Park Facts</h1>
-<dl>
-    <dt>Hot Springs National Park</dt>
-    <dd>The thermal hot springs waters in this park heat naturally to 143ºF.</dd>
+<body class="body">
 
-    <dt>Lake Clark National Park</dt>
-    <dd>Lake Clark, centrally located in Lake Clark National Park, is a 50-mile-long clear, turquoise body of water that is fed by glaciers, waterfalls, rivers, and streams.</dd>
+<div class="header center">
+    <h1>National Park Facts</h1>
+</div>
 
-    <dt>Mammoth Cave National Park</dt>
-    <dd>Mammoth Cave National Park is the world's longest known cave system, with more than 400 miles explored.</dd>
+<div class="faqs">
+    <a href="#" id="highlight-important">Click to hide text</a>
+    <a href="#" id="dehighlight-important">Click to show text.</a>
+    <dl>
+        <dt>Hot Springs National Park</dt>
+        <dd>The thermal hot springs waters in this park heat naturally to 143ºF.</dd>
 
-    <dt>Redwood National Park</dt>
-    <dd>Redwood National Park is home to the world's tallest tree called Hyperion, which earned recognition from the Guinness Book of World Records and remarkably grows on a hill.</dd>
+        <dt>Lake Clark National Park</dt>
+        <dd>Lake Clark, centrally located in Lake Clark National Park, is a 50-mile-long clear, turquoise body of water that is fed by glaciers, waterfalls, rivers, and streams.</dd>
 
-    <dt>Sequoia National Park</dt>
-    <dd>Providing superpower protection, the bark of a giant sequoia tree may be thickest of any tree on Earth––some outer layers of bark measure over two feet thick at the base, providing protection against elements.</dd>
+        <dt>Mammoth Cave National Park</dt>
+        <dd>Mammoth Cave National Park is the world's longest known cave system, with more than 400 miles explored.</dd>
 
-    <dt>Yellowstone National Park</dt>
-    <dd>Yellowstone sits atop the largest supervolcano in North America.</dd>
+        <dt>Redwood National Park</dt>
+        <dd>Redwood National Park is home to the world's tallest tree called Hyperion, which earned recognition from the Guinness Book of World Records and remarkably grows on a hill.</dd>
 
-    <dt>Big Bend National Park</dt>
-    <dd>Historically, people traveled to the Hot Springs Historic District in Big Bend to heal their ailments. Today, visitors can soak in the 105-degree water that gushes from the old foundation of a bathhouse.</dd>
+        <dt>Sequoia National Park</dt>
+        <dd>Providing superpower protection, the bark of a giant sequoia tree may be thickest of any tree on Earth––some outer layers of bark measure over two feet thick at the base, providing protection against elements.</dd>
 
-    <dt>Capitol Reef National Park</dt>
-    <dd>The rocks in Capitol Reef National Park are up to 270 million years old.</dd>
+        <dt>Yellowstone National Park</dt>
+        <dd>Yellowstone sits atop the largest supervolcano in North America.</dd>
 
-    <dt>Channel Islands National Park</dt>
-    <dd>Divers and snorkelers can explore the watery remains of the Winfield Scott shipwreck. Between 1850 and 1900, at least 33 ships were wrecked in the Santa Barbara Channel.</dd>
+        <dt>Big Bend National Park</dt>
+        <dd>Historically, people traveled to the Hot Springs Historic District in Big Bend to heal their ailments. Today, visitors can soak in the 105-degree water that gushes from the old foundation of a bathhouse.</dd>
 
-    <dt>Great Smoky Mountains National Park</dt>
-    <dd>This park is home to over 1,500 types of flowering plants that bloom year-round. A Spring Wildflower Pilgrimage takes places each year, a festival with many guided walks and hikes.</dd>
-</dl>
+        <dt>Capitol Reef National Park</dt>
+        <dd>The rocks in Capitol Reef National Park are up to 270 million years old.</dd>
 
-<a href="#" id="highlight-important">Click to hide text</a>
-<a href="#" id="dehighlight-important">Click to show text.</a>
+        <dt>Channel Islands National Park</dt>
+        <dd>Divers and snorkelers can explore the watery remains of the Winfield Scott shipwreck. Between 1850 and 1900, at least 33 ships were wrecked in the Santa Barbara Channel.</dd>
 
-<a href="https://www.nationalgeographic.com/travel/destinations/north-america/united-states/fun-facts-national-parks/#close">National Geographics Travel Destinations</a>
+        <dt>Great Smoky Mountains National Park</dt>
+        <dd>This park is home to over 1,500 types of flowering plants that bloom year-round. A Spring Wildflower Pilgrimage takes places each year, a festival with many guided walks and hikes.</dd>
+    </dl>
+    <a href="https://www.nationalgeographic.com/travel/destinations/north-america/united-states/fun-facts-national-parks/#close">Nat-Geo Travel Destinations</a>
+</div>
+
+<div class="newsLetter">
+    <a href="#">Would you like to sign up for our news letter?</a>
+    <div class="right">X</div>
+</div>
+
+<div class="frame1 frame">
+    <img src="img/foggy-mountains.jpg" alt="">
+</div>
+
+<div class="frame2 frame">
+    <img src="img/foggy-mountains.jpg" alt="">
+</div>
+
+<div class="frame3 frame">
+    <img src="img/foggy-mountains.jpg" alt="">
+</div>
+
+<div class="frame4 frame">
+    <img src="img/foggy-mountains.jpg" alt="">
+</div>
+
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script>
     "use strict";
