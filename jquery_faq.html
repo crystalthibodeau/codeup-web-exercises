@@ -7,49 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>jquery_faq.html</title>
     <style>
+        *{
+            box-sizing: border-box;
+        }
         body{
             background-color: #A5A7AD;
+            background:url("img/clouds.jpg") ;
+            background-size: cover;
             color: #444A51;
         }
-        .invisible{
-            visibility: hidden;
-        }
-        .fadeInStyle{
-            color: #1969B2;
-            font-size: 2em;
-        }
-        .highlight{
-            background-color: deepskyblue;
-            width: 65%;
-        }
-        .body {
-            display: grid;
-            grid-template-columns: 13% 25% 24% 25% 13%;
-            grid-template-rows: 8% 23% 23% 23% 23%;
-            grid-column-gap: 0px;
-            grid-row-gap: 0px;
-            width: 100%;
-            height: 100%;
-        }
-        .header { grid-area: 1 / 2 / 2 / 5; }
-        .newsLetter { grid-area: 1 / 5 / 2 / 6; }
-        .faqs { grid-area: 2 / 3 / 6 / 4; }
-        .frame1 { grid-area: 2 / 2 / 3 / 3; }
-        .frame2 { grid-area: 4 / 2 / 5 / 3; }
-        .frame3 { grid-area: 2 / 4 / 3 / 5; }
-        .frame4 { grid-area: 4 / 4 / 5 / 5; }
-
-        .center{
-            text-align: center;
-        }
-        .right{
-        padding-left: 9em;
-        }
-
         li{
             list-style: none;
         }
-        
+
         img {
             /*border:solid 2px;*/
             border-bottom-color:#ffe;
@@ -59,7 +29,62 @@
             height:100%;
             width:100%;
         }
+        button{
+            width: 10em;
+            height: 1.75em;
+            /*display: flex;*/
+            /*align-items: center;*/
+            /*justify-content: center;*/
+        }
+        a{
+            color: #1969B2;
+        }
+        .invisible{
+            visibility: hidden;
+        }
+        .fadeInStyle{
+            color: #1969B2;
+            font-size: 1em;
+            text-decoration: underline;
+        }
+        .highlight{
+            background-color: deepskyblue;
+            width: 55%;
+        }
+        .body {
+            display: grid;
+            grid-template-columns: 13% 25% 24% 25% 13%;
+            grid-template-rows: 10% repeat(3, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            width: 100vw;
+            height: 100vh;
+            /*height:100%;*/
+            /*width:100%;*/
+        }
 
+        .header { grid-area: 1 / 2 / 2 / 5; }
+        .faqs { grid-area: 2 / 3 / 5 / 4; }
+        .frame1 { grid-area: 2 / 2 / 3 / 3; }
+        .frame2 { grid-area: 3 / 2 / 4 / 3; }
+        .frame3 { grid-area: 2 / 4 / 3 / 5; }
+        .frame4 { grid-area: 3 / 4 / 4 / 5; }
+        .newsLetter { grid-area: 1 / 5 / 2 / 6; }
+        .newsletter2 { grid-area: 1 / 1 / 2 / 2; }
+        .button1 { grid-area: 2 / 1 / 3 / 2; }
+        .button2 { grid-area: 3 / 1 / 4 / 2; }
+        .button3 { grid-area: 2 / 5 / 3 / 6; }
+        .button4 { grid-area: 3 / 5 / 4 / 6; }
+
+        .center{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+        .right{
+        padding-left: 9em;
+        }
 
         .frame {
             background-color: #ddc;
@@ -98,47 +123,52 @@
              right:-2.5vmin;
              top:-2.5vmin;
          }
-        a{
-            color: #1969B2;
-        }
         .topDown{
-            margin-top: 4em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /*margin-top: 4em;*/
+            margin-left: 10em;
         }
-        button{
-            width: 10em;
-            height: 1.75em;
+        .paddedLeft{
+            padding-left: 2em;
         }
-        
+        .paddedRight{
+            padding-right: 2em;
+        }
     </style>
 </head>
 <body class="body">
 
-<div class="header center">
-    <h1>National Park Facts</h1>
+<div class="header">
+    <h1 class="center">National Park Facts</h1>
 </div>
 
 <div class="faqs">
-    <button id="highlight-important">Click Me!</button>
-    <button id="dehighlight-important">Click Me!</button>
-    <button id="lastHighlight">Click Me!</button>
-    <dl>
-        <dt>Hot Springs National Park</dt>
-        <dd>The thermal hot springs waters in this park heat naturally to 143ºF.</dd>
+<!--    <button id="highlight-important">Click Me!</button>-->
+<!--    <button id="dehighlight-important">Click Me!</button>-->
+    <button id="btn1-left-top" class="center topDown">Swap Images!</button>
 
-        <dt>Lake Clark National Park</dt>
-        <dd>Lake Clark, centrally located in Lake Clark National Park, is a 50-mile-long clear, turquoise body of water that is fed by glaciers, waterfalls, rivers, and streams.</dd>
+    <!--    <button id="lastHighlight">Click Me!</button>-->
 
-        <dt>Mammoth Cave National Park</dt>
-        <dd>Mammoth Cave National Park is the world's longest known cave system, with more than 400 miles explored.</dd>
+<!--    <dl>-->
+<!--        <dt>Hot Springs National Park</dt>-->
+<!--        <dd>The thermal hot springs waters in this park heat naturally to 143ºF.</dd>-->
 
-        <dt>Redwood National Park</dt>
-        <dd>Redwood National Park is home to the world's tallest tree called Hyperion, which earned recognition from the Guinness Book of World Records and remarkably grows on a hill.</dd>
+<!--        <dt>Lake Clark National Park</dt>-->
+<!--        <dd>Lake Clark, centrally located in Lake Clark National Park, is a 50-mile-long clear, turquoise body of water that is fed by glaciers, waterfalls, rivers, and streams.</dd>-->
 
-        <dt>Yellowstone National Park</dt>
-        <dd>Yellowstone sits atop the largest supervolcano in North America.</dd>
+<!--        <dt>Mammoth Cave National Park</dt>-->
+<!--        <dd>Mammoth Cave National Park is the world's longest known cave system, with more than 400 miles explored.</dd>-->
 
-        <dt>Big Bend National Park</dt>
-        <dd>Historically, people traveled to the Hot Springs Historic District in Big Bend to heal their ailments. Today, visitors can soak in the 105-degree water that gushes from the old foundation of a bathhouse.</dd>
+<!--        <dt>Redwood National Park</dt>-->
+<!--        <dd>Redwood National Park is home to the world's tallest tree called Hyperion, which earned recognition from the Guinness Book of World Records and remarkably grows on a hill.</dd>-->
+
+<!--        <dt>Yellowstone National Park</dt>-->
+<!--        <dd>Yellowstone sits atop the largest supervolcano in North America.</dd>-->
+
+<!--        <dt>Big Bend National Park</dt>-->
+<!--        <dd>Historically, people traveled to the Hot Springs Historic District in Big Bend to heal their ailments. Today, visitors can soak in the 105-degree water that gushes from the old foundation of a bathhouse.</dd>-->
 
 <!--        <dt>Capitol Reef National Park</dt>-->
 <!--        <dd>The rocks in Capitol Reef National Park are up to 270 million years old.</dd>-->
@@ -148,7 +178,7 @@
 
 <!--        <dt>Great Smoky Mountains National Park</dt>-->
 <!--        <dd>This park is home to over 1,500 types of flowering plants that bloom year-round. A Spring Wildflower Pilgrimage takes places each year, a festival with many guided walks and hikes.</dd>-->
-    </dl>
+<!--    </dl>-->
 
 <!--===============================================END OF 1ST EXERCISE===============================================-->
 
@@ -161,53 +191,67 @@
         <li>4.The bark of a giant sequoia tree may be thickest of any tree on Earth––some outer layers of bark measure over two feet thick at the base, providing protection against elements.</li>
         </ul>
 
-<!--    <h3>Sequoia National Park</h3>-->
+    <h3>Sequoia National Park</h3>
 
-<!--    <ul>-->
-<!--        <li>1.FACTS facts FaCts facts faCTS FActs facts facts FACTS!</li>-->
-<!--        <li>2.FACTS facts FaCts facts faCTS FActs facts facts FACTS!</li>-->
-<!--        <li>3.FACTS facts FaCts facts faCTS FActs facts facts FACTS!</li>-->
-<!--        <li>4.FACTS facts FaCts facts faCTS FActs facts facts FACTS!</li>-->
-<!--    </ul>-->
+    <ul>
+        <li>1.FACTS facts FaCts facts faCTS FActs facts facts FACTS!</li>
+        <li>2.FACTS facts FaCts facts faCTS FActs facts facts FACTS!</li>
+        <li>3.FACTS facts FaCts facts faCTS FActs facts facts FACTS!</li>
+        <li>4.FACTS facts FaCts facts faCTS FActs facts facts FACTS!</li>
+    </ul>
 
-<!--    <h3>Sequoia National Park</h3>-->
+    <h3>Sequoia National Park</h3>
 
-<!--    <ul>-->
-<!--        <li>1.FACTS facts FaCts facts faCTS FActs facts facts FACTS!</li>-->
-<!--        <li>2.FACTS facts FaCts facts faCTS FActs facts facts FACTS!</li>-->
-<!--        <li>3.FACTS facts FaCts facts faCTS FActs facts facts FACTS!</li>-->
-<!--        <li>4.FACTS facts FaCts facts faCTS FActs facts facts FACTS!</li>-->
+    <ul>
+        <li>1.FACTS facts FaCts facts faCTS FActs facts facts FACTS!</li>
+        <li>2.FACTS facts FaCts facts faCTS FActs facts facts FACTS!</li>
+        <li>3.FACTS facts FaCts facts faCTS FActs facts facts FACTS!</li>
+        <li>4.FACTS facts FaCts facts faCTS FActs facts facts FACTS!</li>
 
-<!--    </ul>-->
+    </ul>
 
     <a href="https://www.nationalgeographic.com/travel/destinations/north-america/united-states/fun-facts-national-parks/#close">Nat-Geo Travel Destinations</a>
 </div>
 
-<div class="newsLetter">
+<div class="newsLetter paddedRight">
+    <a href="#">Click here to sign up for our news letter!</a>
+    <div id="subscribe">X</div>
+</div>
+
+<div class="newsletter2 paddedLeft">
     <h2 id="register" class="fadeInStyle">REGISTER FOR THIS SITE!</h2>
-    <a href="#">Would you like to sign up for our news letter?</a>
-    <div class="right" id="subscribe">X</div>
+    <div id="registerX">X</div>
+
 </div>
 
-<div class="frame1 frame" id="#pic1">
-    <img src="img/fall-trees.jpg" alt="">
-    <button class="topDown">Swap Image</button>
+<!--==============================================START IMAGES======================================================-->
+<div class="frame1 frame">
+    <img src="img/fall-trees.jpg" alt="" id="pic1">
 </div>
+<!--<div class="button1">-->
+<!--    <button class="topDown" id="btn1-left-top">Swap Image</button>-->
+<!--</div>-->
 
-<div class="frame2 frame" id="#pic2">
-    <img src="img/fog-trees.jpg" alt="">
-    <button class="topDown">Swap Image</button>
+<div class="frame2 frame">
+    <img src="img/fog-trees.jpg" alt="" id="pic2">
 </div>
+<!--<div class="button2">-->
+<!--    <button class="topDown" id="btn1-left-bottom">Swap Image</button>-->
+<!--</div>-->
 
-<div class="frame3 frame" id="#pic3">
-    <img src="img/winter-trees.jpg" alt="">
-    <button class="topDown">Swap Image</button>
+<div class="frame3 frame">
+    <img src="img/winter-trees.jpg" alt="" id="pic3">
 </div>
+<!--<div class="button3">-->
+<!--    <button class="topDown" id="btn1-right-top">Swap Image</button>-->
+<!--</div>-->
 
-<div class="frame4 frame" id="#pic4">
-    <img src="img/foggy-mountains.jpg" alt="">
-    <button class="topDown">Swap Image</button>
+<div class="frame4 frame">
+    <img src="img/foggy-mountains.jpg" alt="" id="pic4">
 </div>
+<!--<div class="button4">-->
+<!--    <button class="topDown" id="btn1-right-bottom">Swap Image</button>-->
+<!--</div>-->
 
 
 
@@ -222,7 +266,7 @@
     // });
 
     function highlight(){
-        $("h3").click(function(){
+        $("h3").dblclick(function(){
             $(this).toggleClass("highlight");
         });
     }
@@ -254,10 +298,10 @@ invisible();
         })
     });
 
-    $('h3').click(function(){
-
-            $(this).next('ul').children('li').css('font-weight', 'bold')
-    });
+    // $('h3').click(function(){
+    //
+    //         $(this).next('ul').children('li').css('font-weight', 'bold')
+    // });
 
     $('li').click(function(){
         $(this).parent('ul').children('li').first('li').css('color', 'blue')
@@ -269,34 +313,77 @@ $('#subscribe').click(function(){
     $(this).parent('div').css('display', 'none')
 });
 
-
-    $('ul').hide();
     $('h3').click(function() {
         $(this).next('ul').slideToggle('');
     });
-
-
-    // // $(document).ready(function(){
-    //     $("#register").onload(function(){
-    //         $("#div1").fadeIn();
-    //         $("#div2").fadeIn("slow");
-    //         $("#div3").fadeIn(3000);
-    //     });
-    // // });
+    // $('ul').hide();
 
 
     $('#register').hide();
     $('#register').fadeIn( 8000);
     $('#register').fadeOut(5000);
 
+    $('#registerX').click(function(){
+        $(this).parent('div').css('display', 'none')
+    });
 
 
     // =================================================BONUS==========================================================
-    // $('#pic1').click(function(){
-    //     var holdThis = $('#pic1').attr('src');
-    //     var takeThis = $('#pic2').attr('src');
-    //     $('##pic1').attr(takeThis);
+    var randomPic = ['img/fall-trees.jpg','img/fog-trees.jpg','img/winter-trees.jpg','img/foggy-mountains.jpg','img/ooolala.jpg','img/grandcanyon.jpg','img/waterfall.jpg','img/night-bend.jpg'];
+    var changePic = function(){
+        $("#btn1-left-top").click(function(){
+            var randomIndex1 = Math.floor(Math.random() * randomPic.length);
+            var randomIndex2 = Math.floor(Math.random() * randomPic.length);
+            var randomIndex3 = Math.floor(Math.random() * randomPic.length);
+            var randomIndex4 = Math.floor(Math.random() * randomPic.length);
+
+            $('#pic1').attr('src', randomPic[randomIndex1]);
+            $('#pic2').attr('src', randomPic[randomIndex2]);
+            $('#pic3').attr('src', randomPic[randomIndex3]);
+            $('#pic4').attr('src', randomPic[randomIndex4]);
+
+        });
+    };
+    changePic();
+
+    // $('#btn1-left-top').click(function(){
+    //     // var audio = new Audio('audio/ring-get.mp3');
+    //     // audio.play();
+    //     console.log('left button clicked');
+    //     var first = $('#pic1').attr('src');
+    //     var swap = $('#pic2').attr('src');
+    //     // $('#pic1').attr("src", swap);
+    //     $('#pic2').attr('src', first);
+    //
     // });
+    // $('#btn1-left-bottom').click(function(){
+    //     // var audio = new Audio('audio/ring-get.mp3');
+    //     // audio.play();
+    //     console.log('left button clicked');
+    //     var first = $('#pic1').attr('src');
+    //     var swap = $('#pic2').attr('src');
+    //     $('#pic1').attr("src", swap);
+    //     $('#pic2').attr('src', first);
+    // });
+    // $('#btn1-right-top').click(function(){
+    //     // var audio = new Audio('audio/ring-get.mp3');
+    //     // audio.play();
+    //     console.log('left button clicked');
+    //     var first = $('#pic1').attr('src');
+    //     var swap = $('#pic2').attr('src');
+    //     $('#pic1').attr("src", swap);
+    //     $('#pic2').attr('src', first);
+    // });
+    // $('#btn1-right-bottom').click(function(){
+    //     // var audio = new Audio('audio/ring-get.mp3');
+    //     // audio.play();
+    //     console.log('left button clicked');
+    //     var first = $('#pic1').attr('src');
+    //     var swap = $('#pic2').attr('src');
+    //     $('#pic1').attr("src", swap);
+    //     $('#pic2').attr('src', first);
+    // });
+
 
 
 </script>
