@@ -6,39 +6,94 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>jquery_faq.html</title>
+    <style>
+        .invisible{
+            visibility: hidden;
+        }
+        .highlight{
+            background-color: deepskyblue;
+            width: 15%;
+        }
+    </style>
 </head>
 <body>
 <h1>National Park Facts</h1>
+<dl>
+    <dt>Hot Springs National Park</dt>
+    <dd>The thermal hot springs waters in this park heat naturally to 143ºF.</dd>
 
-Hot Springs National Park
-The thermal hot springs waters in this park heat naturally to 143ºF.
+    <dt>Lake Clark National Park</dt>
+    <dd>Lake Clark, centrally located in Lake Clark National Park, is a 50-mile-long clear, turquoise body of water that is fed by glaciers, waterfalls, rivers, and streams.</dd>
 
-Lake Clark National Park
-Lake Clark, centrally located in Lake Clark National Park, is a 50-mile-long clear, turquoise body of water that is fed by glaciers, waterfalls, rivers, and streams.
+    <dt>Mammoth Cave National Park</dt>
+    <dd>Mammoth Cave National Park is the world's longest known cave system, with more than 400 miles explored.</dd>
 
-Mammoth Cave National Park
-Mammoth Cave National Park is the world's longest known cave system, with more than 400 miles explored.
+    <dt>Redwood National Park</dt>
+    <dd>Redwood National Park is home to the world's tallest tree called Hyperion, which earned recognition from the Guinness Book of World Records and remarkably grows on a hill.</dd>
 
-Redwood National Park
-Redwood National Park is home to the world's tallest tree called Hyperion, which earned recognition from the Guinness Book of World Records and remarkably grows on a hill.
+    <dt>Sequoia National Park</dt>
+    <dd>Providing superpower protection, the bark of a giant sequoia tree may be thickest of any tree on Earth––some outer layers of bark measure over two feet thick at the base, providing protection against elements.</dd>
 
-Sequoia National Park
-Providing superpower protection, the bark of a giant sequoia tree may be thickest of any tree on Earth––some outer layers of bark measure over two feet thick at the base, providing protection against extreme elements.
+    <dt>Yellowstone National Park</dt>
+    <dd>Yellowstone sits atop the largest supervolcano in North America.</dd>
 
-Yellowstone National Park
-Yellowstone sits atop the largest supervolcano in North America.
+    <dt>Big Bend National Park</dt>
+    <dd>Historically, people traveled to the Hot Springs Historic District in Big Bend to heal their ailments. Today, visitors can soak in the 105-degree water that gushes from the old foundation of a bathhouse.</dd>
 
-Big Bend National Park
-Historically, people traveled to the Hot Springs Historic District in Big Bend to heal their ailments. Today, visitors can soak in the 105-degree water that gushes from the old foundation of a bathhouse.
+    <dt>Capitol Reef National Park</dt>
+    <dd>The rocks in Capitol Reef National Park are up to 270 million years old.</dd>
 
-Capitol Reef National Park
-The rocks in Capitol Reef National Park are up to 270 million years old.
+    <dt>Channel Islands National Park</dt>
+    <dd>Divers and snorkelers can explore the watery remains of the Winfield Scott shipwreck. Between 1850 and 1900, at least 33 ships were wrecked in the Santa Barbara Channel.</dd>
 
-Channel Islands National Park
-Divers and snorkelers can explore the watery remains of the Winfield Scott shipwreck. Between 1850 and 1900, at least 33 ships were wrecked in the Santa Barbara Channel.
+    <dt>Great Smoky Mountains National Park</dt>
+    <dd>This park is home to over 1,500 types of flowering plants that bloom year-round. A Spring Wildflower Pilgrimage takes places each year, a festival with many guided walks and hikes.</dd>
+</dl>
 
-Great Smoky Mountains National Park
-This park is home to over 1,500 types of flowering plants that bloom year-round. A Spring Wildflower Pilgrimage takes places each year, a festival with many guided walks and hikes.
+<a href="#" id="highlight-important">Click to hide text</a>
+<a href="#" id="dehighlight-important">Click to show text.</a>
+
+<a href="https://www.nationalgeographic.com/travel/destinations/north-america/united-states/fun-facts-national-parks/#close">National Geographics Travel Destinations</a>
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+
+    // $(document).ready(function(){
+    //     $("dd").click(function(){
+    //         $(this).toggleClass("invisible");
+    //     });
+    // });
+
+
+    function highlight(){
+        $("dt").click(function(){
+            $(this).toggleClass("highlight");
+        });
+    }
+    highlight();
+
+    //$(document).ready(
+    function invisible() {
+        $('#highlight-important').click(function(event) {
+            event.preventDefault();
+            $('dd').addClass('invisible');
+        });
+        $('#dehighlight-important').click(function(event) {
+            event.preventDefault();
+            $('dd').removeClass('invisible');
+        });
+        // TODO: make the individual important elements click-to-toggle-highlight
+        $("dd").click(function() {
+            $(this).toggleClass("invisible");
+        });
+
+            // .html() .css() .text()
+            // .addClass() .removeClass() .toggleClass() .hasClass()
+            // .attrib()
+    }
+    //);
+invisible();
+</script>
 
 </body>
 </html>
