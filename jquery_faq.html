@@ -21,7 +21,6 @@
         }
 
         img {
-            /*border:solid 2px;*/
             border-bottom-color:#ffe;
             border-left-color:#eed;
             border-right-color:#eed;
@@ -31,13 +30,32 @@
         }
         button{
             width: 10em;
-            height: 1.75em;
-            /*display: flex;*/
-            /*align-items: center;*/
-            /*justify-content: center;*/
-        }
+            height: 1.75em;}
         a{
             color: #1969B2;
+        }
+        h3{
+            border-top: 3px solid #444A51;
+            border-bottom: 3px solid #444A51;
+            width: 90%;
+            text-align: center;
+            color: #444A51;
+            font-size: 1.25em;
+            padding-left: .25em;
+            font-weight: lighter;
+            /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
+        }
+
+        .classWithShadow{
+            animation-duration: 0.25s;
+            border-bottom: 2px solid black;
+            border-top: none;
+            color: black;
+            font-size: 1.75em;
+            font-weight: lighter;
+            border-left: 6px solid darkblue;
+            width: 95%;
+            box-shadow: 0 10px 10px -10px #333;
         }
         .invisible{
             visibility: hidden;
@@ -59,8 +77,8 @@
             grid-row-gap: 0px;
             width: 100vw;
             height: 100vh;
-            /*height:100%;*/
-            /*width:100%;*/
+            height:100%;
+            width:100%;
         }
 
         .header { grid-area: 1 / 2 / 2 / 5; }
@@ -81,6 +99,12 @@
             justify-content: center;
             text-align: center;
             align-items: center;
+        }
+        .notCenter{
+            align-items: flex-start;
+        }
+        .text-center{
+            text-align: center;
         }
         .right{
         padding-left: 9em;
@@ -127,8 +151,22 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            /*margin-top: 4em;*/
-            margin-left: 10em;
+            margin-top: 8em;
+            margin-left: 5em;
+        }
+        .buttonTop{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 4em;
+            margin-left: 9em;
+        }
+        .rightButtons{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 8em;
+            margin-left: .25em;
         }
         .paddedLeft{
             padding-left: 2em;
@@ -136,18 +174,20 @@
         .paddedRight{
             padding-right: 2em;
         }
+
     </style>
 </head>
 <body class="body">
 
 <div class="header">
-    <h1 class="center">National Park Facts</h1>
+    <div id="header"><h1 class="center">National Park Facts</h1>
+    </div>
 </div>
 
-<div class="faqs">
+<div class="faqs text-center">
 <!--    <button id="highlight-important">Click Me!</button>-->
 <!--    <button id="dehighlight-important">Click Me!</button>-->
-    <button id="btn1-left-top" class="center topDown">Swap Images!</button>
+    <button id="btn-top" class="center buttonTop">Swap Images!</button>
 
     <!--    <button id="lastHighlight">Click Me!</button>-->
 
@@ -182,16 +222,21 @@
 
 <!--===============================================END OF 1ST EXERCISE===============================================-->
 
-        <h3>Sequoia National Park</h3>
+
+    <div>
+        <h3 class="styleMe">Sequoia National Park</h3>
 
         <ul>
-        <li>1. Tallest tree on Earth!</li>
-        <li>2. As old asa dinosaur — ALMOST</li>
-        <li>3.The park covers 404,063 acres (631.35 sq mi; 1,635.18 km2)</li>
-        <li>4.The bark of a giant sequoia tree may be thickest of any tree on Earth––some outer layers of bark measure over two feet thick at the base, providing protection against elements.</li>
+            <li>1.FACTS facts FaCts facts faCTS FActs facts facts FACTS!</li>
+            <li>2.FACTS facts FaCts facts faCTS FActs facts facts FACTS!</li>
+            <li>3.FACTS facts FaCts facts faCTS FActs facts facts FACTS!</li>
+            <li>4.FACTS facts FaCts facts faCTS FActs facts facts FACTS!</li>
         </ul>
+    </div>
 
-    <h3>Sequoia National Park</h3>
+
+    <div>
+    <h3 class="styleMe">Sequoia National Park</h3>
 
     <ul>
         <li>1.FACTS facts FaCts facts faCTS FActs facts facts FACTS!</li>
@@ -199,8 +244,10 @@
         <li>3.FACTS facts FaCts facts faCTS FActs facts facts FACTS!</li>
         <li>4.FACTS facts FaCts facts faCTS FActs facts facts FACTS!</li>
     </ul>
+    </div>
 
-    <h3>Sequoia National Park</h3>
+    <div>
+    <h3 class="styleMe">Sequoia National Park</h3>
 
     <ul>
         <li>1.FACTS facts FaCts facts faCTS FActs facts facts FACTS!</li>
@@ -209,7 +256,7 @@
         <li>4.FACTS facts FaCts facts faCTS FActs facts facts FACTS!</li>
 
     </ul>
-
+    </div>
     <a href="https://www.nationalgeographic.com/travel/destinations/north-america/united-states/fun-facts-national-parks/#close">Nat-Geo Travel Destinations</a>
 </div>
 
@@ -228,30 +275,30 @@
 <div class="frame1 frame">
     <img src="img/fall-trees.jpg" alt="" id="pic1">
 </div>
-<!--<div class="button1">-->
-<!--    <button class="topDown" id="btn1-left-top">Swap Image</button>-->
-<!--</div>-->
+<div class="button1">
+    <button class="topDown" id="btn1-left-top">Swap Image</button>
+</div>
 
 <div class="frame2 frame">
     <img src="img/fog-trees.jpg" alt="" id="pic2">
 </div>
-<!--<div class="button2">-->
-<!--    <button class="topDown" id="btn1-left-bottom">Swap Image</button>-->
-<!--</div>-->
+<div class="button2">
+    <button class="topDown" id="btn1-left-bottom">Swap Image</button>
+</div>
 
 <div class="frame3 frame">
     <img src="img/winter-trees.jpg" alt="" id="pic3">
 </div>
-<!--<div class="button3">-->
-<!--    <button class="topDown" id="btn1-right-top">Swap Image</button>-->
-<!--</div>-->
+<div class="button3">
+    <button class="rightButtons" id="btn1-right-top">Swap Image</button>
+</div>
 
 <div class="frame4 frame">
     <img src="img/foggy-mountains.jpg" alt="" id="pic4">
 </div>
-<!--<div class="button4">-->
-<!--    <button class="topDown" id="btn1-right-bottom">Swap Image</button>-->
-<!--</div>-->
+<div class="button4">
+    <button class="rightButtons" id="btn1-right-bottom">Swap Image</button>
+</div>
 
 
 
@@ -259,7 +306,10 @@
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script>
     "use strict";
-    // $(document).ready(function(){
+
+    $(document).ready(function(){
+
+        // $(document).ready(function(){
     //     $("dd").click(function(){
     //         $(this).toggleClass("invisible");
     //     });
@@ -313,10 +363,10 @@ $('#subscribe').click(function(){
     $(this).parent('div').css('display', 'none')
 });
 
-    $('h3').click(function() {
-        $(this).next('ul').slideToggle('');
-    });
-    // $('ul').hide();
+$('#header').hide();
+if ( $( "#header" ).is( ":hidden" ) ) {
+    $( '#header' ).show( 4500 );
+            };
 
 
     $('#register').hide();
@@ -328,14 +378,27 @@ $('#subscribe').click(function(){
     });
 
 
+
+        $('h3').next().hide();
+
+        $('h3').click(function() {
+            if ( $( this ).next().is( ":visible" ) ) {
+                $( this ).next().hide( "slow" );
+            } else {
+                $( this ).next().show('slow');
+            }
+        });
+
+        $("h3").hover(function()
+        {$(this).toggleClass('classWithShadow');});
     // =================================================BONUS==========================================================
     var randomPic = ['img/fall-trees.jpg','img/fog-trees.jpg','img/winter-trees.jpg','img/foggy-mountains.jpg','img/ooolala.jpg','img/grandcanyon.jpg','img/waterfall.jpg','img/night-bend.jpg'];
     var changePic = function(){
-        $("#btn1-left-top").click(function(){
+        $("#btn-top").click(function(){
             var randomIndex1 = Math.floor(Math.random() * randomPic.length);
-            var randomIndex2 = Math.floor(Math.random() * randomPic.length);
-            var randomIndex3 = Math.floor(Math.random() * randomPic.length);
-            var randomIndex4 = Math.floor(Math.random() * randomPic.length);
+            var randomIndex2 = (randomIndex1+1)%(randomPic.length);
+            var randomIndex3 = (randomIndex2+1)%(randomPic.length);
+            var randomIndex4 = (randomIndex3+1)%(randomPic.length);
 
             $('#pic1').attr('src', randomPic[randomIndex1]);
             $('#pic2').attr('src', randomPic[randomIndex2]);
@@ -346,44 +409,72 @@ $('#subscribe').click(function(){
     };
     changePic();
 
-    // $('#btn1-left-top').click(function(){
-    //     // var audio = new Audio('audio/ring-get.mp3');
-    //     // audio.play();
-    //     console.log('left button clicked');
-    //     var first = $('#pic1').attr('src');
-    //     var swap = $('#pic2').attr('src');
-    //     // $('#pic1').attr("src", swap);
-    //     $('#pic2').attr('src', first);
-    //
-    // });
-    // $('#btn1-left-bottom').click(function(){
-    //     // var audio = new Audio('audio/ring-get.mp3');
-    //     // audio.play();
-    //     console.log('left button clicked');
-    //     var first = $('#pic1').attr('src');
-    //     var swap = $('#pic2').attr('src');
-    //     $('#pic1').attr("src", swap);
-    //     $('#pic2').attr('src', first);
-    // });
-    // $('#btn1-right-top').click(function(){
-    //     // var audio = new Audio('audio/ring-get.mp3');
-    //     // audio.play();
-    //     console.log('left button clicked');
-    //     var first = $('#pic1').attr('src');
-    //     var swap = $('#pic2').attr('src');
-    //     $('#pic1').attr("src", swap);
-    //     $('#pic2').attr('src', first);
-    // });
-    // $('#btn1-right-bottom').click(function(){
-    //     // var audio = new Audio('audio/ring-get.mp3');
-    //     // audio.play();
-    //     console.log('left button clicked');
-    //     var first = $('#pic1').attr('src');
-    //     var swap = $('#pic2').attr('src');
-    //     $('#pic1').attr("src", swap);
-    //     $('#pic2').attr('src', first);
-    // });
+    $('#btn1-left-top').click(function(){
+        // var audio = new Audio('audio/ring-get.mp3');
+        // audio.play();
+        var first = $('#pic1').attr('src');
+        var picIndex = 1;
+        //Get random number up to 4, but if it is 1, try again
+        while (picIndex === 1) {
+            picIndex = Math.floor((Math.random() * 10) % 4) + 1;
+        }
+        //Swap images
+        var swap = $('#pic'+ picIndex).attr('src');
+        $('#pic1').attr("src", swap);
+        $('#pic'+ picIndex).attr('src', first);
+    });
 
+
+    $('#btn1-left-bottom').click(function(){
+        // var audio = new Audio('audio/ring-get.mp3');
+        // audio.play();
+        // $('#'+(i+1).toString()).children().first('img').prop('id', 'photo'+Math.ceil((i+1)/3).toString());
+        var first = $('#pic2').attr('src');
+        var picIndex = 2;
+        //Get random number up to 4, but if it is 1, try again
+        while (picIndex === 2) {
+            picIndex = Math.floor((Math.random() * 10) % 4) + 1;
+        }
+        //Swap images
+        var swap = $('#pic'+ picIndex).attr('src');
+        $('#pic2').attr("src", swap);
+        $('#pic'+ picIndex).attr('src', first);
+    });
+
+        $('#btn1-right-top').click(function(){
+        // var audio = new Audio('audio/ring-get.mp3');
+        // audio.play();
+            var first = $('#pic3').attr('src');
+            var picIndex = 3;
+            //Get random number up to 4, but if it is 1, try again
+            while (picIndex === 3) {
+                picIndex = Math.floor((Math.random() * 10) % 4) + 1;
+            }
+            //Swap images
+            var swap = $('#pic'+ picIndex).attr('src');
+            $('#pic3').attr("src", swap);
+            $('#pic'+ picIndex).attr('src', first);
+    });
+    $('#btn1-right-bottom').click(function(){
+        // var audio = new Audio('audio/ring-get.mp3');
+        // audio.play();
+        var first = $('#pic4').attr('src');
+        var picIndex = 4;
+        //Get random number up to 4, but if it is 1, try again
+        while (picIndex === 4) {
+            picIndex = Math.floor((Math.random() * 10) % 4) + 1;
+        }
+        //Swap images
+        var swap = $('#pic'+ picIndex).attr('src');
+        $('#pic4').attr("src", swap);
+        $('#pic'+ picIndex).attr('src', first);
+    });
+
+
+
+
+
+    });
 
 
 </script>

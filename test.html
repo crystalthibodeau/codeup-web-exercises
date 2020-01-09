@@ -1,23 +1,350 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/test.css">
+    <title>Picture Swap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
-<body class="unique2">
-<div>
-    <h3>Hello World</h3>
-    <p>Have a good day!</p>
-    <p>Today is Tuesday, November 5th.</p>
-    <p>Today we will learn more about HTML elements!</p>
-    <p>Almost done setting up all of the classes laptops!</p>
-</div>
-<div class="unique">
-    CSS is a fun way to add style throughout your page!
-</div>
+<body class="bg-light">
+<main class="container">
+    <section class="row mt-3">
+        <div id="1" class="col-4 left-content">
+            <img src="img/sonic.png" alt="Sonic The Hedgehog" id="photo1-left" class="img-fluid">
+            <button id="btn1-left" class="btn btn-dark mt-3 form-control switcher">Swap! ></button>
+        </div>
+        <!---->
+        <div id="2" class="col-4 mid-content">
+            <img src="img/Tails.png" alt="Tails The Fox" id="photo1-mid" class="img-fluid">
+            <button id="btn1-mid" class="btn btn-dark mt-3 form-control switcher">< Swap! ></button>
+        </div>
+        <!---->
+        <div id="3" class="col-4 right-content">
+            <img src="img/Knuckles.png" alt="Knuckles The Echidna" id="photo1-right" class="img-fluid">
+            <button id="btn1-right" class="btn btn-dark mt-3 form-control switcher">< Swap!</button>
+        </div>
+    </section>
+
+    <section class="row mt-3">
+        <div id="4" class="col-4 left-content">
+            <img src="img/Espio.png" alt="Espio The Chameleon" id="photo2-left" class="img-fluid">
+            <button id="btn2-left" class="btn btn-dark mt-3 form-control switcher">Swap! ></button>
+        </div>
+        <!---->
+        <div id="5" class="col-4 mid-content">
+            <img src="img/Vector.png" alt="Vector The Crocodile" id="photo2-mid" class="img-fluid">
+            <button id="btn2-mid" class="btn btn-dark mt-3 form-control switcher">< Swap! ></button>
+        </div>
+        <!---->
+        <div id="6" class="col-4 right-content">
+            <img src="img/Charmy.png" alt="Charmy The Bee" id="photo2-right" class="img-fluid">
+            <button id="btn2-right" class="btn btn-dark mt-3 form-control switcher">< Swap!</button>
+        </div>
+    </section>
+
+    <section class="row my-3">
+        <div id="7" class="col-4 left-content">
+            <img src="img/Shadow.png" alt="Shadow The Hedgehog" id="photo3-left" class="img-fluid">
+            <button id="btn3-left" class="btn btn-dark mt-3 form-control switcher">Swap! ></button>
+        </div>
+        <!---->
+        <div id="8" class="col-4 mid-content">
+            <img src="img/robotnik.png" alt="Dr. Robotnik" id="photo3-mid" class="img-fluid">
+            <button id="btn3-mid" class="btn btn-dark mt-3 form-control switcher">< Swap! ></button>
+        </div>
+        <!---->
+        <div id="9" class="col-4 right-content">
+            <img src="img/Omega.png" alt="Omega A Robot" id="photo3-right" class="img-fluid">
+            <button id="btn3-right" class="btn btn-dark mt-3 form-control switcher">< Swap!</button>
+        </div>
+    </section>
+
+    <section class="row mb-3">
+        <div class="col-2">
+            <!-- offset -->
+        </div>
+        <div class="col-8">
+            <button id="big-random" class="btn btn-success form-control">Randomize!</button>
+        </div>
+    </section>
+
+</main>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready( function(){
+        var hold1 = '<img src="img/animal3.jpg" id="photo1-left" alt="Sonic The Hedgehog" class="img-fluid">';
+        var hold2 = '<img src="img/animal1.jpg" id="photo1-mid" alt="Tails The Fox" class="img-fluid">';
+        var hold3 = '<img src="img/animal2.jpg" id="photo1-right" alt="Knuckles The Echidna" class="img-fluid">';
+        var hold4 = '<img src="img/animal4.jpg" id="photo2-left" alt="Espio The Chameleon" class="img-fluid">';
+        var hold5 = '<img src="img/animal5.jpg" id="photo2-mid" alt="Vector The Crocodile" class="img-fluid">';
+        var hold6 = '<img src="img/animal6.jpg" id="photo2-right" alt="Charmy The Bee" class="img-fluid">';
+        var hold7 = '<img src="img/jumbo-dog.jpg" id="photo3-left" alt="Shadow The Hedgehog" class="img-fluid">';
+        var hold8 = '<img src="img/map.jpg" id="photo3-mid" alt="Dr. Robotnik" class="img-fluid">';
+        var hold9 = '<img src="img/fall-trees.jpg" id="photo3-right" alt="Omega A Robot" class="img-fluid">';
+
+        var inHolding = [hold1,hold2,hold3,hold4,hold5,hold6,hold7,hold8,hold9];
+
+        //source: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+
+        function shuffle(array) {
+            for (var i = array.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+
+        $('#big-random').click(function () {
+            var audio = new Audio('audio/ring-lost.mp3');
+            audio.play();
+            shuffle(inHolding);
+            for (var i = 0; i <= 10; i += 1) {
+                if (i%3 === 0) {
+                    $('#'+(i+1).toString()).html(inHolding[i] + ' ' +  '<button id="btn'+Math.ceil((i+1)/3).toString()+'-left" class="btn btn-dark mt-3 form-control switcher">Swap! ></button>');
+                    $('#'+(i+1).toString()).children().first('img').prop('id', 'photo'+Math.ceil((i+1)/3).toString()+'-left');
+                } else if (i%3 === 1) {
+                    $('#'+(i+1).toString()).html(inHolding[i] + ' ' +  '<button id="btn'+Math.ceil((i+1)/3).toString()+'-mid" class="btn btn-dark mt-3 form-control switcher">< Swap! ></button>');
+                    $('#'+(i+1).toString()).children().first('img').prop('id', 'photo'+Math.ceil((i+1)/3).toString()+'-mid');
+                } else if (i%3 === 2) {
+                    $('#'+(i+1).toString()).html(inHolding[i] + ' ' +  '<button id="btn'+Math.ceil((i+1)/3).toString()+'-right" class="btn btn-dark mt-3 form-control switcher">< Swap!</button>');
+                    $('#'+(i+1).toString()).children().first('img').prop('id', 'photo'+Math.ceil((i+1)/3).toString()+'-right');
+                } /*else if (i === 3) {
+                    $('#4').html(inHolding[i] + ' ' +  '<button id="btn2-left" class="btn btn-dark mt-3 form-control switcher">Swap! ></button>');
+                    $('#4').children().first('img').prop('id', 'photo2-left');
+                } else if (i === 4) {
+                    $('#5').html(inHolding[i] + ' ' +  '<button id="btn2-mid" class="btn btn-dark mt-3 form-control switcher">< Swap! ></button>');
+                    $('#5').children().first('img').prop('id', 'photo2-mid');
+                } else if (i === 5) {
+                    $('#6').html(inHolding[i] + ' ' +  '<button id="btn2-right" class="btn btn-dark mt-3 form-control switcher">< Swap!</button>');
+                    $('#6').children().first('img').prop('id', 'photo2-right');
+                } else if (i === 6) {
+                    $('#7').html(inHolding[i] + ' ' +  '<button id="btn3-left" class="btn btn-dark mt-3 form-control switcher">Swap! ></button>');
+                    $('#7').children().first('img').prop('id', 'photo3-left');
+                } else if (i === 7) {
+                    $('#8').html(inHolding[i] + ' ' +  '<button id="btn3-mid" class="btn btn-dark mt-3 form-control switcher">< Swap! ></button>');
+                    $('#8').children().first('img').prop('id', 'photo3-mid');
+                } else if (i === 8) {
+                    $('#9').html(inHolding[i] + ' ' + '<button id="btn3-right" class="btn btn-dark mt-3 form-control switcher">< Swap!</button>');
+                    $('#9').children().first('img').prop('id', 'photo3-right');
+                }*/
+            }
+            $('#btn2-right').click(function(){
+                var audio = new Audio('audio/ring-get.mp3');
+                audio.play();
+                var holdThis = $('#photo2-right').attr('src');
+                var takeThis = $('#photo2-mid').attr('src');
+                $('#photo2-right').attr('src', takeThis);
+                $('#photo2-mid').attr('src', holdThis);
+            });
+
+            $('#btn2-left').click(function(){
+                var audio = new Audio('audio/ring-get.mp3');
+                audio.play();
+                var holdThis = $('#photo2-left').attr('src');
+                var takeThis = $('#photo2-mid').attr('src');
+                $('#photo2-left').attr('src', takeThis);
+                $('#photo2-mid').attr('src', holdThis);
+            });
+
+            $('#btn2-mid').click(function() {
+                var audio = new Audio('audio/ring-get.mp3');
+                audio.play();
+                var magicNumber = Math.floor(Math.random() * 2) + 1;
+                if (magicNumber === 1) {
+                    var holdThis = $('#photo2-left').attr('src');
+                    var takeThis = $('#photo2-mid').attr('src');
+                    $('#photo2-left').attr('src', takeThis);
+                    $('#photo2-mid').attr('src', holdThis);
+                } else {
+                    var holdMe = $('#photo2-right').attr('src');
+                    var takeMe = $('#photo2-mid').attr('src');
+                    $('#photo2-right').attr('src', takeMe);
+                    $('#photo2-mid').attr('src', holdMe);
+                }
+            });
+
+            $('#btn3-right').click(function(){
+                var audio = new Audio('audio/ring-get.mp3');
+                audio.play();
+                var holdThis = $('#photo3-right').attr('src');
+                var takeThis = $('#photo3-mid').attr('src');
+                $('#photo3-right').attr('src', takeThis);
+                $('#photo3-mid').attr('src', holdThis);
+            });
+
+            $('#btn3-left').click(function(){
+                var audio = new Audio('audio/ring-get.mp3');
+                audio.play();
+                var holdThis = $('#photo3-left').attr('src');
+                var takeThis = $('#photo3-mid').attr('src');
+                $('#photo3-left').attr('src', takeThis);
+                $('#photo3-mid').attr('src', holdThis);
+            });
+
+            $('#btn3-mid').click(function() {
+                var audio = new Audio('audio/ring-get.mp3');
+                audio.play();
+                var magicNumber = Math.floor(Math.random() * 2) + 1;
+                if (magicNumber === 1) {
+                    var holdThis = $('#photo3-left').attr('src');
+                    var takeThis = $('#photo3-mid').attr('src');
+                    $('#photo3-left').attr('src', takeThis);
+                    $('#photo3-mid').attr('src', holdThis);
+                } else {
+                    var holdMe = $('#photo3-right').attr('src');
+                    var takeMe = $('#photo3-mid').attr('src');
+                    $('#photo3-right').attr('src', takeMe);
+                    $('#photo3-mid').attr('src', holdMe);
+                }
+            });
+
+            $('#btn1-right').click(function(){
+                var audio = new Audio('audio/ring-get.mp3');
+                audio.play();
+                var holdThis = $('#photo1-right').attr('src');
+                var takeThis = $('#photo1-mid').attr('src');
+                $('#photo1-right').attr('src', takeThis);
+                $('#photo1-mid').attr('src', holdThis);
+            });
+
+            $('#btn1-left').click(function(){
+                var audio = new Audio('audio/ring-get.mp3');
+                audio.play();
+                var holdThis = $('#photo1-left').attr('src');
+                var takeThis = $('#photo1-mid').attr('src');
+                $('#photo1-left').attr('src', takeThis);
+                $('#photo1-mid').attr('src', holdThis);
+            });
+
+            $('#btn1-mid').click(function() {
+                var audio = new Audio('audio/ring-get.mp3');
+                audio.play();
+                var magicNumber = Math.floor(Math.random() * 2) + 1;
+                if (magicNumber === 1) {
+                    var holdThis = $('#photo1-left').attr('src');
+                    var takeThis = $('#photo1-mid').attr('src');
+                    $('#photo1-left').attr('src', takeThis);
+                    $('#photo1-mid').attr('src', holdThis);
+                } else {
+                    var holdMe = $('#photo1-right').attr('src');
+                    var takeMe = $('#photo1-mid').attr('src');
+                    $('#photo1-right').attr('src', takeMe);
+                    $('#photo1-mid').attr('src', holdMe);
+                }
+            });
+        });
+
+        $('#btn2-right').click(function(){
+            var audio = new Audio('audio/ring-get.mp3');
+            audio.play();
+            var holdThis = $('#photo2-right').attr('src');
+            var takeThis = $('#photo2-mid').attr('src');
+            $('#photo2-right').attr('src', takeThis);
+            $('#photo2-mid').attr('src', holdThis);
+        });
+
+        $('#btn2-left').click(function(){
+            var audio = new Audio('audio/ring-get.mp3');
+            audio.play();
+            var holdThis = $('#photo2-left').attr('src');
+            var takeThis = $('#photo2-mid').attr('src');
+            $('#photo2-left').attr('src', takeThis);
+            $('#photo2-mid').attr('src', holdThis);
+        });
+
+        $('#btn2-mid').click(function() {
+            var audio = new Audio('audio/ring-get.mp3');
+            audio.play();
+            var magicNumber = Math.floor(Math.random() * 2) + 1;
+            if (magicNumber === 1) {
+                var holdThis = $('#photo2-left').attr('src');
+                var takeThis = $('#photo2-mid').attr('src');
+                $('#photo2-left').attr('src', takeThis);
+                $('#photo2-mid').attr('src', holdThis);
+            } else {
+                var holdMe = $('#photo2-right').attr('src');
+                var takeMe = $('#photo2-mid').attr('src');
+                $('#photo2-right').attr('src', takeMe);
+                $('#photo2-mid').attr('src', holdMe);
+            }
+        });
+
+        $('#btn3-right').click(function(){
+            var audio = new Audio('audio/ring-get.mp3');
+            audio.play();
+            var holdThis = $('#photo3-right').attr('src');
+            var takeThis = $('#photo3-mid').attr('src');
+            $('#photo3-right').attr('src', takeThis);
+            $('#photo3-mid').attr('src', holdThis);
+        });
+
+        $('#btn3-left').click(function(){
+            var audio = new Audio('audio/ring-get.mp3');
+            audio.play();
+            var holdThis = $('#photo3-left').attr('src');
+            var takeThis = $('#photo3-mid').attr('src');
+            $('#photo3-left').attr('src', takeThis);
+            $('#photo3-mid').attr('src', holdThis);
+        });
+
+        $('#btn3-mid').click(function() {
+            var audio = new Audio('audio/ring-get.mp3');
+            audio.play();
+            var magicNumber = Math.floor(Math.random() * 2) + 1;
+            if (magicNumber === 1) {
+                var holdThis = $('#photo3-left').attr('src');
+                var takeThis = $('#photo3-mid').attr('src');
+                $('#photo3-left').attr('src', takeThis);
+                $('#photo3-mid').attr('src', holdThis);
+            } else {
+                var holdMe = $('#photo3-right').attr('src');
+                var takeMe = $('#photo3-mid').attr('src');
+                $('#photo3-right').attr('src', takeMe);
+                $('#photo3-mid').attr('src', holdMe);
+            }
+        });
+
+        $('#btn-right').click(function(){
+            var audio = new Audio('audio/ring-get.mp3');
+            audio.play();
+            var holdThis = $('#photo-right').attr('src');
+            var takeThis = $('#photo-mid').attr('src');
+            $('#photo-right').attr('src', takeThis);
+            $('#photo-mid').attr('src', holdThis);
+        });
+
+        $('#btn-left').click(function(){
+            var audio = new Audio('audio/ring-get.mp3');
+            audio.play();
+            var holdThis = $('#photo-left').attr('src');
+            var takeThis = $('#photo-mid').attr('src');
+            $('#photo-left').attr('src', takeThis);
+            $('#photo-mid').attr('src', holdThis);
+        });
+
+        $('#btn-mid').click(function() {
+            var audio = new Audio('audio/ring-get.mp3');
+            audio.play();
+            var magicNumber = Math.floor(Math.random() * 2) + 1;
+            if (magicNumber === 1) {
+                var holdThis = $('#photo-left').attr('src');
+                var takeThis = $('#photo-mid').attr('src');
+                $('#photo-left').attr('src', takeThis);
+                $('#photo-mid').attr('src', holdThis);
+            } else {
+                var holdMe = $('#photo-right').attr('src');
+                var takeMe = $('#photo-mid').attr('src');
+                $('#photo-right').attr('src', takeMe);
+                $('#photo-mid').attr('src', holdMe);
+            }
+        });
+    });
+
+</script>
+
 </body>
 </html>

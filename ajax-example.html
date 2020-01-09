@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ajax example</title>
+</head>
+<body>
+
+<!-- INSERT HTML CODE SAMPLE HERE -->
+
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script>
+    $(document).ready(function() {
+
+
+        var pokemon1 = $.ajax('https://pokeapi.co/api/v2/pokemon/22/');
+        pokemon1.done(function (resp) {
+            console.log(resp.name);
+        });
+
+        var pokemon2 = $.ajax('https://pokeapi.co/api/v2/pokemon/807/');
+        pokemon2.done(function (resp) {
+            console.log(resp.name);
+        });
+
+
+
+
+
+
+    });
+</script>
+</body>
+</html>

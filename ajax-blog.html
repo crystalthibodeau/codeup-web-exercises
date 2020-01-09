@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>blog</title>
+    <style>
+        a{
+            color: white;
+        }
+        li{
+            list-style-type: none;
+        }
+        .background{
+            background-color: #E4E4E4;
+        }
+    .font{
+        color: #5D5C61;
+    }
+    .font2{
+        color: #4C5258;
+        text-decoration:underline;
+        font-size: 1.25em;
+    }
+    .font3{
+            color: #7395AE;
+        }
+    .complimentColor1{
+            background: #938E94;
+        }
+    .complimentColor2{
+        background: #557A95;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body class="background">
+<nav class="navbar navbar-lg complimentColor2 d-flex justify-content-around font-weight-bolder font2">
+<!--<ul class="d-flex text-center ">-->
+    <p>
+       Home
+    </p>
+    <p>
+        Posts
+    </p>
+    <p>
+        Saved
+    </p>
+<!--</ul>-->
+</nav>
+    <div class="container">
+        <div id="post" class="mt-5 "></div>
+            <button id="button" class="btn btn-secondary"> refresh </button>
+    </div>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<!-- Your custom JS goes here -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+    (function() {
+        "use strict";
+        $(document).ready(function() {
+
+            var blog = $('#post');
+            var post = $.ajax('data/blog.json');
+            post.done(function(data){
+                data.forEach(function(item){
+                    blog.append("<div class=\"blockquote shadow-lg p-3 mb-5 bg-white\">" +
+
+                        "<h4 class=\"font\">" + item.title + "</h4>" +
+                        "<p class=\"text-muted\">" + item.content + "</p>" +
+                        "<p class=\"font-italic font3\">" + item.date + "</p>"
+                        + "</div>");
+                });
+                console.log(data);
+                console.log(status);
+            });
+
+            // TODO: Take the data from inventory.json and append it to the products table
+            //     {
+            //         type: "GET",
+            //             data:
+            //         {
+            //             title: 'hammer',
+            //                 price : ''
+            //         }
+            //     }
+            //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+            //             its contents and fields
+            //       HINT: You will want to target #insertProducts for your new HTML elements
+
+            $(function() {
+                $("#button").on("click", function() {
+                    $("body").load('#post');
+                    return false;
+                })
+            })
+
+
+
+
+
+        });
+    })();
+
+</script>
+
+</body>
+</html>
