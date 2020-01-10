@@ -47,9 +47,11 @@ var markerOptions = {
     color: "blue",
     draggable: true
 };
-// var marker = new mapboxgl.Marker(markerOptions)
-//     .setLngLat([-98.4816, 29.4260])
-//     .addTo(map);
+var marker = new mapboxgl.Marker(markerOptions)
+    .setLngLat([-98.4816, 29.4260])
+    .addTo(map);
+console.log(marker._lngLat.lng);
+console.log(marker._lngLat.lat);
 
 // TODO: Experiment with the color, and setting the LngLat
 // TODO: Update the marker object to make the marker draggable. *Hint: reference the docs!
@@ -73,7 +75,7 @@ var markerOptions = {
 // var alamoPopup = new mapboxgl.Popup()
 //     .setHTML("<p>Remember The Alamo!</p>")
 //     .addTo(map);
-//
+// //
 // marker.setPopup(alamoPopup);
 
 // TODO: Review the popup docs. What are some additional options we can pass to the popup?
@@ -88,24 +90,24 @@ var markerOptions = {
 // mapboxgl.accessToken = mapboxToken;
 //
 //
-// // var mapOptions = {
-// //     container: 'map',
-// //     style: 'mapbox://styles/mapbox/light-v10',
-// //     // zoom: 10,
-// //     zoom: 12,
-// //     pitch: 65,
-// //     center: [-98.4916, 29.4252],
-// //     sprite: "mapbox://sprites/mapbox/bright-v8"
-// //     // interactive: false
-// // };
-// // var map = new mapboxgl.Map(mapOptions);
+// var mapOptions = {
+//     container: 'map',
+//     style: 'mapbox://styles/mapbox/light-v10',
+//     // zoom: 10,
+//     zoom: 12,
+//     pitch: 65,
+//     center: [-98.4916, 29.4252],
+//     sprite: "mapbox://sprites/mapbox/bright-v8"
+//     // interactive: false
+// };
+// var map = new mapboxgl.Map(mapOptions);
 
 // geocode("600 Navarro st, San Antonio TX, 78025", mapboxToken).then(function(result){
 //     console.log(result);
-//     //recenter
-//     // map.setCenter(result);
+//     // recenter
+//     map.setCenter(result);
 // });
-
+//
 // geocode("9514 Amber Dawn, Helotes TX, 78023", mapboxToken).then(function(result){
 //     console.log(result);
 //     map.setCenter(result);
@@ -119,9 +121,9 @@ var markerOptions = {
 //TODO: Using the geocode method above, add a marker at Codeup to the map
 
 // geocode("600 Navarro st, San Antonio TX, 78025", mapboxToken).then(function(result){
-//     // console.log(result);
-//     //recenter
-//     // map.setCenter(result);
+    // console.log(result);
+    //recenter
+    // map.setCenter(result);
 //
 //     var codeupMarker = new mapboxgl.Marker(markerOptions)
 // .setLngLat([-98.4816, 29.4260])
@@ -139,15 +141,15 @@ var markerOptions = {
 // });
 
 //TODO: Instead of setCenter try using map.flyTo()
-geocode("600 Navarro st, San Antonio TX, 78025", mapboxToken).then(function(result){
-    // console.log(result);
-    //recenter
-    map.flyTo(result);
-
-    var codeupMarker = new mapboxgl.Marker(markerOptions)
-        .setLngLat(result)
-        .addTo(map);
-});
+// geocode("600 Navarro st, San Antonio TX, 78025", mapboxToken).then(function(result){
+//     // console.log(result);
+//     //recenter
+//     map.flyTo(result);
+//
+//     var codeupMarker = new mapboxgl.Marker(markerOptions)
+//         .setLngLat(result)
+//         .addTo(map);
+// });
 
 
 // TODO TOGETHER: Reverse Geocoding: Using the reverse geocoding method, enter the coordinates {lng: -98.4861, lat: 29.4260} to get a physical address for the alamo
