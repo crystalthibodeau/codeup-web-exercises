@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="js/keys.js"></script>
+<script>
+        $.ajax("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/ac0657a1f6150fc148099fb06e9582aa/37.8267,-122.4233").done(function(data){
+            console.log(data);
+            var dataObject = new Date(data.currently.time * 1000); //digits missing off of time call to save memory the multiplication here fixes the time
+            console.log(dataObject.toString());
+});
+
+    //     north east positive
+    // south west negative
+
+    </script>
+</body>
+</html>

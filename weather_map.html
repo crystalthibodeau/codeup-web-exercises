@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    /*=============================================Direct Element Styles==============================================*/
+    body{
+        background-color: #9ADCEA;
+        color: white;
+    }
+    h1{
+        font-size: 2.5em;
+    }
+    /*=============================================Grid Initialization================================================*/
+    .parent {
+        display: grid;
+        /*grid-template-columns: repeat(auto-fit, minmax(5px, 1fr));*/
+        grid-template-columns: 5% repeat(6, 15%) 5%;
+        grid-template-rows: 12% 10% 30% 5% 35% 8%;
+        grid-column-gap: .5em;
+        grid-row-gap: 5px;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .header { grid-area: 1 / 1 / 2 / 9; }
+    .header2 { grid-area: 2 / 1 / 2 / 9; }
+
+    .day1 { grid-area: 3 / 2 / 4 / 4; }
+    .day2 { grid-area: 3 / 4 / 4 / 6; }
+    .day3 { grid-area: 3 / 6 / 4 / 8; }
+    .mapped { grid-area: 5 / 2 / 6 / 8; }
+
+    /*=============================================Text styles================================================*/
+    .textCenter{
+        text-align: center;
+        /*margin:0 auto;*/
+        /*width: 50%;*/
+        /*align-items: center;*/
+
+    }
+    .headerEffect{
+        color: #848487;
+        text-shadow: 1px 1px 0 #969696, 1px 8px 7px #aba8a8;
+        padding: .25em;
+    }
+    .paddingNone{
+        padding: 0;
+        /*margin: .35em;*/
+    }
+    .justTextShadow{
+        text-shadow: 1px 1px 0 #969696, 1px 3px 6px #aba8a8;
+
+    }
+    /*=============================================More Styles================================================*/
+    .headerBoxEffect{
+        -webkit-box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.36);
+        box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.36);
+    }
+    .background-not-blue{
+        background: white ;
+        color: #848487;
+        /*margin: .25em;*/
+    }
+    .shadow{
+        -webkit-box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.36);
+        box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.36);
+    }
+    .weatherCard{
+
+    }
+    .small{
+        height: 20%;
+        width: 20%;
+        padding: 0;
+        margin: 0;
+    }
+    #map {
+        /* the width and height may be set to any size */
+        /*width: 96.5%;*/
+        /*height: 22em;*/
+
+    }
+    /*================================================End OF Styles===================================================*/
+
+</style>
+<body class="parent">
+<div class="header ">
+    <div class="background-not-blue headerBoxEffect">
+    <h1 class="textCenter headerEffect">Weather Forecast</h1>
+    </div>
+</div>
+<div class="header2 justTextShadow" id="header2">
+
+</div>
+<div id="weatherDay1" class="day1 background-not-blue shadow weatherCard">
+
+
+</div>
+<div id="weatherDay2" class="day2 background-not-blue shadow weatherCard">
+
+
+</div>
+<div id="weatherDay3" class="day3 background-not-blue shadow weatherCard">
+
+</div>
+<div class="mapped">
+    <div id='map'></div>
+
+    <!--    <img src="img/wind.png" alt="">-->
+<!--    <img src="img/snow.png" alt="">-->
+<!--    <img src="img/rain.png" alt="">-->
+<!--    <img src="img/sleet.png" alt="">-->
+<!--    <img src="img/partly-cloudy-day.png" alt="">-->
+<!--    <img src="img/partly-cloudy-night.png" alt="">-->
+<!--    <img src="img/fog.png" alt="">-->
+<!--    <img src="img/cloudy.png" alt="">-->
+<!--    <img src="img/clear-night.png" alt="">-->
+<!--    <img src="img/clear-day.png" alt="">-->
+
+</div>
+
+<!--/*===============================================Script Start==================================================*/-->
+
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="js/keys.js"></script>
+<script>
+    (function() {
+        "use strict";
+        $(document).ready(function() {
+
+// <!--/*========================================Start Of Main Function============================================*/-->
+
+
+            $.ajax("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/ac0657a1f6150fc148099fb06e9582aa/37.8267,-122.4233").done(function(data){
+
+// <!--/*==================================Start Of Variable Initialization========================================*/-->
+                var weatherDay1 = $('#weatherDay1');
+                var weatherDay2 = $('#weatherDay2');
+                var weatherDay3 = $('#weatherDay3');
+                var header2 = $('#header2');
+                var imgSrc = "img/" + data.daily.data[0].icon + '.png';
+                // console.log(imgSrc);
+
+
+                 var day1Date = new Date(data.currently.time * 1000); //digits missing off of time call to save memory the multiplication here fixes the time
+                 var day2Date =  new Date((data.daily.data[1].time) * 1000);
+                 var day3Date =  new Date((data.daily.data[3].time) * 1000);
+
+                 var day1Split = day1Date.toString().split(' ');
+                 console.log(day1Split);
+                 var joined1 = day1Split[0] + " " + day1Split[1] + " " + day1Split[2];
+
+                 var day2Split = day2Date.toString().split(' ');
+                 var joined2 = day2Split[0] + " " + day2Split[1] + " " + day2Split[2];
+
+                 var day3Split = day3Date.toString().split(' ');
+                 var joined3 = day3Split[0] + " " + day3Split[1] + " " + day3Split[2];
+
+
+                var day2TempLow =  (data.daily.data[1].temperatureLow);
+                var day3TempLow =  (data.daily.data[2].temperatureLow);
+
+                var day2TempHigh =  (data.daily.data[1].temperatureHigh);
+                var day3TempHigh =  (data.daily.data[2].temperatureHigh);
+
+
+// <!--/*=========================================Start Of Appending===============================================*/-->
+
+                header2.append(
+                        "<h3 class='textCenter'>" + data.daily.summary + "</h3>"
+                );
+                console.log(data.daily.summary);
+                weatherDay1.append("<div class='textCenter'>" +
+
+                        '<img src="'+ imgSrc + '" alt="" class ="small"/>' +
+                        "<h3 class='paddingNone'>" +  "Today: " + joined1 + "</h3>" +
+                         "<p class='paddingNone'>" + data.hourly.summary + "</p>" +
+                         "<p class='paddingNone'>" + "Current Temperature of " + parseInt(data.currently.temperature) + "°" + "</p>" +
+                         "<p class='paddingNone'>" + "High " + parseInt(data.daily.data[0].temperatureHigh) + "° / " + "Low " + parseInt(data.daily.data[0].temperatureLow) + "°" + "</p>"
+                         // "<p class='paddingNone'>" + "Low Temperature of " + parseInt(data.daily.data[0].temperatureLow) + "°" + "</p>"
+
+
+                    + "</div>");
+
+                 weatherDay2.append("<div class='textCenter'>" +
+
+                     '<img src="'+ imgSrc + '" alt="" class ="small"/>' +
+                     "<h3 class='paddingNone'>" + joined2 + "</h3>" +
+                     "<p class='paddingNone'>" + data.hourly.summary + "</p>" +
+                     "<p class='paddingNone'>" + "High Temperature of " + parseInt(day2TempHigh) + "°" + "</p>" +
+                     "<p class='paddingNone'>" + "Low Temperature of " + parseInt(day2TempLow) + "°" + "</p>"
+                     + "</div>");
+                 console.log(data);
+                 console.log(status);
+
+                 weatherDay3.append("<div class='textCenter'>" +
+
+                     '<img src="'+ imgSrc + '" alt="" class ="small"/>' +
+                     "<h4 class='paddingNone'>" + joined3 + "</h4>" +
+                     "<p class='paddingNone'>" + data.hourly.summary + "</p>" +
+                     "<p class='paddingNone'>" + "High Temperature of " + parseInt(day3TempHigh) + "°" + "</p>" +
+                     "<p class='paddingNone'>" + "Low Temperature of " + parseInt(day3TempLow) + "°" + "</p>"
+                     + "</div>");
+                 console.log(data);
+                console.log(imgSrc);
+
+            });
+    //     north east positive
+    // south west negative
+
+// <!--/*============================================Start Of Map==================================================*/-->
+
+            mapboxgl.accessToken = mapboxToken;
+
+
+            var mapOptions = {
+                container: 'map',
+                style: 'mapbox://styles/mapbox/light-v10',
+                // zoom: 10,
+                zoom: 12,
+                pitch: 65,
+                center: [-98.4916, 29.4252],
+                sprite: "mapbox://sprites/mapbox/bright-v8"
+                // interactive: false
+            };
+            var map = new mapboxgl.Map(mapOptions);
+            var markerOptions = {
+                color: "blue",
+                draggable: true
+            };
+            var marker = new mapboxgl.Marker(markerOptions)
+                .setLngLat([-98.4816, 29.4260])
+                .addTo(map);
+            console.log(marker._lngLat.lng);
+            console.log(marker._lngLat.lat);
+// <!--/*=======================================End of Document Ready==============================================*/-->
+
+        });
+    })();
+</script>
+</body>
+</html>
