@@ -259,7 +259,60 @@ function fizzBuzz(num){
                 outfit : 'black body suit and cape with bat mask'
             }
     ]
- console.log(superHeroes);
+
+
+ // console.log(superHeroes);
+
+
+// return average height of array of objects
+
+
+
+var hamsters = [
+    {
+        name: "Hamtaro",
+        heightInMM: 86,
+        fur: ['orange', 'white'],
+        gender: "male",
+        dateOfBirth: "August 6"
+    } , {
+        name: "Bijou",
+        heightInMM: 75,
+        fur: ['white'],
+        gender: "female",
+        dateOfBirth: "July 10"
+    } , {
+        name: "Oxnard",
+        heightInMM: 100,
+        fur: ['grey', 'white'],
+        gender: "male",
+        dateOfBirth: "May 3"
+    } , {
+        name: "Boss",
+        heightInMM: 120,
+        fur: ['brown', 'white'],
+        gender: "male",
+        dateOfBirth: "Spetember 21"
+    } , {
+        name: "Snoozer",
+        heightInMM: 85,
+        fur: ['brown', 'white', "pink"],
+        gender: "male",
+        dateOfBirth: "January 14"
+    }
+];
+
+
+    function averageHeight(arr){
+        var heightAvg = 0;
+        for(var i =0; i <arr.length; i++){
+            heightAvg += arr[i].heightInMM;
+        }
+        return heightAvg / arr.length;
+    }
+
+console.log(averageHeight(hamsters));
+
 
 
 </script>
