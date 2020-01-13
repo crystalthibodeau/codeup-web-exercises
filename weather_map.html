@@ -38,9 +38,12 @@
     button:hover {
         color: #ffffff !important;
         background: #1C3888;
-        border-color: none !important;
+        /*border-color: 0 !important;*/
         transition: all 0.4s ease 0s;
     }
+    /*h3{*/
+    /*    padding: 0;*/
+    /*}*/
     /*=============================================Grid Initialization================================================*/
     .parent {
         display: grid;
@@ -439,6 +442,8 @@
                         $('#weatherLocation').html(result + " " + 'Weather Forecast')                    });
 
                     console.log(lngLat);
+                    console.log(mapCity);
+
 
                 });
             }
