@@ -15,7 +15,9 @@
         box-sizing: border-box;
     }
     body{
-        background-color: #9ADCEA;
+        /*background: url("img/clouds.png");*/
+        background-size: cover;
+        background-color: #D2E8F6;
         color: white;
     }
     h1{
@@ -24,12 +26,27 @@
     ::placeholder{
         text-align: center;
     }
+
+    button {
+        color: #494949 !important;
+        background: #ffffff;
+        border-radius: 6px;
+        border: 1px solid #494949 !important;
+        display: inline-block;
+        transition: all 0.4s ease 0s;
+    }
+    button:hover {
+        color: #ffffff !important;
+        background: #1C3888;
+        border-color: none !important;
+        transition: all 0.4s ease 0s;
+    }
     /*=============================================Grid Initialization================================================*/
     .parent {
         display: grid;
         /*grid-template-columns: repeat(auto-fit, minmax(5px, 1fr));*/
         grid-template-columns: 5% repeat(6, 15%) 5%;
-        grid-template-rows: 8% 8% 10% 10% 10% 5% 5% 23% 14% 7%;
+        grid-template-rows: 8% 8% 10% 10% 10% 5% 1% 27% 14% 7%;
         grid-column-gap: 0px;
         grid-row-gap: 4px;
         width: 100vw;
@@ -121,8 +138,8 @@
 </style>
 <body class="parent">
 <div class="header ">
-    <div class="background-not-blue headerBoxEffect">
-    <h1 class="textCenter">Weather Forecast</h1>
+    <div>
+    <h1 class="textCenter" id="weatherLocation">San Antonio Weather Forecast</h1>
     </div>
 </div>
 <div class="header2 justTextShadow" id="header2">
@@ -148,21 +165,9 @@
 <input type="text" class="form-control mapped-search search-flex width" id="userSearch" placeholder="Find Weather By Address..">
 <button id ="submit" type="button" class="width">Submit</button>
 </div>
-<!--</div>-->
+
 <div class="mapped">
     <div id='map'></div>
-
-    <!--    <img src="img/wind.png" alt="">-->
-<!--    <img src="img/snow.png" alt="">-->
-<!--    <img src="img/rain.png" alt="">-->
-<!--    <img src="img/sleet.png" alt="">-->
-<!--    <img src="img/partly-cloudy-day.png" alt="">-->
-<!--    <img src="img/partly-cloudy-night.png" alt="">-->
-<!--    <img src="img/fog.png" alt="">-->
-<!--    <img src="img/cloudy.png" alt="">-->
-<!--    <img src="img/clear-night.png" alt="">-->
-<!--    <img src="img/clear-day.png" alt="">-->
-
 </div>
 
 <!--/*===============================================Script Start==================================================*/-->
@@ -308,7 +313,7 @@
                                 "<h3 class='paddingNone'>" +  "Today: " + joined1 + "</h3>" +
                                 "<p class='paddingNone'>" + data.hourly.summary + "</p>" +
                                 "<p class='paddingNone'>" + "Current Temperature of " + parseInt(data.currently.temperature) + "°" + "</p>" +
-                                "<p class='paddingNone'>" + "High of " + parseInt(data.daily.data[0].temperatureHigh) + "°" + "Low Temperature of " + parseInt(data.daily.data[0].temperatureLow) + "°" + "</p>"
+                                "<p class='paddingNone'>" + parseInt(data.daily.data[0].temperatureHigh) + "°/" +parseInt(data.daily.data[0].temperatureLow) + "°" + "</p>"
 
                                 + "</div>");
 
@@ -332,6 +337,10 @@
                                 + "</div>");
                             console.log(data);
 
+                            map.flyTo({center:result,zoom:10});
+
+                            $("#weatherLocation").html(search.toUpperCase() + ' FORECAST');
+                            marker.setLngLat([long, lat]);
 
                         });
                 })
@@ -343,8 +352,7 @@
             var mapOptions = {
                 container: 'map',
                 style: 'mapbox://styles/mapbox/light-v10',
-                // zoom: 10,
-                zoom: 12,
+                zoom: 7,
                 pitch: 65,
                 center: [-98.4916, 29.4252],
                 sprite: "mapbox://sprites/mapbox/bright-v8"
@@ -352,7 +360,7 @@
             };
             var map = new mapboxgl.Map(mapOptions);
             var markerOptions = {
-                color: "blue",
+                color: "#1C3888",
                 draggable: true
             };
             var marker = new mapboxgl.Marker(markerOptions)
@@ -424,10 +432,18 @@
                         "<p class='paddingNone'>" + "Low Temperature of " + parseInt(day3TempLow) + "°" + "</p>"
                         + "</div>");
                     console.log(data);
+                    var mapCity = reverseGeocode(lngLat, mapboxToken);
+                    console.log(Promise.resolve(mapCity));
+
+                    mapCity.then(function(result) {
+                        $('#weatherLocation').html(result + " " + 'Weather Forecast')                    });
+
+                    console.log(lngLat);
+
                 });
             }
-            marker.on('dragend', onDragEnd);
 
+            marker.on('dragend', onDragEnd);
 // <!--/*=======================================End of Document Ready==============================================*/-->
 
         });
