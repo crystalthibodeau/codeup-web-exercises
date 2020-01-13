@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <!-- Mapbox CSS -->
+<!--    <link src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'>-->
+
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
 </head>
+
 <style>
     /*=============================================Direct Element Styles==============================================*/
     *{
@@ -16,12 +21,15 @@
     h1{
         font-size: 2.5em;
     }
+    ::placeholder{
+        text-align: center;
+    }
     /*=============================================Grid Initialization================================================*/
     .parent {
         display: grid;
         /*grid-template-columns: repeat(auto-fit, minmax(5px, 1fr));*/
         grid-template-columns: 5% repeat(6, 15%) 5%;
-        grid-template-rows: 8% 8% repeat(3, 10%) 5% repeat(3, 14%) 7%;
+        grid-template-rows: 8% 8% 10% 10% 10% 5% 5% 23% 14% 7%;
         grid-column-gap: 0px;
         grid-row-gap: 4px;
         width: 100vw;
@@ -49,10 +57,15 @@
     }
 
     .mapped {
-        grid-area:  7 / 2 / 10 / 8;
+        grid-area:  8 / 2 / 10 / 8;
         -webkit-box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.36);
         box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.36);
 
+    }
+
+    .mapped-search{
+        grid-area:  7 / 2 / 8 / 8;
+        /*margin: 0 auto;*/
     }
 
     /*=============================================Text styles================================================*/
@@ -91,6 +104,18 @@
     #map {
         height: 100%;
     }
+    .search-flex{
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        align-content: flex-end;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    .width{
+        font-size:1.25em;
+    }
     /*================================================End OF Styles===================================================*/
 
 </style>
@@ -118,6 +143,12 @@
 </div>
 </div>
 </div>
+
+<div class="mapped-search search-flex">
+<input type="text" class="form-control mapped-search search-flex width" id="userSearch" placeholder="Find Weather By Address..">
+<button id ="submit" type="button" class="width">Submit</button>
+</div>
+<!--</div>-->
 <div class="mapped">
     <div id='map'></div>
 
@@ -136,10 +167,12 @@
 
 <!--/*===============================================Script Start==================================================*/-->
 
+
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
-<script src="js/mapbox-geocoder-utils.js"></script>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+
 <script>
     (function() {
         "use strict";
@@ -156,9 +189,10 @@
                 var weatherDay3 = $('#weatherDay3');
                 var header2 = $('#header2');
                 var imgSrc = "img/" + data.daily.data[0].icon + '.png';
+                var imgSrcBackground = "img/background-" + data.daily.data[0].icon + '.png';
 
 
-                 var day1Date = new Date(data.currently.time * 1000); //digits missing off of time call to save memory the multiplication here fixes the time
+                var day1Date = new Date(data.currently.time * 1000); //digits missing off of time call to save memory the multiplication here fixes the time
                  var day2Date =  new Date((data.daily.data[1].time) * 1000);
                  var day3Date =  new Date((data.daily.data[2].time) * 1000);
 
@@ -181,11 +215,11 @@
 
 // <!--/*=========================================Start Of Appending===============================================*/-->
 
-                header2.append(
+                header2.html(
                         "<h3 class='textCenter'>" + data.daily.summary + "</h3>"
                 );
                 console.log(data.daily.summary);
-                weatherDay1.append("<div class='textCenter'>" +
+                weatherDay1.html("<div class='textCenter'>" +
 
                         '<img src="'+ imgSrc + '" alt="" class ="small"/>' +
                         "<h3 class='paddingNone'>" +  "Today: " + joined1 + "</h3>" +
@@ -194,8 +228,11 @@
                          "<p class='paddingNone'>" + "High of " + parseInt(data.daily.data[0].temperatureHigh) + "°" + "Low Temperature of " + parseInt(data.daily.data[0].temperatureLow) + "°" + "</p>"
 
                     + "</div>");
+                weatherDay1.css({
+                    'background': imgSrcBackground,
+                });
 
-                 weatherDay2.append("<div class='textCenter'>" +
+                 weatherDay2.html("<div class='textCenter'>" +
 
                      '<img src="'+ imgSrc + '" alt="" class ="small"/>' +
                      "<h3 class='paddingNone'>" + joined2 + "</h3>" +
@@ -205,7 +242,7 @@
                      + "</div>");
 
 
-                 weatherDay3.append("<div class='textCenter'>" +
+                 weatherDay3.html("<div class='textCenter'>" +
 
                      '<img src="'+ imgSrc + '" alt="" class ="small"/>' +
                      "<h3 class='paddingNone'>" + joined3 + "</h3>" +
@@ -215,13 +252,93 @@
                      + "</div>");
                  console.log(data);
             });
-    //     north east positive
+
+
+
+
+// <!--/*===========================================Button Search==================================================*/-->
+
+
+                //     north east positive
     // south west negative
 
+
+            $('#submit').click(function () {
+                var search = $(userSearch).val();
+
+                //Use geocode function to get coordinates based on a physical address then store
+                geocode(search, mapboxToken).then(function (result) {
+                    var long = result[0].toString();
+                    var lat = result[1].toString();
+                    $.ajax("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + lat + ", " + long)
+                        .done(function (data) {
+
+                            console.log(data);
+
+                            var weatherDay1 = $('#weatherDay1');
+                            var weatherDay2 = $('#weatherDay2');
+                            var weatherDay3 = $('#weatherDay3');
+                            var header2 = $('#header2');
+                            var imgSrc = "img/" + data.daily.data[0].icon + '.png';
+
+
+                            var day1Date = new Date(data.currently.time * 1000); //digits missing off of time call to save memory the multiplication here fixes the time
+                            var day2Date =  new Date((data.daily.data[1].time) * 1000);
+                            var day3Date =  new Date((data.daily.data[2].time) * 1000);
+
+                            var day1Split = day1Date.toString().split(' ');
+                            var joined1 = day1Split[0] + " " + day1Split[1] + " " + day1Split[2];
+
+                            var day2Split = day2Date.toString().split(' ');
+                            var joined2 = day2Split[0] + " " + day2Split[1] + " " + day2Split[2];
+
+                            var day3Split = day3Date.toString().split(' ');
+                            var joined3 = day3Split[0] + " " + day3Split[1] + " " + day3Split[2];
+
+
+                            var day2TempLow =  (data.daily.data[1].temperatureLow);
+                            var day3TempLow =  (data.daily.data[2].temperatureLow);
+
+                            var day2TempHigh =  (data.daily.data[1].temperatureHigh);
+                            var day3TempHigh =  (data.daily.data[2].temperatureHigh);
+
+                            weatherDay1.html("<div class='textCenter'>" +
+
+                                '<img src="'+ imgSrc + '" alt="" class ="small"/>' +
+                                "<h3 class='paddingNone'>" +  "Today: " + joined1 + "</h3>" +
+                                "<p class='paddingNone'>" + data.hourly.summary + "</p>" +
+                                "<p class='paddingNone'>" + "Current Temperature of " + parseInt(data.currently.temperature) + "°" + "</p>" +
+                                "<p class='paddingNone'>" + "High of " + parseInt(data.daily.data[0].temperatureHigh) + "°" + "Low Temperature of " + parseInt(data.daily.data[0].temperatureLow) + "°" + "</p>"
+
+                                + "</div>");
+
+                            weatherDay2.html("<div class='textCenter'>" +
+
+                                '<img src="'+ imgSrc + '" alt="" class ="small"/>' +
+                                "<h3 class='paddingNone'>" + joined2 + "</h3>" +
+                                "<p class='paddingNone'>" + data.hourly.summary + "</p>" +
+                                "<p class='paddingNone'>" + "High Temperature of " + parseInt(day2TempHigh) + "°" + "</p>" +
+                                "<p class='paddingNone'>" + "Low Temperature of " + parseInt(day2TempLow) + "°" + "</p>"
+                                + "</div>");
+
+
+                            weatherDay3.html("<div class='textCenter'>" +
+
+                                '<img src="'+ imgSrc + '" alt="" class ="small"/>' +
+                                "<h3 class='paddingNone'>" + joined3 + "</h3>" +
+                                "<p class='paddingNone'>" + data.hourly.summary + "</p>" +
+                                "<p class='paddingNone'>" + "High Temperature of " + parseInt(day3TempHigh) + "°" + "</p>" +
+                                "<p class='paddingNone'>" + "Low Temperature of " + parseInt(day3TempLow) + "°" + "</p>"
+                                + "</div>");
+                            console.log(data);
+
+
+                        });
+                })
+            });
 // <!--/*============================================Start Of Map==================================================*/-->
 
             mapboxgl.accessToken = mapboxToken;
-
 
             var mapOptions = {
                 container: 'map',
@@ -243,6 +360,74 @@
                 .addTo(map);
             console.log(marker._lngLat.lng);
             console.log(marker._lngLat.lat);
+
+
+            function onDragEnd() {
+                var lngLat = marker.getLngLat();
+                var weather = 'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' + darkSkyKey + "/" + lngLat.lat + "," + lngLat.lng;
+                // // Pulling Weather
+                $.get(weather).done(function (data) {
+                    console.log(data);
+                    var weatherDay1 = $('#weatherDay1');
+                    var weatherDay2 = $('#weatherDay2');
+                    var weatherDay3 = $('#weatherDay3');
+                    var header2 = $('#header2');
+                    var imgSrc = "img/" + data.daily.data[0].icon + '.png';
+
+
+                    var day1Date = new Date(data.currently.time * 1000); //digits missing off of time call to save memory the multiplication here fixes the time
+                    var day2Date =  new Date((data.daily.data[1].time) * 1000);
+                    var day3Date =  new Date((data.daily.data[2].time) * 1000);
+
+                    var day1Split = day1Date.toString().split(' ');
+                    var joined1 = day1Split[0] + " " + day1Split[1] + " " + day1Split[2];
+
+                    var day2Split = day2Date.toString().split(' ');
+                    var joined2 = day2Split[0] + " " + day2Split[1] + " " + day2Split[2];
+
+                    var day3Split = day3Date.toString().split(' ');
+                    var joined3 = day3Split[0] + " " + day3Split[1] + " " + day3Split[2];
+
+
+                    var day2TempLow =  (data.daily.data[1].temperatureLow);
+                    var day3TempLow =  (data.daily.data[2].temperatureLow);
+
+                    var day2TempHigh =  (data.daily.data[1].temperatureHigh);
+                    var day3TempHigh =  (data.daily.data[2].temperatureHigh);
+
+                    weatherDay1.html("<div class='textCenter'>" +
+
+                        '<img src="'+ imgSrc + '" alt="" class ="small"/>' +
+                        "<h3 class='paddingNone'>" +  "Today: " + joined1 + "</h3>" +
+                        "<p class='paddingNone'>" + data.hourly.summary + "</p>" +
+                        "<p class='paddingNone'>" + "Current Temperature of " + parseInt(data.currently.temperature) + "°" + "</p>" +
+                        "<p class='paddingNone'>" + "High of " + parseInt(data.daily.data[0].temperatureHigh) + "°" + "Low Temperature of " + parseInt(data.daily.data[0].temperatureLow) + "°" + "</p>"
+
+                        + "</div>");
+
+                    weatherDay2.html("<div class='textCenter'>" +
+
+                        '<img src="'+ imgSrc + '" alt="" class ="small"/>' +
+                        "<h3 class='paddingNone'>" + joined2 + "</h3>" +
+                        "<p class='paddingNone'>" + data.hourly.summary + "</p>" +
+                        "<p class='paddingNone'>" + "High Temperature of " + parseInt(day2TempHigh) + "°" + "</p>" +
+                        "<p class='paddingNone'>" + "Low Temperature of " + parseInt(day2TempLow) + "°" + "</p>"
+                        + "</div>");
+
+
+                    weatherDay3.html("<div class='textCenter'>" +
+
+                        '<img src="'+ imgSrc + '" alt="" class ="small"/>' +
+                        "<h3 class='paddingNone'>" + joined3 + "</h3>" +
+                        "<p class='paddingNone'>" + data.hourly.summary + "</p>" +
+                        "<p class='paddingNone'>" + "High Temperature of " + parseInt(day3TempHigh) + "°" + "</p>" +
+                        "<p class='paddingNone'>" + "Low Temperature of " + parseInt(day3TempLow) + "°" + "</p>"
+                        + "</div>");
+                    console.log(data);
+                });
+            }
+            marker.on('dragend', onDragEnd);
+
 // <!--/*=======================================End of Document Ready==============================================*/-->
 
         });
