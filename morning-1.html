@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Review</title>
+</head>
+<body>
+<div class="container">
+    <div id="main">
+        <input type="text" id="input">
+        <button onclick="addLi()">Add to List</button>
+        <h4>Favorite Food:</h4>
+        <ul id="favorite-food">
+            <li>Ramen</li>
+            <li>Sushi</li>
+            <li>Curry</li>
+        </ul>
+        <h4 id="change-me">Change Me</h4>
+        <h4>My Cohort: <span id="my-cohort"></span></h4>
+        <input type="text" id="cohort-name">
+        <button id="change-cohort" onClick="update()">Update</button>
+        <br>
+        <button id="highlight">Highlight</button>
+    </div>
+</div>
+<script>
+    "use strict";
+    // TODO: Allow the user to type in their favorite food into the input and append it to the list once the button is clicked.
+    function addLi() {
+        var input = document.getElementById('input').value,
+            listNode = document.getElementById('favorite-food'),
+            liNode = document.createElement("li"),
+            txtNode = document.createTextNode(input);
+        liNode.appendChild(txtNode);
+        listNode.appendChild(liNode);
+    }
+    // TODO: When the heading 'Change Me' is double clicked, change its background-color to purple.
+    document.getElementById("change-me").addEventListener("dblclick", purpBackground);
+    function purpBackground() {
+        document.getElementById("change-me").style.backgroundColor = 'purple';
+    }
+    // TODO: Allow the user to input their cohort name. Once Update button is clicked, the text should should update with the name of the cohort.
+    function update() {
+        var cohort = document.getElementById("cohort-name").value;
+        document.getElementById("my-cohort").innerHTML = cohort;
+    }
+    // TODO: When 'Highlight' button is clicked, change the background color of the cohort name to yellow.
+    document.getElementById("highlight").addEventListener("click", yellowBackground);
+    function yellowBackground() {
+        document.getElementById("my-cohort").style.backgroundColor = 'yellow';
+    }
+    // TODO: Write some JavaScript that changes the background-color of the container to pink after 3 seconds.
+    setTimeout(function () {
+        document.body.style.backgroundColor = "pink"
+    }, 3000);
+</script>
+</body>
+</html>

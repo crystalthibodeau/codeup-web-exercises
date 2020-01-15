@@ -16,32 +16,24 @@
         box-sizing: border-box;
     }
     body{
-        /*background: url("img/clouds.png");*/
         background-size: cover;
-        background-color: #D2E8F6;
-        color: white;
+        background-color: #8BA0AB;
+        color: #78909D;
         font-family: "Nunito Sans", sans-serif;
 
     }
     h1{
-        font-size: 2.5em;
+        font-size: 2em;
     }
-    ::placeholder{
-        text-align: center;
-    }
-
     button {
         color: #494949 !important;
-        background: #ffffff;
-        border-radius: 6px;
-        border: 1px solid #494949 !important;
+        background: #CAD2D3;
         display: inline-block;
         transition: all 0.4s ease 0s;
     }
     button:hover {
         color: #ffffff !important;
         background: #1C3888;
-        /*border-color: 0 !important;*/
         transition: all 0.4s ease 0s;
     }
     img{
@@ -53,9 +45,9 @@
         display: grid;
         /*grid-template-columns: repeat(auto-fit, minmax(5px, 1fr));*/
         grid-template-columns: 5% repeat(6, 15%) 5%;
-        grid-template-rows: 8% 8% 10% 10% 10% 5% 3% 25% 14% 7%;
+        grid-template-rows: 8% 8% 10% 10% 10% 7% 3% 28% 14% 2%;
         grid-column-gap: 0px;
-        grid-row-gap: 4px;
+        grid-row-gap: 0px;
         width: 100vw;
         height: 100vh;
         margin: 0;
@@ -64,20 +56,31 @@
 
     .header {
         grid-area: 1 / 1 / 2 / 9;
-        color: #848487;
+        background-color: white;
+        color: #222222;
         text-shadow: 1px 1px 0 #969696, 1px 8px 7px #aba8a8;
+        border-bottom: solid black 2px;
+
     }
     .header2 {
-        grid-area: 2 / 1 / 3 / 9;}
+        grid-area: 2 / 1 / 3 / 9;
+        color: white;
+        background-color: #222222;
+        border-bottom: solid black 2px;
+        text-align: center;
+    }
 
     .weatherCards {
+        margin-top: 1em;
         grid-area: 3 / 2 / 6 / 8;
+
     }
     .innerDiv1{
         display: flex;
         justify-content: space-between;
         align-items: end;
         align-content: end;
+        margin-bottom: 1em;
     }
 
     .mapped {
@@ -89,25 +92,17 @@
 
     .mapped-search{
         grid-area:  7 / 2 / 8 / 8;
-        /*margin: 0 auto;*/
+        margin-bottom: 1em;
+
     }
 
     /*=================================================Card Flip=====================================================*/
-
-
     *, *:before, *:after {
         box-sizing: border-box;
     }
 
-    @mixin mobile ($size: 640px) {
-        @media screen and (max-width: $size) {
-            @content;
-        }
-    }
-
     .f1_container {
         position: relative;
-        /*margin: 10px auto;*/
         width: 30%;
         height:15em;
         z-index: 1;
@@ -120,14 +115,14 @@
         height: 100%;
         transform-style: preserve-3d;
         transition: all 1.0s linear;
-        /*border-radius: 5px;*/
+        border-radius: 5px;
 
     }
     .f1_container:hover .f1_card {
         transform: rotateY(180deg);
         -webkit-box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.36);
         box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.36);
-        /*border-radius: 5px;*/
+        border-radius: 5px;
 
     }
     .face {
@@ -137,21 +132,25 @@
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         transform-style: preserve-3d;
-        transition: ease-in-out 600ms;
-        /*border-radius: 5px;*/
-
+        transition: ease-in-out 400ms;
+        border-radius: 5px;
+        padding-top: 1em;
+        color: white;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        font-weight: 600;
+        font-size: 1.5em;
     }
     .face.back {
         display: block;
         transform: rotateY(180deg);
         box-sizing: border-box;
         padding: 10px;
-        color: #848487;
+        color: white;
         text-align: center;
-        background-color: white;
-        /*border-radius: 5px;*/
+        background-color: #222222;
+        border-radius: 5px;
         transform-style: preserve-3d;
-        transition: ease-in-out 600ms;
+        transition: ease-in-out 400ms;
 
     }
     #front1, #front2, #front3{
@@ -165,25 +164,12 @@
     .paddingNone{
         padding: 0;
     }
-    .justTextShadow{
-        text-shadow: 1px 1px 0 #969696, 1px 3px 6px #aba8a8;
 
-    }
     /*=============================================More Styles================================================*/
-    .headerBoxEffect{
-        -webkit-box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.36);
-        box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.36);
-    }
-    .background-not-blue{
-        background: white ;
-        color: #848487;
-    }
+
     .shadow{
         -webkit-box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.36);
         box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.36);
-    }
-    .weatherCard{
-        width: 30%;
     }
     .small{
         height: 20%;
@@ -214,12 +200,12 @@
 
 
 <div class="header ">
-    <div>
-    <h1 class="textCenter" id="weatherLocation">San Antonio Weather Forecast</h1>
+    <div class="textCenter">
+    <h1 id="weatherLocation">San Antonio Weather Forecast</h1>
     </div>
 </div>
-<div class="header2 justTextShadow" id="header2">
-
+<div class="header2 textCenter" id="header2">
+<p>Weekly Weather Summary</p>
 </div>
 <div class="weatherCards">
     <div class="innerDiv1">
@@ -229,36 +215,20 @@
         <div class="f1_container">
             <div class="f1_card shadow">
                 <div class="front face" id="front1">
-                    <h1>hello</h1>
+                    <h1>Day 1</h1>
                 </div>
                 <div class="back face center" id="weatherDay1">
-                    <p>This is nice for exposing more information about an image.</p>
-                    <p>Any content can go here.</p>
                 </div>
             </div>
         </div>
 
-            <!--<div id="weatherDay1" class=" background-not-blue shadow weatherCard">-->
-<!--        <div  class="card">-->
-<!--            &lt;!&ndash;            <h2>HTML | Flip Card</h2>&ndash;&gt;-->
-<!--            <div class="card-inner ">-->
-<!--                <div class="card-front" id="weatherDay2">-->
-
-<!--                    <div class="card-back">-->
-<!--                        <p>A Computer Science Portal for Geeks</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
 
         <div class="f1_container">
             <div class="f1_card shadow">
                 <div class="front face" id="front2">
-                    <h1>hello</h1>
+                    <h1>Day 2</h1>
                 </div>
                 <div class="back face center" id="weatherDay2">
-                    <p>This is nice for exposing more information about an image.</p>
-                    <p>Any content can go here.</p>
                 </div>
             </div>
         </div>
@@ -269,25 +239,16 @@
         <div class="f1_container">
             <div class="f1_card shadow">
                 <div class="front face" id="front3">
-                    <h1>hello</h1>
+                    <h1>Day 3</h1>
                 </div>
                 <div class="back face center" id="weatherDay3">
-                    <p>This is nice for exposing more information about an image.</p>
-                    <p>Any content can go here.</p>
                 </div>
             </div>
         </div>
 
-        <!--<div id="weatherDay2" class=" background-not-blue shadow weatherCard"></div>-->
-<!--<div id="weatherDay3" class=" background-not-blue shadow weatherCard"></div>-->
-
-
 
     </div>
 </div>
-
-
-<!--</div>-->
 
 
 <div class="mapped-search search-flex">
@@ -327,7 +288,10 @@
                 var weatherDay3 = $('#weatherDay3');
                 var header2 = $('#header2');
                 var imgSrc = "img/" + data.daily.data[0].icon + '.png';
-                var imgSrcBackground = "img/background-" + data.daily.data[0].icon + '.png';
+                var imgSrcBackground1 = "url('" + "img/background-" + data.daily.data[0].icon + '.jpg' + "'" + ")";
+                var imgSrcBackground2 = "url('" + "img/background-" + data.daily.data[1].icon + '.jpg' + "'" + ")";
+                var imgSrcBackground3 = "url('" + "img/background-" + data.daily.data[2].icon + '.jpg' + "'" + ")";
+
 
 
                 var day1Date = new Date(data.currently.time * 1000); //digits missing off of time call to save memory the multiplication here fixes the time
@@ -350,59 +314,71 @@
                 var day2TempHigh =  (data.daily.data[1].temperatureHigh);
                 var day3TempHigh =  (data.daily.data[2].temperatureHigh);
 
+                var day1Summary = (data.daily.data[0].summary);
+                var day2Summary = (data.daily.data[1].summary);
+                var day3Summary = (data.daily.data[2].summary);
+                console.log(day1Summary);
+                console.log(day2Summary);
+                console.log(day3Summary);
 
 // <!--/*=========================================Start Of Appending===============================================*/-->
-
                 header2.html(
-                        "<h3 class='textCenter'>" + data.daily.summary + "</h3>"
+                    "<h3 class='textCenter'>" + data.daily.summary + "</h3>"
                 );
-                console.log(data.daily.summary);
+
                 front1.css({
-                    'background': "url('img/clouds.gif')"
-                    }
-                );
-                weatherDay1.html("<div class='textCenter'>" +
-
-                        '<img src="'+ imgSrc + '" alt="" class ="small"/>' +
-                        "<h3 class='paddingNone'>" +  "Today: " + joined1 + "</h3>" +
-                         "<p class='paddingNone'>" + data.hourly.summary + "</p>" +
-                         "<p class='paddingNone'>" + "Current Temperature of " + parseInt(data.currently.temperature) + "°" + "</p>" +
-                         "<h2 class='paddingNone'>" + parseInt(data.daily.data[1].temperatureHigh) + "°/" +parseInt(data.daily.data[1].temperatureLow) + "°" + "</h2>"
-
-                    + "</div>");
-                weatherDay1.css({
-                    'background': imgSrcBackground,
+                    'background': imgSrcBackground1,
+                    'background-size' : 'cover'
+                });
+                front2.css({
+                    'background': imgSrcBackground2,
+                    'background-size' : 'cover'
                 });
 
-                front2.css({
-                        'background': "url('img/ooolala.jpg')"
-                    }
-                );
-
-                 weatherDay2.html("<div class='textCenter'>" +
-
-                     '<img src="'+ imgSrc + '" alt="" class ="small"/>' +
-                     "<h3 class='paddingNone'>" + joined2 + "</h3>" +
-                     "<p class='paddingNone'>" + data.hourly.summary + "</p>" +
-                     "<h2 class='paddingNone'>" + parseInt(day2TempHigh) + "°/" +parseInt(day2TempLow) + "°" + "</h2>"
-
-                     + "</div>");
-
                 front3.css({
-                        'background': "url('img/night-bend.jpg')",
-                        'background-size': 'cover'
-                    }
+                    'background': imgSrcBackground3,
+                    'background-size' : 'cover'
+                });
+                front1.html(
+                    "<div>" +
+                    "<h3 class='paddingNone'>" +  "Today: " + joined1 + "</h3>" +
+                    "<p class='paddingNone'>" + day1Summary + "</p>" +
+                    "<p class='paddingNone'>" + "Current Temperature of " + parseInt(data.currently.temperature) + "°" + "</p>" +
+                    "</div>"
                 );
+                front2.html(
+                    "<div>" +
+                    "<h3 class='paddingNone'>" + joined2 + "</h3>" +
+                    "<p class='paddingNone'>" + day2Summary + "</p>" +
+                    "</div>"
+                );
+                front3.html(
+                    "<div>" +
+                    "<h3 class='paddingNone'>" + joined3 + "</h3>" +
+                    "<p class='paddingNone'>" + day3Summary + "</p>" +
+                    "</div>"
+                );
+                console.log(data.hourly.summary);
+                console.log(imgSrcBackground2);
+                console.log(imgSrcBackground3);
 
-                 weatherDay3.html("<div class='textCenter'>" +
+                weatherDay1.html("<div class='textCenter'>" +
+                    '<img src="'+ imgSrc + '" alt="" class ="small"/>' +
+                    "<h2 class='paddingNone'>" + "High " + parseInt(data.daily.data[0].temperatureHigh) + "°/" + "Low " +parseInt(data.daily.data[0].temperatureLow) + "°" + "</h2>"
+                    + "</div>");
 
-                     '<img src="'+ imgSrc + '" alt="" class ="small"/>' +
-                     "<h3 class='paddingNone'>" + joined3 + "</h3>" +
-                     "<p class='paddingNone'>" + data.hourly.summary + "</p>" +
-                     "<h2 class='paddingNone'>" + parseInt(day3TempHigh) + "°/" +parseInt(day3TempLow) + "°" + "</h2>"
+                weatherDay2.html("<div class='textCenter'>" +
+                    '<img src="'+ imgSrc + '" alt="" class ="small"/>' +
+                    "<h2 class='paddingNone'>" + "High " + parseInt(day2TempHigh) + "°/" + "Low " +parseInt(day2TempLow) + "°" + "</h2>"
+                    + "</div>");
 
-                     + "</div>");
-                 console.log(data);
+
+                weatherDay3.html("<div class='textCenter'>" +
+                    '<img src="'+ imgSrc + '" alt="" class ="small"/>' +
+                    "<h2 class='paddingNone'>" + "High " + parseInt(day3TempHigh) + "°/" + "Low " +parseInt(day3TempLow) + "°" + "</h2>"
+
+                    + "</div>");
+                console.log(data);
             });
 
 
@@ -425,7 +401,13 @@
                     $.ajax("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + lat + ", " + long)
                         .done(function (data) {
 
-                            console.log(data);
+                            var front1 = $('#front1');
+                            var front2 = $('#front2');
+                            var front3 = $('#front3');
+                            var imgSrcBackground1 = "url('" + "img/background-" + data.daily.data[0].icon + '.jpg' + "'" + ")";
+                            var imgSrcBackground2 = "url('" + "img/background-" + data.daily.data[1].icon + '.jpg' + "'" + ")";
+                            var imgSrcBackground3 = "url('" + "img/background-" + data.daily.data[2].icon + '.jpg' + "'" + ")";
+
 
                             var weatherDay1 = $('#weatherDay1');
                             var weatherDay2 = $('#weatherDay2');
@@ -454,46 +436,73 @@
                             var day2TempHigh =  (data.daily.data[1].temperatureHigh);
                             var day3TempHigh =  (data.daily.data[2].temperatureHigh);
 
+                            var day1Summary = (data.daily.data[0].summary);
+                            var day2Summary = (data.daily.data[1].summary);
+                            var day3Summary = (data.daily.data[2].summary);
+
                             header2.html(
                                 "<h3 class='textCenter'>" + data.daily.summary + "</h3>"
                             );
 
+                            front1.css({
+                                'background': imgSrcBackground1,
+                                'background-size' : 'cover'
+                            });
+                            front2.css({
+                                'background': imgSrcBackground2,
+                                'background-size' : 'cover'
+                            });
+
+                            front3.css({
+                                'background': imgSrcBackground3,
+                                'background-size' : 'cover'
+                            });
+                            front1.html(
+                                "<div>" +
+                                "<h3 class='paddingNone'>" +  "Today: " + joined1 + "</h3>" +
+                                "<p class='paddingNone'>" + day1Summary + "</p>" +
+                                "<p class='paddingNone'>" + "Current Temperature of " + parseInt(data.currently.temperature) + "°" + "</p>" +
+                                "</div>"
+                            );
+                            front2.html(
+                                "<div>" +
+                                "<h3 class='paddingNone'>" + joined2 + "</h3>" +
+                                "<p class='paddingNone'>" + day2Summary + "</p>" +
+                                "</div>"
+                            );
+                            front3.html(
+                                "<div>" +
+                                "<h3 class='paddingNone'>" + joined3 + "</h3>" +
+                                "<p class='paddingNone'>" + day3Summary + "</p>" +
+                                "</div>"
+                            );
+                            console.log(imgSrcBackground1);
+                            console.log(imgSrcBackground2);
+                            console.log(imgSrcBackground3);
+
                             weatherDay1.html("<div class='textCenter'>" +
 
                                 '<img src="'+ imgSrc + '" alt="" class ="small"/>' +
-                                "<h3 class='paddingNone'>" +  "Today: " + joined1 + "</h3>" +
-                                "<p class='paddingNone'>" + data.hourly.summary + "</p>" +
-                                "<p class='paddingNone'>" + "Current Temperature of " + parseInt(data.currently.temperature) + "°" + "</p>" +
-                                "<h2 class='paddingNone'>" + parseInt(data.daily.data[0].temperatureHigh) + "°/" +parseInt(data.daily.data[0].temperatureLow) + "°" + "</h2>"
-
+                                "<h2 class='paddingNone'>" + "High " + parseInt(data.daily.data[0].temperatureHigh) + "°/" + "Low " +parseInt(data.daily.data[0].temperatureLow) + "°" + "</h2>"
                                 + "</div>");
 
                             weatherDay2.html("<div class='textCenter'>" +
 
                                 '<img src="'+ imgSrc + '" alt="" class ="small"/>' +
-                                "<h3 class='paddingNone'>" + joined2 + "</h3>" +
-                                "<p class='paddingNone'>" + data.hourly.summary + "</p>" +
-                                "<p class='paddingNone'>" + "High Temperature of " + parseInt(day2TempHigh) + "°" + "</p>" +
-                                "<h2 class='paddingNone'>" + "Low Temperature of " + parseInt(day2TempLow) + "°" + "</h2>"
+                                "<h2 class='paddingNone'>" + "High " + parseInt(day2TempHigh) + "°/" + "Low " +parseInt(day2TempLow) + "°" + "</h2>"
                                 + "</div>");
 
 
                             weatherDay3.html("<div class='textCenter'>" +
 
                                 '<img src="'+ imgSrc + '" alt="" class ="small"/>' +
-                                "<h3 class='paddingNone'>" + joined3 + "</h3>" +
-                                "<p class='paddingNone'>" + data.hourly.summary + "</p>" +
-                                "<h2 class='paddingNone'>" + parseInt(day3TempHigh) + "°/" +parseInt(day3TempLow) + "°" + "</h2>"
+                                "<h2 class='paddingNone'>" + "High " + parseInt(day3TempHigh) + "°/" + "Low " +parseInt(day3TempLow) + "°" + "</h2>"
 
                                 + "</div>");
                             console.log(data);
 
                             map.flyTo({center:result,zoom:10});
 
-                            // $("#weatherLocation").html(search.toUpperCase() + ' FORECAST');
-                            // marker.setLngLat([long, lat]);
-
-                            // geocode(search, mapboxToken);
 
                             var mapCity = geocode(search, mapboxToken);
                             mapCity.then(function(result) {
@@ -528,14 +537,14 @@
                 container: 'map',
                 style: 'mapbox://styles/mapbox/light-v10',
                 zoom: 7,
-                pitch: 65,
+                pitch: 55,
                 center: [-98.4916, 29.4252],
                 sprite: "mapbox://sprites/mapbox/bright-v8"
                 // interactive: false
             };
             var map = new mapboxgl.Map(mapOptions);
             var markerOptions = {
-                color: "#1C3888",
+                color: "black",
                 draggable: true
             };
             var marker = new mapboxgl.Marker(markerOptions)
@@ -550,7 +559,19 @@
                 var weather = 'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' + darkSkyKey + "/" + lngLat.lat + "," + lngLat.lng;
                 // // Pulling Weather
                 $.get(weather).done(function (data) {
-                    console.log(data);
+
+
+                    var front1 = $('#front1');
+                    var front2 = $('#front2');
+                    var front3 = $('#front3');
+                    var imgSrcBackground1 = "url('" + "img/background-" + data.daily.data[0].icon + '.jpg' + "'" + ")";
+                    var imgSrcBackground2 = "url('" + "img/background-" + data.daily.data[1].icon + '.jpg' + "'" + ")";
+                    var imgSrcBackground3 = "url('" + "img/background-" + data.daily.data[2].icon + '.jpg' + "'" + ")";
+
+                    console.log(imgSrcBackground1);
+                    console.log(imgSrcBackground2);
+                    console.log(imgSrcBackground3);
+
                     var weatherDay1 = $('#weatherDay1');
                     var weatherDay2 = $('#weatherDay2');
                     var weatherDay3 = $('#weatherDay3');
@@ -578,39 +599,73 @@
                     var day2TempHigh =  (data.daily.data[1].temperatureHigh);
                     var day3TempHigh =  (data.daily.data[2].temperatureHigh);
 
+                    var day1Summary = (data.daily.data[0].summary);
+                    var day2Summary = (data.daily.data[1].summary);
+                    var day3Summary = (data.daily.data[2].summary);
+
                     header2.html(
                         "<h3 class='textCenter'>" + data.daily.summary + "</h3>"
                     );
 
+                    front1.css({
+                        'background': imgSrcBackground1,
+                        'background-size' : 'cover'
+                    });
+                    front2.css({
+                        'background': imgSrcBackground2,
+                        'background-size' : 'cover'
+                    });
+
+                    front3.css({
+                        'background': imgSrcBackground3,
+                        'background-size' : 'cover'
+                    });
+                    front1.html(
+                        "<div>" +
+                        "<h3 class='paddingNone'>" +  "Today: " + joined1 + "</h3>" +
+                        "<p class='paddingNone'>" + day1Summary + "</p>" +
+                        "<p class='paddingNone'>" + "Current Temperature of " + parseInt(data.currently.temperature) + "°" + "</p>" +
+                        "</div>"
+                    );
+                    front2.html(
+                        "<div>" +
+                        "<h3 class='paddingNone'>" + joined2 + "</h3>" +
+                        "<p class='paddingNone'>" + day2Summary + "</p>" +
+                        "</div>"
+                    );
+                    front3.html(
+                        "<div>" +
+                        "<h3 class='paddingNone'>" + joined3 + "</h3>" +
+                        "<p class='paddingNone'>" + day3Summary + "</p>" +
+                        "</div>"
+                    );
+                    console.log(imgSrcBackground1);
+                    console.log(imgSrcBackground2);
+                    console.log(imgSrcBackground3);
+
                     weatherDay1.html("<div class='textCenter'>" +
 
                         '<img src="'+ imgSrc + '" alt="" class ="small"/>' +
-                        "<h3 class='paddingNone'>" +  "Today: " + joined1 + "</h3>" +
-                        "<p class='paddingNone'>" + data.hourly.summary + "</p>" +
-                        "<p class='paddingNone'>" + "Current Temperature of " + parseInt(data.currently.temperature) + "°" + "</p>" +
-                        "<h2 class='paddingNone'>" + "High of " + parseInt(data.daily.data[0].temperatureHigh) + "°" + "Low Temperature of " + parseInt(data.daily.data[0].temperatureLow) + "°" + "</h2>"
+                        "<h2 class='paddingNone'>" + "High " + parseInt(data.daily.data[0].temperatureHigh) + "°/" + "Low " +parseInt(data.daily.data[0].temperatureLow) + "°" + "</h2>"
 
                         + "</div>");
 
                     weatherDay2.html("<div class='textCenter'>" +
 
                         '<img src="'+ imgSrc + '" alt="" class ="small"/>' +
-                        "<h3 class='paddingNone'>" + joined2 + "</h3>" +
-                        "<p class='paddingNone'>" + data.hourly.summary + "</p>" +
-                        "<p class='paddingNone'>" + "High Temperature of " + parseInt(day2TempHigh) + "°" + "</p>" +
-                        "<h2 class='paddingNone'>" + "Low Temperature of " + parseInt(day2TempLow) + "°" + "</h2>"
+                        "<h2 class='paddingNone'>" + "High " + parseInt(day2TempHigh) + "°/" + "Low " +parseInt(day2TempLow) + "°" + "</h2>"
                         + "</div>");
 
 
                     weatherDay3.html("<div class='textCenter'>" +
 
                         '<img src="'+ imgSrc + '" alt="" class ="small"/>' +
-                        "<h3 class='paddingNone'>" + joined3 + "</h3>" +
-                        "<p class='paddingNone'>" + data.hourly.summary + "</p>" +
-                        "<h2 class='paddingNone'>" + parseInt(day3TempHigh) + "°/" +parseInt(day3TempLow) + "°" + "</h2>"
+                        "<h2 class='paddingNone'>" + "High " + parseInt(day3TempHigh) + "°/" + "Low " +parseInt(day3TempLow) + "°" + "</h2>"
 
                         + "</div>");
-                    // console.log(data);
+                    console.log(data);
+
+
                     var mapCity = reverseGeocode(lngLat, mapboxToken);
                     console.log(Promise.resolve(mapCity));
 
@@ -623,8 +678,6 @@
 
                         console.log(resultSplit);
                     });
-
-
 
                 });
             }

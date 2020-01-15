@@ -121,9 +121,9 @@
     var button = document.getElementById("button");
     button.addEventListener("click", buttonClick);
 
-    // button.addEventListener("mouseover", function(){
-    //     button.style.color = "blue";
-    // })
+    button.addEventListener("mouseover", function(){
+        button.style.color = "blue";
+    })
 
     button.addEventListener("mouseover", function(){
         button.setAttribute("class", "purple");
@@ -133,9 +133,9 @@
         button.setAttribute("class", "blue");
     });
 
-    // button.addEventListener("mouseout", function(){
-    //     button.style.color = "purple";
-    // })
+    button.addEventListener("mouseout", function(){
+        button.style.color = "purple";
+    });
 
     setTimeout(function(){
         button.removeEventListener("click", buttonClick);
