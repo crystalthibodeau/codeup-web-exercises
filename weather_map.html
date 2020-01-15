@@ -99,11 +99,11 @@
         box-sizing: border-box;
     }
 
-    /*@mixin mobile ($size: 640px) {*/
-    /*    @media screen and (max-width: $size) {*/
-    /*        @content;*/
-    /*    }*/
-    /*}*/
+    @mixin mobile ($size: 640px) {
+        @media screen and (max-width: $size) {
+            @content;
+        }
+    }
 
     .f1_container {
         position: relative;
@@ -506,13 +506,6 @@
 
                                 };
                                 marker.setLngLat([coordinates.lng, coordinates.lat]);
-                            //     marker.setLngLat[0] = coordinates.lng;
-                            //     marker.setLngLat[1] = coordinates.lat;
-                            //     marker.addto(map);
-                            //     // var marker = new mapboxgl.Marker(markerOptions)
-                            //     //     .setLngLat([-98.4816, 29.4260])
-                            //     //     .addTo(map);
-                            // .setLngLat(resultLong, resultLat)
 
                                 reverseGeocode(coordinates, mapboxToken).then(function(data) {
                                     var resultSplit = data.toString().split(', ');
