@@ -1,0 +1,183 @@
+    /*=============================================Direct Element Styles==============================================*/
+
+*{
+    box-sizing: border-box;
+}
+body{
+    background-size: cover;
+    background-color: #CED5D5;
+    color: #78909D;
+    font-family: 'Josefin Sans', sans-serif;
+}
+h1{
+    font-size: 2em;
+}
+button {
+    color: #494949 !important;
+    background: #CAD2D3;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+}
+button:hover {
+    color: #ffffff !important;
+    background: #1C3888;
+    transition: all 0.4s ease 0s;
+}
+img{
+    width: 100%;
+    height:15em;
+}
+/*=============================================Grid Initialization================================================*/
+.parent {
+    display: grid;
+    /*grid-template-columns: repeat(auto-fit, minmax(5px, 1fr));*/
+    grid-template-columns: 5% repeat(6, 15%) 5%;
+    grid-template-rows: 8% 8% 10% 10% 10% 7% 3% 28% 14% 2%;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    grid-area: 1 / 1 / 2 / 9;
+    background-color: #014D7F;
+    color: white;
+    border-bottom: solid black 2px;
+
+}
+.header2 {
+    grid-area: 2 / 1 / 3 / 9;
+    color: white;
+    background-color: #222222;
+    border-bottom: solid black 2px;
+    text-align: center;
+}
+
+.weatherCards {
+    margin-top: 1em;
+    grid-area: 3 / 2 / 6 / 8;
+
+}
+.innerDiv1{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    align-content: end;
+    margin-bottom: 1em;
+}
+
+.mapped {
+    grid-area:  8 / 2 / 10 / 8;
+    -webkit-box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.36);
+    box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.36);
+
+}
+
+.mapped-search{
+    grid-area:  7 / 2 / 8 / 8;
+    margin-bottom: 1em;
+
+}
+
+/*=================================================Card Flip=====================================================*/
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+.f1_container {
+    position: relative;
+    width: 30%;
+    height:15em;
+    z-index: 1;
+}
+.f1_container {
+    perspective: 1000px;
+}
+.f1_card {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 1.0s linear;
+    /*border-radius: 5px;*/
+
+}
+.f1_container:hover .f1_card {
+    transform: rotateY(180deg);
+    -webkit-box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.36);
+    box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.36);
+    /*border-radius: 5px;*/
+
+}
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: ease-in-out 400ms;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-family: 'Gelasio', serif;
+    font-weight: 600;
+    font-size: 1.65em;
+    letter-spacing: .04em;
+}
+.face.back {
+    display: block;
+    transform: rotateY(180deg);
+    box-sizing: border-box;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    background-color: #014D7F;
+    /*border-radius: 5px;*/
+    transform-style: preserve-3d;
+    transition: ease-in-out 400ms;
+    text-shadow: none;
+
+}
+#front1, #front2, #front3{
+    text-align: center;
+}
+
+/*=================================================Text styles====================================================*/
+.textCenter{
+    text-align: center;
+}
+.paddingNone{
+    padding: 0;
+}
+
+/*=============================================More Styles================================================*/
+
+.shadow{
+    -webkit-box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.36);
+    box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.36);
+}
+.small{
+    height: 20%;
+    width: 20%;
+    padding: 0;
+    margin: 0;
+}
+#map {
+    height: 100%;
+}
+.search-flex{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    align-content: flex-end;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.width{
+    font-size:1.25em;
+}
+/*================================================End OF Styles===================================================*/
+
