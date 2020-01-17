@@ -78,12 +78,21 @@ console.log(longestEmail);
 //     instructors.push(user.name);
 // }
 
-let names = users.reduce(
-    (stack, user) => {return stack += `${user.name} `; }, ''
-);
-console.log(names);
+// let listOfLan = (list,user) => {list.push(user.languages);
+//     return list
+// };
+// let languages = users.reduce(listOfLan,[]);
+// // turn the array to string
+// languages = languages.flat();
+// // take unique value and creates a list of object
+// languages = new Set(languages);
+// console.log(languages);
+// // making array
+// languages = Array.from(languages);
+// console.log(languages);
 
-const unique = [...new Set(users.map(user => user.languages))];
-console.log(unique);
 
 
+const languages = users.reduce(((lang, user)=>
+lang + user.languages), '');
+console.log(languages);
