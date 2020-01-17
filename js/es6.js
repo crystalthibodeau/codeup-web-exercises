@@ -119,3 +119,114 @@ let list = '<ul>';
 
 list += '</ul>';
 
+
+
+
+
+    // day number two map and filter=============================
+
+
+
+
+
+var hamsters = [
+    {
+        name: "Hamtaro",
+        heightInMM: 86,
+        fur: ['orange', 'white'],
+        gender: "male",
+        dateOfBirth: "August 6"
+    } , {
+        name: "Bijou",
+        heightInMM: 75,
+        fur: ['white'],
+        gender: "female",
+        dateOfBirth: "July 10"
+    } , {
+        name: "Oxnard",
+        heightInMM: 100,
+        fur: ['grey', 'white'],
+        gender: "male",
+        dateOfBirth: "May 3"
+    } , {
+        name: "Boss",
+        heightInMM: 120,
+        fur: ['brown', 'white'],
+        gender: "male",
+        dateOfBirth: "Spetember 21"
+    } , {
+        name: "Snoozer",
+        heightInMM: 85,
+        fur: ['brown', 'white', "pink"],
+        gender: "male",
+        dateOfBirth: "January 14",
+        isFavorite : "true"
+    }
+];
+
+let hamsterNames = hamsters.map((hamster) => {
+    return hamster.name;
+});
+console.log(hamsterNames);
+
+
+let furColors1 = hamsters.map((hamster) => {
+    return hamster.fur
+    }
+
+);
+console.log(furColors1);
+
+let furColors = hamsters.map(hamster => hamster.fur);
+console.log(furColors);
+
+let furColors2 = [];
+    hamsters.map(hamster => {
+    hamster.fur.map(color => furColors2.push(color)) ;
+});
+console.log(furColors2);
+
+let hamsterFavorite = hamsters.filter(hamster => hamster.isFavorite);
+let hamsterFavoriteNames = hamsters.filter(hamster => hamster.isFavorite).map(hamster => hamster.name);
+console.log(hamsterFavorite);
+console.log(hamsterFavoriteNames);
+
+let hamsterFavoriteNamesAndGender = hamsters.filter(hamster => hamster.isFavorite).map(hamster =>
+    { return {
+       name: hamster.name,
+        gender: hamster.gender
+    }
+    }
+);
+console.log(hamsterFavoriteNamesAndGender);
+
+let hamsterHeightTotal = hamsters.reduce(
+    (hamsterStack, hamster) => {return hamsterStack + hamster.heightInMM; }, 0
+);
+
+console.log(hamsterHeightTotal);
+let avgHeight = hamsterHeightTotal / hamsters.length;
+
+console.log(avgHeight);
+
+let hamsterStacker = 0;
+for(let hamster of hamsters){
+    hamsterStacker += hamster.heightInMM;
+}
+console.log(hamsterStacker);
+
+
+function countWords(sentence, counts = {}) {
+    const words = sentence.split(' ');
+    const wordCountObject = words.reduce((wordCounts, word) => {
+    if(typeof wordCounts[word] === 'undefined'){
+        wordCounts[word] = 1;
+    }else{
+        wordCounts[words] += 1;
+    }
+    return wordCounts;
+}, counts);
+    return wordCountObject;
+}
+
+console.log(countWords('Mary had a little lamb, little lamb, little lamb'));
