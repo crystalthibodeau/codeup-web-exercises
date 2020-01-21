@@ -62,37 +62,61 @@ console.log(experience / users.length);
 
 // Use .reduce to get the longest email from the list of users.
 
+// let longestEmail = emails.reduce ((longEmail, currentEmail) => {
+//     if(currentEmail.length > longEmail.length){
+//         return currentEmail;
+//     }else{
+//         return longEmail
+//     }
+// }, "");
+// console.log(longestEmail);
+
 let longestEmail = emails.reduce ((longEmail, currentEmail) => {
-    if(currentEmail.length > longEmail.length){
-        return currentEmail
-    }else{
-        return longEmail
-    }
+    if(currentEmail.length > longEmail.length) return currentEmail;
+    return longEmail
 }, "");
 console.log(longestEmail);
 
 // Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
 
-// for (let user of users){
-//     let instructors = '';
-//     instructors.push(user.name);
-// }
+let names = users.reduce(
+    (stack, user) => {return stack += ` ${user.name}`; }, ''
+);
+console.log(names);
 
-// let listOfLan = (list,user) => {list.push(user.languages);
-//     return list
-// };
-// let languages = users.reduce(listOfLan,[]);
-// // turn the array to string
-// languages = languages.flat();
-// // take unique value and creates a list of object
-// languages = new Set(languages);
-// console.log(languages);
-// // making array
-// languages = Array.from(languages);
-// console.log(languages);
+let greeting = users.reduce((runningGreeting, user) => {
+    return runningGreeting += user.name + ', ';
+}, 'Your instructors are: ');
+greeting = greeting.substring(0, greeting.length-2) + '.';
+console.log(greeting);
 
 
 
-const languages = users.reduce(((lang, user)=>
-lang + user.languages), '');
+
+let uniqueLang = users
+    .reduce((languages, usersLang) => {
+        usersLang.languages.forEach(function (language) {
+            if (languages.includes(language)){
+            } else {
+                languages.push(language);
+            }
+        });
+        return languages
+    }, []);
+console.log(uniqueLang);
+
+
+
+let listOfLan = (list,user) => {list.push(user.languages);
+    return list
+};
+let languages = users.reduce(listOfLan,[]);
+// turn the array to string
+languages = languages.flat();
+// take unique value and creates a list of object
+languages = new Set(languages);
 console.log(languages);
+// making array
+languages = Array.from(languages);
+console.log(languages);
+
