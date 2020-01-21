@@ -315,6 +315,37 @@ console.log(averageHeight(hamsters));
 
 
 
+
+
+const isAnagram = (str1, str2) => {
+    str1= str1.toLowerCase().split('').sort().join('');
+    str2= str2.toLowerCase().split('').sort().join('');
+
+    return (str1 === str2);
+};
+
+
+//
+// const isAnagram = (str1, str2) => {
+//     const normalize = str =>
+//         str
+//             .toLowerCase()
+//             .split('')
+//             .sort()
+//             .join('');
+//     return normalize(str1) === normalize(str2);
+// };
+console.log(isAnagram('iceman', 'cinema'));
+console.log(isAnagram('madam', 'madam'));
+console.log(isAnagram('race', 'care'));
+console.log(isAnagram('racer', 'care'));
+
+
+
+
+
+
+
 </script>
 </body>
 </html>
