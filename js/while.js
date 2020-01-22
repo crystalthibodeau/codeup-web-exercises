@@ -3,13 +3,13 @@ console.log("hello from while.js!");
 // connected to loops.html
 // in console.log to see #===='while loop iteration #' +
 
-// var i = 2;
-//
-// do {
-//     console.log(i);
-//     (i *=2);
-//     // i = i * 2;
-// } while (i <= 65536);
+var i = 2;
+
+do {
+    console.log(i);
+    (i *=2);
+    // i = i * 2;
+} while (i <= 65536);
 
 
 
