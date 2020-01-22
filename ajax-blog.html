@@ -102,7 +102,11 @@
                 font-family: "American Typewriter";
             }
 
-
+        }
+        @media(min-width:576px){
+            #hideButton{
+                display:none;
+            }
         }
     </style>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -129,8 +133,8 @@
             </li>
         </ul>
     </div>
-    <button class="navbar-togger d-sm-block d-md-none d-lg-none complimentColor2" type="button" data-toggle="collapse" data-target="#portfolioNavbar"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-togger navbar-expand-lg complimentColor2 " type="button" data-toggle="collapse" data-target="#portfolioNavbar"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="hideButton">
         <span class="navbar-toggler-icon"></span>
     </button>
 </div>
