@@ -11,4 +11,4 @@ export const multiply = (num1, num2) => {
 };
 
 
-// module.exports = {puppy, multiply};
+module.exports = {puppy, multiply};
