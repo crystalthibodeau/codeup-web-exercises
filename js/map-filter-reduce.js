@@ -119,4 +119,173 @@ console.log(languages);
 // making array
 languages = Array.from(languages);
 console.log(languages);
+let movies = [
+    {
+        "title": "John Wick",
+        "rating": "5",
+        "id": 1,
+        "genre": "action"
+    },
+    {
+        "title": "Star Wars: A New Hope",
+        "rating": "5",
+        "id": 2,
+        "genre": "science fiction"
+    },
+    {
+        "title": "IT",
+        "rating": "4",
+        "id": 3,
+        "genre": "horror"
+    },
+    {
+        "title": "The Notebook",
+        "rating": "2",
+        "id": 4,
+        "genre": "romance"
+    },
+    {
+        "title": "Old School",
+        "rating": "4",
+        "id": 5,
+        "genre": "comedy"
+    },
+    {
+        "title": "Grown Ups",
+        "rating": "2",
+        "id": 6,
+        "genre": "comedy"
+    },
+    {
+        "title": "The Hobbit: An Unexpected Journey",
+        "rating": "1",
+        "id": 7,
+        "genre": "fantasy"
+    },
+    {
+        "title": "Toy Story",
+        "rating": "5",
+        "id": 8,
+        "genre": "animation"
+    },
+    {
+        "title": "Princess Mononoke",
+        "rating": "5",
+        "id": 9,
+        "genre": "anime"
+    },
+    {
+        "title": "Howl's Moving Castle",
+        "rating": "5",
+        "id": 10,
+        "genre": "anime"
+    },
+    {
+        "title": "The Magnificent Seven",
+        "rating": "3",
+        "id": 11,
+        "genre": "western"
+    },
+    {
+        "title": "Catwoman",
+        "rating": "1",
+        "id": 12,
+        "genre": "action"
+    },
+    {
+        "title": "Harry Potter and the Sorcerer's Stone",
+        "rating": "4",
+        "id": 13,
+        "genre": "fantasy"
+    },
+    {
+        "title": "Aladdin",
+        "rating": "1",
+        "id": 14,
+        "genre": "live-action"
+    }
+];
+const rateMovie = movies => {
+    for(let movie of movies){
+        if(movie.rating === '5'){
+            console.log(`${movie.title} is fantastic!`)
+        }else if(movie.rating === '1'){
+            console.log(`${movie.title} is terrible!`)
+        }else{
+            console.log(movie.title)
+        }
+    }
+};
+rateMovie(movies);
 
+if (true) {
+    let x = 5;
+}
+console.log(typeof x);
+// function sayHello(name) {
+//     return 'Hello, ' + name + '!';
+// }
+// console.log(sayHello('crystal'));
+
+// #1
+// const sayHello = (name) => { 'Hello, ' + name + '!' };
+// console.log(sayHello('crystal'));
+
+
+
+// // #2
+// const sayHello = name => { 'Hello, ' + name + '!' }
+// console.log(sayHello('crystal'));
+//
+//
+//
+// // #3
+const sayHello = (name) => `Hello, ${name}!`;
+console.log(sayHello('crystal'));
+//
+// let numbers = [1, 2, 3, 4, 5];
+// console.log(numbers.map(n => n * 3));
+
+const isDivisibleBy3 = n => n % 3 === 0;
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+console.log(numbers.filter(isDivisibleBy3));
+console.log(numbers);
+//
+// const p = new Promise((resolve, reject) => {
+//
+//     // return 3;
+//
+//
+//
+//     resolve(3);
+//     //
+//     //
+//     //
+//     // reject(3);
+//
+//
+// });
+//
+// p.then(result => console.log(result));
+// p.catch(error => console.log('An error occured!'));
+
+const p = new Promise((resolve, reject) => {
+    // WHAT GOES HERE?
+
+    // return 3;
+
+
+
+    // resolve(3)
+    //
+    //
+    //
+    reject(3)
+
+
+});
+
+p.then(result => console.log(result));
+p.catch(error => console.log('An error occured!'));
