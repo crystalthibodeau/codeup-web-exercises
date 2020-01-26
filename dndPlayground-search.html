@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>D&D Search</title>
+    <style>
+        .width {
+            width:15%;
+        }
+    </style>
+</head>
+<body>
+<h1>Search</h1>
+
+
+<!--Search Selector-->
+
+<label for="search-selection" class="labels">Search under: </label>
+<select id="search-selection">
+    <option value="ability-scores">Abilities</option>
+    <option value="classes">Classes</option>
+    <option value="conditions">Conditions</option>
+    <option value="equipment">Equipment</option>
+    <option value="languages">Languages</option>
+    <option value="monsters">Monsters</option>
+    <option value="races">Races</option>
+    <option value="skills">Skills</option>
+    <option value="spells">Spells</option>
+</select>
+<br>
+
+
+
+<!--Search Input-->
+<label for="search-string" class="labels">Search:</label>
+
+<input type="text" class="width" id="search-string" maxlength="100" placeholder="Enter search string here..." onsubmit="searchedFor()">
+
+<button onclick="searchedFor()">Search</button>
+
+
+<script>
+function searchedFor () {
+    var searchString = document.getElementById('search-string').value;
+    alert(searchString);
+}
+
+</script>
+</body>
+
+
+
+
+
+</html>
