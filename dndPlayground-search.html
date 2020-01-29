@@ -6,41 +6,64 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>D&D Search</title>
-    <style>
-        .width {
-            width:15%;
-        }
-    </style>
+    <link rel="stylesheet" href="css/dnd.css">
+
 </head>
-<body>
-<h1>Search</h1>
+<!--<body>-->
+<body class="background body-text">
 
+<!--================================PARENT GRID======================================================================-->
+<div class="parent">
 
-<!--Search Selector-->
+    <!--================================TITLE========================================================================-->
 
-<label for="search-selection" class="labels">Search under: </label>
-<select id="search-selection">
-    <option value="ability-scores">Abilities</option>
-    <option value="classes">Classes</option>
-    <option value="conditions">Conditions</option>
-    <option value="equipment">Equipment</option>
-    <option value="languages">Languages</option>
-    <option value="monsters">Monsters</option>
-    <option value="races">Races</option>
-    <option value="skills">Skills</option>
-    <option value="spells">Spells</option>
-</select>
-<br>
+    <div class="title" id="title"><h1 class="right">
+        Playground</h1></div>
+    <!--================================NAV START====================================================================-->
 
+    <div class="navBar">
+        <nav>
+            <ul class="ulContainer navStyle">
+                <li class="liItems navItem1"><a href="dndPlayground-character.html" target="_blank">Character</a></li>
+                <li class="liItems navItem2"><a href="dndPlayground-map.html" target="_blank">Map</a></li>
+                <!--                <li class="liItems navItem3"><a href="">Index</a></li>-->
+                <li class="liItems navItem3"><a href="dndPlayground-search.html" target="_blank">Search</a></li>
+            </ul>
+        </nav>
+    </div>
 
+    <!--================================CAMPAIGN TITLE===============================================================-->
 
-<!--Search Input-->
-<label for="search-string" class="labels">Search:</label>
+<!--    <div class="campName"> <h1>Search</h1></div>-->
+    <!--================================MISSION STMT=================================================================-->
+<div class="center">
+    <div class="search">
+        <label for="search-selection" class="width">Search under: </label>
+        <select id="search-selection">
+            <option value="ability-scores">Abilities</option>
+            <option value="classes">Classes</option>
+            <option value="conditions">Conditions</option>
+            <option value="equipment">Equipment</option>
+            <option value="languages">Languages</option>
+            <option value="monsters">Monsters</option>
+            <option value="races">Races</option>
+            <option value="skills">Skills</option>
+            <option value="spells">Spells</option>
+        </select>
+        <br>
+    </div>
+    <!--================================DICE ROLL====================================================================-->
 
-<input type="text" class="width" id="search-string" maxlength="100" placeholder="Enter search string here..." onsubmit="searchedFor()">
+    <div class="search">
+        <label for="search-string">Search For:</label>
 
-<button onclick="searchedFor()">Search</button>
+        <input type="text"  id="search-string" class="width" maxlength="100" placeholder="Enter search string here..." onsubmit="searchedFor()">
 
+        <button onclick="searchedFor()" >Search</button>
+
+    </div>
+</div>
+</div>
 
 <script>
 function searchedFor () {
@@ -49,10 +72,9 @@ function searchedFor () {
 }
 
 </script>
+
+
+
+
 </body>
-
-
-
-
-
 </html>
