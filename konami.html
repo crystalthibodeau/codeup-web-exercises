@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Konami Code</title>
-<!--    ==============================================PAGE LINKS=====================================================-->
+    <!--    ==============================================PAGE LINKS=====================================================-->
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link  rel="stylesheet" href="css/konami.css">
 </head>
@@ -16,11 +16,11 @@
 <audio id="invader">
     <source src="img/invader-theme.mp3" type="audio/mp3">
 </audio>
-    <div class="header">
-       <h1> Konami Code </h1>
-    </div>
-    <div class="game1"> </div>
-    <div class="game2"> </div>
+<div class="header">
+    <h1> Konami Code </h1>
+</div>
+<div class="game1"> </div>
+<div class="game2"> </div>
 
 <!--    ==============================================SCRIPT START===================================================-->
 
@@ -38,7 +38,8 @@
             if (input === key) {
                 <!--    ===============================BODY CSS AFTER CODE===========================================-->
                 $('body').css({
-                    'background': 'black',
+                    'background': 'url("img/arcade3.jpg")',
+                    'background-size' : 'cover',
                     'width': '100%',
                     'height': '100%',
                     "font-weight": "bold",
@@ -74,30 +75,17 @@
 
                 $('body').css({
                     'background': 'url("img/original-pac.gif")',
-                    // 'background': 'url("img/original-pac.jpg")',
                     'background-size' : 'cover',
-                    // 'color' : '#0300FE',
+                    'width': '100%',
+                    'height': '100%',
                     "font-weight": "bold",
-                    "text-shadow" : "0 0 5px #FFF 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #3421A0, 0 0 30px #3421A0, 0 0 40px #3421A0, 0 0 55px #3421A0, 0 0 75px #3421A0, 2px 2px 0px rgba(25,201,206,0)"
+                    "text-shadow" : "0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #3421A0, 0 0 30px #3421A0, 0 0 40px #3421A0, 0 0 55px #3421A0, 0 0 75px #3421A0, 2px 2px 0px rgba(25,201,206,0)"
 
-                });
-                $('.header').css({
-                    'padding': '0px',
-                    'margin' : '0px',
-                    'font-size': '45px'
-
-            });
-                $('.game1').css({
-                    'padding': '0px'
-                });
-                $('.game2').css({
-                    'padding': '0px'
                 });
                 $('audio#pacPlay')[0].play();
-                $('audio#pacPlay').animate({volume: 1}, 1500);
                 $('div.header').html("<h1>Pacman Unlocked</h1>");
-                $('div.game1').html('<p> 30 Lives Remaining</p>');
-                $('div.game2').html('<p>Enter to Start</p>');
+                $('div.game1').html('<p> 30 Lives</p>');
+                $('div.game2').html('<p>Remaining</p>');
             }
             console.log(!key.indexOf(input));
             if (!key.indexOf(input)){return !key.indexOf(input);}
@@ -126,22 +114,10 @@
                     "text-shadow" : "0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #3421A0, 0 0 30px #3421A0, 0 0 40px #3421A0, 0 0 55px #3421A0, 0 0 75px #3421A0, 2px 2px 0px rgba(25,201,206,0)"
 
                 });
-
-
-                $('audio#invader').onload(function() {
-                    if (this.paused == false) {
-                        $('audio#invader')[0].play();
-                        this.pause();
-                        alert('music paused');
-                    } else {
-                        this.play();
-                        alert('music playing');
-                    }
-                });
-
+                $('audio#invader')[0].play();
                 $('div.header').html("<h1>Space Invaders Extra</h1>");
-                $('div.game1').html('<p>30 Lives Remaining</p>');
-                $('div.game2').html('<p>Enter to Start</p>');
+                $('div.game1').html('<p> UNLOCKED</p>');
+                $('div.game2').html('<p>30 Lives</p>');
             }
             console.log(!key.indexOf(input));
             if (!key.indexOf(input)){return !key.indexOf(input);}

@@ -22,15 +22,28 @@ body{
 .header { grid-area: 1 / 2 / 2 / 3; }
 .game1 {
     grid-area: 2 / 2 / 3 / 3;
-    padding: 1em;
+    padding: .5em;
 }
 .game2 {
     grid-area: 3 / 2 / 4 / 3;
-    padding: 1em;
+    padding: .5em;
+}
+.header-arcade { grid-area: 1 / 2 / 2 / 3;
+    padding-top: 0;
+    margin-top: 0;
+
+}
+.game1-arcade {
+    grid-area: 2 / 2 / 3 / 3;
+    padding: 2em;
+}
+.game2-arcade {
+    grid-area: 3 / 2 / 4 / 3;
+    padding: 2em;
 }
 h1{
-    font-size: 55px;
-    padding: .5em;
+    font-size: 52px;
+    padding: .4em;
     text-shadow: 0 0 5px #FFF, 0 0 10px #FFF,
     0 0 15px #FFF, 0 0 20px #3421A0, 0 0 30px #3421A0,
     0 0 40px #3421A0, 0 0 55px #3421A0, 0 0 75px #3421A0,
