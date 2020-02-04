@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery_faq.html</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background-color: lightslategray;
+            color: #444A51;
+        }
+        img {
+            border-bottom-color:#ffe;
+            border-left-color:#eed;
+            border-right-color:#eed;
+            border-top-color:#ccb;
+            height:100%;
+            width:100%;
+        }
+        button{
+            width: 10em;
+            height: 1.75em;
+            margin-left: 10em;
+        }
+        h1{
+            /*border-top: 3px solid #444A51;*/
+            /*border-bottom: 3px solid #444A51;*/
+            /*width: 30%;*/
+            text-align: center;
+            color: #444A51;
+            font-size: 3em;
+            /*font-weight: lighter;*/
+            /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
+            /*padding: .25em;*/
+        }
+        .center{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+
+        .frame {
+            background-color: #ddc;
+            border: solid 5vmin #eee;
+            border-bottom-color: #fff;
+            border-left-color: #eee;
+            border-radius: 2px;
+            border-right-color: #eee;
+            border-top-color: #ddd;
+            box-shadow: 0 0 5px 0 rgba(0, 0, 0, .25) inset, 0 5px 10px 5px rgba(0, 0, 0, .25);
+            box-sizing: border-box;
+            display: inline-block;
+            height:95%;
+            width: 85%;
+            position: relative;
+            text-align: center;
+            margin-left: 1em;
+        }
+        .frame:before {
+            border-radius:2px;
+            bottom:-2vmin;
+            box-shadow:0 2px 5px 0 rgba(0,0,0,.25) inset;
+            content:"";
+            left:-2vmin;
+            position:absolute;
+            right:-2vmin;
+            top:-2vmin;
+        }
+        .frame:after {
+            border-radius:2px;
+            bottom:-2.5vmin;
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,.25);
+            content:"";
+            left:-2.5vmin;
+            position:absolute;
+            right:-2.5vmin;
+            top:-2.5vmin;
+        }
+        .parent {
+            display: grid;
+            grid-template-columns: 1fr repeat(2, 12%) 1fr repeat(2, 12%) 1fr repeat(2, 12%) 1fr repeat(2, 12%) 1fr;
+            grid-template-rows: repeat(3, 1fr) repeat(2, 18%) repeat(3, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .div1 { grid-area: 1 / 1 / 2 / 14; }
+        .div2 { grid-area: 2 / 2 / 3 / 13; }
+        .div3 { grid-area: 4 / 2 / 6 / 4; }
+        .div4 { grid-area: 4 / 5 / 6 / 7; }
+        .div5 { grid-area: 4 / 8 / 6 / 10; }
+        .div6 { grid-area: 4 / 11 / 6 / 13; }
+        .div7 { grid-area: 6 / 5 / 7 / 7; }
+        .div8 { grid-area: 6 / 8 / 7 / 10; }
+        .div9 { grid-area: 6 / 11 / 7 / 13; }
+        .div10 { grid-area: 6 / 2 / 7 / 4; }
+
+
+    </style>
+</head>
+<body>
+<!--==============================================START IMAGES======================================================-->
+<div class="parent">
+    <div class="div1">
+        <div id="header" class="center"><h1>Swap Images</h1></div>
+    </div>
+    <div class="div2">
+            <button id="btn-top" class=" buttonTop div9">Swap Images!</button>
+    </div>
+    <div class="div3">
+        <div class="frame">
+            <img src="img/fall-trees.jpg" alt="" id="pic1">
+        </div>
+    </div>
+    <div class="div4">
+        <div class="frame">
+            <img src="img/fog-trees.jpg" alt="" id="pic2">
+        </div>
+    </div>
+    <div class="div5">
+        <div class="frame">
+            <img src="img/winter-trees.jpg" alt="" id="pic3">
+        </div>
+    </div>
+    <div class="div6">
+        <div class="frame4 frame">
+            <img src="img/foggy-mountains.jpg" alt="" id="pic4">
+        </div>
+    </div>
+    <div class="div7">
+        <div class="button2">
+            <button class="topDown" id="btn1-left-bottom">Swap Image</button>
+        </div>
+    </div>
+    <div class="div8">
+        <div class="button3">
+            <button class="rightButtons" id="btn1-right-top">Swap Image</button>
+        </div>
+    </div>
+    <div class="div9">
+        <div class="button4">
+            <button class="rightButtons" id="btn1-right-bottom">Swap Image</button>
+        </div>
+    </div>
+    <div class="div10">
+        <div class="button1">
+        <button class="topDown" id="btn1-left-top">Swap Image</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!--=================================================START OF SCRIPT=================================================-->
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+
+    $(document).ready(function(){
+
+        var randomPic = ['img/fall-trees.jpg','img/fog-trees.jpg','img/winter-trees.jpg','img/foggy-mountains.jpg','img/ooolala.jpg','img/grandcanyon.jpg','img/waterfall.jpg','img/night-bend.jpg'];
+        var changePic = function(){
+            $("#btn-top").click(function(){
+                var randomIndex1 = Math.floor(Math.random() * randomPic.length);
+                var randomIndex2 = (randomIndex1+1)%(randomPic.length);
+                var randomIndex3 = (randomIndex2+1)%(randomPic.length);
+                var randomIndex4 = (randomIndex3+1)%(randomPic.length);
+
+                $('#pic1').attr('src', randomPic[randomIndex1]);
+                $('#pic2').attr('src', randomPic[randomIndex2]);
+                $('#pic3').attr('src', randomPic[randomIndex3]);
+                $('#pic4').attr('src', randomPic[randomIndex4]);
+
+            });
+        };
+        changePic();
+
+        $('#btn1-left-top').click(function(){
+            // var audio = new Audio('audio/ring-get.mp3');
+            // audio.play();
+            var first = $('#pic1').attr('src');
+            var picIndex = 1;
+            //Get random number up to 4, but if it is 1, try again
+            while (picIndex === 1) {
+                picIndex = Math.floor((Math.random() * 10) % 4) + 1;
+            }
+            //Swap images
+            var swap = $('#pic'+ picIndex).attr('src');
+            $('#pic1').attr("src", swap);
+            $('#pic'+ picIndex).attr('src', first);
+        });
+
+
+        $('#btn1-left-bottom').click(function(){
+            // var audio = new Audio('audio/ring-get.mp3');
+            // audio.play();
+            var first = $('#pic2').attr('src');
+            var picIndex = 2;
+            //Get random number up to 4, but if it is 1, try again
+            while (picIndex === 2) {
+                picIndex = Math.floor((Math.random() * 10) % 4) + 1;
+            }
+            //Swap images
+            var swap = $('#pic'+ picIndex).attr('src');
+            $('#pic2').attr("src", swap);
+            $('#pic'+ picIndex).attr('src', first);
+        });
+
+        $('#btn1-right-top').click(function(){
+            // var audio = new Audio('audio/ring-get.mp3');
+            // audio.play();
+            var first = $('#pic3').attr('src');
+            var picIndex = 3;
+            //Get random number up to 4, but if it is 1, try again
+            while (picIndex === 3) {
+                picIndex = Math.floor((Math.random() * 10) % 4) + 1;
+            }
+            //Swap images
+            var swap = $('#pic'+ picIndex).attr('src');
+            $('#pic3').attr("src", swap);
+            $('#pic'+ picIndex).attr('src', first);
+        });
+        $('#btn1-right-bottom').click(function(){
+            // var audio = new Audio('audio/ring-get.mp3');
+            // audio.play();
+            var first = $('#pic4').attr('src');
+            var picIndex = 4;
+            //Get random number up to 4, but if it is 1, try again
+            while (picIndex === 4) {
+                picIndex = Math.floor((Math.random() * 10) % 4) + 1;
+            }
+            //Swap images
+            var swap = $('#pic'+ picIndex).attr('src');
+            $('#pic4').attr("src", swap);
+            $('#pic'+ picIndex).attr('src', first);
+        });
+
+    });
+
+
+</script>
+
+</body>
+</html>
+
