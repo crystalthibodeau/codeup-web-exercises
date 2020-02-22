@@ -9,5 +9,410 @@
 </head>
 <body>
 <h1>Character</h1>
+<hr>
+<div class="page character-sheet">
+    <div class="grid-area character-info">
+        <div class="input-field character-name">
+            <label for="character-name">Character Name</label>
+            <input type="text" name="character-name">
+        </div>
+        <div class="input-field race">
+            <label for="race">Race</label>
+            <input type="text" name="race">
+        </div>
+        <div class="input-field class">
+            <label for="class">Class</label>
+            <input type="text" name="class">
+        </div>
+        <div class="input-field level">
+            <label for="level">Level</label>
+            <input type="number" name="level" min="1" max="20">
+        </div>
+        <div class="input-field player-name">
+            <label for="player-name">Player Name</label>
+            <input type="text" name="player-name">
+        </div>
+        <div class="input-field background">
+            <label for="background">Background</label>
+            <input type="text" name="background">
+        </div>
+        <div class="input-field alignment">
+            <label for="alignment">Alignment</label>
+            <input type="text" name="alignment">
+        </div>
+        <div class="input-field experience-points">
+            <label for="experience-points">XP</label>
+            <input type="text" name="experience-points">
+        </div>
+    </div>
+
+    <div class="grid-area character-attributes">
+        <div class="proficiency-bonus tooltipped" data-position="top" data-tooltip="Proficiency Bonus is automatically calculated based on level.">
+            <input type="number" name="proficiency-bonus" disabled>
+            <div class="label">Proficiency Bonus</div>
+        </div>
+        <div class="attribute-container strength">
+            <div class="attribute-score">
+                <div class="label">Strength</div>
+                <input class="score" type="number" name="strength-score" min="0" max="20">
+                <input class="modifier" type="number" name="strength-modifier" disabled>
+            </div>
+            <div class="attribute-proficiency tooltipped" data-position="top" data-tooltip="Click to toggle proficiencies. A filled circle represents a proficiency.">
+                <input type="checkbox" name="strength-save-proficiency">
+                <input type="checkbox" name="athletics-proficiency">
+            </div>
+            <div class="attribute-rolls tooltipped" data-position="top" data-tooltip="Proficiency scores are automatically calculated based on Ability Scores and Ability Proficiencies">
+                <input type="number" name="strength-save-roll" disabled>
+                <input type="number" name="athletics-roll" disabled>
+            </div>
+            <div class="attribute-labels">
+                <div class="label">Saving Throw</div>
+                <div class="label">Athletics</div>
+            </div>
+        </div>
+        <div class="attribute-container dexterity">
+            <div class="attribute-score">
+                <div class="label">Dexterity</div>
+                <input class="score" type="number" name="dexterity-score" min="0" max="20">
+                <input class="modifier" type="number" name="dexterity-modifier" disabled>
+            </div>
+            <div class="attribute-proficiency tooltipped" data-position="top" data-tooltip="Click to toggle proficiencies. A filled circle represents a proficiency.">
+                <input type="checkbox" name="dexterity-save-proficiency">
+                <input type="checkbox" name="acrobatics-proficiency">
+                <input type="checkbox" name="sleight-of-hand-proficiency">
+                <input type="checkbox" name="stealth-proficiency">
+            </div>
+            <div class="attribute-rolls tooltipped" data-position="top" data-tooltip="Proficiency scores are automatically calculated based on Ability Scores and Ability Proficiencies">
+                <input type="number" name="dexterity-save-roll" disabled>
+                <input type="number" name="acrobatics-roll" disabled>
+                <input type="number" name="sleight-of-hand-roll" disabled>
+                <input type="number" name="stealth-roll" disabled>
+            </div>
+            <div class="attribute-labels">
+                <div class="label">Saving Throw</div>
+                <div class="label">Acrobatics</div>
+                <div class="label">Sleight of Hand</div>
+                <div class="label">Stealth</div>
+            </div>
+        </div>
+        <div class="attribute-container constitution">
+            <div class="attribute-score">
+                <div class="label">Constitution</div>
+                <input class="score" type="number" name="constitution-score" min="0" max="20">
+                <input class="modifier" type="number" name="constitution-modifier" disabled>
+            </div>
+            <div class="attribute-proficiency tooltipped" data-position="top" data-tooltip="Click to toggle proficiencies. A filled circle represents a proficiency.">
+                <input type="checkbox" name="constitution-save-proficiency">
+            </div>
+            <div class="attribute-rolls tooltipped" data-position="top" data-tooltip="Proficiency scores are automatically calculated based on Ability Scores and Ability Proficiencies">
+                <input type="number" name="constitution-save-roll" disabled>
+            </div>
+            <div class="attribute-labels">
+                <div class="label">Saving Throw</div>
+            </div>
+        </div>
+        <div class="attribute-container intelligence">
+            <div class="attribute-score">
+                <div class="label">Intelligence</div>
+                <input class="score" type="number" name="intelligence-score" min="0" max="20">
+                <input class="modifier" type="number" name="intelligence-modifier" disabled>
+            </div>
+            <div class="attribute-proficiency tooltipped" data-position="top" data-tooltip="Click to toggle proficiencies. A filled circle represents a proficiency.">
+                <input type="checkbox" name="intelligence-save-proficiency">
+                <input type="checkbox" name="arcana-proficiency">
+                <input type="checkbox" name="history-proficiency">
+                <input type="checkbox" name="investigation-proficiency">
+                <input type="checkbox" name="nature-proficiency">
+                <input type="checkbox" name="religion-proficiency">
+            </div>
+            <div class="attribute-rolls tooltipped" data-position="top" data-tooltip="Proficiency scores are automatically calculated based on Ability Scores and Ability Proficiencies">
+                <input type="number" name="intelligence-save-roll" disabled>
+                <input type="number" name="arcana-roll" disabled>
+                <input type="number" name="history-roll" disabled>
+                <input type="number" name="investigation-roll" disabled>
+                <input type="number" name="nature-roll" disabled>
+                <input type="number" name="religion-roll" disabled>
+            </div>
+            <div class="attribute-labels">
+                <div class="label">Saving Throw</div>
+                <div class="label">Arcana</div>
+                <div class="label">History</div>
+                <div class="label">Investigation</div>
+                <div class="label">Nature</div>
+                <div class="label">Religion</div>
+            </div>
+        </div>
+        <div class="attribute-container wisdom">
+            <div class="attribute-score">
+                <div class="label">Wisdom</div>
+                <input class="score" type="number" name="wisdom-score" min="0" max="20">
+                <input class="modifier" type="number" name="wisdom-modifier" disabled>
+            </div>
+            <div class="attribute-proficiency tooltipped" data-position="top" data-tooltip="Click to toggle proficiencies. A filled circle represents a proficiency.">
+                <input type="checkbox" name="wisdom-save-proficiency">
+                <input type="checkbox" name="animal-handling-proficiency">
+                <input type="checkbox" name="insight-proficiency">
+                <input type="checkbox" name="medicine-proficiency">
+                <input type="checkbox" name="perception-proficiency">
+                <input type="checkbox" name="survival-proficiency">
+            </div>
+            <div class="attribute-rolls tooltipped" data-position="top" data-tooltip="Proficiency scores are automatically calculated based on Ability Scores and Ability Proficiencies">
+                <input type="number" name="wisdom-save-roll" disabled>
+                <input type="number" name="animal-handling-roll" disabled>
+                <input type="number" name="insight-roll" disabled>
+                <input type="number" name="medicine-roll" disabled>
+                <input type="number" name="perception-roll" disabled>
+                <input type="number" name="survival-roll" disabled>
+            </div>
+            <div class="attribute-labels">
+                <div class="label">Saving Throw</div>
+                <div class="label">Animal Handling</div>
+                <div class="label">Insight</div>
+                <div class="label">Medicine</div>
+                <div class="label">Perception</div>
+                <div class="label">Survival</div>
+            </div>
+        </div>
+        <div class="attribute-container charisma">
+            <div class="attribute-score">
+                <div class="label">Charisma</div>
+                <input class="score" type="number" name="charisma-score" min="0" max="20">
+                <input class="modifier" type="number" name="charisma-modifier" disabled>
+            </div>
+            <div class="attribute-proficiency tooltipped" data-position="top" data-tooltip="Click to toggle proficiencies. A filled circle represents a proficiency.">
+                <input type="checkbox" name="charisma-save-proficiency">
+                <input type="checkbox" name="deception-proficiency">
+                <input type="checkbox" name="intimidation-proficiency">
+                <input type="checkbox" name="performance-proficiency">
+                <input type="checkbox" name="persuasion-proficiency">
+            </div>
+            <div class="attribute-rolls tooltipped" data-position="top" data-tooltip="Proficiency scores are automatically calculated based on Ability Scores and Ability Proficiencies">
+                <input type="number" name="charisma-save-roll" disabled>
+                <input type="number" name="deception-roll" disabled>
+                <input type="number" name="intimidation-roll" disabled>
+                <input type="number" name="performance-roll" disabled>
+                <input type="number" name="persuasion-roll" disabled>
+            </div>
+            <div class="attribute-labels">
+                <div class="label">Saving Throw</div>
+                <div class="label">Deception</div>
+                <div class="label">Intimidation</div>
+                <div class="label">Performance</div>
+                <div class="label">Persuasion</div>
+            </div>
+        </div>
+        <div class="passive-wisdom tooltipped" data-position="top" data-tooltip="Proficiency scores are automatically calculated based on Ability Scores and Ability Proficiencies">
+            <input type="number" name="passive-wisdom" disabled>
+            <div class="label">Passive Perception (Perception + 10)</div>
+        </div>
+    </div>
+
+    <div class="grid-area character-combat">
+        <div class="combat-stats">
+            <div class="combat-stat">
+                <div class="label">Armour Class</div>
+                <input class="stat" type="number" name="armour-class" min="0">
+            </div>
+
+            <div class="combat-stat">
+                <div class="label">Initiative</div>
+                <input class="stat" type="number" name="initiative" disabled>
+            </div>
+
+            <div class="combat-stat">
+                <div class="label">Movement</div>
+                <input class="stat" type="number" name="walking-speed" min="0">
+            </div>
+        </div>
+        <div class="combat-health">
+            <div class="hitpoints">
+                <div class="label">Hitpoints</div>
+                <div class="current">
+                    <div class="label">Current</div>
+                    <input type="number" name="current-hitpoints">
+                </div>
+                <div class="temporary">
+                    <div class="label">Temporary</div>
+                    <input type="number" name="temporary-hitpoints">
+                </div>
+                <div class="maximum">
+                    <div class="label">Maximum</div>
+                    <input type="number" name="maximum-hitpoints">
+                </div>
+            </div>
+            <div class="hit-dice">
+                <div class="label">Hit dice</div>
+                <div class="available">
+                    <div class="label">Available</div>
+                    <input type="number" name="available-hit-dice">
+                </div>
+                <div class="maximum">
+                    <div class="label">Maximum</div>
+                    <input type="text" name="maximum-hit-dice">
+                </div>
+            </div>
+                <hr>
+        </div>
+        <div class="combat-attacks">
+
+        </div>
+    </div>
+</div>
+<script>
+    M.AutoInit();
+    console.clear();
+    console.log('inputs without name attributes');
+    console.log(document.querySelectorAll('input:not([name])'));
+
+    document.addEventListener('DOMContentLoaded',function()
+    {
+        //setup tooltips over inputs
+        var elems = document.querySelectorAll('.tooltipped');
+        var instances = M.Tooltip.init(elems);
+
+        let inputs = document.querySelectorAll('input[name]');
+
+        for (var input of inputs)
+        {
+            if(input.type === 'text')
+            {
+                input.value = localStorage.getItem(input.name);
+
+                if(input.value !== "")
+                {
+                    console.log(input.name);
+                    let inputLabelElement = document.querySelector('label[for="'+input.name+'"]');
+                    if(inputLabelElement != undefined)
+                    {
+                        inputLabelElement.classList.add('active');
+                    }
+                }
+
+                input.addEventListener('keyup',function(e)
+                {
+                    if(e.target.value === '')
+                    {
+                        localStorage.removeItem(e.target.name);
+                    }
+                    else
+                    {
+                        localStorage.setItem(e.target.name, e.target.value);
+                    }
+                });
+            }
+            else if (input.type === 'checkbox')
+            {
+                input.checked = localStorage.getItem(input.name);
+
+                //string type fixing
+                if(localStorage.getItem(input.name) === "true")
+                {
+                    input.checked = true;
+                }
+                if(localStorage.getItem(input.name) === "false")
+                {
+                    input.checked = false;
+                }
+
+                input.addEventListener('change', function(e)
+                {
+                    localStorage.setItem(e.target.name, e.target.checked);
+                    recalculateProficiencies();
+                });
+            }
+            else if(input.type === 'number')
+            {
+                input.value = localStorage.getItem(input.name);
+
+                //force move level input's label on page load if the level input's value is set
+                if(input.name === 'level' && input.value !== "")
+                {
+                    document.querySelector('label[for=level]').classList.add('active');
+                }
+
+                input.addEventListener('input', function(e)
+                {
+                    localStorage.setItem(e.target.name, e.target.value);
+
+                    //if this number input is the level input, recalculate proficiency bonus
+                    if(e.target.name === 'level')
+                    {
+                        recalculateProficiencies();
+                    }
+
+                    //if this number input is an attribute score input, recalulate attribute modifiers
+                    if(e.target.name.indexOf('-score') !== -1)
+                    {
+                        //get attribute modifier's name based on attribute score's name (strength-score -> strength-modifier)
+                        let attributeModifierName = e.target.name.slice(0,e.target.name.indexOf('-score')) + '-modifier';
+                        let attributeModifierElement = document.querySelector('input[name=' + attributeModifierName + ']');
+
+                        //calculate attribute modifier based on attribute score
+                        attributeModifierElement.value = Math.floor(e.target.value / 2) - 5;
+
+                        //don't forget to store the attribute modifier too
+                        localStorage.setItem(attributeModifierName, attributeModifierElement.value);
+
+                        //then finally
+                        recalculateProficiencies();
+                    }
+                });
+            }
+        }
+
+    },false);
+
+    function recalculateProficiencies()
+    {
+        let level = document.querySelector('input[name=level]').value;
+        let proficiencyBonusElement = document.querySelector('input[name=proficiency-bonus]');
+        proficiencyBonusElement.value = Math.ceil((level / 4) + 1);
+        localStorage.setItem(proficiencyBonusElement.name, proficiencyBonusElement.value);
+
+        //recalculate all other proficiency rolls here
+        let attributeScores = document.querySelectorAll('.attribute-score');
+        let attributeProficienciesGroups = document.querySelectorAll('.attribute-score ~ .attribute-proficiency');
+        let attributeRollsGroups = document.querySelectorAll('.attribute-score ~ .attribute-rolls');
+
+        for (let i = 0; i < attributeScores.length; i++)
+        {
+            let attributeModifier = attributeScores[i].querySelector('.modifier').value;
+            let attributeProficiencies = attributeProficienciesGroups[i].querySelectorAll('input');
+            let attributeProficiencyRolls = attributeRollsGroups[i].querySelectorAll('input');
+
+            console.group(i);
+
+            for (let j = 0; j < attributeProficiencyRolls.length; j++)
+            {
+                if(attributeProficiencies[j].checked === true)
+                {
+                    console.log(parseInt(proficiencyBonusElement.value) + parseInt(attributeModifier));
+                    attributeProficiencyRolls[j].value = parseInt(proficiencyBonusElement.value) + parseInt(attributeModifier);
+                }
+                else
+                {
+                    console.log(parseInt(attributeModifier));
+                    attributeProficiencyRolls[j].value = parseInt(attributeModifier);
+                }
+                localStorage.setItem(attributeProficiencyRolls[j].name, attributeProficiencyRolls[j].value);
+            }
+
+            console.groupEnd(i);
+        }
+
+        //Don't forget to update passive perception if the proficiencies might have changed
+        let passiveWisdomPerceptionElement = document.querySelector('input[name=passive-wisdom]');
+        let perceptionRollElement = document.querySelector('input[name=perception-roll]');
+        //plus 10 because it is a passive roll, so the player doesn't have to roll a d20 then add this bonus
+        passiveWisdomPerceptionElement.value = 10 + parseInt(perceptionRollElement.value);
+        localStorage.setItem(passiveWisdomPerceptionElement.name, passiveWisdomPerceptionElement.value);
+
+        //Also don't forget to update initiative bonus if the dexterity modifier might have changed
+        let initiativeBonusElement = document.querySelector('input[name=initiative]');
+        let dexterityModifierElement = document.querySelector('input[name=dexterity-modifier]');
+        initiativeBonusElement.value = parseInt(dexterityModifierElement.value);
+        localStorage.setItem(initiativeBonusElement.name, initiativeBonusElement.value);
+    };
+</script>
 </body>
 </html>

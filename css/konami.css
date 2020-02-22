@@ -6,6 +6,8 @@ body{
     justify-content: space-around;
     background: url("../img/arcade.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
     font-family: 'Press Start 2P', cursive;
     text-shadow : 1px 0px 8px #FFF;
     color: #3421A0;

@@ -43,12 +43,14 @@
             <option value="ability-scores">Abilities</option>
             <option value="classes">Classes</option>
             <option value="conditions">Conditions</option>
-            <option value="equipment">Equipment</option>
+            <option value="magicitems">Magic Items</option>
             <option value="languages">Languages</option>
             <option value="monsters">Monsters</option>
             <option value="races">Races</option>
             <option value="skills">Skills</option>
             <option value="spells">Spells</option>
+            <option value="weapons">Weapons</option>
+            <option value="search">SEARCH</option>
         </select>
         <br>
     </div>
@@ -59,22 +61,50 @@
 
         <input type="text"  id="search-string" class="width" maxlength="100" placeholder="Enter search string here..." onsubmit="searchedFor()">
 
-        <button onclick="searchedFor()" >Search</button>
+        <button id="buttonSearch" >Search</button>
+        <div id="names">
 
+        </div>
     </div>
 </div>
 </div>
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 
 <script>
-function searchedFor () {
-    var searchString = document.getElementById('search-string').value;
-    alert(searchString);
-}
+    $(document).ready(function() {
+
+
+
+        var url = 'https://api.open5e.com/';
+        $('#buttonSearch').click(function() {
+            var searchSelection = document.getElementById('search-selection').value.toLowerCase();
+            var searchString = document.getElementById('search-string').value.toLowerCase();
+
+            $.ajax(url + searchSelection).done(function(data) {
+
+                var results = data.results;
+                console.log(results);
+                    var namesArray = [];
+                for(var i =0; i < results.length; i++){
+                    namesArray.push(results[i].name);
+                    $('#names').append("<div class='linkName' id=\'" + i + "\'><h1>" + namesArray[i] + "</h1></div>"); // add the html string to the body element.
+                }
+
+                $('div.linkName').click(function() {
+                    console.log(results);
+                    $(this).append("<div class='linkName'><h5>" + data.results[this.id].hit_dice + "</h5></div>"); // add the html string to the body element.
+                    $(this).append("<div class='linkName'><h5>" + data.results[this.id].hp_at_1st_level + "</h5></div>"); // add the html string to the body element.
+                    // $(this).next().hide(data.results[this.id]);
+                });
+
+
+            });
+
+
+        });
+    });
+
 
 </script>
-
-
-
-
 </body>
 </html>
