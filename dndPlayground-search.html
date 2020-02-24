@@ -85,18 +85,22 @@
                 var results = data.results;
                 console.log(results);
                     var namesArray = [];
-                for(var i =0; i < results.length; i++){
+                for(var i =0; i < results.length; i++) {
                     namesArray.push(results[i].name);
                     $('#names').append("<div class='linkName' id=\'" + i + "\'><h1>" + namesArray[i] + "</h1></div>"); // add the html string to the body element.
-                }
 
-                $('div.linkName').click(function() {
-                    console.log(results);
-                    $(this).append("<div class='linkName'><h5>" + data.results[this.id].hit_dice + "</h5></div>"); // add the html string to the body element.
-                    $(this).append("<div class='linkName'><h5>" + data.results[this.id].hp_at_1st_level + "</h5></div>"); // add the html string to the body element.
-                    // $(this).next().hide(data.results[this.id]);
+                }
+                $("div.linkName").append(function(){
+                    var sectionOne = "<div class='hit_dice newClass'><h5>" + data.results[this.id].hit_dice + "</h5></div>";
+                    var sectionTwo = "<div class='hp_at_1st_level newClass'><h5>" + data.results[this.id].hp_at_1st_level + "</h5></div>";
+                    $(this).append(sectionOne); // add the html string to the body element.
+                    $(this).append(sectionTwo); // add the html string to the body element.
                 });
 
+                $("div.linkName").click(function() {
+                    $(this).children('.hit_dice').toggleClass('newClass');
+                    $(this).children('.hp_at_1st_level').toggleClass('newClass');
+                });
 
             });
 

@@ -24,6 +24,8 @@
 .mission { grid-area: 4 / 1 / 6 / 2; }
 .dice { grid-area: 4 / 2 / 5 / 3; }
 .character { grid-area: 5 / 2 / 6 / 3; }
+.newClass{display: none}
+
 /*===================TITLE STYLING============================================================================*/
 #title{
     display: flex;
