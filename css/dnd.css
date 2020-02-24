@@ -10,8 +10,6 @@
     width: 100fr;
     grid-template-columns: 50% 50%;
     grid-template-rows: 15% 10% 10% 20% 45%;
-    /*grid-column-gap: 0px;*/
-    /*grid-row-gap: 0px;*/
 }
 
 .title { grid-area: 1 / 1 / 2 / 3; }
@@ -177,25 +175,6 @@ button{
     font-size: .75em;
     margin: 1em;
 }
-.search{
-    position: sticky;
-    font-size: 1.2em;
-    z-index: 500;
-    margin-left: 3em;
-    width: 55%;
-
-
-}
-.width{
-    /*width: 55%;*/
-    /*margin-right: .3em;*/
-    /*margin-left: .3em;*/
-}
-.center {
-    display: flex;
-    justify-content: center;
-    /*margin: 0 auto;*/
-}
 
 
 .homebrew-rules
@@ -243,6 +222,5 @@ button{
     {
         margin: 0;
         padding: 20pt;
-        box-shadow: 0;
     }
 }
