@@ -1,4 +1,5 @@
 /*===================GRID LAYOUT==============================================================================*/
+
 *{
     box-sizing: border-box;
     padding: 0;
@@ -6,221 +7,262 @@
 }
 .parent {
     display: grid;
+    grid-template-columns: 5% repeat(3, 30%) 5%;
+    grid-template-rows: 8% repeat(3, 28%) 8%;
+    width: 100vw;
     height: 100vh;
-    width: 100fr;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 15% 10% 10% 20% 45%;
 }
-
-.title { grid-area: 1 / 1 / 2 / 3; }
-.navBar { grid-area: 2 / 1 / 3 / 3; }
-.campName { grid-area: 3 / 1 / 4 / 3;
-    text-align: center;
-    color: #EC1A23;
-    text-shadow: -1px 0 black, 0 4px black, 1px 0 black, 0 2px black;
-}
-.mission { grid-area: 4 / 1 / 6 / 2; }
-.dice { grid-area: 4 / 2 / 5 / 3; }
-.character { grid-area: 5 / 2 / 6 / 3; }
-.newClass{display: none}
-
-/*===================TITLE STYLING============================================================================*/
-#title{
-    display: flex;
-    font-family: 'VT323', monospace;
-    font-size: 2em;
-    color: black;
-    background: white;
-    /*padding: .5em;*/
-    /*margin: 1em;*/
-    text-align: center;
-    /*background: white;*/
-    background-image: url("../img/logo-dnd.png");
-    background-size: 75% 100%;
+.background{
+    /*background-image: url(../img/image.png);*/
+    background-color: lightgray;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
     background-repeat: no-repeat;
-    align-items: center;
-    justify-content: center;
 }
-.right{
-    /*display: flex;*/
-    /* justify-content: end;*/
-    /* align-content: center*/
-    padding-left: 14em;
+
+.navBar {
+    grid-area: 1 / 1 / 2 / 6;
+}
+.mission {
+    grid-area: 2 / 2 / 5 / 4;
+    padding: 2em;
+    margin: 1em;
+    background-color: lightgray;
+    /*border-radius: 15px;*/
+}
+.dice {
+    grid-area: 2 / 4 / 3 / 5;
+    padding: .75em;
+    margin: 1em;
+    background-color: lightgray;
+    /*border-radius: 15px;*/
+}
+.character {
+    grid-area: 3 / 4 / 5 / 5;
+    padding: .75em;
+    margin: 1em;
+    background-color: lightgray;
+    /*border-radius: 15px;*/
+}
+.footer {
+    grid-area: 5 / 1 / 6 / 6;
+
+}
+.card {
+    text-align:center;
+    /*margin-right: 40%;*/
+    /*margin-left: 40%;*/
+    /*width: 350px;*/
+    /*height: 400px;*/
+    background: white;
+    border-radius: 15px;
+
+    /*box-shadow: 0px 0px 0px grey;*/
+    -webkit-transition:  box-shadow .6s ease-out;
+    box-shadow: .8px .9px 3px black;
+
+}
+.card:hover{
+    box-shadow: 1px 8px 20px black;
+    -webkit-transition:  box-shadow .6s ease-in;
 }
 /*===================NAV STYLING==============================================================================*/
-.ulContainer{
-    display: flex; /* made unordered list a flex container */
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    /*height: inherit;*/
-    align-items: center;
-    justify-content: space-around;
-    border-bottom: 2px solid black;
-    border-top: 2px solid black;
-    font-size: 1.5em;
-    font-family: 'VT323', monospace;
-}
-.liItems{
-    padding: .5em;
-
-}
-.navStyle{
-    background-color: black;
-    height: 2em;
-}
-/*.notHomeNav{*/
-/*    display: flex; !* made unordered list a flex container *!*/
-/*    list-style: none;*/
-/*    padding: 0;*/
-/*    margin: 0;*/
-/*    !*height: inherit;*!*/
-/*    align-items: center;*/
-/*    justify-content: flex-start;*/
-/*    border-bottom: 2px solid black;*/
-/*    border-top: 2px solid black;*/
-/*    font-size: 1.5em;*/
-/*    font-family: 'VT323', monospace;*/
-/*}*/
-/*.notHomeLi{*/
-/*    padding-right: 1em;*/
-/*    padding-left: 3em;*/
-
-
-/*}*/
-
-a {
-    color: white;
-    text-decoration: none;
-}
 a:hover{
-    font-size: 1.2em;
-    text-decoration: underline;
-    color: white;
+    /*font-size: 1.2em;*/
+    color: slategrey;
 }
-/*.navItem1 {*/
-/*    padding-left: 8.5em;*/
-/*    padding-right: 14em;*/
-/*    border: 2px solid black;*/
-/*    padding-top: .5em;*/
-/*    padding-bottom: .5em;*/
-/*}*/
-/*.navItem2 {*/
-/*    padding-left: 14em;*/
-/*    padding-right: 14em;*/
-/*    border: 2px solid black;*/
-/*    padding-top: .5em;*/
-/*    padding-bottom: .5em;*/
-/*}*/
-/*.navItem3 {*/
-/*    padding-left: 14.25em;*/
-/*    padding-right: 14em;*/
-/*    border: 2px solid black;*/
-/*    padding-top: .5em;*/
-/*    padding-bottom: .5em;*/
-/*}*/
-/*==========================================BACKGROUND========================================================*/
-.background{
-    background-image: url("../img/foggy-mountains.jpg");
-    background-color: rgba(100,100,100,1);
-    background-blend-mode: lighten;
-    background-size: cover;
-}
-
 .body-text{
-    color: white;
     font-weight: bold;
     font-size: large;
 }
-.scroll{
-    background-image:url("../img/scroll.png");
-    background-size: 35em 26em;
-    background-repeat: no-repeat;
-    /*background: no-repeat;*/
-    /*background: no-repeat;*/
-    z-index: 2;
-}
-.scrollText{
-    position: absolute;
-    top: 17em;
-    left: 6em;
-    width: 18em;
-    z-index: 1;
-    color: #393432;
-    font-weight: lighter;
-    font-family: 'Marck Script', cursive;
-    font-size: 1.2em;
-}
+
+/*.scrollText{*/
+/*    color: #393432;*/
+/*    font-weight: lighter;*/
+/*    font-family: 'Marck Script', cursive;*/
+/*    font-size: 1.2em;*/
+/*}*/
 button{
-    width: auto;
+    width: 6em;
     padding: .3em;
     background: lightgray;
     color: black;
     border: 1px solid black;
-    box-shadow: 0 0 5px black;
+    /*box-shadow: 0 0 5px black;*/
     font-weight: bold;
     font-size: .55em;
 }
 /*===================BODY TEXT STYLING========================================================================*/
-.bodyText{
-    font-size: 1.5em;
-    padding: 1em;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 1px black;
-}
-.diceText{
-    font-size: 1em;
-    padding: .3em;
-}
-.npcText{
-    font-size: .75em;
-    margin: 1em;
-}
 
-
-.homebrew-rules
-{
-    grid-area: 1 / 1 / 2 / 2;
+/*.diceText{*/
+/*    font-size: 1em;*/
+/*    margin-top: 1em;*/
+/*    padding: .3em;*/
+/*}*/
+/*.npcText{*/
+/*    font-size: .75em;*/
+/*    margin-top: 1em;*/
+/*}*/
+.campaign-name{
+    color: #EC1A23;
+    text-shadow: 1px 0 black, 0 1px black, 1px 0 black, 0 1px black;
 }
-.personal-details {
-    grid-area: 2 / 1 / 3 / 2;
+a {
+    color: white;
 }
-
- img
-  {
-      max-width: 100%;
-  }
-
-.level-history
-{
-    grid-area: 3 / 1 / 4 / 2;
-}
-.spells {
-    grid-area: 1 / 2 / 4 / 3;
+.header {
+    background-color: black;
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
 }
 
-.stats td
-  {
-      width: 50%;
-  }
-
-
-@page
-{
-    size: A4;
+.header ul {
     margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: black;
 }
 
-@media print
-{
-    html, body
-    {
-        margin: 0;
-        padding: 0;
-        box-shadow: 0;
+.header li a {
+    display: block;
+    padding: 20px 20px;
+    border-right: 1px solid #f4f4f4;
+    text-decoration: none;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+    background-color: #f4f4f4;
+}
+
+.header .logo {
+    display: block;
+    float: left;
+    font-size: 2em;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+}
+
+/* menu */
+
+.header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+
+.header .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 22px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+    top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+    top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+    display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+}
+@media (min-width: 48em) {
+    .header li {
+        float: left;
     }
-    .page
-    {
-        margin: 0;
-        padding: 20pt;
+    .header li a {
+        padding: 20px 30px;
+    }
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+    .header .menu-icon {
+        display: none;
     }
 }
+.dragon{
+    /*background-image: url(../img/monster-dnd.png);*/
+
+    /*background-image: url(../img/ice-dragon.png);*/
+
+    background-image: url(../img/7be08fb149953d6d00b8fabefc51dd21.png);/*crop out logo*/
+
+    /*background-image: url(../img/Winter_wolf.png);*/
+    /*background-image: url(../img/gibbering-mouther.png);*/
+
+    /*background-image: url(../img/dragon.png);*/
+
+    /*background-image: url(../img/brown-character-clip-art-png-clip-art.png);*/
+
+    /*background-image: url(../img/kisspng-dungeons-dragons-miniatures-game-pathfinder-role-drac-5b336f56b2e9d7.2384455615300974947328.jpg);*/
+
+    /*background-image: url(../img/illithid.png);*/
+    background-repeat: no-repeat;
+    position: fixed;
+    bottom: -1.5em;
+    right: 58em;
+    z-index: 7;
+    height: 24em;
+    width: 50em;
+    background-size: contain;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+

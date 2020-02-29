@@ -10,35 +10,37 @@
 
 </head>
 <!--<body>-->
-<body class="background body-text">
+<body class="background">
 
 <!--================================PARENT GRID======================================================================-->
 <div class="parent">
 
     <!--================================TITLE========================================================================-->
 
-    <div class="title" id="title"><h1 class="right">
-        Playground</h1></div>
+<!--    <div class="title" id="title"><h1 class="right">-->
+<!--        Playground</h1></div>-->
     <!--================================NAV START====================================================================-->
 
     <div class="navBar">
-        <nav>
-            <ul class="ulContainer navStyle">
-                <li class="liItems navItem1"><a href="dndPlayground-character.html" target="_blank">Character</a></li>
-                <li class="liItems navItem2"><a href="dndPlayground-map.html" target="_blank">Map</a></li>
-                <!--                <li class="liItems navItem3"><a href="">Index</a></li>-->
-                <li class="liItems navItem3"><a href="dndPlayground-search.html" target="_blank">Search</a></li>
+        <header class="header">
+            <a href="" class="logo">D&D Playground</a>
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            <ul class="menu">
+                <li><a href="dndPlayground-character.html" target="_blank">Character</a></li>
+                <li><a href="dndPlayground-map.html" target="_blank">Map</a></li>
+                <li><a href="dndPlayground-search.html" target="_blank">Search</a></li>
             </ul>
-        </nav>
+        </header>
     </div>
 
     <!--================================CAMPAIGN TITLE===============================================================-->
 
 <!--    <div class="campName"> <h1>Search</h1></div>-->
     <!--================================MISSION STMT=================================================================-->
-<div class="center">
-    <div class="search">
-        <label for="search-selection" class="width">Search under: </label>
+<div class="search-section search center-flex">
+    <div>
+        <label for="search-selection">Search under: </label>
         <select id="search-selection">
             <option value="ability-scores">Abilities</option>
             <option value="classes">Classes</option>
@@ -53,35 +55,36 @@
             <option value="search">SEARCH</option>
         </select>
         <br>
-    </div>
 </div>
     <!--================================DICE ROLL====================================================================-->
-    <div class="center">
-    <div class="search">
+    <div>
         <label for="search-string">Search For:</label>
 
         <input type="text"  id="search-string" class="width" maxlength="100" placeholder="Enter search string here..." onsubmit="searchedFor()">
 
         <button id="buttonSearch" >Search</button>
-        <div id="names">
 
-        </div>
     </div>
 
 </div>
+
+    <div id="names" class="search-results card">
+
+    </div>
 </div>
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 
 <script>
     $(document).ready(function() {
 
-
-
         var url = 'https://api.open5e.com/';
-        $('#buttonSearch').click(function() {
-            var searchSelection = document.getElementById('search-selection').value.toLowerCase();
-            var searchString = document.getElementById('search-string').value.toLowerCase();
 
+        $('#search-selection').change(function() {
+            var searchSelection = document.getElementById('search-selection').value.toLowerCase();
+
+            var searchString = document.getElementById('search-string').value.toLowerCase();
+           document.getElementById('search-string').value = "";
+            console.log("searchSelection", searchSelection);
             $.ajax(url + searchSelection).done(function(data) {
 
                 var results = data.results;

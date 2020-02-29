@@ -10,41 +10,43 @@
     <link href="https://fonts.googleapis.com/css?family=Marck+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/dnd.css">
 </head>
-<body class="background body-text">
+<body>
 
 <!--================================PARENT GRID======================================================================-->
-<div class="parent">
+<div class="parent background">
 
-    <!--================================TITLE========================================================================-->
-
-    <div class="title" id="title"><h1 class="right">
-    Playground</h1></div>
     <!--================================NAV START====================================================================-->
 
     <div class="navBar">
-        <nav>
-            <ul class="ulContainer navStyle">
-                <li class="liItems navItem1"><a href="dndPlayground-character.html" target="_blank">Character</a></li>
-                <li class="liItems navItem2"><a href="dndPlayground-map.html" target="_blank">Map</a></li>
-<!--                <li class="liItems navItem3"><a href="">Index</a></li>-->
-                <li class="liItems navItem3"><a href="dndPlayground-search.html" target="_blank">Search</a></li>
+
+        <header class="header">
+            <a href="" class="logo">D&D Playground</a>
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            <ul class="menu">
+                <li><a href="dndPlayground-character.html" target="_blank">Character</a></li>
+                <li><a href="dndPlayground-map.html" target="_blank">Map</a></li>
+                <li><a href="dndPlayground-search.html" target="_blank">Search</a></li>
             </ul>
-        </nav>
+        </header>
     </div>
 
     <!--================================CAMPAIGN TITLE===============================================================-->
-
-    <div class="campName"> <h1>The Return of the Wicked Covenant</h1></div>
     <!--================================MISSION STMT=================================================================-->
-
-    <div class="mission scroll">
+    <div class="mission card">
+        <h1 class="campaign-name">The Return of the Wicked Covenant</h1>
+        <br>
         <p class="scrollText">
-        Mission statement....... This is an adventure about dragon things and we will go do the killings of the dragons unless you die first because oh yeah there is monsters and you might not get along with people but you also might and learn lots of cool things so hey there's that but anyway... adventure and stuff!
+            Mission statement....... This is an adventure about dragon things and we will go do the killings of the dragons unless you die first because oh yeah there is monsters and you might not get along with people but you also might and learn lots of cool things so hey there's that but anyway... adventure and stuff!
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid, aut blanditiis debitis dolores doloribus ex hic illo, ipsum laborum libero minima natus obcaecati quia, tenetur ullam vero voluptas voluptate.
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid, aut blanditiis debitis dolores doloribus ex hic illo, ipsum laborum libero minima natus obcaecati quia, tenetur ullam vero voluptas voluptate.
         </p>
     </div>
     <!--================================DICE ROLL====================================================================-->
 
-    <div class="dice bodyText">
+    <div class="dice bodyText card">
         <h4>Roll Some Dice!</h4>
 
         <!--=======================================Dice Selector=====================================================-->
@@ -59,9 +61,9 @@
             <option value="20">D20</option>
             <option value="100">D100</option>
         </select>
-<br>
+<!--<br>-->
         <!-- ========================================Number of Dice Selector=========================================-->
-        <label for="dice-num" class="labels">How Many? </label>
+        <br><label for="dice-num" class="labels">How Many? </label>
 
         <input type="text" id="dice-num" placeholder="Number of Dice..." onsubmit="diceRoll()">
         <br>
@@ -74,13 +76,14 @@
     </div>
     <!--================================NPC GENERATOR================================================================-->
 
-    <div class="character bodyText">
-        <br>
+    <div class="character bodyText card">
         <p> Non-Player Character Generater </p>
         <button onclick="generateNPC()">Generate</button>
         <br>
         <div id="charText" class="npcText"></div>
     </div>
+    <div class="dragon"></div>
+    <div class="footer"></div>
 </div>
 
 <!--================================END OF PARENT GRID START OF JS===================================================-->
