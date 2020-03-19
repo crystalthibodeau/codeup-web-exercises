@@ -238,11 +238,11 @@ a {
     }
 }
 .dragon{
-    /*background-image: url(../img/monster-dnd.png);*/
+    background-image: url(../img/monster-dnd.png);
 
     /*background-image: url(../img/ice-dragon.png);*/
 
-    background-image: url(../img/7be08fb149953d6d00b8fabefc51dd21.png);/*crop out logo*/
+    /*background-image: url(../img/7be08fb149953d6d00b8fabefc51dd21.png);!*crop out logo*!*/
 
     /*background-image: url(../img/Winter_wolf.png);*/
     /*background-image: url(../img/gibbering-mouther.png);*/
@@ -256,13 +256,13 @@ a {
     /*background-image: url(../img/illithid.png);*/
     background-repeat: no-repeat;
     position: fixed;
-    bottom: -1.5em;
-    right: 58em;
+    bottom: 1em;
+    right: 40em;
     z-index: 7;
-    height: 24em;
-    width: 50em;
+    height: 15em;
+    width: 46em;
     background-size: contain;
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
+    /*-webkit-transform: scaleX(-1);*/
+    /*transform: scaleX(-1);*/
 }
 
