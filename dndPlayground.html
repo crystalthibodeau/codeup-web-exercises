@@ -25,7 +25,6 @@
             <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
             <ul class="menu">
                 <li><a href="dndPlayground-character.html" target="_blank">Character</a></li>
-                <li><a href="dndPlayground-map.html" target="_blank">Map</a></li>
                 <li><a href="dndPlayground-search.html" target="_blank">Search</a></li>
             </ul>
         </header>
@@ -38,16 +37,16 @@
         <br>
         <p class="scrollText">
             Mission statement....... This is an adventure about dragon things and we will go do the killings of the dragons unless you die first because oh yeah there is monsters and you might not get along with people but you also might and learn lots of cool things so hey there's that but anyway... adventure and stuff!
-            <br>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid, aut blanditiis debitis dolores doloribus ex hic illo, ipsum laborum libero minima natus obcaecati quia, tenetur ullam vero voluptas voluptate.
-            <br>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid, aut blanditiis debitis dolores doloribus ex hic illo, ipsum laborum libero minima natus obcaecati quia, tenetur ullam vero voluptas voluptate.
+<!--            <br>-->
+<!--            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid, aut blanditiis debitis dolores doloribus ex hic illo, ipsum laborum libero minima natus obcaecati quia, tenetur ullam vero voluptas voluptate.-->
+<!--            <br>-->
+<!--            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid, aut blanditiis debitis dolores doloribus ex hic illo, ipsum laborum libero minima natus obcaecati quia, tenetur ullam vero voluptas voluptate.-->
         </p>
     </div>
     <!--================================DICE ROLL====================================================================-->
 
     <div class="dice bodyText card">
-        <h4>Roll Some Dice!</h4>
+        <h3>Roll Some Dice!</h3>
 
         <!--=======================================Dice Selector=====================================================-->
         <label for="dice-selection" class="labels">Type of Dice: </label>
@@ -64,8 +63,20 @@
 <!--<br>-->
         <!-- ========================================Number of Dice Selector=========================================-->
         <br><label for="dice-num" class="labels">How Many? </label>
-
-        <input type="text" id="dice-num" placeholder="Number of Dice..." onsubmit="diceRoll()">
+        <select id="dice-num">
+            <option value="0">Select..</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+<!--        <input type="text" id="dice-num" placeholder="Number of Dice..." onsubmit="diceRoll()">-->
         <br>
         <button onclick="diceRoll()">Roll!</button>
         <br>
@@ -77,7 +88,7 @@
     <!--================================NPC GENERATOR================================================================-->
 
     <div class="character bodyText card">
-        <p> Non-Player Character Generater </p>
+        <h3> Non-Player Character Generater </h3>
         <button onclick="generateNPC()">Generate</button>
         <br>
         <div id="charText" class="npcText"></div>
@@ -96,7 +107,7 @@
 
         //Get values from input fields
         var type = document.getElementById('dice-selection').value;
-        var numDice = document.getElementById('dice-num').value;
+        var numDice = parseInt(document.getElementById('dice-num').value);
 
         //Generate values from input
        for (var i=0; i<numDice; i++ ) {
@@ -105,12 +116,12 @@
 
        //Display values generated
        var diceBody = document.getElementById('diceResult');
-       diceBody.innerHTML = dice.toString();
+       diceBody.innerHTML = dice.toString().replace(/,/g, ", ");
     }
 
     //===========================================Clear Selections on Load===============================================
     document.getElementById('dice-selection').value = "";
-    document.getElementById('dice-num').value = "";
+    document.getElementById('dice-num').value = "0";
 
 
 

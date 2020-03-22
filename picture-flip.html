@@ -11,8 +11,10 @@
             box-sizing: border-box;
         }
         body{
-            background-color: lightslategray;
+            background-color: lightgrey;
             color: #444A51;
+            margin: 0;
+            padding: 0;
         }
         img {
             border-bottom-color:#ffe;
@@ -22,25 +24,42 @@
             height:100%;
             width:100%;
         }
-        button{
-            width: 10em;
-            font-size: .8em;
-            margin-left: 8em;
-            text-align: center;
+        /*button{*/
+        /*    margin-top: 1em;*/
+        /*    width: 10em;*/
+        /*    height: 2.5em;*/
+        /*    font-size: .8em;*/
+        /*    !*margin-left: 8em;*!*/
+        /*    text-align: center;*/
+        /*    padding: .4em;*/
+        /*    color: white;*/
+        /*    !*border-radius: 10px;*!*/
+        /*    background-color: #008CBA;*/
+        /*    text-transform: uppercase;*/
+        /*}*/
+        /*button:hover {*/
+        /*    transform: scale(1.3);*/
+        /*    background-color: black;*/
+        /*}*/
+        button {
+            box-shadow:inset 0px 1px 0px 0px #ffffff;
+            background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+            background-color:#ededed;
+            border-radius:6px;
+            border:1px solid #dcdcdc;
+            display:inline-block;
+            cursor:pointer;
+            color:#777777;
+            font-family:Arial;
+            font-size:15px;
+            font-weight:bold;
+            padding:6px 24px;
+            text-decoration:none;
+            text-shadow:0px 1px 0px #ffffff;
         }
         button:hover {
-            transform: scale(1.3);
-        }
-        h1{
-            /*border-top: 3px solid #444A51;*/
-            /*border-bottom: 3px solid #444A51;*/
-            /*width: 30%;*/
-            text-align: center;
-            color: #444A51;
-            font-size: 3em;
-            /*font-weight: lighter;*/
-            /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
-            /*padding: .25em;*/
+            background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+            background-color:#dfdfdf;
         }
         .center{
             display: flex;
@@ -89,24 +108,55 @@
         .parent {
             display: grid;
             grid-template-columns: 1fr repeat(2, 12%) 1fr repeat(2, 12%) 1fr repeat(2, 12%) 1fr repeat(2, 12%) 1fr;
-            grid-template-rows: repeat(3, 1fr) repeat(2, 18%) repeat(3, 1fr);
+            grid-template-rows: repeat(3, 10%) repeat(2, 18%) repeat(3, 1fr);
             grid-column-gap: 0px;
             grid-row-gap: 0px;
             width: 100vw;
             height: 100vh;
         }
 
-        .div1 { grid-area: 1 / 1 / 2 / 14; }
-        .div2 { grid-area: 2 / 2 / 3 / 13; }
+        .div1 {
+            grid-area: 1 / 1 / 2 / 14;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            width: 100%;
+            /*text-align: center;*/
+            color: #dddddd;
+            font-size: 1.5em;
+            padding: 0;
+            margin: 0;
+        }
+        .div2 {
+            grid-area: 2 / 2 / 3 / 13;
+            margin-top: 1em;
+            text-align: center;
+        }
+        .buttonDiv{
+            display: flex;
+            justify-content: center;
+        }
         .div3 { grid-area: 4 / 2 / 6 / 4; }
         .div4 { grid-area: 4 / 5 / 6 / 7; }
         .div5 { grid-area: 4 / 8 / 6 / 10; }
         .div6 { grid-area: 4 / 11 / 6 / 13; }
-        .div7 { grid-area: 6 / 5 / 7 / 7; }
-        .div8 { grid-area: 6 / 8 / 7 / 10; }
-        .div9 { grid-area: 6 / 11 / 7 / 13; }
-        .div10 { grid-area: 6 / 2 / 7 / 4; }
-
+        .div7 {
+            display: flex;
+            justify-content: center;
+            grid-area: 6 / 5 / 7 / 7; }
+        .div8 {
+            display: flex;
+            justify-content: center;
+            grid-area: 6 / 8 / 7 / 10; }
+        .div9 {
+            display: flex;
+            justify-content: center;
+            grid-area: 6 / 11 / 7 / 13; }
+        .div10 {
+            display: flex;
+            justify-content: center;
+            grid-area: 6 / 2 / 7 / 4; }
 
     </style>
 </head>
@@ -114,12 +164,20 @@
 <!--==============================================START IMAGES======================================================-->
 <div class="parent">
     <div class="div1">
-        <div id="header" class="center"><h1>Swap Images</h1></div>
+        <div id="header" class="center"><h1>Picture Swap</h1></div>
     </div>
+
     <div class="div2">
-            <button id="btn-top" class=" buttonTop div9">Swap Images!</button>
+        <div>
+            <h4>Click Shuffle Images to Shuffle in new pictures, or Swap Image to shuffle that picture with another that is currently showing. </h4>
+        </div>
+        <div class="buttonDiv">
+            <button id="btn-top" class=" buttonTop div9">Shuffle Images</button>
+        </div>
     </div>
+
     <div class="div3">
+
         <div class="frame">
             <img src="img/fall-trees.jpg" alt="" id="pic1">
         </div>

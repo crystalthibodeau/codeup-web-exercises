@@ -66,10 +66,6 @@
     -webkit-transition:  box-shadow .6s ease-in;
 }
 .background{
-    /*background-image: url("../img/foggy-mountains.jpg");*/
-    /*background-color: rgba(100,100,100,1);*/
-    /*background-blend-mode: lighten;*/
-    /*background-size: cover;*/
     background-color: lightgray;
 }
 
@@ -105,7 +101,6 @@ a {
 
 .header li a {
     display: block;
-    /*padding: 20px 20px;*/
     border-right: 1px solid #f4f4f4;
     text-decoration: none;
     padding: 2em;
