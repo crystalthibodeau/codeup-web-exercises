@@ -63,8 +63,18 @@ fieldset {
     color: white;
     font-weight: bold;
     border: solid lightgrey 1px;
+    transition: transform .3s ease-out;
+    -webkit-transition: -moz-transform .3s ease-out;
+    -moz-transition: -webkit-transform .3s ease-out;
+    -o-transition: -o-transform .3s ease-out;
 }
 
+.btn:hover{
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.02);
+}
 .form-control {
     /* There must be 4px on top of the text and below the text of an input with this class */
     padding-top:4px;
