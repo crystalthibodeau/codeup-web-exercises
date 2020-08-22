@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="w-100">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -33,6 +33,7 @@
             -o-transition: all 0.3s ease;
             transition: all 0.3s ease;
         }
+
         #return-to-top i {
             color: #fff;
             position: relative;
@@ -45,10 +46,11 @@
             -o-transition: all 0.8s ease;
             transition: all 0.8s ease;
         }
+
         #return-to-top:hover {
-            background:#00CEE1;
-        ;
+            background: #00CEE1;;
         }
+
         #return-to-top:hover i {
             text-shadow: 2px 1px 2px #1C6EA4;
             color: #fff;
@@ -123,18 +125,18 @@
 <body>
 
 
-<nav class="navbar w-100 sticky-top searchSpringNav d-flex justify-content-lg-between justify-content-sm-center">
-    <di id="navbarNav">
+<nav class="navbar w-100 sticky-top searchSpringNav d-flex justify-content-center justify-content-xl-between
+">
+    <div id="navbarNav">
         <a class="navbar-brand d-lg-block text-monospace align-self-sm-center" href="#"><h2 id="navHeader">
             Searchspring</h2></a>
-    </di>
+    </div>
     <form action="#" method="get" class="form-inline" id="demoForm">
         <input class="form-control" type="text" placeholder="Search.." id="search"
                name="search" aria-label="Search"/>
-        <div class="form-inline">
-            <label for="ingredient-query-input"></label>
-            <button type="submit" class="btn button p-2 searchSpringNav d-flex" id="ingredient-query-input"><i
-                    class="fas fa-search p-0 m-0"></i>
+        <div class="d-flex justify-content-center justify-content-xl-between">
+            <button type="submit" class="btn button p-2 searchSpringNav d-flex justify-content-center"><i
+                    class="fas align-self-sm-center fa-search p-0 m-0"></i>
             </button>
         </div>
     </form>
@@ -197,6 +199,15 @@
     //If the product has an “msrp” field and it’s less than “price” field display the “msrp” next to the price crossed out.
 
     //BONUS ==Above and below the results show pagination with next and previous buttons. You could also display some pages before/after the current page as applicable.
+    function mediaQuery(){
+        if(window.matchMedia("(max-width: 600px)").matches){
+            document.getElementById("demoForm").classList.remove("form-inline")
+        }
+            else{
+            document.getElementById("demoForm").classList.add("form-inline")
+        }
+    }
+    mediaQuery();
 
     function notEmptyLanding() {
         $('#demoForm').submit();
@@ -230,7 +241,7 @@
         }
         var firstRun = "http://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=" + searchParam + "&resultsFormat=native&page=" + 1;
         $.ajax(firstRun).done(function (data) {
-
+            mediaQuery();
 
             // Create the cards
             var ShoppingCard = "";
@@ -238,18 +249,18 @@
                 var msrp = "";
 
                 // product has an “msrp” field
-                if(data.results[i].msrp != null || data.results[i].msrp !== undefined || data.results[i].msrp !== "" ){
-                // and it’s less than “price” field
-                // console.log(data.results[i].msrp < data.results[i].price)
-                var msrpNum = parseFloat(data.results[i].msrp);
-                var priceNum = parseFloat(data.results[i].price);
-                //console.log("msrp", msrpNum + " vs " + priceNum)
+                if (data.results[i].msrp != null || data.results[i].msrp !== undefined || data.results[i].msrp !== "") {
+                    // and it’s less than “price” field
+                    // console.log(data.results[i].msrp < data.results[i].price)
+                    var msrpNum = parseFloat(data.results[i].msrp);
+                    var priceNum = parseFloat(data.results[i].price);
+                    //console.log("msrp", msrpNum + " vs " + priceNum)
 
-                if (msrpNum>priceNum) {
-                    msrp = '<h4 class="px-1 red">' + "$" + data.results[i].msrp + '</h4>';
-                    console.log(msrp)
-                    // console.log(data.results[i].msrp)
-                }
+                    if (msrpNum > priceNum) {
+                        msrp = '<h4 class="px-1 red">' + "$" + data.results[i].msrp + '</h4>';
+                        console.log(msrp)
+                        // console.log(data.results[i].msrp)
+                    }
 
                 }
 
@@ -280,7 +291,8 @@
         console.log(paginationNumber)
 
         $.ajax("http://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=" + searchParam + "&resultsFormat=native&page=" + (paginationNumber)).done(function (data) {
-            console.log(data)
+            // console.log(data)
+            mediaQuery();
             var paginationNumbers = document.getElementsByClassName("paginationNumber");
 
             for (let i = 0; i < paginationNumbers.length; i++) {
@@ -314,14 +326,14 @@
                 var msrp = "";
 
                 // product has an “msrp” field
-                if(data.results[i].msrp != null || data.results[i].msrp !== undefined || data.results[i].msrp !== "" ){
+                if (data.results[i].msrp != null || data.results[i].msrp !== undefined || data.results[i].msrp !== "") {
                     // and it’s less than “price” field
                     // console.log(data.results[i].msrp < data.results[i].price)
                     var msrpNum = parseFloat(data.results[i].msrp);
                     var priceNum = parseFloat(data.results[i].price);
                     //console.log("msrp", msrpNum + " vs " + priceNum)
 
-                    if (msrpNum>priceNum) {
+                    if (msrpNum > priceNum) {
                         msrp = '<h4 class="px-1 red">' + "$" + data.results[i].msrp + '</h4>';
                         console.log(msrp)
                         // console.log(data.results[i].msrp)
@@ -386,14 +398,14 @@
                 var msrp = "";
 
                 // product has an “msrp” field
-                if(data.results[i].msrp != null || data.results[i].msrp !== undefined || data.results[i].msrp !== "" ){
+                if (data.results[i].msrp != null || data.results[i].msrp !== undefined || data.results[i].msrp !== "") {
                     // and it’s less than “price” field
                     // console.log(data.results[i].msrp < data.results[i].price)
                     var msrpNum = parseFloat(data.results[i].msrp);
                     var priceNum = parseFloat(data.results[i].price);
                     //console.log("msrp", msrpNum + " vs " + priceNum)
 
-                    if (msrpNum>priceNum) {
+                    if (msrpNum > priceNum) {
                         msrp = '<h4 class="px-3 red">' + "$" + data.results[i].msrp + '</h4>';
                         console.log(msrp)
                         // console.log(data.results[i].msrp)
@@ -436,16 +448,16 @@
         bothPrevious[i].addEventListener("click", previous);
     }
     // ===== Scroll to Top ====
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
             $('#return-to-top').fadeIn(200);    // Fade in the arrow
         } else {
             $('#return-to-top').fadeOut(200);   // Else fade out the arrow
         }
     });
-    $('#return-to-top').click(function() {      // When arrow is clicked
+    $('#return-to-top').click(function () {      // When arrow is clicked
         $('body,html').animate({
-            scrollTop : 0                       // Scroll to top of body
+            scrollTop: 0                       // Scroll to top of body
         }, 500);
     });
 
