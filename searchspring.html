@@ -145,6 +145,7 @@
     //If the product has an “msrp” field and it’s less than “price” field display the “msrp” next to the price crossed out.
 
     //BONUS ==Above and below the results show pagination with next and previous buttons. You could also display some pages before/after the current page as applicable.
+
     function notEmptyLanding() {
         $('#demoForm').submit();
     }
@@ -157,21 +158,6 @@
     }
 
     paginationNumber = number;
-
-    // function placeHolder(x, y){
-    //     console.log(y)
-    //     if(y !== 1){
-    //         console.log(y)
-    //         x.setAttribute("placeholder", searchString);
-    //     }else{
-    //         x.setAttribute("placeholder", "Search..");
-    //         console.log(y)
-    //         y++
-    //     }
-    // }
-    //
-    // var activePlaceholder = document.getElementById("search");
-    // placeHolder(activePlaceholder, 1);
 
 
     if (document.getElementById("search") == null) {
@@ -215,8 +201,6 @@
             $(".ShoppingCards").html(ShoppingCard);
 
         });
-
-
     }
 
 
@@ -228,19 +212,24 @@
         $.ajax("http://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=" + searchParam + "&resultsFormat=native&page=" + (paginationNumber)).done(function (data) {
             console.log(data)
             var paginationNumbers = document.getElementsByClassName("paginationNumber");
+
             for (let i = 0; i < paginationNumbers.length; i++) {
                 paginationNumbers[i].innerHTML = paginationNumber;
 
                 for (let i = 0; i < document.getElementsByClassName("previous").length; i++) {
+
                     if (paginationNumber === 1) {
                         if (!document.getElementsByClassName("previous")[i].classList.contains("disabled")) {
-                            document.getElementsByClassName("previous")[i].classList.add("disabled")
                             document.getElementsByClassName("next")[i].classList.remove("disabled")
+                            document.getElementsByClassName("previous")[i].classList.add("disabled")
                         }
                     }
+
                     if (paginationNumber > 1) {
                         document.getElementsByClassName("previous")[i].classList.remove("disabled")
+                        document.getElementsByClassName("next")[i].classList.remove("disabled")
                     }
+
                     if (paginationNumber === data.pagination.totalPages) {
                         document.getElementsByClassName("previous")[i].classList.remove("disabled")
                         document.getElementsByClassName("next")[i].classList.add("disabled")
@@ -283,13 +272,14 @@
 
                     if (paginationNumber === 1) {
                         if (!document.getElementsByClassName("previous")[i].classList.contains("disabled")) {
+                            document.getElementsByClassName("next")[i].classList.remove("disabled")
                             document.getElementsByClassName("previous")[i].classList.add("disabled")
                         }
-
                     }
 
                     if (paginationNumber > 1) {
                         document.getElementsByClassName("previous")[i].classList.remove("disabled")
+                        document.getElementsByClassName("next")[i].classList.remove("disabled")
                     }
 
                     if (paginationNumber === data.pagination.totalPages) {
