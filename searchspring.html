@@ -5,42 +5,29 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <title>Searchspring</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css"/>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Font Awesome Script -->
     <script src="https://kit.fontawesome.com/b9c50b62e0.js" crossorigin="anonymous"></script>
-    <!-- PantryChef Text -->
-    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap" rel="stylesheet">
-    <!-- CSS -->
-    <style>
-        .jumbotron {
-            height: 45vh;
-        }
-    </style>
-</head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
 
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <!--        <ul class="navbar-nav">-->
-        <!--            <li class="nav-item">-->
-        <!--                <a href="#coffeeList" class="nav-link">Results</a>-->
-        <!--            </li>-->
-        <!--        </ul>-->
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
         <a class="navbar-brand d-none d-lg-block text-monospace" href="#"><h2>Searchspring</h2></a>
         <form action="#" method="get" class="input-group w-25">
             <input class="form-control rounded" type="text" id="search"
-                   placeholder="Search: apples, flour, etc..."
+                   placeholder="Search.."
                    name="search" aria-label="Search"/>
             <div class="input-group-append">
                 <label for="ingredient-query-input"></label>
@@ -48,31 +35,43 @@
                 </button>
             </div>
         </form>
-        <!--        <ul class="navbar-nav">-->
-        <!--            <li class="nav-item active">-->
-        <!--                <a href="#newCoffee" class="nav-link">Add Coffee<span class="sr-only">(current)</span></a>-->
-        <!--            </li>-->
-        <!--        </ul>-->
     </div>
 </nav>
 
-<div class="jumbotron jumbotron-fluid mb-0">
-    <div class="container">
-        <h1 class="display-4">Search Now</h1>
-        <p class="lead">Shop your favorites anywhere, anytime...</p>
-        <a id="newCoffee"></a>
+
+<div class="container">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center mb-0">
+            <li class="page-item disabled">
+                <a class="page-link a-disabled" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item a-disabled"><a class="page-link" href="#" id="paginationNumber"></a></li>
+            <li class="page-item">
+                <a class="page-link" href="#" id="paginationNumberNext1">Next</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!--   Cards created dynamically by api call   -->
+    <div class="row ShoppingCards bg-white">
+
     </div>
+
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center mb-0">
+            <li class="page-item disabled">
+                <a class="page-link a-disabled" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item a-disabled"><a class="page-link" href="#" id="paginationNumber2"></a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li>
+        </ul>
+    </nav>
+
 </div>
 
-<div class="container d-flex ">
-
-
-    <!--   Cards created dynamically by spoonacular api calls   -->
-    <div class="row recipeCards bg-white mt-5 mb-5">
-
-
-    </div>
-</div>
 
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -84,145 +83,80 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 
 <script>
-
-
-    console.log("hello");
+    var number = 1;
+    var paginationNumber = parseInt(document.getElementById("paginationNumber").innerHTML);
+    paginationNumber = number;
 
     if (document.getElementById("search") == null) {
         console.log("oops, null");
     } else {
+        console.log("hello");
 
         var searchString;
-        // console.log(searchString);
         var urlSearchString = window.location.href;
         var url = new URL(urlSearchString);
         var searchParam = url.searchParams.get("search");
         searchString = searchParam.replace(/,|,\s/g, ",+");
-        // console.log("url string" + searchString);
+
+        //break results into groups of 12 or however many per page
+        //display that number per page
+        //update pagination number by one for each page or set per page
+        //each time the pagination is clicked call ajax for next page {update page number in call}
+        //if page number === 1 disable previous
+        //if page number === result.length/items per page === sets.length disable next
+
+        $.ajax("http://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=" + searchParam + "&resultsFormat=native&page=" + 1).done(function (data) {
+
+            var number = 1;
+            var paginationNumber = document.getElementById("paginationNumber");
+            paginationNumber.innerHTML = number;
+
+            // console.log(data.results[1].thumbnailImageUrl);
+
+            console.log(data.results);
+
+            //Create the cards
+
+            var ShoppingCard = "";
 
 
-        $.ajax("https://api.spoonacular.com/recipes/findByIngredients" + "?ingredients=" + searchString + "&number=100&apiKey=" + '' + "").done(function (data) {
+            for (let i = 0; i < data.results.length; i++) {
 
-
-            console.log("inside ajax");
-
-
-            //Create the cards to hold the data for the recipe
-
-            var recipe = "";
-
-
-            for (var i = 0; i < data.length; i++) {
-
-                recipe += '<div class="mb-4 col-12 col-sm-6 col-md-4 col-lg-4">';
-                recipe += '<div class="card recipe-card shadow bg-white rounded">';
-                recipe += '<img class="card-img-top" style="height: 16em;" src="' + data[i].image + '" alt="Recipe image" />';
-                recipe += '<div class=card-body>';
-                recipe += '<h4 class="card-title text-center">' + data[i].title + '</h4>';
-                recipe += '</div>';
-                recipe += '<div class="card-footer">';
-                recipe += '<small class="text-muted d-flex justify-content-center align-items-center">';
-                recipe += '<button class="btn btn-primary recipe" data-toggle="modal" data-target="#recipeApiModalLong" id="' + data[i].id + '\">\n' + '  View Recipe\n' + '</button>';
-                recipe += '</small>';
-                recipe += "</div>";
-                recipe += "</div>";
-                recipe += "</div>";
+                ShoppingCard += '<div class="mb-4 col-12 col-sm-6 col-md-4 col-lg-4">';
+                ShoppingCard += '<div class="card shadow bg-white rounded">';
+                ShoppingCard += '<img class="card-img-top img-fluid" src="' + data.results[i].thumbnailImageUrl + '" alt="Card image" />';
+                ShoppingCard += "</div>";
+                ShoppingCard += "</div>";
             }
 
-            $(".recipeCards").html(recipe);
+            $(".ShoppingCards").html(ShoppingCard);
 
-            $('.recipe').on('click', function () {
-
-
-                console.log(this.id + " id should be here");
-
-
-                $.ajax("https://api.spoonacular.com/recipes/" + this.id + "/information?includeNutrition=false&apiKey=" + '' + "").done(function (data) {
-
-
-                    console.log(data);
-
-
-                    //Variables to show the specific recipe details
-                    let recipeTitle = "";
-                    let recipeImage = "";
-                    let recipeIngredients = "";
-                    let recipeInstructions = "";
-                    let recipeCuisines = "";
-                    let recipeSource = "";
-
-                    // recipeTitle += data.title + " by " + data.creditsText;
-                    recipeTitle += data.title + " by " + '<a class="profileFromRecipeAnchorTags" href="' + data.sourceUrl + '"target=_blank>' + data.creditsText + '</a>';
-
-
-                    recipeImage += '<img class="img-fluid" src="' + data.image + '" alt="" />';
-
-
-                    //Display the categories/cuisines for the chosen recipe
-                    if (data.cuisines.length == 0) {
-
-                        recipeCuisines += '<li class="mr-2">' + 'Sorry, no Cuisines associated with recipe at the moment.' + '</li>';
-
-                    } else {
-                        for (var j = 0; j < data.cuisines.length; j++) {
-
-                            recipeCuisines += '<li class="mr-2">' + data.cuisines[j] + '</li>'
-
-                        }
-                    }
-
-
-                    //For loop to grab the ingredients and put them in a list
-                    if (data.extendedIngredients.length == 0) {
-
-                        recipeIngredients += 'Currently no available ingredients for this recipe sorry.'
-
-                    } else {
-                        for (var i = 0; i < data.extendedIngredients.length; i++) {
-
-                            recipeIngredients += '<li class="list-group-item mt-1 mb-1">' + data.extendedIngredients[i].amount + " " + data.extendedIngredients[i].unit + " " + data.extendedIngredients[i].originalName + '</li>';
-
-                        }
-                    }
-
-
-                    //Grab the instructions from the get request of the the recipe
-                    if (data.analyzedInstructions.length == 0) {
-
-                        recipeInstructions += '<li class="list-group-item">' + 'Currently no available instructions for this recipe sorry.' + '</li>';
-
-                    } else {
-
-                        for (var k = 0; k < data.analyzedInstructions[0].steps.length; k++) {
-
-                            recipeInstructions += '<li class="list-group-item mt-1 mb-1">' + "Step " + data.analyzedInstructions[0].steps[k].number + ": " + data.analyzedInstructions[0].steps[k].step + '</li>';
-
-                        }
-
-                    }
-
-
-                    //External link for further recipe details
-
-                    recipeSource += '<p class="sourceUrl mt-3">' + 'Click on who its by in title to see more recipe details' + '</p>';
-
-                    //using jquery to display the object properties from the get request
-                    $('.api-modal-title').html(recipeTitle);
-
-                    $('.api-modal-cuisine').html(recipeCuisines);
-
-                    $('.api-modal-image').html(recipeImage);
-
-                    $('.api-ingredient-list-group').html(recipeIngredients);
-
-                    $('.api-instruction-list-group').html(recipeInstructions);
-
-                    $('.api-modal-recipeSource').html(recipeSource);
-
-                })
-            })
         });
+
+
     }
+
+    function next() {
+        console.log(paginationNumber)
+        paginationNumber = paginationNumber + 1;
+        $.ajax("http://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=" + searchParam + "&resultsFormat=native&page=" + (paginationNumber)).done(function (data) {
+            var ShoppingCard = "";
+            paginationNumber.innerHTML = number;
+            for (let i = 0; i < data.results.length; i++) {
+
+                ShoppingCard += '<div class="mb-4 col-12 col-sm-6 col-md-4 col-lg-4">';
+                ShoppingCard += '<div class="card shadow bg-white rounded">';
+                ShoppingCard += '<img class="card-img-top img-fluid" src="' + data.results[i].thumbnailImageUrl + '" alt="Card image" />';
+                ShoppingCard += "</div>";
+                ShoppingCard += "</div>";
+            }
+
+            $(".ShoppingCards").html(ShoppingCard);
+        })
+
+    }
+
+    document.getElementById(("paginationNumberNext1")).addEventListener("click", next);
 
 </script>
 </body>
