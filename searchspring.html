@@ -11,9 +11,55 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b9c50b62e0.js" crossorigin="anonymous"></script>
 
+
     <style>
+        #return-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #3A23AD;
+            width: 50px;
+            height: 50px;
+            text-decoration: none;
+            -webkit-border-radius: 35px;
+            -moz-border-radius: 35px;
+            border-radius: 35px;
+            display: none;
+            -webkit-transition: all 0.3s linear;
+            -moz-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+        #return-to-top i {
+            color: #fff;
+            position: relative;
+            left: 16px;
+            top: 13px;
+            font-size: 19px;
+            font-weight: bolder;
+            -webkit-transition: all 0.8s ease;
+            -moz-transition: all 0.8s ease;
+            -o-transition: all 0.8s ease;
+            transition: all 0.8s ease;
+        }
+        #return-to-top:hover {
+            background:#00CEE1;
+        ;
+        }
+        #return-to-top:hover i {
+            text-shadow: 2px 1px 2px #1C6EA4;
+            color: #fff;
+            top: 5px;
+        }
+
+        .red {
+            color: darkred;
+            text-decoration: line-through;
+        }
+
         .btn {
             background-color: white;
             color: #3A23AD;
@@ -26,7 +72,7 @@
         }
 
         .card {
-            transition: transform .13s ease-in-out;
+            transition: transform .2s;
         }
 
         .card:hover {
@@ -54,17 +100,20 @@
         }
 
         #navHeader {
+            transition: transform .2s ease-in-out;
             color: lightgrey;
         }
 
         #navHeader:hover {
             color: #00CEE1;
+            transform: scale(1.05);
         }
 
         .searchSpringText {
             color: #3A23AD;
         }
-        .white{
+
+        .white {
             color: white;
         }
 
@@ -76,7 +125,8 @@
 
 <nav class="navbar w-100 sticky-top searchSpringNav d-flex justify-content-lg-between justify-content-sm-center">
     <di id="navbarNav">
-        <a class="navbar-brand d-lg-block text-monospace align-self-sm-center" href="#"><h2 id="navHeader">Searchspring</h2></a>
+        <a class="navbar-brand d-lg-block text-monospace align-self-sm-center" href="#"><h2 id="navHeader">
+            Searchspring</h2></a>
     </di>
     <form action="#" method="get" class="form-inline" id="demoForm">
         <input class="form-control" type="text" placeholder="Search.." id="search"
@@ -89,6 +139,8 @@
         </div>
     </form>
 </nav>
+<a href="javascript:" id="return-to-top"><i class="icon-chevron-up fa-lg"></i></a>
+
 <!--====================================End Of NavBar StART OF First Pagination======================================-->
 
 <div class="container">
@@ -182,21 +234,39 @@
 
             // Create the cards
             var ShoppingCard = "";
-
-            console.log(data.results[1])
-
             for (let i = 0; i < data.results.length; i++) {
+                var msrp = "";
+
+                // product has an “msrp” field
+                if(data.results[i].msrp != null || data.results[i].msrp !== undefined || data.results[i].msrp !== "" ){
+                // and it’s less than “price” field
+                // console.log(data.results[i].msrp < data.results[i].price)
+                var msrpNum = parseFloat(data.results[i].msrp);
+                var priceNum = parseFloat(data.results[i].price);
+                //console.log("msrp", msrpNum + " vs " + priceNum)
+
+                if (msrpNum>priceNum) {
+                    msrp = '<h4 class="px-1 red">' + "$" + data.results[i].msrp + '</h4>';
+                    console.log(msrp)
+                    // console.log(data.results[i].msrp)
+                }
+
+                }
 
                 ShoppingCard += '<div class="mb-4 col-12 col-sm-6 col-md-4 col-lg-4">';
                 ShoppingCard += '<div class="card shadow bg-white rounded">';
                 ShoppingCard += '<img class="card-img-top img-fluid" src="' + data.results[i].thumbnailImageUrl + '" alt="Card image" />';
                 ShoppingCard += '<div class="card-body">';
                 ShoppingCard += '<h4>' + data.results[i].title + '</h4>';
-                ShoppingCard += '<h4 class="text-center">' + "$" + data.results[i].price + '</h4>'
+                ShoppingCard += '<div class="d-flex justify-content-center">';
+                ShoppingCard += '<h4 class="px-1">' + "$" + data.results[i].price + '</h4>'
+                ShoppingCard += msrp;
+                ShoppingCard += '</div>';
                 ShoppingCard += '</div>';
                 ShoppingCard += '</div>';
                 ShoppingCard += '</div>';
             }
+
 
             $(".ShoppingCards").html(ShoppingCard);
 
@@ -237,20 +307,42 @@
 
                 }
             }
+
             var ShoppingCard = "";
 
             for (let i = 0; i < data.results.length; i++) {
+                var msrp = "";
+
+                // product has an “msrp” field
+                if(data.results[i].msrp != null || data.results[i].msrp !== undefined || data.results[i].msrp !== "" ){
+                    // and it’s less than “price” field
+                    // console.log(data.results[i].msrp < data.results[i].price)
+                    var msrpNum = parseFloat(data.results[i].msrp);
+                    var priceNum = parseFloat(data.results[i].price);
+                    //console.log("msrp", msrpNum + " vs " + priceNum)
+
+                    if (msrpNum>priceNum) {
+                        msrp = '<h4 class="px-1 red">' + "$" + data.results[i].msrp + '</h4>';
+                        console.log(msrp)
+                        // console.log(data.results[i].msrp)
+                    }
+
+                }
 
                 ShoppingCard += '<div class="mb-4 col-12 col-sm-6 col-md-4 col-lg-4">';
                 ShoppingCard += '<div class="card shadow bg-white rounded">';
                 ShoppingCard += '<img class="card-img-top img-fluid" src="' + data.results[i].thumbnailImageUrl + '" alt="Card image" />';
                 ShoppingCard += '<div class="card-body">';
                 ShoppingCard += '<h4>' + data.results[i].title + '</h4>';
-                ShoppingCard += '<h4 class="text-center">' + "$" + data.results[i].price + '</h4>'
+                ShoppingCard += '<div class="d-flex justify-content-center">';
+                ShoppingCard += '<h4 class="px-1">' + "$" + data.results[i].price + '</h4>'
+                ShoppingCard += msrp;
+                ShoppingCard += '</div>';
                 ShoppingCard += '</div>';
                 ShoppingCard += '</div>';
                 ShoppingCard += '</div>';
             }
+
 
             $(".ShoppingCards").html(ShoppingCard);
         })
@@ -290,16 +382,34 @@
                 }
             }
             var ShoppingCard = "";
-
-
             for (let i = 0; i < data.results.length; i++) {
+                var msrp = "";
+
+                // product has an “msrp” field
+                if(data.results[i].msrp != null || data.results[i].msrp !== undefined || data.results[i].msrp !== "" ){
+                    // and it’s less than “price” field
+                    // console.log(data.results[i].msrp < data.results[i].price)
+                    var msrpNum = parseFloat(data.results[i].msrp);
+                    var priceNum = parseFloat(data.results[i].price);
+                    //console.log("msrp", msrpNum + " vs " + priceNum)
+
+                    if (msrpNum>priceNum) {
+                        msrp = '<h4 class="px-3 red">' + "$" + data.results[i].msrp + '</h4>';
+                        console.log(msrp)
+                        // console.log(data.results[i].msrp)
+                    }
+
+                }
 
                 ShoppingCard += '<div class="mb-4 col-12 col-sm-6 col-md-4 col-lg-4">';
                 ShoppingCard += '<div class="card shadow bg-white rounded">';
                 ShoppingCard += '<img class="card-img-top img-fluid" src="' + data.results[i].thumbnailImageUrl + '" alt="Card image" />';
                 ShoppingCard += '<div class="card-body">';
                 ShoppingCard += '<h4>' + data.results[i].title + '</h4>';
-                ShoppingCard += '<h4 class="text-center">' + "$" + data.results[i].price + '</h4>'
+                ShoppingCard += '<div class="d-flex justify-content-center">';
+                ShoppingCard += '<h4 class="px-1">' + "$" + data.results[i].price + '</h4>'
+                ShoppingCard += msrp;
+                ShoppingCard += '</div>';
                 ShoppingCard += '</div>';
                 ShoppingCard += '</div>';
                 ShoppingCard += '</div>';
@@ -325,7 +435,19 @@
     for (let i = 0; i < bothNext.length; i++) {
         bothPrevious[i].addEventListener("click", previous);
     }
-
+    // ===== Scroll to Top ====
+    $(window).scroll(function() {
+        if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+            $('#return-to-top').fadeIn(200);    // Fade in the arrow
+        } else {
+            $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+        }
+    });
+    $('#return-to-top').click(function() {      // When arrow is clicked
+        $('body,html').animate({
+            scrollTop : 0                       // Scroll to top of body
+        }, 500);
+    });
 
 </script>
 </body>
