@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="w-100">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -11,40 +11,94 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/b9c50b62e0.js" crossorigin="anonymous"></script>
 
+    <style>
+        .btn {
+            background-color: white;
+            color: #3A23AD;
+            border-radius: 50%;
+            border: none;
+        }
+
+        .searchSpringNav {
+            background-color: #3A23AD;
+        }
+
+        .card {
+            transition: transform .13s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        .fas {
+            color: white;
+            transition: transform .2s ease-in-out;
+        }
+
+        .fas:hover {
+            transform: scale(1.16);
+            color: #00CEE1;
+        !important;
+        }
+
+        .page-link {
+            color: #3A23AD;
+        !important;
+        }
+
+        .page-link:hover {
+            color: #00CEE1;
+        }
+
+        #navHeader {
+            color: lightgrey;
+        }
+
+        #navHeader:hover {
+            color: #00CEE1;
+        }
+
+        .searchSpringText {
+            color: #3A23AD;
+        }
+        .white{
+            color: white;
+        }
+
+    </style>
 </head>
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-        <a class="navbar-brand d-none d-lg-block text-monospace" href="#"><h2>Searchspring</h2></a>
-        <form action="#" method="get" class="input-group w-25">
-            <input class="form-control rounded" type="text" id="search"
-                   placeholder="Search.."
-                   name="search" aria-label="Search"/>
-            <div class="input-group-append">
-                <label for="ingredient-query-input"></label>
-                <button type="submit" class="button fas fa-search fa-lg" id="ingredient-query-input">
-                </button>
-            </div>
-        </form>
-    </div>
+
+<nav class="navbar w-100 sticky-top searchSpringNav d-flex justify-content-lg-between justify-content-sm-center">
+    <di id="navbarNav">
+        <a class="navbar-brand d-lg-block text-monospace align-self-sm-center" href="#"><h2 id="navHeader">Searchspring</h2></a>
+    </di>
+    <form action="#" method="get" class="form-inline" id="demoForm">
+        <input class="form-control" type="text" placeholder="Search.." id="search"
+               name="search" aria-label="Search"/>
+        <div class="form-inline">
+            <label for="ingredient-query-input"></label>
+            <button type="submit" class="btn button p-2 searchSpringNav d-flex" id="ingredient-query-input"><i
+                    class="fas fa-search p-0 m-0"></i>
+            </button>
+        </div>
+    </form>
 </nav>
 <!--====================================End Of NavBar StART OF First Pagination======================================-->
 
 <div class="container">
 
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center mb-0 parentDisabled">
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center mb-0 p-4">
             <li class="page-item disabled previous">
                 <a class="page-link paginationNumberPrevious" href="#" tabindex="-1" aria-disabled="true">Previous</a>
             </li>
-            <li class="page-item"><a class="page-link paginationNumber" href="#"></a></li>
+            <li class="page-item disabled"><a class="page-link paginationNumber" href="#"></a></li>
             <li class="page-item next">
                 <a class="page-link paginationNumberNext" href="#">Next</a>
             </li>
@@ -62,11 +116,11 @@
     <!--==========================================START OF Last Pagination=============================================-->
 
     <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center mb-0 parentDisabled">
+        <ul class="pagination justify-content-center mb-0 pb-4">
             <li class="page-item disabled previous">
                 <a class="page-link paginationNumberPrevious" href="#" tabindex="-1" aria-disabled="true">Previous</a>
             </li>
-            <li class="page-item"><a class="page-link paginationNumber" href="#"></a></li>
+            <li class="page-item disabled"><a class="page-link paginationNumber" href="#"></a></li>
             <li class="page-item next">
                 <a class="page-link paginationNumberNext" href="#">Next</a>
             </li>
@@ -91,44 +145,71 @@
     //If the product has an “msrp” field and it’s less than “price” field display the “msrp” next to the price crossed out.
 
     //BONUS ==Above and below the results show pagination with next and previous buttons. You could also display some pages before/after the current page as applicable.
+    function notEmptyLanding() {
+        $('#demoForm').submit();
+    }
 
     var number = 1;
     var paginationNumber;
     var paginationNumbers = document.getElementsByClassName("paginationNumber");
     for (let i = 0; i < paginationNumbers.length; i++) {
-        console.log(paginationNumbers.length)
         document.getElementsByClassName("paginationNumber")[i].innerHTML = number;
     }
 
     paginationNumber = number;
 
+    // function placeHolder(x, y){
+    //     console.log(y)
+    //     if(y !== 1){
+    //         console.log(y)
+    //         x.setAttribute("placeholder", searchString);
+    //     }else{
+    //         x.setAttribute("placeholder", "Search..");
+    //         console.log(y)
+    //         y++
+    //     }
+    // }
+    //
+    // var activePlaceholder = document.getElementById("search");
+    // placeHolder(activePlaceholder, 1);
+
+
     if (document.getElementById("search") == null) {
         console.log("oops, null");
     } else {
-
         var searchString;
+        searchString = '';
         var urlSearchString = window.location.href;
         var url = new URL(urlSearchString);
         var searchParam = url.searchParams.get("search");
+        console.log(searchString)
         if (searchParam != null) {
             searchString = searchParam.replace(/,|,\s/g, ",+");
         }
 
-        document.getElementById("search").placeholder = searchString;
+        if (searchString === "") {
+            $('#demoForm').submit();
+        }
+        var firstRun = "http://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=" + searchParam + "&resultsFormat=native&page=" + 1;
+        $.ajax(firstRun).done(function (data) {
 
-        $.ajax("http://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=" + searchParam + "&resultsFormat=native&page=" + 1).done(function (data) {
 
-            //Create the cards
+            // Create the cards
             var ShoppingCard = "";
 
+            console.log(data.results[1])
 
             for (let i = 0; i < data.results.length; i++) {
 
                 ShoppingCard += '<div class="mb-4 col-12 col-sm-6 col-md-4 col-lg-4">';
                 ShoppingCard += '<div class="card shadow bg-white rounded">';
                 ShoppingCard += '<img class="card-img-top img-fluid" src="' + data.results[i].thumbnailImageUrl + '" alt="Card image" />';
-                ShoppingCard += "</div>";
-                ShoppingCard += "</div>";
+                ShoppingCard += '<div class="card-body">';
+                ShoppingCard += '<h4>' + data.results[i].title + '</h4>';
+                ShoppingCard += '<h4 class="text-center">' + "$" + data.results[i].price + '</h4>'
+                ShoppingCard += '</div>';
+                ShoppingCard += '</div>';
+                ShoppingCard += '</div>';
             }
 
             $(".ShoppingCards").html(ShoppingCard);
@@ -154,6 +235,7 @@
                     if (paginationNumber === 1) {
                         if (!document.getElementsByClassName("previous")[i].classList.contains("disabled")) {
                             document.getElementsByClassName("previous")[i].classList.add("disabled")
+                            document.getElementsByClassName("next")[i].classList.remove("disabled")
                         }
                     }
                     if (paginationNumber > 1) {
@@ -168,14 +250,17 @@
             }
             var ShoppingCard = "";
 
-
             for (let i = 0; i < data.results.length; i++) {
 
                 ShoppingCard += '<div class="mb-4 col-12 col-sm-6 col-md-4 col-lg-4">';
                 ShoppingCard += '<div class="card shadow bg-white rounded">';
                 ShoppingCard += '<img class="card-img-top img-fluid" src="' + data.results[i].thumbnailImageUrl + '" alt="Card image" />';
-                ShoppingCard += "</div>";
-                ShoppingCard += "</div>";
+                ShoppingCard += '<div class="card-body">';
+                ShoppingCard += '<h4>' + data.results[i].title + '</h4>';
+                ShoppingCard += '<h4 class="text-center">' + "$" + data.results[i].price + '</h4>'
+                ShoppingCard += '</div>';
+                ShoppingCard += '</div>';
+                ShoppingCard += '</div>';
             }
 
             $(".ShoppingCards").html(ShoppingCard);
@@ -222,14 +307,22 @@
                 ShoppingCard += '<div class="mb-4 col-12 col-sm-6 col-md-4 col-lg-4">';
                 ShoppingCard += '<div class="card shadow bg-white rounded">';
                 ShoppingCard += '<img class="card-img-top img-fluid" src="' + data.results[i].thumbnailImageUrl + '" alt="Card image" />';
-                ShoppingCard += "</div>";
-                ShoppingCard += "</div>";
+                ShoppingCard += '<div class="card-body">';
+                ShoppingCard += '<h4>' + data.results[i].title + '</h4>';
+                ShoppingCard += '<h4 class="text-center">' + "$" + data.results[i].price + '</h4>'
+                ShoppingCard += '</div>';
+                ShoppingCard += '</div>';
+                ShoppingCard += '</div>';
             }
 
             $(".ShoppingCards").html(ShoppingCard);
         })
 
     }
+
+    var navHeader = document.getElementById("navHeader");
+
+    navHeader.addEventListener("click", notEmptyLanding)
 
     var bothNext = document.getElementsByClassName("paginationNumberNext");
 
@@ -242,6 +335,7 @@
     for (let i = 0; i < bothNext.length; i++) {
         bothPrevious[i].addEventListener("click", previous);
     }
+
 
 </script>
 </body>
