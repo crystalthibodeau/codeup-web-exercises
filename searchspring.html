@@ -11,8 +11,6 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Font Awesome Script -->
-    <script src="https://kit.fontawesome.com/b9c50b62e0.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -37,41 +35,47 @@
         </form>
     </div>
 </nav>
-
+<!--====================================End Of NavBar StART OF First Pagination======================================-->
 
 <div class="container">
+
     <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center mb-0">
-            <li class="page-item disabled">
-                <a class="page-link a-disabled" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        <ul class="pagination justify-content-center mb-0 parentDisabled">
+            <li class="page-item disabled previous">
+                <a class="page-link paginationNumberPrevious" href="#" tabindex="-1" aria-disabled="true">Previous</a>
             </li>
-            <li class="page-item a-disabled"><a class="page-link" href="#" id="paginationNumber"></a></li>
-            <li class="page-item">
-                <a class="page-link" href="#" id="paginationNumberNext1">Next</a>
+            <li class="page-item"><a class="page-link paginationNumber" href="#"></a></li>
+            <li class="page-item next">
+                <a class="page-link paginationNumberNext" href="#">Next</a>
             </li>
         </ul>
     </nav>
 
-    <!--   Cards created dynamically by api call   -->
+
+    <!--================End of First Pagination START OF Cards created dynamically by api call=========================-->
+
     <div class="row ShoppingCards bg-white">
 
     </div>
 
 
+    <!--==========================================START OF Last Pagination=============================================-->
+
     <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center mb-0">
-            <li class="page-item disabled">
-                <a class="page-link a-disabled" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        <ul class="pagination justify-content-center mb-0 parentDisabled">
+            <li class="page-item disabled previous">
+                <a class="page-link paginationNumberPrevious" href="#" tabindex="-1" aria-disabled="true">Previous</a>
             </li>
-            <li class="page-item a-disabled"><a class="page-link" href="#" id="paginationNumber2"></a></li>
-            <li class="page-item">
-                <a class="page-link" href="#">Next</a>
+            <li class="page-item"><a class="page-link paginationNumber" href="#"></a></li>
+            <li class="page-item next">
+                <a class="page-link paginationNumberNext" href="#">Next</a>
             </li>
         </ul>
     </nav>
 
 </div>
 
+<!--==================================================Start Of Scripts===============================================-->
 
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -83,40 +87,38 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 
 <script>
+
+    //If the product has an “msrp” field and it’s less than “price” field display the “msrp” next to the price crossed out.
+
+    //BONUS ==Above and below the results show pagination with next and previous buttons. You could also display some pages before/after the current page as applicable.
+
     var number = 1;
-    var paginationNumber = parseInt(document.getElementById("paginationNumber").innerHTML);
+    var paginationNumber;
+    var paginationNumbers = document.getElementsByClassName("paginationNumber");
+    for (let i = 0; i < paginationNumbers.length; i++) {
+        console.log(paginationNumbers.length)
+        document.getElementsByClassName("paginationNumber")[i].innerHTML = number;
+    }
+
     paginationNumber = number;
 
     if (document.getElementById("search") == null) {
         console.log("oops, null");
     } else {
-        console.log("hello");
 
         var searchString;
         var urlSearchString = window.location.href;
         var url = new URL(urlSearchString);
         var searchParam = url.searchParams.get("search");
-        searchString = searchParam.replace(/,|,\s/g, ",+");
+        if (searchParam != null) {
+            searchString = searchParam.replace(/,|,\s/g, ",+");
+        }
 
-        //break results into groups of 12 or however many per page
-        //display that number per page
-        //update pagination number by one for each page or set per page
-        //each time the pagination is clicked call ajax for next page {update page number in call}
-        //if page number === 1 disable previous
-        //if page number === result.length/items per page === sets.length disable next
+        document.getElementById("search").placeholder = searchString;
 
         $.ajax("http://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=" + searchParam + "&resultsFormat=native&page=" + 1).done(function (data) {
 
-            var number = 1;
-            var paginationNumber = document.getElementById("paginationNumber");
-            paginationNumber.innerHTML = number;
-
-            // console.log(data.results[1].thumbnailImageUrl);
-
-            console.log(data.results);
-
             //Create the cards
-
             var ShoppingCard = "";
 
 
@@ -136,12 +138,37 @@
 
     }
 
+
     function next() {
-        console.log(paginationNumber)
+
         paginationNumber = paginationNumber + 1;
+        console.log(paginationNumber)
+
         $.ajax("http://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=" + searchParam + "&resultsFormat=native&page=" + (paginationNumber)).done(function (data) {
+            console.log(data)
+            var paginationNumbers = document.getElementsByClassName("paginationNumber");
+            for (let i = 0; i < paginationNumbers.length; i++) {
+                paginationNumbers[i].innerHTML = paginationNumber;
+
+                for (let i = 0; i < document.getElementsByClassName("previous").length; i++) {
+                    if (paginationNumber === 1) {
+                        if (!document.getElementsByClassName("previous")[i].classList.contains("disabled")) {
+                            document.getElementsByClassName("previous")[i].classList.add("disabled")
+                        }
+                    }
+                    if (paginationNumber > 1) {
+                        document.getElementsByClassName("previous")[i].classList.remove("disabled")
+                    }
+                    if (paginationNumber === data.pagination.totalPages) {
+                        document.getElementsByClassName("previous")[i].classList.remove("disabled")
+                        document.getElementsByClassName("next")[i].classList.add("disabled")
+                    }
+
+                }
+            }
             var ShoppingCard = "";
-            paginationNumber.innerHTML = number;
+
+
             for (let i = 0; i < data.results.length; i++) {
 
                 ShoppingCard += '<div class="mb-4 col-12 col-sm-6 col-md-4 col-lg-4">';
@@ -156,7 +183,65 @@
 
     }
 
-    document.getElementById(("paginationNumberNext1")).addEventListener("click", next);
+    function previous() {
+
+        paginationNumber = paginationNumber - 1;
+
+        $.ajax("http://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=" + searchParam + "&resultsFormat=native&page=" + (paginationNumber)).done(function (data) {
+
+            var paginationNumbers = document.getElementsByClassName("paginationNumber");
+
+            for (let i = 0; i < paginationNumbers.length; i++) {
+                paginationNumbers[i].innerHTML = paginationNumber;
+
+                for (let i = 0; i < document.getElementsByClassName("previous").length; i++) {
+
+                    if (paginationNumber === 1) {
+                        if (!document.getElementsByClassName("previous")[i].classList.contains("disabled")) {
+                            document.getElementsByClassName("previous")[i].classList.add("disabled")
+                        }
+
+                    }
+
+                    if (paginationNumber > 1) {
+                        document.getElementsByClassName("previous")[i].classList.remove("disabled")
+                    }
+
+                    if (paginationNumber === data.pagination.totalPages) {
+                        document.getElementsByClassName("previous")[i].classList.remove("disabled")
+                        document.getElementsByClassName("next")[i].classList.add("disabled")
+                    }
+
+                }
+            }
+            var ShoppingCard = "";
+
+
+            for (let i = 0; i < data.results.length; i++) {
+
+                ShoppingCard += '<div class="mb-4 col-12 col-sm-6 col-md-4 col-lg-4">';
+                ShoppingCard += '<div class="card shadow bg-white rounded">';
+                ShoppingCard += '<img class="card-img-top img-fluid" src="' + data.results[i].thumbnailImageUrl + '" alt="Card image" />';
+                ShoppingCard += "</div>";
+                ShoppingCard += "</div>";
+            }
+
+            $(".ShoppingCards").html(ShoppingCard);
+        })
+
+    }
+
+    var bothNext = document.getElementsByClassName("paginationNumberNext");
+
+    for (let i = 0; i < bothNext.length; i++) {
+        bothNext[i].addEventListener("click", next);
+    }
+
+    var bothPrevious = document.getElementsByClassName("paginationNumberPrevious");
+
+    for (let i = 0; i < bothNext.length; i++) {
+        bothPrevious[i].addEventListener("click", previous);
+    }
 
 </script>
 </body>
