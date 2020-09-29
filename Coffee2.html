@@ -13,6 +13,12 @@
     <title>Coffee Time</title>
 
     <style>
+        .light-text{
+            color: #B5926E;
+        }
+        a:hover{
+            color: #00aba9;
+        }
         .caramel-text {
             color: #9F6A46;
             font-weight: bolder;
@@ -20,27 +26,25 @@
             -webkit-text-stroke-color: black;
 
         }
-        /*.caramel-text{*/
-        /*    color: #7E4625;*/
-        /*}*/
+
         .myButton {
             box-shadow:inset 0px 1px 0px 0px #22130F;
-            background:linear-gradient(to bottom, #7E4625 5%, #AB7752 100%);
-            background-color:#7E4625;
+            background-color:#00aba9;
             border-radius:3px;
             border:1px solid #2d231a;
             display:inline-block;
             cursor:pointer;
-            color:#ffffff;
+            color: #ffffff;
+            font-weight: bolder;
             font-family:Arial;
-            font-size:13px;
             padding:6px 24px;
             text-decoration:none;
             text-shadow:0px 1px 0px #4d3534;
+            transition: .1s ease-in-out;
         }
         .myButton:hover {
-            background:linear-gradient(to bottom, #AB7752 5%, #7E4625 100%);
-            background-color:#AB7752;
+            background-color:#FF8C00;
+            transform: scale(1.03);
         }
         .myButton:active {
             position:relative;
@@ -53,14 +57,12 @@
         }
 
         .card {
-            background-color: #9F6A46 !important;
+            text-align: center;
             outline: black;
-            color: lightgrey;
-            transition: .2s ease-in-out;
-
+            color: darkorange;
         }
         .card:hover{
-            transform: scale(1.03);
+            color: #fe7d48;
         }
 
         .white-text {
@@ -75,20 +77,20 @@
 
         .jumbotron {
             height: 45vh;
-            /*background: url("https://file03.16sucai.com/2016/10/1100/16sucai_p20161010072_0de.JPG") no-repeat center center;*/
             background: url("https://cdn.luxe.digital/media/2020/05/07203610/best-coffee-beans-luxe-digital.jpg") no-repeat center center;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover;
         }
-
+        .jumbotron:hover{
+            filter: brightness(80%);
+        }
         body {
             background-color: #2D231A;
         }
 
         nav {
-            /*background-color: transparent !important;*/
             background-color: #22130F;
         }
     </style>
@@ -134,7 +136,7 @@
         <form class="w-50 p-4">
             <div class="row p-1">
                 <div class="col">
-                    <label for="roast-selection">Filter by Roast</label>
+                    <label for="roast-selection" class="light-text">Filter by Roast</label>
                     <select id="roast-selection" class="form-control">
                         <option>all</option>
                         <option>light</option>
@@ -151,11 +153,11 @@
         <form class="w-50 p-4">
             <div class="row p-1">
                 <div class="col-6">
-                    <label for="new-name">Add a New Coffee</label>
+                    <label for="new-name" class="light-text">Add a New Coffee</label>
                     <input type="text" class="form-control" id="new-name" placeholder="Coffee Name..">
                 </div>
                 <div class="col-6">
-                    <label for="new-roast">Roast Type</label>
+                    <label for="new-roast" class="light-text">Roast Type</label>
                     <select id="new-roast" class="form-control">
                         <option>light</option>
                         <option>medium</option>
@@ -184,9 +186,9 @@
 
     function renderCoffee(coffee) {
 
-        var html = '<div class="coffee card shadow-sm p-3 bg-white rounded">';
-        html += '<div class="card-body">' + '<h4 class="card-title">' + coffee.name + '</h4>';
-        html += '<p class="card-text">' + coffee.roast + '</p>';
+        var html = '<div class="coffee card shadow-sm p-1 bg-white rounded">';
+        html += '<div class="card-body">' + '<h2 class="card-title">' + coffee.name + '</h2>';
+        html += '<h5 class="card-text">' + coffee.roast + ' roast' + '</h5>';
         html += '</div>';
         html += '</div>';
 
